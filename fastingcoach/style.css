@@ -1,0 +1,164 @@
+html, button, input {
+    font-family: 'DM Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 1000vh;
+}
+
+.popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.leave-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 24px 16px;
+    width: 300px;
+    text-align: center;
+    z-index: 100;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.popup-bg.active {
+    display: block;
+}
+
+.leave-popup.active {
+    opacity: 1;
+    top: 50%;
+}
+
+.leave-popup>p:first-child {
+    margin: 0 8px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.leave-popup>p:nth-child(2) {
+    margin: 34px 0;
+    font-size: 14px;
+    color: #EF4E44;
+}
+
+.leave-popup .weight {
+    margin-bottom: 34px;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.leave-popup .byTime {
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+
+.leave-popup ul {
+    padding-left: 0;
+}
+
+
+.leave-popup li {
+    font-size: 13px;
+    font-weight: 500;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.leave-popup li:last-child {
+    margin-bottom: 34px;
+}
+
+.leave-popup li svg{
+    width: 10px;
+    margin-right: 10px;
+}
+
+.btn {
+    display: block;
+    background-color: #161622;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 55px;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-popup {
+    margin-top: 22px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+@media screen and (orientation: landscape) {
+    .leave-popup {
+        height: 100%;
+        max-height: 300px;
+        width: 530px;
+        padding: 15px 20px;
+        justify-content: space-between;
+    }
+
+    .leave-popup .weight, .leave-popup li:last-child, .close-popup{
+        margin: 0;
+    }
+
+    .leave-popup p:first-child {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .leave-popup p:nth-child(2) {
+        margin: 0;
+    }
+
+    .leave-popup .byTime {
+        display: inline-block;
+    }
+
+    .leave-popup ul {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .btn {
+        max-width: 350px;
+    }
+
+    .close-popup {
+        margin-top: 5px;
+    }
+}
+

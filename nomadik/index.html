@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+    <link href="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/css/nomadik.css?ts=1603484408&amp;host=www.thenomadik.com" rel="stylesheet" type="text/css" media="all">
+    <link href="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/css/responsive.css?ts=1603476040&amp;host=www.thenomadik.com" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+<main>
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .flx {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 25px;
+            color: #233950;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 30px 0;
+        }
+
+        .title-test {
+            padding: 20px;
+            background-image: url("https://d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/topo1.png?ts=1603476057&host=www.thenomadik.com");
+        }
+        .title-test h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: white;
+            text-align: left;
+        }
+        .title-test h2 span {
+            font-size: 22px;
+        }
+        .title-test p {
+            font-size: 14px;
+            color: white;
+            text-align: left;
+        }
+
+        .subscription {
+            padding: 30px 15px;
+            background-image: url("https://d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/topo_white.png?ts=1603476057&host=www.thenomadik.com");
+            text-align: center;
+        }
+        .subscription ul {
+            padding-left: 30px;
+        }
+        .subscription ul li {
+            list-style: none;
+            text-align: left;
+            font-size: 12px;
+            line-height: 16px;
+            color: #646370;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .subscription ul li::before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -25px;
+            content: "";
+            height: 15px;
+            width: 15px;
+            transform: translateY(-50%);
+            background: url("https://i.ibb.co/c1mM1QC/confirm.png") center center no-repeat;
+            background-size: contain;
+        }
+        .subscription form {
+            background-color: white;
+        }
+        .subscription form > div {
+            background: url("https://i.ibb.co/x8nz4wF/box.png") center bottom no-repeat;
+            background-size: contain;
+            padding: 16px 25px;
+        }
+        .subscription form label {
+            display: block;
+            position: relative;
+            height: 45px;
+        }
+        .subscription form label.green::before {
+            content: "";
+        }
+        .subscription form label.green select {
+            padding: 8px 15px;
+        }
+        .subscription form label.blue::before {
+            content: "most value";
+            color: #6862DB;
+        }
+        .subscription form label::before {
+            display: block;
+            position: absolute;
+            content: "Most popular";
+            top: 8px;
+            left: 20px;
+            font-weight: 700;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #E39936;
+        }
+        .subscription form select {
+            display: block;
+            color: #444;
+            line-height: 1.3;
+            box-sizing: border-box;
+            margin: 0;
+            border: 1px solid #aaa;
+            box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+            border-radius: 0.5em;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEyIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02IDcuMDAwMDFMMCAxLjU1NTU2TDEuMiAwLjQ2NjY3NUw2IDQuODIyMjNMMTAuOCAwLjQ2NjY3NUwxMiAxLjU1NTU2TDYgNy4wMDAwMVoiIGZpbGw9IiM4OTg5ODkiLz4KPC9zdmc+Cg==");
+            background-repeat: no-repeat, repeat;
+            background-position: right 0.7em top 50%, 0 0;
+            background-size: 0.65em auto, 100%;
+            width: 100%;
+            height: 45px;
+            padding: 16px 25px 8px 15px;
+            font-size: 13px;
+            font-family: "Roboto", sans-serif;
+        }
+        .subscription form h5 {
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #233950;
+            padding-bottom: 5px;
+        }
+        .subscription form h5 + p {
+            font-weight: bold;
+            font-size: 12px;
+            color: #566743;
+            padding-bottom: 20px;
+        }
+        .subscription form .price {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 13px;
+            color: #233950;
+        }
+        .subscription form .price span {
+            font-size: 22px;
+        }
+        .subscription form .price + p {
+            font-weight: 500;
+            font-size: 12px;
+            color: #646370;
+        }
+        .subscription form .line {
+            display: block;
+            height: 2px;
+            width: 40px;
+            margin: 0 auto 15px;
+            background-color: #566743;
+        }
+        .subscription form .item {
+            display: none;
+        }
+        .subscription form .item.active {
+            display: block;
+        }
+        .subscription form .btn {
+            display: block;
+            margin: 15px auto;
+            max-width: 280px;
+            background-color: #EF9600;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 3px;
+            border: none;
+            padding: 0;
+        }
+        .subscription form .btn.green {
+            background-color: #9DBF16;
+        }
+        .subscription form .btn.blue {
+            background-color: #6862DB;
+        }
+        .subscription form .ship {
+            color: #E96969;
+            font-size: 11px;
+        }
+        .subscription form .ship span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .subscription form .ship span svg {
+            margin-right: 5px;
+        }
+
+        .brands {
+            background-image: url("https://d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/topo_white.png?ts=1603476057&host=www.thenomadik.com");
+        }
+
+        .sample-kit {
+            overflow: hidden;
+        }
+
+        .tns-visually-hidden {
+            display: none;
+        }
+
+        .tns-ovh {
+            overflow: hidden;
+        }
+
+        .tns-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .tns-nav button {
+            margin: 5px;
+            height: 10px;
+            width: 10px;
+            border: 1px solid #27362C;
+            border-radius: 50px;
+            background-color: #fff;
+        }
+        .tns-nav button.tns-nav-active {
+            background-color: #27362C;
+        }
+
+        .slider-block {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            height: 17px;
+            width: 8px;
+            background: url("https://i.ibb.co/MR259fx/arrow.png") center center no-repeat;
+            background-size: contain;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .next {
+            transform: rotateZ(180deg) translateY(50%);
+            right: -15px;
+            left: auto;
+        }
+
+        .our-benefits {
+            background-image: url("https://d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/topo1.png?ts=1603476057&host=www.thenomadik.com");
+            padding-bottom: 0;
+        }
+        .our-benefits h2 {
+            color: white;
+        }
+        .our-benefits .benefits {
+            flex-wrap: wrap;
+            align-items: stretch;
+            padding: 0 15px 30px;
+        }
+        .our-benefits .benefit {
+            padding: 15px;
+            width: 50%;
+            text-align: center;
+            color: white;
+            font-size: 13px;
+        }
+        .our-benefits .benefit:first-child {
+            border-bottom: 1px solid white;
+            border-right: 1px solid white;
+        }
+        .our-benefits .benefit:nth-child(2) {
+            border-bottom: 1px solid white;
+        }
+        .our-benefits .benefit:nth-child(3) {
+            border-right: 1px solid white;
+        }
+        .our-benefits .benefit img {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .img-benefits {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .img-benefits img {
+            width: 100%;
+        }
+
+        .email-opt-section form {
+            display: flex;
+            height: 35px;
+        }
+
+        .email-opt-section form input {
+            height: 100%;
+        }
+
+        .email-opt-section form > input {
+            width: 25%;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .email-opt-section form > div {
+            width: 75%;
+        }
+
+        #email_optin {
+            width: 100%;
+            border: none;
+            border-radius: 3px 0 0 3px;
+        }
+
+    </style>
+
+<section class="title-test">
+    <h2>A New Adventure,<br><span>Delivered Monthly</span></h2>
+    <p>Discover the latest gear, spend more time in nature and save money
+    </p>
+</section>
+
+<section class="sample-kit">
+    <h2>Sample Kits</h2>
+    <div class="slider-block">
+        <div class="prev-sample-kit prev"></div>
+        <div class="slider-sample-kit">
+            <img src="https://i.ibb.co/rtW3y2v/sample1.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/dmKt4sB/sample2.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/D4wRDWx/sample3.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/hx56ky0/sample4.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/r2vGd0x/sample5.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/71xNz1t/sample6.jpg" alt="sample kit">
+        </div>
+        <div class="next-sample-kit next"></div>
+    </div>
+</section>
+
+<section class="our-benefits">
+    <h2>Our Benefits</h2>
+    <div class="benefits flx">
+        <div class="benefit">
+            <img
+                src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/icon-gear.png?ts=1603476047&amp;host=www.thenomadik.com"
+                alt="gear icon">
+            <p><b>DISCOVER EPIC GEAR:</b><br>
+                learn about new brands and get equipped with the latest gear</p>
+        </div>
+        <div class="benefit">
+            <img
+                src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/icon_map.png?ts=1603476047&amp;host=www.thenomadik.com"
+                alt="map icon">
+            <p><b>SPEND MORE TIME IN NATURE:</b><br>
+                the monthly outdoor challenge will inspire your next trip</p>
+        </div>
+        <div class="benefit">
+            <img
+                src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/backpack_icon.png?ts=1603476043&amp;host=www.thenomadik.com"
+                alt="bag icon">
+            <p><b>MONTHLY THEMES:</b><br>
+                get new gear for each season and tailored to your interests</p>
+        </div>
+        <div class="benefit">
+            <img
+                src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/icon_clock.png?ts=1603476047&amp;host=www.thenomadik.com"
+                alt="gear icon">
+            <p><b>SAVE MONEY:</b><br>
+                boxes start at $29.99, guaranteed $50 retail value</p>
+        </div>
+    </div>
+</section>
+
+<section class="subscription">
+    <h2>Select a Subscription</h2>
+    <form>
+        <div>
+            <label>
+                <select name="plan" id="plan">
+                    <option value="1">Pay 1 Month — $32.95</option>
+                    <option value="2" selected>Pay every 6 months — $187.50</option>
+                    <option value="3">Pay every 12 months — $359.88</option>
+                </select>
+            </label>
+            <div class="item">
+                <h5>monthly collection</h5>
+                <p>1 Month</p>
+                <span class="line"></span>
+                <p class="price"><span>$32.95</span>/month</p>
+                <p>Renews Semi-annually, Cancel Anytime</p>
+                <a href="https://www.thenomadik.com/subscribe/1019641322_subscription-box/1019641317_Month+to+Month?gift=False" class="btn green m1">continue</a>
+
+                <ul>
+                    <li>Delivered Monthly</li>
+                    <li>All full-size items (never overstock or closeouts)</li>
+                    <li>Discover best-in-class brands & epic gear</li>
+                    <li>Spend more time in nature</li>
+                    <li class="last">Monthly themes based on seasons + your interests</li>
+                </ul>
+            </div>
+            <div class="item active">
+                <h5>monthly collection</h5>
+                <p>Pay Every 6 Months</p>
+                <span class="line"></span>
+                <p class="price"><span>$31.25</span>/month</p>
+                <p>Renews Semi-annually, Cancel Anytime</p>
+                <a href="https://www.thenomadik.com/ac/SHIPFREE?next=subscribe/1019641322_subscription-box/1019641319_6+Month+Prepay" class="btn m6">continue</a>
+
+                <ul>
+                    <li>Delivered Monthly</li>
+                    <li>All full-size items (never overstock or closeouts)</li>
+                    <li>Guaranteed $50 retail value per kit</li>
+                    <li>Discover best-in-class brands & epic gear</li>
+                    <li>Spend more time in nature</li>
+                    <li>Monthly themes based on seasons + your interests</li>
+                </ul>
+                <p class="ship"><span>
+                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 3.42383V4.48633H10.0938V12.4551H6.82337C6.58644 11.5419 5.76512 10.8613 4.78125 10.8613C3.79737 10.8613 2.97606 11.5419 2.73913 12.4551H2.125V9.79883H1.0625V13.5176H2.73913C2.97606 14.4308 3.79737 15.1113 4.78125 15.1113C5.76512 15.1113 6.58644 14.4308 6.82337 13.5176H11.2391C11.4761 14.4308 12.2974 15.1113 13.2812 15.1113C14.2651 15.1113 15.0864 14.4308 15.3234 13.5176H17V9.1847L16.9665 9.1013L15.904 5.9138L15.7887 5.54883H11.1562V3.42383H0ZM0.53125 5.54883V6.61133H5.3125V5.54883H0.53125ZM11.1562 6.61133H15.0243L15.9375 9.33398V12.4551H15.3234C15.0864 11.5419 14.2651 10.8613 13.2812 10.8613C12.2974 10.8613 11.4761 11.5419 11.2391 12.4551H11.1562V6.61133ZM1.0625 7.67383V8.73633H4.25V7.67383H1.0625ZM4.78125 11.9238C5.37466 11.9238 5.84375 12.3929 5.84375 12.9863C5.84375 13.5797 5.37466 14.0488 4.78125 14.0488C4.18784 14.0488 3.71875 13.5797 3.71875 12.9863C3.71875 12.3929 4.18784 11.9238 4.78125 11.9238ZM13.2812 11.9238C13.8747 11.9238 14.3438 12.3929 14.3438 12.9863C14.3438 13.5797 13.8747 14.0488 13.2812 14.0488C12.6878 14.0488 12.2188 13.5797 12.2188 12.9863C12.2188 12.3929 12.6878 11.9238 13.2812 11.9238Z" fill="#E96969"/>
+                    </svg>
+                    Free shipping (US only)</span>You save $30</p>
+            </div>
+            <div class="item">
+                <h5>monthly collection</h5>
+                <p>Pay Every 12 Months</p>
+                <span class="line"></span>
+                <p class="price"><span>$29.99</span>/month</p>
+                <p>Renews Semi-annually, Cancel Anytime</p>
+                <a href="https://www.thenomadik.com/ac/SHIPFREE?next=subscribe/1019641322_subscription-box/1019641320_12+Month+Prepay" class="btn blue m12">continue</a>
+
+                <ul>
+                    <li>Delivered Monthly</li>
+                    <li>All full-size items (never overstock or closeouts)</li>
+                    <li>Guaranteed $50 retail value per kit</li>
+                    <li>Discover best-in-class brands & epic gear</li>
+                    <li>Spend more time in nature</li>
+                    <li>Monthly themes based on seasons + your interests</li>
+                </ul>
+                <p class="ship"><span>
+                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 3.42383V4.48633H10.0938V12.4551H6.82337C6.58644 11.5419 5.76512 10.8613 4.78125 10.8613C3.79737 10.8613 2.97606 11.5419 2.73913 12.4551H2.125V9.79883H1.0625V13.5176H2.73913C2.97606 14.4308 3.79737 15.1113 4.78125 15.1113C5.76512 15.1113 6.58644 14.4308 6.82337 13.5176H11.2391C11.4761 14.4308 12.2974 15.1113 13.2812 15.1113C14.2651 15.1113 15.0864 14.4308 15.3234 13.5176H17V9.1847L16.9665 9.1013L15.904 5.9138L15.7887 5.54883H11.1562V3.42383H0ZM0.53125 5.54883V6.61133H5.3125V5.54883H0.53125ZM11.1562 6.61133H15.0243L15.9375 9.33398V12.4551H15.3234C15.0864 11.5419 14.2651 10.8613 13.2812 10.8613C12.2974 10.8613 11.4761 11.5419 11.2391 12.4551H11.1562V6.61133ZM1.0625 7.67383V8.73633H4.25V7.67383H1.0625ZM4.78125 11.9238C5.37466 11.9238 5.84375 12.3929 5.84375 12.9863C5.84375 13.5797 5.37466 14.0488 4.78125 14.0488C4.18784 14.0488 3.71875 13.5797 3.71875 12.9863C3.71875 12.3929 4.18784 11.9238 4.78125 11.9238ZM13.2812 11.9238C13.8747 11.9238 14.3438 12.3929 14.3438 12.9863C14.3438 13.5797 13.8747 14.0488 13.2812 14.0488C12.6878 14.0488 12.2188 13.5797 12.2188 12.9863C12.2188 12.3929 12.6878 11.9238 13.2812 11.9238Z" fill="#E96969"/>
+                    </svg>
+                    Free shipping (US only)</span>You save $30</p>
+            </div>
+        </div>
+    </form>
+
+</section>
+
+<div class="how-it-works">
+    <style>
+        .how-it-works {
+            margin: 30px auto;
+            max-width: 320px;
+
+        }
+
+        .how-it-works .subsection {
+            display: flex;
+            width: 100%;
+            padding: 0;
+
+        }
+
+        .how-it-works .subsection:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            font-size: 18px;
+            color: #96A84E;
+        }
+
+        .how-it-works .subsection img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .how-it-works p {
+            width: 60%;
+            font-size: 12px;
+            color: #646370;
+        }
+    </style>
+
+    <h2>How It Works</h2>
+    <div>
+            <div class="subsection">
+                <img src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/howitworks_icon_add.png?ts=1603476047&amp;host=www.thenomadik.com" alt="add icon">
+                <p><span class="emphasis">SUBSCRIBE</span><br>Become a member - plans start at $29.99/box.
+                    Get 3-7 full-sized, premium products in every box. <br>
+                    <b>Guaranteed $50 retail value.</b></p>
+            </div>
+            <div class="subsection">
+                <img src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/howitworks_icon_edit.png?ts=1603476047&amp;host=www.thenomadik.com" alt="add icon">
+                <p><span class="emphasis">CUSTOMIZE</span><br>After ordering, fill out a personal profile + we'll tailor
+                    your box to your interests.</p>
+                <br>
+                <br>
+            </div>
+            <div class="subsection">
+                <img src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/howitworks_icon_map.png?ts=1603476047&amp;host=www.thenomadik.com" alt="add icon">
+                <p><span class="emphasis">EXPLORE</span><br>We send the latest gear from premium brands to support you on your adventures. Lookout for our monthly outdoor challenges for trip-inspiration!</p>
+            </div>
+    </div>
+</div>
+
+<div class="img-benefits">
+    <img class="benefits-image"
+         src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/nikki-in-tent.jpg?ts=1603476051&amp;host=www.thenomadik.com"
+         alt="nikki in tent">
+</div>
+
+<section class="types">
+    <h2>Types of Gear You'll Get</h2>
+    <div class="slider-block">
+        <div class="prev-types prev"></div>
+        <div class="slider-types">
+            <img src="https://i.ibb.co/XxPBnky/type1.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/PcPh2nR/type2.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/ZBfHZbz/type3.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/sQ7GyFK/type4.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/WyJdNFZ/type5.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/p4GghLS/type6.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/VtjqGfQ/type7.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/zXFp73j/type8.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/MBdvQB7/type9.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/0r9qtgD/type10.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/p2KTfCp/type11.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/LgkTtbq/type12.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/pjdyf9Z/type13.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/PM63SHF/type14.jpg" alt="sample kit">
+        </div>
+        <div class="next-types next"></div>
+    </div>
+</section>
+
+<section class="brands">
+    <h2>Brands in the Box</h2>
+    <div class="slider-block">
+        <div class="prev-brands prev"></div>
+        <div class="slider-brands">
+            <img src="https://i.ibb.co/LxD2Rw4/brand1.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/G2rLWVr/brand2.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/4Tq9R1b/brand3.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/SsyTfdq/brand4.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/m6VJK6W/brand5.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/wzPQRsb/brand6.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/hFQzxDM/brand7.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/pbZ3hV6/brand8.jpg" alt="sample kit">
+        </div>
+        <div class="next-brands next"></div>
+    </div>
+    <h2>Featured In</h2>
+    <div class="slider-block">
+        <div class="prev-featured prev"></div>
+        <div class="slider-featured">
+            <img src="https://i.ibb.co/CVxPyfL/featured1.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/Wz1LX43/featured2.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/8csknHj/featured3.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/ZJrjxpb/featured4.jpg" alt="sample kit">
+            <img src="https://i.ibb.co/jfr11yt/featured5.jpg" alt="sample kit">
+        </div>
+        <div class="next-featured next"></div>
+    </div>
+
+    
+</section>
+
+<div class="container faq">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>FAQ</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+            <style>
+
+                .faq {
+                    padding: 20px;
+                }
+                .faq-template {
+                    font-family: "Futura", sans-serif;
+                }
+                .faq-header {
+                    text-align: center;
+                }
+
+                /*FAQ*/
+
+                .faq-box {
+                    position:relative;
+                    margin:0;
+                    margin-top:1rem;
+                    margin-left:auto;
+                    margin-right:auto;
+                    max-width:800px;
+                    border: 0.2rem solid #566743;
+                    border-radius: 0.5rem;
+                    padding: 1rem 0.75rem;
+                    letter-spacing: 0;
+                }
+                .faq-title {
+                    width: 80%;
+                    margin-bottom:0;
+                    font-size: 16px;
+                }
+                .faq-icon {
+                    position: absolute;
+                    top: 1rem;
+                    right: 0.5rem;
+                    border-radius:50%;
+                    width:1.9rem;
+                    height:1.9rem;
+                    display:flex;
+                    justify-content: center;
+                    font-size:1.2rem;
+                    border:0.15rem solid #233950;
+                    text-align:center;
+                    cursor: pointer;
+
+                }
+                .faq-icon .fas {
+                    position: relative;
+                    left: 0.05rem;
+                    top:0.4rem;
+                    font-size:1.0rem;
+                    color: #566743;
+                    display:inline-block;
+
+                }
+                .faq-icon .fa-arrow-down {
+                    color:#233950;
+                }
+
+                .faq-icon .fa-arrow-up {
+                    top: 0.3rem;
+                    color:#233950;
+                }
+                .faq-icon.active {
+                    color: #233950;
+                }
+                .faq-body {
+                    font-size: 17px;
+                    padding:0;
+                    margin:0;
+                    margin-top:1rem;
+                    display: none;
+                    overflow: hidden;
+                }
+
+                .faq-box {
+                    background-color: #F6F6F6;
+                    border: 0 none;
+                    border-radius: 0;
+                }
+
+                .faq-box p {
+                    font-size: 15px;
+                    color: #646370;
+                    margin: 1rem;
+                    font-family: "Futura", sans-serif;
+                }
+
+                .faq-title {
+                    margin-left: 15px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    padding:.2rem 0;
+                }
+                .fa-chevron-up {
+                    color: #000000;
+                }
+                .faq .button2 {
+                    margin: auto;
+                }
+
+                @media only screen and (max-width: 550px) {
+
+                    .faq {
+                        margin-bottom: 3rem;
+                    }
+                    .faq-box {
+                        padding: 1rem;
+                    }
+
+                    .faq h2 {
+                        padding: 3.5rem 0 1.5rem 0;
+                        margin: 0;
+                    }
+
+                    .faq-title {
+                        font-size: 13px;
+                    }
+
+                    .faq p{
+                        font-size: 12px;
+                        margin: 10px 15px 0 15px;
+                    }
+
+                    .faq .button2 {
+                        margin: auto;
+                    }
+                }
+            </style>
+
+
+
+            <div class="col-md-12">
+
+                <h3 class="faq-header">MEMBERSHIP INFO</h3>
+
+                <div class="faq-box faq-subscribe">
+                    <h4 class="faq-title">Will my gear kit be the same as everyone else?</h4>
+                    <div class="faq-icon"><span class="fas fa-arrow-down"></span></div>
+                    <p class="faq-body">
+                        Everybody could get the same box, but it’s not guaranteed. Our adventure experts work hard to find the latest gear, but many items are only available in limited quantities. But rest assured, the value, quality, and quantity of the items in all variations of our kits are comparable each month.
+                    </p>
+                </div>
+
+                <div class="faq-box faq-subscribe faq-cs">
+                    <h4 class="faq-title">When will my gear kit ship?</h4>
+                    <div class="faq-icon"><span class="fas fa-arrow-down"></span></div>
+                    <p class="faq-body">
+                        We typically ship by the 24th of each month (except December, which will ship by the 20th). If you become a member prior to the 13th of the month, your Welcome Box will ship by the 24th of that month. If you become a member after the 13th of the month, your Welcome Box will ship by the 24th of the following month.
+                        <br><br>
+                        We understand you may be eager to get your new gear! If that’s the case, we can expedite your first month free of charge. Just email <a href="mailto:info@thenomadik.com">info@thenomadik.com</a> after you subscribe.
+                        <br><br>
+                        PLEASE NOTE: Due to COVID-19, shipping carriers are experiencing intermittent delays nationwide. Shipments could be delayed while in transit.
+                    </p>
+                </div>
+
+                <div class="faq-box faq-subscribe">
+                    <h4 class="faq-title">When will I be charged?</h4>
+                    <div class="faq-icon"><span class="fas fa-arrow-down"></span></div>
+                    <p class="faq-body">
+                        You'll be charged on the day you sign up. After that, you will automatically get charged on your renewal date (varies by monthly plan type).
+                    </p>
+                </div>
+
+                <div class="faq-box faq-subscribe faq-cs">
+                    <h4 class="faq-title">Can I cancel anytime?</h4>
+                    <div class="faq-icon"><span class="fas fa-arrow-down"></span></div>
+                    <p class="faq-body">
+                        No problem! Of course, we would love to have you as a member, but you can cancel or re-activate whenever you want. You can cancel directly in your customer account, without having to email or call us. There are no contracts and no cancellation fees. If you would like to cancel your membership, you must do so before the first day of the month. For the 1-month plan, you need to cancel on or before the first of each month. For the 6 and 12-month plans, you need to cancel before the end of your membership term.
+                        <br><br>
+                        <b style="padding-left:1rem;">To cancel a subscription:</b> <br>
+                        <b style="padding-left:2rem;">1. Login to your account </b><br>
+                        <b style="padding-left:2rem;"> 2. Click the orange UPDATE button under Manage Subscriptions</b> <br>
+                        <b style="padding-left:2rem;">3. Click the green EDIT button under Your Subscriptions</b> <br>
+                        <b style="padding-left:2rem;">4. Click the green CANCEL SUBSCRIPTION button</b> <br>
+                        <b style="padding-left:2rem;"> 5. Answer the questions and click the green SUBMIT button</b><br>
+                        <br>
+                        Please note that canceling your account does not provide you with a refund for any paid boxes, nor does it stop a pending charge. Your cancellation will go into effect the following billing cycle.
+                        <br><br>
+                        If you cancel after the first of the month, you will still receive your gear kit and will not be eligible for a refund. Your cancellation will be effective the following billing cycle.
+                        <br><br>
+                        If you subscribe and cancel your membership right away, you will receive your first month, and all subsequent months will be canceled (unless you prepaid for a 6 or 12-month membership).
+                        6 and 12-month memberships are prepaid and therefore non-refundable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="footer bg-dark">
+        <style>
+            .footer .nomadik-button {
+                background-color: #E39936;
+                padding: 0;
+                width: 25%;
+                font-size: 12px;
+            }
+
+            #email_optin {
+                border: none;
+            }
+            
+            .footer {
+                margin: 30px 0 0;
+            }
+
+            .footer .email-opt-section p {
+                text-align: left;
+                color : rgba(255, 255, 255, 0.6);
+            }
+
+            .footer address {
+                color : rgba(255, 255, 255, 0.6);
+            }
+
+            .footer address+a {
+                color : rgba(255, 255, 255, 0.6);
+            }
+
+            .footer .fab {
+                color : rgba(255, 255, 255, 0.6);
+            }
+
+            .footer {
+                text-align: center;
+            }
+
+            div.copy {
+                background-image : url("https://d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/topo1.png?ts=1603476057&host=my.cratejoy.com");
+                color : rgba(255, 255, 255, 0.6);
+            }
+        </style>
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-2 col-6">
+                    <div class="footer-subitems">
+                        <a href="/howitworks">How it Works</a><br>
+                        <a href="/nomadik">Subscribe</a><br>
+                        <a href="/faq">FAQ</a><br>
+                        <a href="/contact/index">Contact</a>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-6">
+                    <div class="footer-subitems">
+                        <!--<a href="/about">About</a><br>-->
+                        <!--<a href="http://www.blog.thenomadik.com/">Blog</a><br>-->
+                        <!--<a href="/careers">Careers</a><br>-->
+                        <a href="/affiliate">Affiliate</a><br>
+                        <a href="/privacy_policy">Privacy</a><br>
+                        <a href="/terms_conditions">Terms &amp; Conditions</a><br>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <!-- theme_id: 3260297231, modified_at: 2020-10-23 18:00:39.386656+00:00 -->
+
+                    <div class="email-opt-section" style="margin-bottom:40px;">
+                        <p>Sign up below, get an exclusive offer plus epic adventure content!</p>
+                        <form>
+                            <div style="max-width:400px; margin:auto; margin-bottom:20px;">
+                                <input style="width:100%; border:1px solid black; padding:0.3rem 0.7rem;" type="email" value="" id="email_optin" name="EMAIL" placeholder="EMAIL">
+                            </div>
+                            <input type="submit" value="Subscribe" onclick="javascript:email_opt();" id="btn_email_optin" class="nomadik-button">
+                        </form>
+                        <h5 class="center" id="email_optin_confirm" style="display:none; color:#ca7636;">THANKS!</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 margin-bottom-1">
+                    <img style="height:2rem;" src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/Nomadik_Tent_white.svg?ts=1603476051&amp;host=www.thenomadik.com">
+                    <img style="height:1rem; vertical-align:-40%;" src="//d3a1v57rabk2hm.cloudfront.net/thenomadiksubscriptionbox/parcel-copy-80/images/nomadik_text_white.svg?ts=1603476052&amp;host=www.thenomadik.com">
+                    <address>
+                        The Nomadik<br>
+                        San Diego, California
+                    </address>
+                    <a href="mailto:info@thenomadik.com">info@thenomadik.com</a>
+
+                    <div style="font-size:2rem; letter-spacing:0.25rem;">
+                        <a href="https://www.instagram.com/thenomadik/" target="_blank"><span class="fab fa-instagram"></span></a>
+                        <a href="https://www.facebook.com/thenomadik/" target="_blank"><span class="fab fa-facebook-square"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
