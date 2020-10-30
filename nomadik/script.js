@@ -125,14 +125,15 @@ function ready () {
         item.addEventListener('click', function () {
             if(this.classList.contains('active')){
                 this.classList.remove('active');
-                this.nextElementSibling.style.maxHeight = "0";
+                this.nextElementSibling.style.height = "0";
                 this.children[0].classList.remove('fa-arrow-up');
                 this.children[0].classList.add('fa-arrow-down');
             } else {
                 this.classList.add('active');
-                this.nextElementSibling.style.maxHeight = "400px";
+                this.nextElementSibling.style.height = "100%";
                 this.children[0].classList.remove('fa-arrow-down');
                 this.children[0].classList.add('fa-arrow-up');
+                window.dataLayer = window.dataLayer || [];
                 dataLayer.push({
                     'event': 'event-to-ga',
                     'eventCategory': 'Exp - Shorter Flow',

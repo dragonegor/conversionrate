@@ -1,0 +1,191 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+.more-img-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F3FAFD;
+  border-radius: 2px;
+  height: 20px;
+  font-size: 16px;
+  border: none;
+  color: #256799;
+}
+.more-img-button svg {
+  margin: 5px;
+}
+
+.info-block {
+  padding: 24px 30px 30px;
+  background-color: #F3FAFD;
+  border-radius: 6px;
+  max-width: 450px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.info-block h3 {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.info-block h3 svg {
+  margin-right: 20px;
+}
+.info-block p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.info-block button {
+  background-color: #219BE7;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.info-block .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.info-block .pin {
+  position: absolute;
+  background-color: #F3FAFD;
+  height: 20px;
+  width: 20px;
+  bottom: 0;
+  left: 48%;
+  transform-origin: bottom left;
+  transform: rotateZ(45deg);
+}
+
+.more-img-popup {
+  max-width: 920px;
+  position: relative;
+  padding: 40px;
+  background-color: #fff;
+}
+.more-img-popup .popup-content {
+  display: flex;
+  justify-content: space-between;
+  color: #414042;
+}
+.more-img-popup .popup-content > div:last-child > *:not(:last-child) {
+  margin-bottom: 12px;
+}
+.more-img-popup .popup-content > div {
+  width: 47%;
+}
+.more-img-popup .popup-content > div:first-child {
+  display: flex;
+  align-items: center;
+}
+.more-img-popup .popup-content > div:first-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.more-img-popup .popup-content h3 {
+  font-size: 21px;
+  font-weight: 700;
+}
+.more-img-popup .popup-content .step {
+  font-size: 13px;
+}
+.more-img-popup .popup-content .step b {
+  margin-right: 5px;
+}
+.more-img-popup .popup-content .popup-phone-block {
+  border-radius: 6px;
+  border: 1px solid #9B9B9B;
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+}
+.more-img-popup .popup-content .popup-phone-block > *:not(:last-child) {
+  margin-bottom: 8px;
+}
+.more-img-popup .popup-content .popup-phone-block .phone {
+  font-size: 26px;
+  font-weight: 700;
+  color: #3C9806;
+}
+.more-img-popup .popup-content .popup-phone-block .work-time {
+  color: #9B9B9B;
+}
+.more-img-popup .popup-content .popup-phone-block .or {
+  position: relative;
+  display: inline-block;
+}
+.more-img-popup .popup-content .popup-phone-block .or::before, .more-img-popup .popup-content .popup-phone-block .or::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 40px;
+  background-color: #9B9B9B;
+  top: 50%;
+}
+.more-img-popup .popup-content .popup-phone-block .or::before {
+  right: 150%;
+}
+.more-img-popup .popup-content .popup-phone-block .or::after {
+  left: 150%;
+}
+.more-img-popup .popup-content .popup-phone-block form {
+  display: flex;
+  height: 40px;
+}
+.more-img-popup .popup-content .popup-phone-block form label {
+  position: relative;
+}
+.more-img-popup .popup-content .popup-phone-block form label:first-child {
+  width: 55%;
+}
+.more-img-popup .popup-content .popup-phone-block form label:last-child {
+  width: 45%;
+}
+.more-img-popup .popup-content .popup-phone-block form label svg {
+  position: absolute;
+  height: 12px;
+  left: 14px;
+  top: 14px;
+}
+.more-img-popup .popup-content .popup-phone-block form input[type=tel] {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #9B9B9B;
+  border-radius: 5px 0px 0px 5px;
+  padding-left: 40px;
+  font-size: 13px;
+  color: #414042;
+}
+.more-img-popup .popup-content .popup-phone-block form input[type=tel]::placeholder {
+  font-family: "Arial", sans-serif;
+  font-size: 13px;
+  color: #9B9B9B;
+}
+.more-img-popup .popup-content .popup-phone-block form input[type=submit] {
+  width: 100%;
+  height: 100%;
+  background-color: #3C9806;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+.more-img-popup .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */
