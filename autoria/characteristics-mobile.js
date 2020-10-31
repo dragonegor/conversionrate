@@ -26,7 +26,7 @@ let style = `
   }
 
   .more-characteristics {
-    margin: 15px;
+    padding: 20px;
     background-color: #F3FAFD;
     border-radius: 6px;
   }
@@ -81,7 +81,7 @@ let fuelInfo = `
 </div>
 `
 
-let characteristics = `
+let moreCharacteristics = `
 <div class="more-characteristics">
   <p><b>Бракує характеристик авто на сайті?</b></p>
   <p>Запитайте безпосередньо у автосалону потрібну інформацію</p>
@@ -94,7 +94,10 @@ let characteristics = `
 
 document.body.insertAdjacentHTML('afterbegin', style);
 document.querySelector('.defines_list>*:nth-child(8)').insertAdjacentHTML('afterend', fuelInfo);
-document.querySelector('.characteristics').insertAdjacentHTML('afterend', characteristics);
+document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCharacteristics);
+let complectationBlock = document.getElementById('auto-complectation-block');
+let characteristics = document.getElementsByClassName('characteristics');
+characteristics.after(complectationBlock);
 
 
 
