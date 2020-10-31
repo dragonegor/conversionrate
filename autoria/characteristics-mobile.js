@@ -1,3 +1,81 @@
+// insert style
+let style = `
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+  }
+
+  .fuel_info {
+    display: flex;
+    padding: 15px;
+  }
+  .fuel_info svg {
+    flex-shrink: 0;
+    height: 20px;
+    margin-right: 10px;
+  }
+  .fuel_info p {
+    color: #256799;
+    font-size: 16px;
+  }
+  .fuel_info .blue-underline {
+    line-height: 20px;
+    border-bottom: 2px dotted #256799;
+  }
+
+  .characteristics {
+    margin: 15px;
+    padding: 20px;
+    background-color: #F3FAFD;
+    border-radius: 6px;
+  }
+  .characteristics p {
+    font-size: 13px;
+    color: #414042;
+    margin-bottom: 12px;
+  }
+  .characteristics p b {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .characteristics button, .equipment button {
+    background-color: #219BE7;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+
+  .equipment {
+    background-color: #F3FAFD;
+    width: 100%;
+    padding: 20px;
+  }
+  .equipment h3 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #414042;
+    padding: 0 5px;
+    margin-bottom: 12px;
+  }
+  .equipment > p {
+    font-size: 13px;
+    color: #414042;
+    margin-bottom: 12px;
+  }
+</style>
+`
+document.body.insertAdjacentHTML('afterbegin', style);
+
+
+
+
 let selector = document.querySelector('.defines_list>*:nth-child(8)');
 let fuelInfo = `
 <div class="fuel_info">
