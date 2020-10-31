@@ -10,7 +10,6 @@ let style = `
 
   .fuel_info {
     display: flex;
-    padding: 15px;
   }
   .fuel_info svg {
     flex-shrink: 0;
@@ -26,23 +25,22 @@ let style = `
     border-bottom: 2px dotted #256799;
   }
 
-  .characteristics {
+  .more-characteristics {
     margin: 15px;
-    padding: 20px;
     background-color: #F3FAFD;
     border-radius: 6px;
   }
-  .characteristics p {
+  .more-characteristics p {
     font-size: 13px;
     color: #414042;
     margin-bottom: 12px;
   }
-  .characteristics p b {
+  .more-characteristics p b {
     font-size: 16px;
     font-weight: 700;
   }
 
-  .characteristics button, .equipment button {
+  .more-characteristics button, .equipment button {
     background-color: #219BE7;
     border-radius: 5px;
     font-size: 16px;
@@ -71,12 +69,7 @@ let style = `
   }
 </style>
 `
-document.body.insertAdjacentHTML('afterbegin', style);
 
-
-
-
-let selector = document.querySelector('.defines_list>*:nth-child(8)');
 let fuelInfo = `
 <div class="fuel_info">
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,4 +80,21 @@ let fuelInfo = `
   <p><span class="blue-underline">Дізнатися про фактичні витрати по українських дорогах (по місту / по трасі)</span></p>
 </div>
 `
-selector.insertAdjacentHTML('afterend', fuelInfo);
+
+let characteristics = `
+<div class="more-characteristics">
+  <p><b>Бракує характеристик авто на сайті?</b></p>
+  <p>Запитайте безпосередньо у автосалону потрібну інформацію</p>
+  <button>Уточнити характеристики</button>
+</div>
+`
+
+
+
+
+document.body.insertAdjacentHTML('afterbegin', style);
+document.querySelector('.defines_list>*:nth-child(8)').insertAdjacentHTML('afterend', fuelInfo);
+document.querySelector('.characteristics').insertAdjacentHTML('afterend', characteristics);
+
+
+
