@@ -96,7 +96,7 @@ document.body.insertAdjacentHTML('afterbegin', style);
 document.querySelector('.defines_list>*:nth-child(8)').insertAdjacentHTML('afterend', fuelInfo);
 document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCharacteristics);
 let complectationBlock = document.querySelector('.auto-complectation-block');
-document.querySelector('.auto-complectation-block').remove();
+complectationBlock.remove();
 console.log(complectationBlock);
 
 
