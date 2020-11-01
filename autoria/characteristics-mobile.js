@@ -95,7 +95,8 @@ let moreCharacteristics = `
 document.body.insertAdjacentHTML('afterbegin', style);
 document.querySelector('.defines_list>*:nth-child(8)').insertAdjacentHTML('afterend', fuelInfo);
 document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCharacteristics);
-let complectationBlock = document.getElementById('auto-complectation-block');
+let complectationBlock = document.querySelector('auto-complectation-block');
+document.querySelector('auto-complectation-block').remove();
 let characteristics = document.getElementsByClassName('characteristics');
 characteristics.after(complectationBlock);
 
