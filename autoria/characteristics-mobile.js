@@ -98,7 +98,6 @@ document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCh
 let complectationBlock = document.querySelector('.auto-complectation-block');
 document.querySelector('.auto-complectation-block').remove();
 let characteristics = document.querySelector('.more-characteristics');
-characteristics.after(complectationBlock);
-
+characteristics.insertAdjacentElement('afterend', complectationBlock);
 
 
