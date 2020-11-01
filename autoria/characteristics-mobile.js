@@ -97,7 +97,7 @@ document.querySelector('.defines_list>*:nth-child(8)').insertAdjacentHTML('after
 document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCharacteristics);
 let complectationBlock = document.querySelector('.auto-complectation-block');
 document.querySelector('.auto-complectation-block').remove();
-let characteristics = document.getElementsByClassName('characteristics');
+let characteristics = document.querySelector('.characteristics');
 characteristics.after(complectationBlock);
 
 
