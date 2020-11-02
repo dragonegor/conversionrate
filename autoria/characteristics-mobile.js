@@ -144,15 +144,19 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
 
     let mut = new MutationObserver((mutations) => {
       if(this.classList.contains('fuel_info')) {
-        document.querySelector('.react_modal__header').childNodes[0].nodeValue = `
-        <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
-        <p>Офіційний сервіс автосалону може надати вам <br><b>реальні дані щодо витрат палива,</b><br>грунтуючись на авто, яких вони обслуговують.</p>`
+        document.querySelector('.react_modal__header').childNodes[0].remove();
+        document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', `
+          <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
+          <p>Офіційний сервіс автосалону може надати вам <br><b>реальні дані щодо витрат палива,</b><br>грунтуючись на авто, яких вони обслуговують.</p>
+        `);
       } else if (this.classList.contains('char')) {
-        document.querySelector('.react_modal__header').childNodes[0].nodeValue = `
+        document.querySelector('.react_modal__header').childNodes[0].remove();
+        document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', `
         <h4>Уточнити характеристики ${carModel}</h4>
         <p>Запросіть інформацію про авто, якої бракує на сайті.</p>`
       } else if (this.classList.contains('equip')) {
-        document.querySelector('.react_modal__header').childNodes[0].nodeValue = `
+        document.querySelector('.react_modal__header').childNodes[0].remove();
+        document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', `
         <h4>Дізнатися про поставки ${carModel}</h4>
         <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>`
       }
