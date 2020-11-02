@@ -158,6 +158,6 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
         <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>
         <span class="react_modal__close">×</span>`
       }
-    }, 10)
+    }, 100)
   })
 })
