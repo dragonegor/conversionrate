@@ -83,6 +83,7 @@ let style = `
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+    z-index: 100;
   }
   
   .more-img-popup.active {
@@ -211,7 +212,7 @@ let style = `
     z-index: 100;
   }
   
-  .darkBg {
+  .darkBgImg {
     position:absolute;
     top: 0;
     left: 0;
@@ -222,14 +223,25 @@ let style = `
     display: none;
   }
   
-  .darkBg.active {
+  .darkBgImg.active {
     display: block;
+  }
+  
+  .darkBg {
+    position:fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .6);
+    display: none;
+    z-index: 99;
   }
 </style>
 `;
 
 let btnBlock = `
-<div class="darkBg"></div>
+<div class="darkBgImg"></div>
 <div class="more-img-block">
 <button class="more-img-button">
   <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -304,7 +316,7 @@ let popUp = `
 
 if (!window.location.pathname.includes('/uk/')) {
   btnBlock = `
-  <div class="darkBg"></div>
+  <div class="darkBgImg"></div>
   <div class="more-img-block">
     <button class="more-img-button">
       <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -386,6 +398,7 @@ if (!window.location.pathname.includes('/uk/')) {
 
 
 document.body.insertAdjacentHTML('afterbegin', style);
+document.body.insertAdjacentHTML('afterbegin', popUp);
 
 document.querySelector('.count-photo').insertAdjacentHTML("afterend", btnBlock);
 document.querySelector('.more-img-button').addEventListener('click', function () {
