@@ -162,7 +162,7 @@ let mut = new MutationObserver(function (mutations) {
 document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
 
-    mut.observe(document.body, {
+    mut.observe.bind(this, document.body, {
       characterData: true,
       childList: true,
       subtree: true,
