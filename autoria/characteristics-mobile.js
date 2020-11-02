@@ -153,12 +153,12 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
         document.querySelector('.react_modal__header').childNodes[0].remove();
         document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', `
         <h4>Уточнити характеристики ${carModel}</h4>
-        <p>Запросіть інформацію про авто, якої бракує на сайті.</p>`
+        <p>Запросіть інформацію про авто, якої бракує на сайті.</p>`);
       } else if (this.classList.contains('equip')) {
         document.querySelector('.react_modal__header').childNodes[0].remove();
         document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', `
         <h4>Дізнатися про поставки ${carModel}</h4>
-        <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>`
+        <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>`);
       }
 
       mut.disconnect();
