@@ -132,12 +132,14 @@ let equipment = `
 document.body.insertAdjacentHTML('afterbegin', style);
 document.querySelector('.defines_list>*:nth-child(8)').insertAdjacentHTML('afterend', fuelInfo);
 document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCharacteristics);
-let complectationBlock = document.getElementById('auto-complectation-block');
 let char = document.querySelector('.more-characteristics');
-char.after(complectationBlock);
+let complectationBlock = document.getElementById('auto-complectation-block');
+if(complectationBlock) {
+  char.after(complectationBlock);
+  document.querySelector('#auto-complectation-block h3').innerHTML = `Інші варіанти комплектації ${carModel}:`;
+  document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
+}
 
-document.querySelector('#auto-complectation-block h3').innerHTML = `Інші варіанти комплектації ${carModel}:`;
-document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
 
 document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
