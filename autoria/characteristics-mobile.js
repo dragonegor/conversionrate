@@ -140,6 +140,7 @@ document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('after
 document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
     let mut = new MutationObserver(function (mutations) {
+     console.log(this);
       if(this.classList.contains('fuel_info')) {
         document.querySelector('.react_modal__header').innerHTML = `
         <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
