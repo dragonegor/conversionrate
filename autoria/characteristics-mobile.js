@@ -129,7 +129,7 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
     let event = new Event('click');
 
     console.log(this);
-    document.querySelector("span[data-tm='phone-commercial']").dispatchEvent(event);
+    document.querySelector("#mobile-call").dispatchEvent(event);
   })
 })
 
