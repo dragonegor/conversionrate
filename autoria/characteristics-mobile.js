@@ -126,9 +126,8 @@ document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('after
 
 document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
-    let event = new Event('click');
-    console.log(this);
-    document.querySelector("#mobile-call").dispatchEvent(event);
+    let event = new Event('click', {bubbles: true});
+    document.querySelector("span.button.button--green").dispatchEvent(event);
   })
 })
 
