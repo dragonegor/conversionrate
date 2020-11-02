@@ -136,23 +136,27 @@ char.after(complectationBlock);
 
 document.querySelector('#auto-complectation-block h3').innerHTML = `Інші варіанти комплектації ${carModel}:`;
 document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
-let mut = new MutationObserver(function () {
-  if(this.classList.contains('fuel_info')) {
-    document.querySelector('.react_modal__header').innerHTML = `
-      <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
-      <p>Офіційний сервіс автосалону може надати вам <br><b>реальні дані щодо витрат палива,</b><br>грунтуючись на авто, яких вони обслуговують.</p>
-      <span class="react_modal__close">×</span>`
-  } else if (this.classList.contains('char')) {
-    document.querySelector('.react_modal__header').innerHTML = `
-      <h4>Уточнити характеристики ${carModel}</h4>
-      <p>Запросіть інформацію про авто, якої бракує на сайті.</p>
-      <span class="react_modal__close">×</span>`
-  } else if (this.classList.contains('equip')) {
-    document.querySelector('.react_modal__header').innerHTML = `
-      <h4>Дізнатися про поставки ${carModel}</h4>
-      <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>
-      <span class="react_modal__close">×</span>`
-  }
+
+
+// if(this.classList.contains('fuel_info')) {
+//   document.querySelector('.react_modal__header').innerHTML = `
+//       <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
+//       <p>Офіційний сервіс автосалону може надати вам <br><b>реальні дані щодо витрат палива,</b><br>грунтуючись на авто, яких вони обслуговують.</p>
+//       <span class="react_modal__close">×</span>`
+// } else if (this.classList.contains('char')) {
+//   document.querySelector('.react_modal__header').innerHTML = `
+//       <h4>Уточнити характеристики ${carModel}</h4>
+//       <p>Запросіть інформацію про авто, якої бракує на сайті.</p>
+//       <span class="react_modal__close">×</span>`
+// } else if (this.classList.contains('equip')) {
+//   document.querySelector('.react_modal__header').innerHTML = `
+//       <h4>Дізнатися про поставки ${carModel}</h4>
+//       <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>
+//       <span class="react_modal__close">×</span>`
+// }
+
+let mut = new MutationObserver(function (mutations) {
+    console.log(mutations);
 })
 document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
