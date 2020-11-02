@@ -209,7 +209,7 @@ let style = `
     position: absolute;
     bottom: 11px;
     left: 90px;
-    z-index: 100;
+    z-index: 98;
   }
   
   .darkBgImg {
@@ -218,7 +218,7 @@ let style = `
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 99;
+    z-index: 97;
     background-color: rgba(0, 0, 0, .6);
     display: none;
   }
