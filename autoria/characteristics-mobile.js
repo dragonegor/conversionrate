@@ -169,6 +169,8 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
       characterDataOldValue: true
     });
 
+    console.log(mut);
+
     let event = new Event('click', {bubbles: true});
     document.querySelector("span.button.button--green").dispatchEvent(event);
     mut.disconnect();
