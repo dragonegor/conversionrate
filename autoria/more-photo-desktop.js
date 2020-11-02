@@ -13,15 +13,13 @@ let style = `
     justify-content: space-between;
     background-color: #F3FAFD;
     border-radius: 2px;
-    height: 20px;
     font-size: 16px;
     border: none;
     color: #256799;
   }
   .more-img-button svg {
-    margin: 5px;
+    margin: 3px;
   }
-
   .info-block {
     padding: 24px 30px 30px;
     background-color: #F3FAFD;
@@ -30,7 +28,7 @@ let style = `
     position: absolute;
     margin-bottom: 20px;
     bottom: -200%;
-    left: 0;
+    left: -50%;
   }
   .info-block h3 {
     font-size: 16px;
@@ -193,7 +191,9 @@ let style = `
   }
   
   .more-img-block {
-    position:relative;
+    position: absolute;
+    bottom: 11px;
+    left: 90px;
   }
 </style>
 `;
@@ -271,7 +271,7 @@ let popUp = `
 </div>
 `
 
-if (!window.location.pathname.includes(/uk/)) {
+if (!window.location.pathname.includes('/uk/')) {
   btnBlock = `
   <div class="more-img-block">
     <button class="more-img-button">
@@ -348,10 +348,11 @@ if (!window.location.pathname.includes(/uk/)) {
             fill="#9B9B9B"/>
       </svg>
     </div>
-  </div>
-  `
+  </div>`
 }
+
+
 
 document.body.insertAdjacentHTML('afterbegin', style);
 
-
+document.querySelector('.count-photo').insertAdjacentHTML("afterend", btnBlock);
