@@ -48,12 +48,25 @@ let style = `
     padding: 10px 15px;
     border: none;
   }
-
-  .equipment {
-    background-color: #F3FAFD;
-    width: 100%;
-    padding: 20px;
+  
+  #auto-complectation-block {
+   background-color: #F3FAFD;
+   margin-top: 35px;
   }
+  
+  #auto-complectation-block h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  #auto-complectation-block ul li.active {
+    display: none;
+  }
+  
+  #auto-complectation-block ul li {
+    margin: 20px 0;
+  }
+
   .equipment > p {
     font-size: 13px;
     color: #414042;
@@ -100,6 +113,6 @@ let complectationBlock = document.getElementById('auto-complectation-block');
 let char = document.querySelector('.more-characteristics');
 char.after(complectationBlock);
 
-document.querySelector('#auto-complectation-block h3').innerHTML += `Інші варіанти комплектації ${carModel}:`;
+document.querySelector('#auto-complectation-block h3').innerHTML = `Інші варіанти комплектації ${carModel}:`;
 document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
 
