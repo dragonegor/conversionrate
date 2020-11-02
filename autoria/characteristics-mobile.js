@@ -141,7 +141,7 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
     let event = new Event('click', {bubbles: true});
     document.querySelector("span.button.button--green").dispatchEvent(event);
-    setTimeout(function () {
+    setTimeout(() => {
       if(this.classList.contains('fuel_info')) {
         document.querySelector('.react_modal__header').innerHTML = `
         <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
