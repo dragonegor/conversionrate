@@ -24,11 +24,11 @@ let style = `
     padding: 24px 30px 30px;
     background-color: #F3FAFD;
     border-radius: 6px;
-    max-width: 450px;
+    width: 450px;
     position: absolute;
     margin-bottom: 20px;
-    bottom: -200%;
-    left: -50%;
+    bottom: -150%;
+    left: -10%;
   }
   .info-block h3 {
     font-size: 16px;
@@ -196,10 +196,21 @@ let style = `
     left: 90px;
     z-index: 100;
   }
+  
+  .darkBg {
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .6);
+  }
 </style>
 `;
 
 let btnBlock = `
+<div class="darkBg"></div>
 <div class="more-img-block">
 <button class="more-img-button">
   <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -274,6 +285,7 @@ let popUp = `
 
 if (!window.location.pathname.includes('/uk/')) {
   btnBlock = `
+  <div class="darkBg"></div>
   <div class="more-img-block">
     <button class="more-img-button">
       <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
