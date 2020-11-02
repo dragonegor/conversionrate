@@ -389,8 +389,11 @@ document.body.insertAdjacentHTML('afterbegin', style);
 
 document.querySelector('.count-photo').insertAdjacentHTML("afterend", btnBlock);
 document.querySelector('.more-img-button').addEventListener('click', function () {
-  document.querySelector('.info-block').classList.add('active');
-  document.querySelector('.darkBg').classList.add('active');
+  if (document.querySelector('.info-block').classList.contains('active')){
+    document.querySelector('.info-block').classList.remove('active');
+    document.querySelector('.darkBg').classList.remove('active');
+  }
+  document.querySelector('.more-img-popup').classList.add('active');
 });
 
 document.querySelector('.info-block .close').addEventListener('click', function () {
