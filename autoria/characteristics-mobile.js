@@ -54,14 +54,6 @@ let style = `
     width: 100%;
     padding: 20px;
   }
-  .equipment h3 {
-    font-size: 20px;
-    line-height: 26px;
-    font-weight: 700;
-    color: #414042;
-    padding: 0 5px;
-    margin-bottom: 12px;
-  }
   .equipment > p {
     font-size: 13px;
     color: #414042;
@@ -89,17 +81,16 @@ let moreCharacteristics = `
 </div>
 `
 
+
+let carModel = document.querySelector('.view-auto_testimonials_full .rating+span strong').textContent;
+
 let equipment = `
     <div class="equipment">
-        <h3>Інші варіанти комплектації "Infiniti Q60":</h3>
-        <div class="block-insert"></div>
         <p>Ви можете дізнатись про найближчі поставки даного авто (у наступні 30 днів).</p>
         <button>Дізнатись про найближчі поставки</button>
     </div>
 `
 
-let carModel = document.querySelector('.view-auto_testimonials_full .rating+span strong');
-console.log(carModel);
 
 
 document.body.insertAdjacentHTML('afterbegin', style);
@@ -108,4 +99,7 @@ document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCh
 let complectationBlock = document.getElementById('auto-complectation-block');
 let char = document.querySelector('.more-characteristics');
 char.after(complectationBlock);
+
+document.querySelector('.auto-complectation-block h3').innerHTML += `Інші варіанти комплектації ${carModel}:`;
+document.querySelector('.auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
 
