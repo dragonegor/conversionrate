@@ -138,7 +138,7 @@ document.querySelector('#auto-complectation-block h3').innerHTML = `Інші в�
 document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
 
 let mut = new MutationObserver(function (mutations) {
-  console.log(this);
+  console.log(mutations);
   // if(this.classList.contains('fuel_info')) {
   //   document.querySelector('.react_modal__header').innerHTML = `
   //       <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
@@ -161,11 +161,9 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
 
     mut.observe(document.documentElement, {
-      attributes: true,
       characterData: true,
       childList: true,
       subtree: true,
-      attributeOldValue: true,
       characterDataOldValue: true
     });
 
