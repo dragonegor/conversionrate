@@ -105,15 +105,15 @@ let fuelInfo = `
     <path d="M10 4.05078C9.73478 4.05078 9.48043 4.15614 9.29289 4.34367C9.10536 4.53121 9 4.78556 9 5.05078C9 5.316 9.10536 5.57035 9.29289 5.75789C9.48043 5.94542 9.73478 6.05078 10 6.05078C10.2652 6.05078 10.5196 5.94542 10.7071 5.75789C10.8946 5.57035 11 5.316 11 5.05078C11 4.78556 10.8946 4.53121 10.7071 4.34367C10.5196 4.15614 10.2652 4.05078 10 4.05078Z" fill="#256799"/>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10Z" fill="#256799"/>
   </svg>
-  <p><span class="blue-underline">Дізнатися про фактичні витрати по українських дорогах (по місту / по трасі)</span></p>
+  <p><span class="blue-underline">Узнать фактический расход по украинским дорогам (по городу / трассе)</span></p>
 </div>
 `
 
 let moreCharacteristics = `
-<div class="more-characteristics">
-  <p><b>Бракує характеристик авто на сайті?</b></p>
-  <p>Запитайте безпосередньо у автосалону потрібну інформацію</p>
-  <button class="test-popup char">Уточнити характеристики</button>
+<div class="characteristics">
+  <p><b>Не хватает характеристик авто на сайте?</b></p>
+  <p>Спросите непосредственно у автосалона нужную информацию</p>
+  <button>Уточнить характеристики</button>
 </div>
 `
 
@@ -122,8 +122,8 @@ let carModel = document.querySelector('.view-auto_testimonials_full .rating+span
 
 let equipment = `
     <div class="equipment">
-        <p>Ви можете дізнатись про найближчі поставки даного авто (у наступні 30 днів).</p>
-        <button class="test-popup equip">Дізнатись про найближчі поставки</button>
+        <p>Вы можете узнать о ближайших поставках данного авто (в последующие 30 дней).</p>
+        <button class="test-popup equip">Узнать о ближайших поставках</button>
     </div>
 `
 
@@ -136,7 +136,7 @@ let complectationBlock = document.getElementById('auto-complectation-block');
 let char = document.querySelector('.more-characteristics');
 char.after(complectationBlock);
 
-document.querySelector('#auto-complectation-block h3').innerHTML = `Інші варіанти комплектації ${carModel}:`;
+document.querySelector('#auto-complectation-block h3').innerHTML = `Другие варианты комплектации ${carModel}:`;
 document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
 
 document.querySelectorAll('.test-popup').forEach((item)=> {
@@ -146,19 +146,19 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
       if(this.classList.contains('fuel_info')) {
         document.querySelector('.react_modal__header').childNodes[0].remove();
         document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', `
-          <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
-          <p>Офіційний сервіс автосалону може надати вам <b>реальні дані щодо витрат палива,</b> грунтуючись на авто, яких вони обслуговують.</p>
+          <h4>Узнать о фактических расходах топлива ${carModel}</h4>
+          <p>Официальный сервис автосалона может предоставить вам <b>реальные данные о расходах топлива</b>, основываясь на авто, которых они обслуживают.</p>
         `);
       } else if (this.classList.contains('char')) {
         document.querySelector('.react_modal__header').childNodes[0].remove();
         document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', `
-        <h4>Уточнити характеристики ${carModel}</h4>
-        <p>Запросіть інформацію про авто, якої бракує на сайті.</p>`);
+        <h4>Уточнить характеристики ${carModel}</h4>
+        <p>Запросите информацию об авто, которой не хватает на сайте.</p>`);
       } else if (this.classList.contains('equip')) {
         document.querySelector('.react_modal__header').childNodes[0].remove();
         document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', `
-        <h4>Дізнатися про поставки ${carModel}</h4>
-        <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>`);
+        <h4>Узнать о поставках ${carModel}</h4>
+        <p>Запросите информацию о ближайших поставках данного авто (в последующие 30 дней).</p>`);
       }
 
       mut.disconnect();
