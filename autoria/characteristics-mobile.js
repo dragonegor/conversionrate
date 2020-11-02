@@ -100,6 +100,6 @@ let complectationBlock = document.getElementById('auto-complectation-block');
 let char = document.querySelector('.more-characteristics');
 char.after(complectationBlock);
 
-document.querySelector('.auto-complectation-block h3').innerHTML += `Інші варіанти комплектації ${carModel}:`;
-document.querySelector('.auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
+document.querySelector('#auto-complectation-block h3').innerHTML += `Інші варіанти комплектації ${carModel}:`;
+document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
 
