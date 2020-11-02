@@ -135,7 +135,7 @@ let p3 = `<h4>Дізнатися про поставки ${carModel}</h4>
           <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>`
 
 
-if (!window.location.pathname.includes(/uk/)) {
+if (!window.location.pathname.includes('/uk/')) {
   fuelInfo = `
     <div class="fuel_info test-popup">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
