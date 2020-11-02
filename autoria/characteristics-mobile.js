@@ -51,7 +51,7 @@ let style = `
   
   #auto-complectation-block {
    background-color: #F3FAFD;
-   margin-top: 20px;
+   margin: 20px -15px 0;
    padding: 15px;
   }
   
@@ -127,6 +127,7 @@ document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('after
 document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
     console.log(this);
+    document.querySelector("span[data-tm='phone-commercial']").dispatchEvent('click');
   })
 })
 
