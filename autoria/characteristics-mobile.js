@@ -51,7 +51,7 @@ let style = `
   
   #auto-complectation-block {
    background-color: #F3FAFD;
-   margin-top: 35px;
+   margin-top: 20px;
    padding: 15px;
   }
   
@@ -72,7 +72,7 @@ let style = `
     margin: 20px 0;
     border-top: none;
     background-color: white;
-    padding: 5px;
+    padding: 10px;
   }
 
   .equipment > p {
@@ -84,7 +84,7 @@ let style = `
 `
 
 let fuelInfo = `
-<div class="fuel_info">
+<div class="fuel_info test-popup">
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M9 8.98047C9 8.71525 9.10536 8.4609 9.29289 8.27336C9.48043 8.08583 9.73478 7.98047 10 7.98047C10.2652 7.98047 10.5196 8.08583 10.7071 8.27336C10.8946 8.4609 11 8.71525 11 8.98047V14.9805C11 15.2457 10.8946 15.5 10.7071 15.6876C10.5196 15.8751 10.2652 15.9805 10 15.9805C9.73478 15.9805 9.48043 15.8751 9.29289 15.6876C9.10536 15.5 9 15.2457 9 14.9805V8.98047Z" fill="#256799"/>
     <path d="M10 4.05078C9.73478 4.05078 9.48043 4.15614 9.29289 4.34367C9.10536 4.53121 9 4.78556 9 5.05078C9 5.316 9.10536 5.57035 9.29289 5.75789C9.48043 5.94542 9.73478 6.05078 10 6.05078C10.2652 6.05078 10.5196 5.94542 10.7071 5.75789C10.8946 5.57035 11 5.316 11 5.05078C11 4.78556 10.8946 4.53121 10.7071 4.34367C10.5196 4.15614 10.2652 4.05078 10 4.05078Z" fill="#256799"/>
@@ -98,7 +98,7 @@ let moreCharacteristics = `
 <div class="more-characteristics">
   <p><b>Бракує характеристик авто на сайті?</b></p>
   <p>Запитайте безпосередньо у автосалону потрібну інформацію</p>
-  <button>Уточнити характеристики</button>
+  <button class="test-popup char">Уточнити характеристики</button>
 </div>
 `
 
@@ -108,7 +108,7 @@ let carModel = document.querySelector('.view-auto_testimonials_full .rating+span
 let equipment = `
     <div class="equipment">
         <p>Ви можете дізнатись про найближчі поставки даного авто (у наступні 30 днів).</p>
-        <button>Дізнатись про найближчі поставки</button>
+        <button class="test-popup equip">Дізнатись про найближчі поставки</button>
     </div>
 `
 
@@ -123,4 +123,11 @@ char.after(complectationBlock);
 
 document.querySelector('#auto-complectation-block h3').innerHTML = `Інші варіанти комплектації ${carModel}:`;
 document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('afterend', equipment);
+
+document.querySelectorAll('.test-popup').forEach((item)=> {
+  item.addEventListener('click', function () {
+    console.log(this);
+  })
+})
+
 
