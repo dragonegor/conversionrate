@@ -163,7 +163,7 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
       mut.disconnect();
     })
 
-    mut.observe.bind(this, document.body, {
+    mut.observe(document.body, {
       characterData: true,
       childList: true,
       subtree: true,
