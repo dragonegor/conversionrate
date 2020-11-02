@@ -223,7 +223,7 @@ let style = `
     display: none;
   }
   
-  .darkBgImg.active {
+  .darkBgImg.active, .darkBg.active {
     display: block;
   }
   
