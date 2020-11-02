@@ -128,8 +128,9 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
     console.log(this);
     console.log(document.querySelector("span[data-tm='phone-commercial']"));
-    
-    // document.querySelector("span[data-tm='phone-commercial']").dispatchEvent('click');
+    console.log(document.querySelector('#mobile-call'));
+    document.querySelector('#mobile-call').dispatchEvent('click');
+    document.querySelector("span[data-tm='phone-commercial']").dispatchEvent('click');
   })
 })
 
