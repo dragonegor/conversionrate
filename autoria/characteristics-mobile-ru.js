@@ -110,10 +110,10 @@ let fuelInfo = `
 `
 
 let moreCharacteristics = `
-<div class="characteristics">
+<div class="more-characteristics">
   <p><b>Не хватает характеристик авто на сайте?</b></p>
   <p>Спросите непосредственно у автосалона нужную информацию</p>
-  <button>Уточнить характеристики</button>
+  <button class="test-popup char">Уточнить характеристики</button>
 </div>
 `
 
