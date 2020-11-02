@@ -98,7 +98,7 @@ let equipment = `
     </div>
 `
 
-let carModel = document.querySelector('.vin_checked_list>dd:nth-child(2) .argument').childNodes[0];
+let carModel = document.querySelector('.view-auto_testimonials_full .rating+span');
 console.log(carModel);
 
 
