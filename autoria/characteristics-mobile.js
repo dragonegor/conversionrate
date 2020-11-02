@@ -52,6 +52,7 @@ let style = `
   #auto-complectation-block {
    background-color: #F3FAFD;
    margin-top: 35px;
+   padding: 15px;
   }
   
   #auto-complectation-block h3 {
@@ -63,8 +64,15 @@ let style = `
     display: none;
   }
   
+  #auto-complectation-block .complectation {
+  border-bottom: none;
+  }
+  
   #auto-complectation-block ul li {
     margin: 20px 0;
+    border-top: none;
+    background-color: white;
+    padding: 5px;
   }
 
   .equipment > p {
