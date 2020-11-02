@@ -89,7 +89,17 @@ let moreCharacteristics = `
 </div>
 `
 
+let equipment = `
+    <div class="equipment">
+        <h3>Інші варіанти комплектації "Infiniti Q60":</h3>
+        <div class="block-insert"></div>
+        <p>Ви можете дізнатись про найближчі поставки даного авто (у наступні 30 днів).</p>
+        <button>Дізнатись про найближчі поставки</button>
+    </div>
+`
 
+let carModel = document.querySelector('.vin_checked_list>dd:nth-child(2) .argument');
+console.log(carModel);
 
 
 document.body.insertAdjacentHTML('afterbegin', style);
@@ -98,8 +108,3 @@ document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCh
 let complectationBlock = document.getElementById('auto-complectation-block');
 let char = document.querySelector('.more-characteristics');
 char.after(complectationBlock);
-console.log(complectationBlock);
-console.log(char);
-
-
-
