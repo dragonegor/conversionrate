@@ -222,7 +222,7 @@ let style = `
     display: none;
   }
   
-  .darkBg {
+  .darkBg.active {
     display: block;
   }
 </style>
