@@ -127,7 +127,9 @@ document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('after
 document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
     console.log(this);
-    document.querySelector("span[data-tm='phone-commercial']").dispatchEvent('click');
+    console.log(document.querySelector("span[data-tm='phone-commercial']"));
+    
+    // document.querySelector("span[data-tm='phone-commercial']").dispatchEvent('click');
   })
 })
 
