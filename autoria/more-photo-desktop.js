@@ -279,6 +279,7 @@ let btnBlock = `
 `
 
 let popUp = `
+  <div class="darkBg"></div>
   <div class="more-img-popup">
   <div class="popup-content">
     <div><img src="https://cdn.riastatic.com/photosnewr/auto/new_auto_storage/opel_grandland-x__989237-620x465x70.jpg" alt="auto"></div>
@@ -354,6 +355,7 @@ if (!window.location.pathname.includes('/uk/')) {
   `
 
   popUp = `
+  <div class="darkBg"></div>
   <div class="more-img-popup">
     <div class="popup-content">
       <div><img src="https://cdn.riastatic.com/photosnewr/auto/new_auto_storage/opel_grandland-x__989237-620x465x70.jpg"
@@ -404,18 +406,24 @@ document.querySelector('.count-photo').insertAdjacentHTML("afterend", btnBlock);
 document.querySelector('.more-img-button').addEventListener('click', function () {
   if (document.querySelector('.info-block').classList.contains('active')){
     document.querySelector('.info-block').classList.remove('active');
-    document.querySelector('.darkBg').classList.remove('active');
+    document.querySelector('.darkBgImg').classList.remove('active');
   }
   document.querySelector('.more-img-popup').classList.add('active');
+  document.querySelector('.darkBg').classList.add('active');
 });
 
 document.querySelector('.info-block .close').addEventListener('click', function () {
   document.querySelector('.info-block').classList.remove('active');
-  document.querySelector('.darkBg').classList.remove('active');
+  document.querySelector('.darkBgImg').classList.remove('active');
 });
 
 document.querySelector('.info-block button').addEventListener('click', function () {
   document.querySelector('.info-block').classList.remove('active');
-  document.querySelector('.darkBg').classList.remove('active');
+  document.querySelector('.darkBgImg').classList.remove('active');
   document.querySelector('.more-img-popup').classList.add('active');
 });
+
+document.querySelector('.more-img-popup .close').addEventListener('click', function () {
+  document.querySelector('.more-img-popup').classList.remove('active');
+  document.querySelector('.darkBg').classList.remove('active');
+})
