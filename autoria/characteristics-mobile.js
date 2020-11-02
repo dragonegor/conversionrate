@@ -98,7 +98,7 @@ let equipment = `
     </div>
 `
 
-let carModel = document.querySelector('.view-auto_testimonials_full .rating+span');
+let carModel = document.querySelector('.view-auto_testimonials_full .rating+span strong');
 console.log(carModel);
 
 
