@@ -194,6 +194,7 @@ let style = `
     position: absolute;
     bottom: 11px;
     left: 90px;
+    z-index: 100;
   }
 </style>
 `;
