@@ -98,7 +98,7 @@ let equipment = `
     </div>
 `
 
-let carModel = document.querySelector('.vin_checked_list>dd:nth-child(2) .argument');
+let carModel = document.querySelector('.vin_checked_list>dd:nth-child(2) .argument').childNodes[0];
 console.log(carModel);
 
 
@@ -108,3 +108,4 @@ document.querySelector('.characteristics').insertAdjacentHTML('afterend', moreCh
 let complectationBlock = document.getElementById('auto-complectation-block');
 let char = document.querySelector('.more-characteristics');
 char.after(complectationBlock);
+
