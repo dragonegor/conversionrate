@@ -139,6 +139,7 @@ document.querySelector('#auto-complectation-block ul').insertAdjacentHTML('after
 
 let mut = new MutationObserver(function (mutations) {
   console.log(mutations);
+  console.log(this);
   if(this.classList.contains('fuel_info')) {
     document.querySelector('.react_modal__header').innerHTML = `
         <h4>Дізнатися про фактичні витрати палива ${carModel}</h4>
@@ -155,6 +156,7 @@ let mut = new MutationObserver(function (mutations) {
         <p>Запросіть інформацію про найближчі поставки даного авто (у наступні 30 днів).</p>
         <span class="react_modal__close">×</span>`
   }
+  mut.disconnect();
 })
 
 document.querySelectorAll('.test-popup').forEach((item)=> {
