@@ -8,7 +8,7 @@ let style = `
       display:flex;
    }
    
-   .prod_desc .tablist li[aria-controls="tabs-3"] {
+   .prod_desc .ui-tabs-nav li[aria-controls="tabs-3"] {
       order: 4;
    }
    
