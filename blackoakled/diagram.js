@@ -17,13 +17,13 @@ switch (select.value) {
 function switchSvg() {
   switch (select.value) {
     case 'Combo':
-      document.querySelector('.light-diagram').setAttribute('src', 'https://i.ibb.co/ZgtbtW9/combo.png')
+      document.querySelector('.light_diagram').setAttribute('src', 'https://i.ibb.co/ZgtbtW9/combo.png')
       break;
     case 'Flood':
-      document.querySelector('.light-diagram').setAttribute('src', 'https://i.ibb.co/F393cst/flood.png')
+      document.querySelector('.light_diagram').setAttribute('src', 'https://i.ibb.co/F393cst/flood.png')
       break;
     case 'Spot':
-      document.querySelector('.light-diagram').setAttribute('src', 'https://i.ibb.co/S3D9jnR/spot.png')
+      document.querySelector('.light_diagram').setAttribute('src', 'https://i.ibb.co/S3D9jnR/spot.png')
       break;
     default: '';
   }
