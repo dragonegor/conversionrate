@@ -427,6 +427,7 @@ document.querySelector('.info-block button').addEventListener('click', function 
   document.querySelector('.info-block').classList.remove('active');
   document.querySelector('.darkBgImg').classList.remove('active');
   document.querySelector('.more-img-popup').classList.add('active');
+  document.querySelector('.darkBg').classList.add('active');
 });
 
 document.querySelector('.more-img-popup .close').addEventListener('click', function () {
@@ -446,7 +447,6 @@ function counter () {
     })
   } else {
     lookedPhoto += 1;
-    console.log(lookedPhoto);
   }
 }
 
