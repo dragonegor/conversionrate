@@ -44,7 +44,7 @@ if (select.value) {
   select.addEventListener('change', switchSvg);
 }
 
-document.querySelector('.prod_desc .tablist li[aria-controls="tabs-3"]').after(document.querySelector('.prod_desc .tablist li:last-child'));
+document.querySelector('.prod_desc .ui-tabs-nav li[aria-controls="tabs-3"]').after(document.querySelector('.prod_desc .ui-tabs-nav li:last-child'));
 
 let specBlock = document.querySelector('.prod_desc #tabs-3').innerHTML;
 
