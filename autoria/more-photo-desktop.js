@@ -208,7 +208,7 @@ let style = `
   .more-img-block {
     position: absolute;
     bottom: 11px;
-    left: 90px;
+    left: 110px;
     z-index: 98;
   }
   
