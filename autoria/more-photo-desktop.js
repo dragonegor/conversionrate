@@ -24,12 +24,18 @@ let style = `
     padding: 24px 30px 30px;
     background-color: #F3FAFD;
     border-radius: 6px;
-    max-width: 450px;
+    width: 450px;
     position: absolute;
     margin-bottom: 20px;
-    bottom: -200%;
-    left: -50%;
+    bottom: 150%;
+    left: -10%;
+    display: none;
   }
+  
+  .info-block.active {
+    display: block;
+  }
+  
   .info-block h3 {
     font-size: 16px;
     font-weight: 700;
@@ -69,10 +75,19 @@ let style = `
   }
 
   .more-img-popup {
-    max-width: 920px;
-    position: relative;
+    width: 920px;
+    position: fixed;
     padding: 40px;
     background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 100;
+  }
+  
+  .more-img-popup.active {
+    display: block;
   }
   .more-img-popup .popup-content {
     display: flex;
@@ -193,12 +208,48 @@ let style = `
   .more-img-block {
     position: absolute;
     bottom: 11px;
-    left: 90px;
+    left: 110px;
+    z-index: 98;
+  }
+  
+  .darkBgImg {
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 97;
+    background-color: rgba(0, 0, 0, .6);
+    display: none;
+  }
+  
+  .darkBgImg.active, .darkBg.active {
+    display: block;
+  }
+  
+  .darkBg {
+    position:fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(65, 64, 66, 0.5);
+    display: none;
+    z-index: 99;
   }
 </style>
 `;
 
+let imgSrc = document.querySelectorAll('.image-gallery-slide')[0].querySelector('img').getAttribute('src');
+let phones = '';
+window.initialState.phones.forEach((item) => {
+  if(item.phone_formatted) {
+    phones += `${item.phone_formatted} `
+  }
+})
+
 let btnBlock = `
+<div class="darkBgImg"></div>
 <div class="more-img-block">
 <button class="more-img-button">
   <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,15 +287,16 @@ let btnBlock = `
 `
 
 let popUp = `
+  <div class="darkBg"></div>
   <div class="more-img-popup">
   <div class="popup-content">
-    <div><img src="https://cdn.riastatic.com/photosnewr/auto/new_auto_storage/opel_grandland-x__989237-620x465x70.jpg" alt="auto"></div>
+    <div><img src="${imgSrc}" alt="auto"></div>
     <div>
       <h3>Як запросити додаткові фото цього авто:</h3>
       <p class="step">
         <b>1</b>Зателефонуйте менеджеру автосалону і назвіть модель даного авто.<p>
       <div class="popup-phone-block">
-      <p class="phone">(048) 787 61 29</p>
+      <p class="phone">${phones}</p>
       <p class="work-time">Робочий час з 09:00 до 18:00 </p>
       <p class="or">або</p>
       <p><b>залиште свій номер телефону</b></p>
@@ -273,6 +325,7 @@ let popUp = `
 
 if (!window.location.pathname.includes('/uk/')) {
   btnBlock = `
+  <div class="darkBgImg"></div>
   <div class="more-img-block">
     <button class="more-img-button">
       <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -310,9 +363,10 @@ if (!window.location.pathname.includes('/uk/')) {
   `
 
   popUp = `
+  <div class="darkBg"></div>
   <div class="more-img-popup">
     <div class="popup-content">
-      <div><img src="https://cdn.riastatic.com/photosnewr/auto/new_auto_storage/opel_grandland-x__989237-620x465x70.jpg"
+      <div><img src="${imgSrc}"
                 alt="auto"></div>
       <div>
         <h3>Как запросить дополнительные фото этого авто:</h3>
@@ -320,7 +374,7 @@ if (!window.location.pathname.includes('/uk/')) {
           <b>1</b> Позвоните менеджеру автосалона и назовите модель данного авто.
         <p>
           <div class="popup-phone-block">
-        <p class="phone">(048) 787 61 29</p>
+        <p class="phone">${phones}</p>
         <p class="work-time">Рабочее время: с 09:00 до 18:00</p>
         <p class="or">или</p>
         <p><b>оставьте свой номер телефона </b></p>
@@ -351,8 +405,51 @@ if (!window.location.pathname.includes('/uk/')) {
   </div>`
 }
 
-
-
 document.body.insertAdjacentHTML('afterbegin', style);
+document.body.insertAdjacentHTML('afterbegin', popUp);
 
 document.querySelector('.count-photo').insertAdjacentHTML("afterend", btnBlock);
+document.querySelector('.more-img-button').addEventListener('click', function () {
+  if (document.querySelector('.info-block').classList.contains('active')){
+    document.querySelector('.info-block').classList.remove('active');
+    document.querySelector('.darkBgImg').classList.remove('active');
+  }
+  document.querySelector('.more-img-popup').classList.add('active');
+  document.querySelector('.darkBg').classList.add('active');
+});
+
+document.querySelector('.info-block .close').addEventListener('click', function () {
+  document.querySelector('.info-block').classList.remove('active');
+  document.querySelector('.darkBgImg').classList.remove('active');
+});
+
+document.querySelector('.info-block button').addEventListener('click', function () {
+  document.querySelector('.info-block').classList.remove('active');
+  document.querySelector('.darkBgImg').classList.remove('active');
+  document.querySelector('.more-img-popup').classList.add('active');
+  document.querySelector('.darkBg').classList.add('active');
+});
+
+document.querySelector('.more-img-popup .close').addEventListener('click', function () {
+  document.querySelector('.more-img-popup').classList.remove('active');
+  document.querySelector('.darkBg').classList.remove('active');
+});
+
+let lookedPhoto = 1;
+let imgListLength = window.initialState.photos.length;
+
+function counter () {
+  if(lookedPhoto >= 8 || lookedPhoto >= imgListLength) {
+    document.querySelector('.info-block').classList.add('active');
+    document.querySelector('.darkBgImg').classList.add('active');
+    document.querySelectorAll('.image-gallery-nav').forEach((item) => {
+      item.removeEventListener('click', counter);
+    })
+  } else {
+    lookedPhoto += 1;
+  }
+}
+
+document.querySelectorAll('.image-gallery-nav').forEach((item) => {
+  item.addEventListener('click', counter);
+});

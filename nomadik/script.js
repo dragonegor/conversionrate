@@ -10,7 +10,7 @@ window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
 hj('trigger', 'shorter_flow');
 
 let script = document.createElement('script');
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js';
+script.src = 'https://dragonegor.github.io/conversionrate/autoria/more-photo-desktop.js';
 script.async = false;
 document.head.appendChild(script);
 
