@@ -1,13 +1,14 @@
 let select =  document.querySelector('.variations select[data-option="option1"]');
 
 switch (select.value) {
-  case 'combo':
+  case 'Combo':
+    console.log(select.parentElement);
     select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram" src="https://i.ibb.co/ZgtbtW9/combo.png" alt="variant">');
     break;
-  case 'flood':
+  case 'Flood':
     select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/F393cst/flood.png" alt="variant">');
     break;
-  case 'spot':
+  case 'Spot':
     select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/S3D9jnR/spot.png" alt="variant">');
     break;
   default: '';
@@ -15,13 +16,13 @@ switch (select.value) {
 
 function switchSvg() {
   switch (select.value) {
-    case 'combo':
+    case 'Combo':
       document.querySelector('.light-diagram').setAttribute('src', 'https://i.ibb.co/ZgtbtW9/combo.png')
       break;
-    case 'flood':
+    case 'Flood':
       document.querySelector('.light-diagram').setAttribute('src', 'https://i.ibb.co/F393cst/flood.png')
       break;
-    case 'spot':
+    case 'Spot':
       document.querySelector('.light-diagram').setAttribute('src', 'https://i.ibb.co/S3D9jnR/spot.png')
       break;
     default: '';
