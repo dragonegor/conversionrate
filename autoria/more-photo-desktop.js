@@ -233,12 +233,20 @@ let style = `
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(65, 64, 66, 0.5);
     display: none;
     z-index: 99;
   }
 </style>
 `;
+
+let imgSrc = document.querySelectorAll('.image-gallery-slide')[0].querySelector('img').getAttribute('src');
+let phones = '';
+window.initialState.phones.forEach((item) => {
+  if(item.phone) {
+    phones += `${item.phone} `
+  }
+})
 
 let btnBlock = `
 <div class="darkBgImg"></div>
@@ -282,13 +290,13 @@ let popUp = `
   <div class="darkBg"></div>
   <div class="more-img-popup">
   <div class="popup-content">
-    <div><img src="https://cdn.riastatic.com/photosnewr/auto/new_auto_storage/opel_grandland-x__989237-620x465x70.jpg" alt="auto"></div>
+    <div><img src="${imgSrc}" alt="auto"></div>
     <div>
       <h3>Як запросити додаткові фото цього авто:</h3>
       <p class="step">
         <b>1</b>Зателефонуйте менеджеру автосалону і назвіть модель даного авто.<p>
       <div class="popup-phone-block">
-      <p class="phone">(048) 787 61 29</p>
+      <p class="phone">${phones}</p>
       <p class="work-time">Робочий час з 09:00 до 18:00 </p>
       <p class="or">або</p>
       <p><b>залиште свій номер телефону</b></p>
@@ -358,7 +366,7 @@ if (!window.location.pathname.includes('/uk/')) {
   <div class="darkBg"></div>
   <div class="more-img-popup">
     <div class="popup-content">
-      <div><img src="https://cdn.riastatic.com/photosnewr/auto/new_auto_storage/opel_grandland-x__989237-620x465x70.jpg"
+      <div><img src="${imgSrc}"
                 alt="auto"></div>
       <div>
         <h3>Как запросить дополнительные фото этого авто:</h3>
@@ -366,7 +374,7 @@ if (!window.location.pathname.includes('/uk/')) {
           <b>1</b> Позвоните менеджеру автосалона и назовите модель данного авто.
         <p>
           <div class="popup-phone-block">
-        <p class="phone">(048) 787 61 29</p>
+        <p class="phone">${phones}</p>
         <p class="work-time">Рабочее время: с 09:00 до 18:00</p>
         <p class="or">или</p>
         <p><b>оставьте свой номер телефона </b></p>
@@ -397,8 +405,6 @@ if (!window.location.pathname.includes('/uk/')) {
   </div>`
 }
 
-
-
 document.body.insertAdjacentHTML('afterbegin', style);
 document.body.insertAdjacentHTML('afterbegin', popUp);
 
@@ -427,3 +433,23 @@ document.querySelector('.more-img-popup .close').addEventListener('click', funct
   document.querySelector('.more-img-popup').classList.remove('active');
   document.querySelector('.darkBg').classList.remove('active');
 })
+
+let lookedPhoto = 1;
+let imgListLength = window.initialState.photos.length;
+
+function counter () {
+  if(lookedPhoto >= 8 || lookedPhoto >= imgListLength) {
+    document.querySelector('.info-block').classList.add('active');
+    document.querySelector('.darkBgImg').classList.add('active');
+    document.querySelectorAll('.image-gallery-nav').forEach((item) => {
+      item.removeEventListener('click', counter);
+    })
+  } else {
+    lookedPhoto += 1;
+    console.log(lookedPhoto);
+  }
+}
+
+document.querySelectorAll('.image-gallery-nav').forEach((item) => {
+  item.addEventListener('click', counter);
+});
