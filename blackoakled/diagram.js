@@ -1,33 +1,51 @@
-let select =  document.querySelector('.variations select[data-option="option1"]');
+let style = `
+<style>
+   .light_diagram {
+      margin: 10px 0 15px;
+   }
+</style>
+`
 
-switch (select.value) {
-  case 'Combo':
-    console.log(select.parentElement);
-    select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram" src="https://i.ibb.co/ZgtbtW9/combo.png" alt="variant">');
-    break;
-  case 'Flood':
-    select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/F393cst/flood.png" alt="variant">');
-    break;
-  case 'Spot':
-    select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/S3D9jnR/spot.png" alt="variant">');
-    break;
-  default: '';
-}
 
 function switchSvg() {
+  let img = document.querySelector('.light_diagram');
   switch (select.value) {
     case 'Combo':
-      document.querySelector('.light_diagram').setAttribute('src', 'https://i.ibb.co/ZgtbtW9/combo.png')
+      img.setAttribute('src', 'https://i.ibb.co/ZgtbtW9/combo.png');
       break;
     case 'Flood':
-      document.querySelector('.light_diagram').setAttribute('src', 'https://i.ibb.co/F393cst/flood.png')
+      img.setAttribute('src', 'https://i.ibb.co/F393cst/flood.png');
       break;
     case 'Spot':
-      document.querySelector('.light_diagram').setAttribute('src', 'https://i.ibb.co/S3D9jnR/spot.png')
+      img.setAttribute('src', 'https://i.ibb.co/S3D9jnR/spot.png');
+      break;
+    default:
+      img.remove();
+  }
+}
+
+
+let select =  document.querySelector('.variations select[data-option="option1"]');
+if (select.value) {
+  switch (select.value) {
+    case 'Combo':
+      select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram" src="https://i.ibb.co/ZgtbtW9/combo.png" alt="variant">');
+      break;
+    case 'Flood':
+      select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/F393cst/flood.png" alt="variant">');
+      break;
+    case 'Spot':
+      select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/S3D9jnR/spot.png" alt="variant">');
       break;
     default: '';
   }
-}
-switchSvg();
-select.addEventListener('change', switchSvg);
 
+  switchSvg();
+  select.addEventListener('change', switchSvg);
+}
+
+document.querySelector('.prod_desc .tablist li[aria-controls="tabs-3"]').after(document.querySelector('.prod_desc .tablist li:last-child'));
+
+let specBlock = document.querySelector('.prod_desc #tabs-3').innerHTML;
+
+console.log(specBlock);
