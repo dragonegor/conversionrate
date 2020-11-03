@@ -3,6 +3,15 @@ let style = `
    .light_diagram {
       margin: 10px 0 15px;
    }
+   
+   .prod_desc .tablist {
+      display:flex;
+   }
+   
+   .prod_desc .tablist li[aria-controls="tabs-3"] {
+      order: 4;
+   }
+   
 </style>
 `
 document.body.insertAdjacentHTML('afterbegin', style);
