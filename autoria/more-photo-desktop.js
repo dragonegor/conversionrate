@@ -243,8 +243,8 @@ let style = `
 let imgSrc = document.querySelectorAll('.image-gallery-slide')[0].querySelector('img').getAttribute('src');
 let phones = '';
 window.initialState.phones.forEach((item) => {
-  if(item.phone) {
-    phones += `${item.phone} `
+  if(item.phone_formatted) {
+    phones += `${item.phone_formatted} `
   }
 })
 
@@ -433,7 +433,7 @@ document.querySelector('.info-block button').addEventListener('click', function 
 document.querySelector('.more-img-popup .close').addEventListener('click', function () {
   document.querySelector('.more-img-popup').classList.remove('active');
   document.querySelector('.darkBg').classList.remove('active');
-})
+});
 
 let lookedPhoto = 1;
 let imgListLength = window.initialState.photos.length;
