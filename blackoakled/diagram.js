@@ -146,7 +146,7 @@ window.onload = function() {
     h.hj = h.hj || function () {
       (h.hj.q = h.hj.q || []).push(arguments)
     };
-    h._hjSettings = {hjid: 1962080, hjsv: 6};
+    h._hjSettings = {hjid: 1831568, hjsv: 6};
     a = o.getElementsByTagName('head')[0];
     r = o.createElement('script');
     r.async = 1;
@@ -156,10 +156,7 @@ window.onload = function() {
   window.hj = window.hj || function () {
     (hj.q = hj.q || []).push(arguments)
   };
-  try {
-    hj('trigger', 'PDP_spread');
-  } catch (e) {
-  }
+  hj('trigger', 'PDP_spread');
 
   window.dataLayer = window.dataLayer || [];
   dataLayer.push({
