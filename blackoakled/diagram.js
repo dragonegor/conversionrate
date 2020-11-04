@@ -77,6 +77,7 @@ function switchSvg() {
 
 let select;
 if (document.querySelector('.variations .selector-wrapper>.selector-wrapper label')) {
+  console.log('123');
   document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
     if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
       select = item.querySelector('select');
