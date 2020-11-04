@@ -75,11 +75,11 @@ function switchSvg() {
   });
 }
 
-let select = document.querySelector('.variations');
+let select = document.querySelector('.variations>div>div>div>div>label');
 console.log(select);
 if (select) {
   console.log('123');
-  document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
+  document.querySelectorAll('.variations>div>div>div>div').forEach((item) => {
     if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
       select = item.querySelector('select');
       switch (select.value) {
