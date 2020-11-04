@@ -75,8 +75,8 @@ function switchSvg() {
   });
 }
 
-let select;
-if (document.querySelector('.variations .selector-wrapper>.selector-wrapper label')) {
+let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper label');
+if (select) {
   console.log('123');
   document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
     if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
