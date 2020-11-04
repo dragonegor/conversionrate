@@ -16,7 +16,7 @@ let style = `
       font-size: 20px;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 15px;
+      margin: 10px 0;
    }
    
    .insert-spec {
