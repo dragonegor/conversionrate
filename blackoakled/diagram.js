@@ -4,14 +4,50 @@ let style = `
       margin: 10px 0 15px;
    }
    
-   .prod_desc .tablist {
-      display:flex;
+   .prod_desc .ui-tabs-nav, #tabs > ul > li {
+      display:flex !important;
    }
    
-   .prod_desc .ui-tabs-nav li[aria-controls="tabs-3"] {
+   {
       order: 4;
    }
    
+   .description h3 {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 15px;
+   }
+   
+   .insert-spec {
+    text-align: center;
+   }
+   .insert-spec {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   .insert-spec table {
+      width: auto !important;
+      margin: 10px auto;
+   }
+   .flx {
+     display:flex;
+     height: 80px;
+     justify-content: center;
+     align-items: center;
+   }
+   .flx img {
+     margin: 10px;
+   }
+   .flx img:first-child {
+     width: 120px;
+   }
+   
+   .flx img:last-child {
+     width: 120px;
+     height: 60px;
+   }
 </style>
 `
 document.body.insertAdjacentHTML('afterbegin', style);
@@ -29,30 +65,70 @@ function switchSvg() {
       img.setAttribute('src', 'https://i.ibb.co/S3D9jnR/spot.png');
       break;
     default:
-      img.remove();
+      '';
   }
 }
 
-
-let select =  document.querySelector('.variations select[data-option="option1"]');
-if (select.value) {
-  switch (select.value) {
-    case 'Combo':
-      select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram" src="https://i.ibb.co/ZgtbtW9/combo.png" alt="variant">');
-      break;
-    case 'Flood':
-      select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/F393cst/flood.png" alt="variant">');
-      break;
-    case 'Spot':
-      select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/S3D9jnR/spot.png" alt="variant">');
-      break;
-    default: '';
-  }
-
-  switchSvg();
-  select.addEventListener('change', switchSvg);
+let select;
+if (document.querySelector('.variations .selector-wrapper>.selector-wrapper label')) {
+  document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
+    if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
+      select = item.querySelector('select');
+      switch (select.value) {
+        case 'Combo':
+          select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram" src="https://i.ibb.co/ZgtbtW9/combo.png" alt="variant">');
+          break;
+        case 'Flood':
+          select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/F393cst/flood.png" alt="variant">');
+          break;
+        case 'Spot':
+          select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/S3D9jnR/spot.png" alt="variant">');
+          break;
+        default:
+          '';
+      }
+      select.addEventListener('change', switchSvg);
+    }
+  });
 }
 
+  let specs = false;
+  document.querySelectorAll('.prod_desc .description>ul li a').forEach((item, i) => {
+    if (item.innerText === 'Specs') {
+      document.querySelector(`.prod_desc .description ul li:nth-child(${i+1})`).style.order = '4';
+      item.innerText = 'Installation Guide';
+      let pic = document.querySelector('.two-pic').innerHTML;
+      document.querySelector('.two-pic').remove();
+      let specBlock;
+      if(document.querySelector(`.description>*:nth-child(${i+2})`)){
+        specBlock = document.querySelector(`.description>*:nth-child(${i+2})`).innerHTML;
+        document.querySelector(`.description>*:nth-child(${i+2})`).innerHTML = '<h3>Installation guide will be added soon.</h3>';
+      }
+      let insertBlock = `
+          <h3>Specifications:</h3>
+          <div class="insert-spec">
+             ${specBlock}
+             <div class="flx">
+             ${pic}
+             </div>
+          </div>
+          <h3>Overview:</h3>
+      `
+      document.querySelector('.prod_desc .description>ul li:nth-child(1) a').innerText = 'Specs & Overview';
 
-let specBlock = document.querySelector('.prod_desc #tabs-3').innerHTML;
-console.log(specBlock);
+      document.querySelector('.description>*:nth-child(2)').insertAdjacentHTML('afterbegin', insertBlock);
+      specs = true;
+    }
+  })
+
+
+  if(!specs && document.querySelectorAll('.prod_desc .description>ul li').length === 3) {
+    let li4 = document.querySelector('.prod_desc .description>ul li:last-child').cloneNode(true);
+    li4.querySelector('a').innerText = 'Installation Guide';
+    li4.querySelector('a').setAttribute('href', '#tabs-5')
+    let div4 = document.querySelector('.description>*:last-child').cloneNode(true);
+    div4.id = 'tabs-5';
+    div4.innerHTML = '<h3>Installation guide will be added soon.</h3>';
+    document.querySelector('.prod_desc .description>ul').appendChild(li4);
+    document.querySelector('.prod_desc .description').appendChild(div4);
+  }
