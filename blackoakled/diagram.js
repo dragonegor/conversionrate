@@ -75,7 +75,7 @@ function switchSvg() {
   });
 }
 
-let select = document.querySelector('.variations label');
+let select = document.querySelector('.variations');
 console.log(select);
 if (select) {
   console.log('123');
