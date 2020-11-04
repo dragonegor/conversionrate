@@ -53,6 +53,8 @@
 `
   document.body.insertAdjacentHTML('afterbegin', style);
 
+
+window.onload = function() {
   function switchSvg() {
     let img = document.querySelector('.light_diagram');
     switch (select.value) {
@@ -75,11 +77,15 @@
       'eventAction': 'Click on Optics buttons'
     });
   }
-window.onload = function() {
-  let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper label');
+
+  let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper');
+  console.log(select);
   if (select) {
     document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
-      if (item.querySelector('label').innerText.toLowerCase() === 'optics' || item.querySelector('label').innerText.toLowerCase() === 'optic') {
+      console.log(item.querySelector('select').value.toLowerCase())
+      if (item.querySelector('select').value.toLowerCase() === 'combo' ||
+          item.querySelector('select').value.toLowerCase() === 'flood' ||
+          item.querySelector('select').value.toLowerCase() === 'spot') {
         select = item.querySelector('select');
         switch (select.value) {
           case 'Combo':
