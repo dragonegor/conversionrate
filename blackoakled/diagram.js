@@ -75,7 +75,7 @@ function switchSvg() {
   });
 }
 
-let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper label');
+let select = document.querySelector('.variations .selector-wrapper>* label');
 console.log(select);
 if (select) {
   console.log('123');
