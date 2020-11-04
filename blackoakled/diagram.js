@@ -67,6 +67,12 @@ function switchSvg() {
     default:
       '';
   }
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - PDP_spread',
+    'eventAction': 'Click on Optics buttons'
+  });
 }
 
 let select;
@@ -132,3 +138,66 @@ if (document.querySelector('.variations .selector-wrapper>.selector-wrapper labe
     document.querySelector('.prod_desc .description>ul').appendChild(li4);
     document.querySelector('.prod_desc .description').appendChild(div4);
   }
+
+//scripts
+
+(function (h, o, t, j, a, r) {
+  h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+  h._hjSettings = { hjid: 1962080, hjsv: 6 };
+  a = o.getElementsByTagName('head')[0];
+  r = o.createElement('script'); r.async = 1;
+  r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+  a.appendChild(r);
+})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+window.hj = window.hj || function () { (hj.q = hj.q || []).push(arguments) };
+try {
+  hj('trigger', 'PDP_spread');
+}
+catch (e) { }
+
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+  'event': 'event-to-ga',
+  'eventCategory': 'Exp - PDP_spread',
+  'eventAction': 'loaded'
+});
+
+document.querySelector('.owl-buttons>div').addEventListener('click', function () {
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - PDP_spread',
+    'eventAction': 'Click on slider arrows'
+  });
+});
+document.querySelector('.owl-item').addEventListener('click', function () {
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - PDP_spread',
+    'eventAction': 'Click on slider images'
+  });
+});
+
+document.querySelector('#addToCart').addEventListener('click', function () {
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - PDP_spread',
+    'eventAction': 'Click on Add to Cart'
+  });
+});
+
+document.querySelectorAll('.prod_desc .description>ul li').forEach((item) => {
+  item.addEventListener('click', function () {
+    let title = item.querySelector('a').innerText;
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'event-to-ga',
+      'eventCategory': 'Exp - New PDP',
+      'eventAction': 'Click on product tabs',
+      'eventLabel': `${title}`
+    });
+  })
+})
+
