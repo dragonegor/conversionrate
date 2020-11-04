@@ -1,4 +1,4 @@
-window.onload = function() {
+
   let style = `
 <style>
    .light_diagram {
@@ -75,7 +75,7 @@ window.onload = function() {
       'eventAction': 'Click on Optics buttons'
     });
   }
-
+window.onload = function() {
   let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper label');
   if (select) {
     document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
@@ -98,7 +98,7 @@ window.onload = function() {
       }
     });
   }
-
+}
   let specs = false;
   document.querySelectorAll('.prod_desc .description>ul li a').forEach((item, i) => {
     if (item.innerText === 'Specs') {
@@ -207,4 +207,4 @@ window.onload = function() {
       });
     })
   })
-}
+
