@@ -75,10 +75,6 @@ function switchSvg() {
   });
 }
 
-let select = document.querySelector('.variations>div>div>div>div>label');
-console.log(select);
-if (select) {
-  console.log('123');
   document.querySelectorAll('.variations>div>div>div>div').forEach((item) => {
     if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
       select = item.querySelector('select');
@@ -98,7 +94,6 @@ if (select) {
       select.addEventListener('change', switchSvg);
     }
   });
-}
 
   let specs = false;
   document.querySelectorAll('.prod_desc .description>ul li a').forEach((item, i) => {
