@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function() {
   let style = `
 <style>
    .light_diagram {
@@ -76,25 +76,28 @@ window.onload = function () {
     });
   }
 
-  document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
-    if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
-      select = item.querySelector('select');
-      switch (select.value) {
-        case 'Combo':
-          select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram" src="https://i.ibb.co/ZgtbtW9/combo.png" alt="variant">');
-          break;
-        case 'Flood':
-          select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/F393cst/flood.png" alt="variant">');
-          break;
-        case 'Spot':
-          select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/S3D9jnR/spot.png" alt="variant">');
-          break;
-        default:
-          '';
+  let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper label');
+  if (select) {
+    document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
+      if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
+        select = item.querySelector('select');
+        switch (select.value) {
+          case 'Combo':
+            select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram" src="https://i.ibb.co/ZgtbtW9/combo.png" alt="variant">');
+            break;
+          case 'Flood':
+            select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/F393cst/flood.png" alt="variant">');
+            break;
+          case 'Spot':
+            select.parentElement.insertAdjacentHTML('afterend', '<img class="light_diagram"  src="https://i.ibb.co/S3D9jnR/spot.png" alt="variant">');
+            break;
+          default:
+            '';
+        }
+        select.addEventListener('change', switchSvg);
       }
-      select.addEventListener('change', switchSvg);
-    }
-  });
+    });
+  }
 
   let specs = false;
   document.querySelectorAll('.prod_desc .description>ul li a').forEach((item, i) => {
