@@ -79,7 +79,7 @@ window.onload = function() {
   let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper label');
   if (select) {
     document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
-      if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
+      if (item.querySelector('label').innerText.toLowerCase() === 'optics' || item.querySelector('label').innerText.toLowerCase() === 'optic') {
         select = item.querySelector('select');
         switch (select.value) {
           case 'Combo':
