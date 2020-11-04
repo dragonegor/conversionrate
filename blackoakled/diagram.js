@@ -1,4 +1,5 @@
-let style = `
+window.onload = function () {
+  let style = `
 <style>
    .light_diagram {
       margin: 10px 0 15px;
@@ -50,32 +51,32 @@ let style = `
    }
 </style>
 `
-document.body.insertAdjacentHTML('afterbegin', style);
+  document.body.insertAdjacentHTML('afterbegin', style);
 
-function switchSvg() {
-  let img = document.querySelector('.light_diagram');
-  switch (select.value) {
-    case 'Combo':
-      img.setAttribute('src', 'https://i.ibb.co/ZgtbtW9/combo.png');
-      break;
-    case 'Flood':
-      img.setAttribute('src', 'https://i.ibb.co/F393cst/flood.png');
-      break;
-    case 'Spot':
-      img.setAttribute('src', 'https://i.ibb.co/S3D9jnR/spot.png');
-      break;
-    default:
-      '';
+  function switchSvg() {
+    let img = document.querySelector('.light_diagram');
+    switch (select.value) {
+      case 'Combo':
+        img.setAttribute('src', 'https://i.ibb.co/ZgtbtW9/combo.png');
+        break;
+      case 'Flood':
+        img.setAttribute('src', 'https://i.ibb.co/F393cst/flood.png');
+        break;
+      case 'Spot':
+        img.setAttribute('src', 'https://i.ibb.co/S3D9jnR/spot.png');
+        break;
+      default:
+        '';
+    }
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'event-to-ga',
+      'eventCategory': 'Exp - PDP_spread',
+      'eventAction': 'Click on Optics buttons'
+    });
   }
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({
-    'event': 'event-to-ga',
-    'eventCategory': 'Exp - PDP_spread',
-    'eventAction': 'Click on Optics buttons'
-  });
-}
 
-  document.querySelectorAll('.variations>div>div>div>div').forEach((item) => {
+  document.querySelectorAll('.variations .selector-wrapper>.selector-wrapper').forEach((item) => {
     if (item.querySelector('label').innerText === 'Optics' || item.querySelector('label').innerText === 'Optic') {
       select = item.querySelector('select');
       switch (select.value) {
@@ -98,14 +99,14 @@ function switchSvg() {
   let specs = false;
   document.querySelectorAll('.prod_desc .description>ul li a').forEach((item, i) => {
     if (item.innerText === 'Specs') {
-      document.querySelector(`.prod_desc .description ul li:nth-child(${i+1})`).style.order = '4';
+      document.querySelector(`.prod_desc .description ul li:nth-child(${i + 1})`).style.order = '4';
       item.innerText = 'Installation Guide';
       let pic = document.querySelector('.two-pic').innerHTML;
       document.querySelector('.two-pic').remove();
       let specBlock;
-      if(document.querySelector(`.description>*:nth-child(${i+2})`)){
-        specBlock = document.querySelector(`.description>*:nth-child(${i+2})`).innerHTML;
-        document.querySelector(`.description>*:nth-child(${i+2})`).innerHTML = '<h3>Installation guide will be added soon.</h3>';
+      if (document.querySelector(`.description>*:nth-child(${i + 2})`)) {
+        specBlock = document.querySelector(`.description>*:nth-child(${i + 2})`).innerHTML;
+        document.querySelector(`.description>*:nth-child(${i + 2})`).innerHTML = '<h3>Installation guide will be added soon.</h3>';
       }
       let insertBlock = `
           <h3>Specifications:</h3>
@@ -125,7 +126,7 @@ function switchSvg() {
   })
 
 
-  if(!specs && document.querySelectorAll('.prod_desc .description>ul li').length === 3) {
+  if (!specs && document.querySelectorAll('.prod_desc .description>ul li').length === 3) {
     let li4 = document.querySelector('.prod_desc .description>ul li:last-child').cloneNode(true);
     li4.querySelector('a').innerText = 'Installation Guide';
     li4.querySelector('a').setAttribute('href', '#tabs-5')
@@ -138,67 +139,72 @@ function switchSvg() {
 
 //scripts
 
-(function (h, o, t, j, a, r) {
-  h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-  h._hjSettings = { hjid: 1962080, hjsv: 6 };
-  a = o.getElementsByTagName('head')[0];
-  r = o.createElement('script'); r.async = 1;
-  r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-  a.appendChild(r);
-})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-window.hj = window.hj || function () { (hj.q = hj.q || []).push(arguments) };
-try {
-  hj('trigger', 'PDP_spread');
-}
-catch (e) { }
+  (function (h, o, t, j, a, r) {
+    h.hj = h.hj || function () {
+      (h.hj.q = h.hj.q || []).push(arguments)
+    };
+    h._hjSettings = {hjid: 1962080, hjsv: 6};
+    a = o.getElementsByTagName('head')[0];
+    r = o.createElement('script');
+    r.async = 1;
+    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  window.hj = window.hj || function () {
+    (hj.q = hj.q || []).push(arguments)
+  };
+  try {
+    hj('trigger', 'PDP_spread');
+  } catch (e) {
+  }
 
-window.dataLayer = window.dataLayer || [];
-dataLayer.push({
-  'event': 'event-to-ga',
-  'eventCategory': 'Exp - PDP_spread',
-  'eventAction': 'loaded'
-});
-
-document.querySelectorAll('.owl-buttons>div').forEach((item) => {
-  item.addEventListener('click', function () {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-      'event': 'event-to-ga',
-      'eventCategory': 'Exp - PDP_spread',
-      'eventAction': 'Click on slider arrows'
-    });
-  });
-})
-document.querySelectorAll('.owl-item').forEach((item) => {
-  item.addEventListener('click', function () {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-      'event': 'event-to-ga',
-      'eventCategory': 'Exp - PDP_spread',
-      'eventAction': 'Click on slider images'
-    });
-  });
-})
-
-document.querySelector('#addToCart').addEventListener('click', function () {
   window.dataLayer = window.dataLayer || [];
   dataLayer.push({
     'event': 'event-to-ga',
     'eventCategory': 'Exp - PDP_spread',
-    'eventAction': 'Click on Add to Cart'
+    'eventAction': 'loaded'
   });
-});
 
-document.querySelectorAll('.prod_desc .description>ul li').forEach((item) => {
-  item.addEventListener('click', function () {
-    let title = item.querySelector('a').innerText;
+  document.querySelectorAll('.owl-buttons>div').forEach((item) => {
+    item.addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - PDP_spread',
+        'eventAction': 'Click on slider arrows'
+      });
+    });
+  })
+  document.querySelectorAll('.owl-item').forEach((item) => {
+    item.addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - PDP_spread',
+        'eventAction': 'Click on slider images'
+      });
+    });
+  })
+
+  document.querySelector('#addToCart').addEventListener('click', function () {
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
       'event': 'event-to-ga',
-      'eventCategory': 'Exp - New PDP',
-      'eventAction': 'Click on product tabs',
-      'eventLabel': `${title}`
+      'eventCategory': 'Exp - PDP_spread',
+      'eventAction': 'Click on Add to Cart'
     });
-  })
-})
+  });
 
+  document.querySelectorAll('.prod_desc .description>ul li').forEach((item) => {
+    item.addEventListener('click', function () {
+      let title = item.querySelector('a').innerText;
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - New PDP',
+        'eventAction': 'Click on product tabs',
+        'eventLabel': `${title}`
+      });
+    })
+  })
+}
