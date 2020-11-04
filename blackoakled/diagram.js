@@ -162,14 +162,16 @@ dataLayer.push({
   'eventAction': 'loaded'
 });
 
-document.querySelector('.owl-buttons>div').addEventListener('click', function () {
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({
-    'event': 'event-to-ga',
-    'eventCategory': 'Exp - PDP_spread',
-    'eventAction': 'Click on slider arrows'
+document.querySelectorAll('.owl-buttons>div').forEach((item) => {
+  item.addEventListener('click', function () {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'event-to-ga',
+      'eventCategory': 'Exp - PDP_spread',
+      'eventAction': 'Click on slider arrows'
+    });
   });
-});
+})
 document.querySelector('.owl-item').addEventListener('click', function () {
   window.dataLayer = window.dataLayer || [];
   dataLayer.push({
