@@ -172,14 +172,16 @@ document.querySelectorAll('.owl-buttons>div').forEach((item) => {
     });
   });
 })
-document.querySelector('.owl-item').addEventListener('click', function () {
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({
-    'event': 'event-to-ga',
-    'eventCategory': 'Exp - PDP_spread',
-    'eventAction': 'Click on slider images'
+document.querySelectorAll('.owl-item').forEach((item) => {
+  item.addEventListener('click', function () {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'event-to-ga',
+      'eventCategory': 'Exp - PDP_spread',
+      'eventAction': 'Click on slider images'
+    });
   });
-});
+})
 
 document.querySelector('#addToCart').addEventListener('click', function () {
   window.dataLayer = window.dataLayer || [];
