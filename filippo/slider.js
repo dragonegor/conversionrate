@@ -145,8 +145,10 @@ let style = `
   </div>
 `
 
+document.addEventListener('DOMContentLoaded', function () {
   document.body.insertAdjacentHTML('afterbegin', style);
   document.querySelector('.wishlist-wrao').insertAdjacentHTML('afterend', sliderHtml);
+})
 
 window.addEventListener('load', function () {
   let slider = tns({
