@@ -135,3 +135,13 @@
   window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
   hj('trigger', 'Review_under_ATC_on_pdp');
 
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - Review_under_ATC_on_pdp',
+    'eventAction': 'loaded'
+  });
+
+  $('.slider_reviews .slider_content').on('afterChange', function () {
+      console.log('swipe');
+  })
