@@ -51,7 +51,10 @@
    }
 </style>
 `
-  document.body.insertAdjacentHTML('afterbegin', style);
+  document.addEventListener('DOMContentLoaded', function () {
+    document.body.insertAdjacentHTML('afterbegin', style);
+  })
+
 
 
 window.onload = function() {
