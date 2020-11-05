@@ -154,7 +154,7 @@ window.addEventListener('load', function () {
     prevButton: ".leftBtn",
     nextButton: ".rightBtn",
     navPosition: "bottom",
-    preventScrollOnTouch: 'force'
+    preventScrollOnTouch: 'auto'
   })
 
   slider.events.on('transitionStart', (info, eventName) => {
