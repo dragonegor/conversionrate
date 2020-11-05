@@ -1,9 +1,20 @@
-  let style = `
+let script4 = document.createElement('script');
+script4.src = 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js';
+script4.async = false;
+document.head.appendChild(script4);
+
+let linkstyle = document.createElement('link');
+linkstyle.href = 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css';
+linkstyle.rel = "stylesheet"
+linkstyle.async = false;
+document.head.appendChild(linkstyle);
+
+let style = `
 <style>
   .slider_reviews {
     position: relative;
     margin: 15px 0;
-    padding: 15px 20px;
+    padding: 15px 20px 0;
     background-color: #FAFAFA;
   }
   
@@ -29,6 +40,29 @@
   
   .slider_item .review {
     font-weight: 400;
+  }
+  
+  .tns-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 0;
+    margin: 15px -20px 0;
+  }
+  
+  .tns-nav button {
+    padding: 0;
+    display: block;
+    height: 8px;
+    width: 8px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 5px;
+  }
+  .tns-nav button.tns-nav-active {
+    background-color: black;
   }
 </style>
 `
@@ -113,15 +147,26 @@
 
   document.body.insertAdjacentHTML('afterbegin', style);
   document.querySelector('.wishlist-wrao').insertAdjacentHTML('afterend', sliderHtml);
-  window.onload = function () {
-    $('.slider_content').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow: $(".leftBtn"),
-      nextArrow: $(".rightBtn"),
-      dots: true
+
+window.addEventListener('load', function () {
+  let slider = tns({
+    container: ".slider_content",
+    prevButton: ".leftBtn",
+    nextButton: ".rightBtn",
+    navPosition: "bottom",
+    preventScrollOnTouch: 'force'
+  })
+
+  slider.events.on('transitionStart', (info, eventName) => {
+    console.log('slider swipe');
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'event-to-ga',
+      'eventCategory': 'Exp - Review_under_ATC_on_pdp',
+      'eventAction': 'click on slider arrows'
     });
-  }
+  });
+});
 
 
   (function(h,o,t,j,a,r){
@@ -142,6 +187,3 @@
     'eventAction': 'loaded'
   });
 
-  $('.slider_reviews .slider_content').on('afterChange', function () {
-      console.log('swipe');
-  })
