@@ -53,11 +53,6 @@
 `
   document.addEventListener('DOMContentLoaded', function () {
     document.body.insertAdjacentHTML('afterbegin', style);
-  })
-
-
-
-window.onload = function() {
   function switchSvg() {
     let img = document.querySelector('.light_diagram');
     switch (select.value) {
@@ -107,7 +102,7 @@ window.onload = function() {
       }
     });
   }
-}
+})
   // let specs = false;
   // document.querySelectorAll('.prod_desc .description>ul li a').forEach((item, i) => {
   //   if (item.innerText === 'Specs') {
