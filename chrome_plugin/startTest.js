@@ -1,4 +1,4 @@
-let script = document.createElement('script');
-script.src = 'https://dragonegor.github.io/conversionrate/blackoakled/diagram.js';
-script.async = false;
-document.head.appendChild(script);
+let script45871 = document.createElement('script');
+script45871.src = 'https://rate/filippo/slider.js';
+script45871.async = false;
+document.head.appendChild(script45871);
