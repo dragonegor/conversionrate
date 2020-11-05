@@ -113,14 +113,16 @@
 
   document.body.insertAdjacentHTML('afterbegin', style);
   document.querySelector('.wishlist-wrao').insertAdjacentHTML('afterend', sliderHtml);
+  window.onload = function () {
+    $('.slider_content').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $(".leftBtn"),
+      nextArrow: $(".rightBtn"),
+      dots: true
+    });
+  }
 
-  $('.slider_content').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: $(".leftBtn"),
-    nextArrow: $(".rightBtn"),
-    dots: true
-  });
 
   (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
