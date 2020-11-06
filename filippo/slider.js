@@ -145,12 +145,10 @@ let style = `
   </div>
 `
 
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
   document.body.insertAdjacentHTML('afterbegin', style);
   document.querySelector('.wishlist-wrao').insertAdjacentHTML('afterend', sliderHtml);
-})
-
-window.addEventListener('load', function () {
+  
   let slider = tns({
     container: ".slider_content",
     prevButton: ".leftBtn",
