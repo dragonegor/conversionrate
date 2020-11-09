@@ -1,4 +1,4 @@
-
+window.onload = function() {
   let style = `
 <style>
    .light_diagram {
@@ -7,10 +7,6 @@
    
    .prod_desc .ui-tabs-nav, #tabs > ul > li {
       display:flex !important;
-   }
-   
-   {
-      order: 4;
    }
    
    .description h3 {
@@ -51,8 +47,8 @@
    }
 </style>
 `
-  document.addEventListener('DOMContentLoaded', function () {
-    document.body.insertAdjacentHTML('afterbegin', style);
+
+  document.body.insertAdjacentHTML('afterbegin', style);
   function switchSvg() {
     let img = document.querySelector('.light_diagram');
     switch (select.value) {
@@ -68,13 +64,14 @@
       default:
         '';
     }
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-      'event': 'event-to-ga',
-      'eventCategory': 'Exp - PDP_spread',
-      'eventAction': 'Click on Optics buttons'
-    });
   }
+
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - PDP_spread',
+    'eventAction': 'Click on Optics buttons'
+  });
 
   let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper');
   console.log(select);
@@ -102,7 +99,7 @@
       }
     });
   }
-})
+
   let specs = false;
   document.querySelectorAll('.prod_desc .description>ul li a').forEach((item, i) => {
     if (item.innerText === 'Specs') {
@@ -145,71 +142,72 @@
   }
 
 //scripts
-  window.onload = function() {
-    (function (h, o, t, j, a, r) {
-      h.hj = h.hj || function () {
-        (h.hj.q = h.hj.q || []).push(arguments)
-      };
-      h._hjSettings = {hjid: 1831568, hjsv: 6};
-      a = o.getElementsByTagName('head')[0];
-      r = o.createElement('script');
-      r.async = 1;
-      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    window.hj = window.hj || function () {
-      (hj.q = hj.q || []).push(arguments)
+
+  (function (h, o, t, j, a, r) {
+    h.hj = h.hj || function () {
+      (h.hj.q = h.hj.q || []).push(arguments)
     };
-    hj('trigger', 'PDP_spread');
+    h._hjSettings = {hjid: 1831568, hjsv: 6};
+    a = o.getElementsByTagName('head')[0];
+    r = o.createElement('script');
+    r.async = 1;
+    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  window.hj = window.hj || function () {
+    (hj.q = hj.q || []).push(arguments)
+  };
+  hj('trigger', 'PDP_spread');
 
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-      'event': 'event-to-ga',
-      'eventCategory': 'Exp - PDP_spread',
-      'eventAction': 'loaded'
-    });
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - PDP_spread',
+    'eventAction': 'loaded'
+  });
 
-    document.querySelectorAll('.owl-buttons>div').forEach((item) => {
-      item.addEventListener('click', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-          'event': 'event-to-ga',
-          'eventCategory': 'Exp - PDP_spread',
-          'eventAction': 'Click on slider arrows'
-        });
-      });
-    })
-    document.querySelectorAll('.owl-item').forEach((item) => {
-      item.addEventListener('click', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-          'event': 'event-to-ga',
-          'eventCategory': 'Exp - PDP_spread',
-          'eventAction': 'Click on slider images'
-        });
-      });
-    })
-
-    document.querySelector('#addToCart').addEventListener('click', function () {
+  document.querySelectorAll('.owl-buttons>div').forEach((item) => {
+    item.addEventListener('click', function () {
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
         'event': 'event-to-ga',
         'eventCategory': 'Exp - PDP_spread',
-        'eventAction': 'Click on Add to Cart'
+        'eventAction': 'Click on slider arrows'
       });
     });
+  })
 
-    document.querySelectorAll('.prod_desc .description>ul li').forEach((item) => {
-      item.addEventListener('click', function () {
-        let title = item.querySelector('a').innerText;
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-          'event': 'event-to-ga',
-          'eventCategory': 'Exp - New PDP',
-          'eventAction': 'Click on product tabs',
-          'eventLabel': `${title}`
-        });
-      })
+  document.querySelectorAll('.owl-item').forEach((item) => {
+    item.addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - PDP_spread',
+        'eventAction': 'Click on slider images'
+      });
+    });
+  })
+
+  document.querySelector('#addToCart').addEventListener('click', function () {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'event-to-ga',
+      'eventCategory': 'Exp - PDP_spread',
+      'eventAction': 'Click on Add to Cart'
+    });
+  });
+
+  document.querySelectorAll('.prod_desc .description>ul li').forEach((item) => {
+    item.addEventListener('click', function () {
+      let title = item.querySelector('a').innerText;
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - New PDP',
+        'eventAction': 'Click on product tabs',
+        'eventLabel': `${title}`
+      });
     })
+  })
+}
 
-  }
