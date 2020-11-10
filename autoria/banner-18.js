@@ -17,7 +17,9 @@ let p1 = 'оставьте свой номер телефона',
     info = 'На этот автомобиль повышенный спрос!',
     infoBtn = 'Уточнить о наличии этой комплектации',
     timeWork = `Отдел продаж салона работает с ${openTime} до ${closeTime}`,
-    rate = 'Оцените автосалон'
+    rate = 'Оцените автосалон',
+    thx1 = 'Спасибо за вашу заявку!',
+    thx2 = 'Мы с вами свяжемся в ближайшее время'    
 
 if (window.location.pathname.includes('/uk/')) {
   p1 = 'залиште свій номер телефону'
@@ -28,6 +30,8 @@ if (window.location.pathname.includes('/uk/')) {
   infoBtn = 'Дізнатися про наявність цієї комплектації'
   timeWork = `Відділ продажу салону працює з ${openTime} до ${closeTime}`
   rate = 'Оцініть автосалон'
+  thx1 = 'Дякуємо за вашу заявку!'
+  thx2 = 'Ми зателефонуємо вам у найближчий час'
 }
 
 let style = `
@@ -317,7 +321,7 @@ document.querySelector('.high-demand-wrap').addEventListener('click', function (
           $(".react_modal").addClass("thankyou")
           $(".react_modal__body .popup-content > div:first-child").remove()
           $(".popup-phone-block").empty()
-          $(".popup-phone-block").append('<div class="thx_holder"><div class="modal_title"><p>Спасибо за вашу заявку!</p></div><div class="info_text"><p>Мы с вами свяжемся в ближайшее время</p></div></div>')
+          $(".popup-phone-block").append(`<div class="thx_holder"><div class="modal_title"><p>${thx1}</p></div><div class="info_text"><p>${thx2}</p></div></div>`)
           window.dataLayer = window.dataLayer || []
           dataLayer.push({
             event: "event-to-ga",
