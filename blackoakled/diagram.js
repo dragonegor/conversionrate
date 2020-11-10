@@ -64,14 +64,16 @@ window.onload = function() {
       default:
         '';
     }
-  }
-
-  window.dataLayer = window.dataLayer || [];
+    
+    window.dataLayer = window.dataLayer || [];
   dataLayer.push({
     'event': 'event-to-ga',
     'eventCategory': 'Exp - PDP_spread',
     'eventAction': 'Click on Optics buttons'
   });
+  }
+
+  
 
   let select = document.querySelector('.variations .selector-wrapper>.selector-wrapper');
   console.log(select);
