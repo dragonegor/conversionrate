@@ -228,7 +228,7 @@ function abjqlr(o) {
 .hide_modal,.thankyou .modal_photo-car{display:none}
 .ab_test_modal.evening_modal .react_modal__container{max-width:350px!important;margin:auto}
 .ab_test_modal.evening_modal .react_modal__header{font-size:18px;line-height:26px;padding:8px 35px 0 15px!important}
-.ab_test_modal.evening_modal .react_modal__body{padding:15px} .mt-20{display:flex; justify-content: space-between;}
+.ab_test_modal.evening_modal .react_modal__body{padding:15px} .mt-20{justify-content: space-between;}
 .text_devider, .sub_title, .info_text, .modal_form {
 display: none !important;
 }
