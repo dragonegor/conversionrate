@@ -59,6 +59,7 @@ let style = `
       color: #096F4A;
       font-weight: 600;
       font-size: 11px;
+      line-height: 15px;
     }
   
     .banner_wrapper>.descr_banner{
@@ -68,6 +69,7 @@ let style = `
       margin: 15px auto 0;
       display: none;
       overflow: hidden;
+      line-height: 15px;
     }
     
     .banner_wrapper.open>.descr_banner {
