@@ -59,7 +59,7 @@ let banner = `
     </div>
   </div>
 `
-
+document.body.insertAdjacentHTML('afterbegin', style);
 let search = document.querySelector('.search-results-section .flights-section')
 let mut = new MutationObserver((mutations) => {
   console.log(mutations)
@@ -87,8 +87,10 @@ function startBanner() {
           ((infoCode1 === "kbp" || infoCode1 === "tlv") && (infoCode2 === "kbp" || infoCode2 === "tlv")) ||
           ((infoCode1 === "kbp" || infoCode1 === "dxb") && (infoCode2 === "kbp" || infoCode2 === "dxb")))
   ) {
-    document.body.insertAdjacentHTML('afterbegin', style);
-    document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner);
+    let banner = document.querySelector('.banner_wrapper')
+    if (!banner) {
+      document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner)
+    }
   } else {
     let banner = document.querySelector('.banner_wrapper');
     if(banner) {
