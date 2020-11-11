@@ -83,8 +83,8 @@ let banner = `
     </div>
   </div>
 `
-document.body.insertAdjacentHTML('afterbegin', style);
-let search = document.querySelector('.search-results-section .flights-section')
+document.body.insertAdjacentHTML('afterbegin', style)
+let search = document.querySelector('.flights-section')
 let mut = new MutationObserver((mutations) => {
   console.log(mutations)
   let infoCont = document.querySelector('.flights-section .info-container')
