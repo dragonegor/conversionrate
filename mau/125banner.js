@@ -60,19 +60,42 @@ let banner = `
   </div>
 `
 
-document.addEventListener('DOMContentLoaded', function () {
+let search = document.querySelector('.search-results-section .flights-section')
+let mut = new MutationObserver((mutations) => {
+  console.log(mutations)
+  let infoCont = document.querySelector('.flights-section .info-container')
+  mutations.forEach((mutation) => {
+    if(mutation.target === infoCont) {
+      startBanner();
+    }
+  })
+})
+mut.observe(search, {
+  characterData: true,
+  childList: true,
+  subtree: true,
+  characterDataOldValue: true
+})
+
+function startBanner() {
   let infoCode1 = document.querySelectorAll('.info-code')[0].textContent.toLowerCase()
   let infoCode2 = document.querySelectorAll('.info-code')[1].textContent.toLowerCase()
 
-  if(
+  if (
       !(((infoCode1 === "kbp" || infoCode1 === "ist") && (infoCode2 === "kbp" || infoCode2 === "ist")) ||
-      ((infoCode1 === "kbp" || infoCode1 === "lgw") && (infoCode2 === "kbp" || infoCode2 === "lgw")) ||
-      ((infoCode1 === "kbp" || infoCode1 === "tlv") && (infoCode2 === "kbp" || infoCode2 === "tlv")) ||
-      ((infoCode1 === "kbp" || infoCode1 === "dxb") && (infoCode2 === "kbp" || infoCode2 === "dxb")))
+          ((infoCode1 === "kbp" || infoCode1 === "lgw") && (infoCode2 === "kbp" || infoCode2 === "lgw")) ||
+          ((infoCode1 === "kbp" || infoCode1 === "tlv") && (infoCode2 === "kbp" || infoCode2 === "tlv")) ||
+          ((infoCode1 === "kbp" || infoCode1 === "dxb") && (infoCode2 === "kbp" || infoCode2 === "dxb")))
   ) {
     document.body.insertAdjacentHTML('afterbegin', style);
     document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner);
+  } else {
+    let banner = document.querySelector('.banner_wrapper');
+    if(banner) {
+      banner.remove();
+    }
   }
-})
+}
 
+startBanner()
 
