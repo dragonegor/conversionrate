@@ -164,6 +164,18 @@ function abjqlr(o) {
 .text_devider, .sub_title, .info_text, .modal_form {
 display: none !important;
 }
+
+.phones_modal__item {
+height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.phones_modal_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 </style>`)
 }
 
