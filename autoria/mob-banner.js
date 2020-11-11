@@ -232,6 +232,9 @@ function abjqlr(o) {
 .text_devider, .sub_title, .info_text, .modal_form {
 display: none !important;
 }
+.rating-group .rating-group-label:last-child svg{
+    nargin-right: 0;
+}
 </style>`)
 }
 
