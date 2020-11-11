@@ -1,3 +1,27 @@
+try {
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:1657822,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+  hj('trigger', 'search-results-covid-info');
+}
+catch(e) {}
+
+window.dataLayerUamaster = window.dataLayerUamaster || [];
+dataLayerUamaster.push({
+  'event': 'autoEvent2',
+  'eventCategory': 'Exp - Search results - covid info',
+  'eventAction': 'activated',
+  'eventLabel': '',
+  'eventValue': '',
+  'eventNonInteraction': 1
+})
+
 let mainTxt = 'Вернем 125% стоимости билетов бонусами, если рейс будет отменен в связи с COVID-19',
     descr = `Вы получите онлайн промокод (сертификат) на <b>полную стоимость</b> неиспользованного билета. Как дополнительный
      комплимент от авиакомпании МАУ вам будет начислено бонус в размере 25%. Вы сможете использовать этот промокод для
@@ -90,6 +114,17 @@ function startBanner() {
     let bannerBlock = document.querySelector('.banner_wrapper')
     if (!bannerBlock) {
       document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner)
+      document.querySelector('#next-page-button').addEventListener('hover', function () {
+        window.dataLayerUamaster = window.dataLayerUamaster || [];
+        dataLayerUamaster.push({
+          'event': 'autoEvent2',
+          'eventCategory': 'Exp - Search results - covid info',
+          'eventAction': 'hover Continue',
+          'eventLabel': '',
+          'eventValue': '',
+          'eventNonInteraction': 1
+        })
+      })
     }
   } else {
     let bannerBlock = document.querySelector('.banner_wrapper')
