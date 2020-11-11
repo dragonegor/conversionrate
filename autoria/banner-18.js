@@ -6,9 +6,11 @@
 
 
 let openTime = window.initialState.salon_schedule[0][2].hours.slice(0, 3)
+let openTimeTxt = window.initialState.salon_schedule[0][2].hours.slice(0, 5)
 openTime = openTime[0] === '0' ? openTime[1] : openTime
 
 let closeTime = window.initialState.salon_schedule[0][2].hours.slice(7, 9)
+let closeTimeTxt = window.initialState.salon_schedule[0][2].hours.slice(7)
 
 let p1 = 'оставьте свой номер телефона',
     p2 = 'мы перезвоним и дадим информацию по кредитам',
@@ -16,7 +18,7 @@ let p1 = 'оставьте свой номер телефона',
     wrongNumber = 'Мобильный телефон некорректен. Пример 0931234567',
     info = 'На этот автомобиль повышенный спрос!',
     infoBtn = 'Уточнить о наличии этой комплектации',
-    timeWork = `Отдел продаж салона работает с ${openTime} до ${closeTime}`,
+    timeWork = `Отдел продаж салона работает с ${openTimeTxt} до ${closeTimeTxt}`,
     rate = 'Оцените автосалон',
     thx1 = 'Спасибо за вашу заявку!',
     thx2 = 'Мы с вами свяжемся в ближайшее время'    
@@ -28,7 +30,7 @@ if (window.location.pathname.includes('/uk/')) {
   wrongNumber = 'Мобільний телефон некоректний. Приклад 0931234567'
   info = 'На це авто підвищений попит!'
   infoBtn = 'Дізнатися про наявність цієї комплектації'
-  timeWork = `Відділ продажу салону працює з ${openTime} до ${closeTime}`
+  timeWork = `Відділ продажу салону працює з ${openTimeTxt} до ${closeTimeTxt}`
   rate = 'Оцініть автосалон'
   thx1 = 'Дякуємо за вашу заявку!'
   thx2 = 'Ми зателефонуємо вам у найближчий час'
