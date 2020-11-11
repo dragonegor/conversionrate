@@ -233,7 +233,7 @@ function abjqlr(o) {
 display: none !important;
 }
 .rating-group .rating-group-label:last-child svg{
-    nargin-right: 0;
+    margin-right: 0;
 }
 </style>`)
 }
