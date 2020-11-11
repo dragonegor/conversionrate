@@ -176,6 +176,9 @@ height: 70%;
     flex-direction: column;
     justify-content: space-around;
 }
+.react_modal__body {
+    padding: 0 30px 30px;
+}
 </style>`)
 }
 
