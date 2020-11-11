@@ -59,14 +59,14 @@ let banner = `
     </div>
   </div>
 `
-document.body.insertAdjacentHTML('afterbegin', style);
-let search = document.querySelector('.search-results-section .flights-section')
+document.body.insertAdjacentHTML('afterbegin', style)
+let search = document.querySelector('.flights-section')
 let mut = new MutationObserver((mutations) => {
   console.log(mutations)
   let infoCont = document.querySelector('.flights-section .info-container')
   mutations.forEach((mutation) => {
     if(mutation.target === infoCont) {
-      startBanner();
+      startBanner()
     }
   })
 })
@@ -92,7 +92,7 @@ function startBanner() {
       document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner)
     }
   } else {
-    let banner = document.querySelector('.banner_wrapper');
+    let banner = document.querySelector('.banner_wrapper')
     if(banner) {
       banner.remove();
     }
