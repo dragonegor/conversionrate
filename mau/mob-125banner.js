@@ -105,7 +105,6 @@ let banner = `
 document.body.insertAdjacentHTML('afterbegin', style)
 let search = document.querySelector('.flights-section')
 let mut = new MutationObserver((mutations) => {
-    console.log(mutations)
     let infoCont = document.querySelector('.flights-section .info-container')
     mutations.forEach((mutation) => {
         if(mutation.target === infoCont) {
