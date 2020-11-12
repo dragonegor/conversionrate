@@ -8,14 +8,14 @@ try {
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
-    hj('trigger', 'search-results-covid-info');
+    hj('trigger', '125_back_guarantee');
 }
 catch(e) {}
 
 window.dataLayerUamaster = window.dataLayerUamaster || [];
 dataLayerUamaster.push({
     'event': 'autoEvent2',
-    'eventCategory': 'Exp - Search results - covid info',
+    'eventCategory': 'Exp - 125% back guarantee',
     'eventAction': 'activated',
     'eventLabel': '',
     'eventValue': '',
