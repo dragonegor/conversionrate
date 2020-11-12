@@ -1,38 +1,38 @@
 try {
-  (function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:1657822,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
-  hj('trigger', 'search-results-covid-info');
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1657822,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+    hj('trigger', 'search-results-covid-info');
 }
 catch(e) {}
 
 window.dataLayerUamaster = window.dataLayerUamaster || [];
 dataLayerUamaster.push({
-  'event': 'autoEvent2',
-  'eventCategory': 'Exp - Search results - covid info',
-  'eventAction': 'activated',
-  'eventLabel': '',
-  'eventValue': '',
-  'eventNonInteraction': 1
+    'event': 'autoEvent2',
+    'eventCategory': 'Exp - Search results - covid info',
+    'eventAction': 'activated',
+    'eventLabel': '',
+    'eventValue': '',
+    'eventNonInteraction': 1
 })
 
 let mainTxt = 'Вернём бонусами полную стоимость билета + 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19',
     descr = `Используйте промокод для оплаты одного будущего путешествия <b>в течение 2-х лет</b>`
 
 if (window.location.href.includes('/EN/')) {
-  // mainTxt = ''
-  // descr = ''
-  console.log('english')
+    // mainTxt = ''
+    // descr = ''
+    console.log('english')
 } else if (window.location.href.includes('/UK/')) {
-  mainTxt = 'Повернемо бонусами повну вартість квитка +25% від авіакомпанії МАУ, якщо рейс буде скасовано через COVID-19'
-  descr = `Використайте промокод для оплати однієї майбутньої подорожі <b>впродовж наступних 2-х років</b>`
-  console.log('ukrainian')
+    mainTxt = 'Повернемо бонусами повну вартість квитка +25% від авіакомпанії МАУ, якщо рейс буде скасовано через COVID-19'
+    descr = `Використайте промокод для оплати однієї майбутньої подорожі <b>впродовж наступних 2-х років</b>`
+    console.log('ukrainian')
 }
 
 let style = `
@@ -105,53 +105,69 @@ let banner = `
 document.body.insertAdjacentHTML('afterbegin', style)
 let search = document.querySelector('.flights-section')
 let mut = new MutationObserver((mutations) => {
-  console.log(mutations)
-  let infoCont = document.querySelector('.flights-section .info-container')
-  mutations.forEach((mutation) => {
-    if(mutation.target === infoCont) {
-      startBanner();
-    }
-  })
+    console.log(mutations)
+    let infoCont = document.querySelector('.flights-section .info-container')
+    mutations.forEach((mutation) => {
+        if(mutation.target === infoCont) {
+            startBanner();
+        }
+    })
 })
 mut.observe(search, {
-  characterData: true,
-  childList: true,
-  subtree: true,
-  characterDataOldValue: true
+    characterData: true,
+    childList: true,
+    subtree: true,
+    characterDataOldValue: true
 })
 
 function startBanner() {
-  let infoCode1 = document.querySelectorAll('.info-code')[0].textContent.toLowerCase()
-  let infoCode2 = document.querySelectorAll('.info-code')[1].textContent.toLowerCase()
+    let infoCode1 = document.querySelectorAll('.info-code')[0].textContent.toLowerCase()
+    let infoCode2 = document.querySelectorAll('.info-code')[1].textContent.toLowerCase()
 
-  if (true
+    if (true
 //       !(((infoCode1 === "kbp" || infoCode1 === "ist") && (infoCode2 === "kbp" || infoCode2 === "ist")) ||
 //           ((infoCode1 === "kbp" || infoCode1 === "lgw") && (infoCode2 === "kbp" || infoCode2 === "lgw")) ||
 //           ((infoCode1 === "kbp" || infoCode1 === "tlv") && (infoCode2 === "kbp" || infoCode2 === "tlv")) ||
 //           ((infoCode1 === "kbp" || infoCode1 === "dxb") && (infoCode2 === "kbp" || infoCode2 === "dxb")))
-  ) {
-    let bannerBlock = document.querySelector('.banner_wrapper')
-    if (!bannerBlock) {
-      document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner);
-      document.querySelector('.banner_wrapper').addEventListener('click', function () {
-        document.querySelector('.banner_wrapper').classList.toggle('open')
-        window.dataLayerUamaster = window.dataLayerUamaster || [];
-          dataLayerUamaster.push({
-            'event': 'autoEvent2',
-            'eventCategory': 'Exp - 125% back guarantee',
-            'eventAction': 'click on Banner',
-            'eventLabel': '',
-            'eventValue': '',
-            'eventNonInteraction': 1
-          })
-      })
+    ) {
+        let bannerBlock = document.querySelector('.banner_wrapper')
+        if (!bannerBlock) {
+            document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner);
+            document.querySelector('.banner_wrapper').addEventListener('click', function () {
+                let open = document.querySelector('.banner_wrapper').classList.contains('open')
+                if(!open) {
+                    document.querySelector('.banner_wrapper').classList.add('open')
+                    window.dataLayerUamaster = window.dataLayerUamaster || [];
+                    dataLayerUamaster.push({
+                        'event': 'autoEvent2',
+                        'eventCategory': 'Exp - 125% back guarantee',
+                        'eventAction': 'click to expand banner',
+                        'eventLabel': '',
+                        'eventValue': '',
+                        'eventNonInteraction': 1
+                    })
+                } else {
+                    document.querySelector('.banner_wrapper').classList.remove('open')
+                    window.dataLayerUamaster = window.dataLayerUamaster || [];
+                    dataLayerUamaster.push({
+                        'event': 'autoEvent2',
+                        'eventCategory': 'Exp - 125% back guarantee',
+                        'eventAction': 'click to collapse banner',
+                        'eventLabel': '',
+                        'eventValue': '',
+                        'eventNonInteraction': 1
+                    })
+                }
+
+
+            })
+        }
+    } else {
+        let bannerBlock = document.querySelector('.banner_wrapper')
+        if(bannerBlock) {
+            bannerBlock.remove();
+        }
     }
-  } else {
-    let bannerBlock = document.querySelector('.banner_wrapper')
-    if(bannerBlock) {
-      bannerBlock.remove();
-    }
-  }
 }
 
 startBanner()
