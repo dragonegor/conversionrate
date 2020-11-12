@@ -169,5 +169,7 @@ function startBanner() {
     }
 }
 
-startBanner()
-
+let info = document.querySelectorAll('.info-code')[0]
+if (info) {
+    startBanner()
+}
