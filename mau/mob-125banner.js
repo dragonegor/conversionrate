@@ -22,18 +22,16 @@ dataLayerUamaster.push({
   'eventNonInteraction': 1
 })
 
-let mainTxt = 'Вернем 125% стоимости билетов бонусами, если рейс будет отменен в связи с COVID-19',
-    descr = `Вы получите онлайн промокод (сертификат) на <b>полную стоимость</b> неиспользованного билета. Как дополнительный
-     комплимент от авиакомпании МАУ вам будет начислено бонус в размере 25%. Вы сможете использовать этот промокод для
-      оплаты будущих путешествий в течении 2 лет. `
+let mainTxt = 'Вернём бонусами полную стоимость билета + 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19',
+    descr = `Используйте промокод для оплаты одного будущего путешествия <b>в течение 2-х лет</b>`
 
 if (window.location.href.includes('/EN/')) {
   // mainTxt = ''
   // descr = ''
   console.log('english')
 } else if (window.location.href.includes('/UK/')) {
-  // mainTxt = ''
-  // descr = ''
+  mainTxt = 'Повернемо бонусами повну вартість квитка +25% від авіакомпанії МАУ, якщо рейс буде скасовано через COVID-19'
+  descr = `Використайте промокод для оплати однієї майбутрньої подорожі <b>впродовж наступних 2-х років</b>`
   console.log('ukrainian')
 }
 
@@ -137,6 +135,15 @@ function startBanner() {
       document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner);
       document.querySelector('.banner_wrapper').addEventListener('click', function () {
         document.querySelector('.banner_wrapper').classList.toggle('open')
+        window.dataLayerUamaster = window.dataLayerUamaster || [];
+          dataLayerUamaster.push({
+            'event': 'autoEvent2',
+            'eventCategory': 'Exp - 125% back guarantee',
+            'eventAction': 'click on Banner',
+            'eventLabel': '',
+            'eventValue': '',
+            'eventNonInteraction': 1
+          })
       })
     }
   } else {
