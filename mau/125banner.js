@@ -82,7 +82,7 @@ let banner = `
   </div>
 `
 document.body.insertAdjacentHTML('afterbegin', style)
-let search = document.querySelector('.flights-section')
+let search = document.querySelector('body')
 let mut = new MutationObserver((mutations) => {
     let infoCont = document.querySelector('.flights-section .info-container')
     mutations.forEach((mutation) => {
@@ -119,6 +119,9 @@ function startBanner() {
         }
     }
 }
+let info = document.querySelectorAll('.info-code')[0]
+if (info) {
+    startBanner()
+}
 
-startBanner()
 
