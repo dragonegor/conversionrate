@@ -54,7 +54,7 @@ let style = `
     }
     .banner_wrapper .text p:first-child{
       color: #096F4A;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 18px;
       margin-bottom: 10px;
     }
