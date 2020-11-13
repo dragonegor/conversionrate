@@ -43,6 +43,7 @@ let style = `
       background-color: #DBF5E1;
       display:flex;
       align-items: center;
+      justify-content: center;
       margin: 0 15px 15px;
     }
     .banner_wrapper svg {
