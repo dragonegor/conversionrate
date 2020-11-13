@@ -32,7 +32,16 @@ function abjqlr(o) {
   console.log("%cTest come", "background:red;color:wite;");
   var a, t, d, n, l, r, i, s, _, p;
   window.customer_click = location.href, console.log("customer_click is " + window.customer_click);
-  try {
+  l = window, r = document.documentElement, i = "async-hide", s = "dataLayer", _ = {"GTM-P46SHG8": !0}, r.className += " " + i, _.start = +new Date, _.end = p = function () {
+    r.className = r.className.replace(RegExp(" ?" + i), "")
+  }, (l[s] = l[s] || []).hide = _, setTimeout(function () {
+    p(), _.end = null
+  }, 0), _.timeout = 0, window.dataLayer = window.dataLayer || [], dataLayer.push({
+    event: "event-to-ga",
+    eventCategory: "pdp highly demand banner",
+    eventAction: "loaded"
+  }), console.log("loaded"), o(document).on("click", ".high-demand-wrap", function () {
+       try {
     a = window, t = document, a.hj = a.hj || function () {
       (a.hj.q = a.hj.q || []).push(arguments)
     }, a._hjSettings = {
@@ -43,15 +52,6 @@ function abjqlr(o) {
     }, hj("trigger", "pdp_highly_demand_banner")
   } catch (e) {
   }
-  l = window, r = document.documentElement, i = "async-hide", s = "dataLayer", _ = {"GTM-P46SHG8": !0}, r.className += " " + i, _.start = +new Date, _.end = p = function () {
-    r.className = r.className.replace(RegExp(" ?" + i), "")
-  }, (l[s] = l[s] || []).hide = _, setTimeout(function () {
-    p(), _.end = null
-  }, 0), _.timeout = 0, window.dataLayer = window.dataLayer || [], dataLayer.push({
-    event: "event-to-ga",
-    eventCategory: "pdp highly demand banner",
-    eventAction: "loaded"
-  }), console.log("loaded"), o(document).on("click", ".high-demand-wrap", function () {
     window.dataLayer = window.dataLayer || [], dataLayer.push({
       event: "event-to-ga",
       eventCategory: "PDP highly demand banner",
