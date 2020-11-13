@@ -115,6 +115,17 @@ function startBanner() {
 
         if (!bannerBlock) {
             document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner)
+            document.querySelector('.banner_wrapper').addEventListener('click', function () {
+                window.dataLayerUamaster = window.dataLayerUamaster || [];
+                dataLayerUamaster.push({
+                    'event': 'autoEvent2',
+                    'eventCategory': 'Exp - 125% back guarantee',
+                    'eventAction': 'click on Banner',
+                    'eventLabel': '',
+                    'eventValue': '',
+                    'eventNonInteraction': 1
+                })
+            })
         }
     } else {
         if(bannerBlock) {
