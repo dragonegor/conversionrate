@@ -129,8 +129,8 @@ function startBanner() {
         document.querySelector('.banner_wrapper .text p:first-child').innerText = 'Повернемо бонусами повну вартість квитка +25% від авіакомпанії МАУ, якщо рейс буде скасовано через COVID-19'
         document.querySelector('.banner_wrapper .text p:last-child').innerText = `Використайте промокод для оплати однієї майбутрньої подорожі <b>впродовж наступних 2-х років</b>`
     } else {
-        document.querySelector('.banner_wrapper .text').innerText = 'Вернём бонусами полную стоимость билета + 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19'
-        document.querySelector('.banner_wrapper .descr_banner').innerText = `Используйте промокод для оплаты одного будущего путешествия <b>в течение 2-х лет</b>`
+        document.querySelector('.banner_wrapper .text p:first-child').innerText = 'Вернём бонусами полную стоимость билета + 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19'
+        document.querySelector('.banner_wrapper .text p:last-child').innerText = `Используйте промокод для оплаты одного будущего путешествия <b>в течение 2-х лет</b>`
     }
 }
 let info = document.querySelectorAll('.info-code')[0]
