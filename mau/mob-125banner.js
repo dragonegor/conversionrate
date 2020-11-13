@@ -57,7 +57,7 @@ let style = `
     .banner_wrapper .text {
       width: 76%;
       color: #096F4A;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 11px;
       line-height: 15px;
     }
