@@ -22,16 +22,17 @@ dataLayerUamaster.push({
     'eventNonInteraction': 1
 })
 let url = window.location.href
-let mainTxt = 'Вернём бонусами полную стоимость билета + 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19',
-    descr = `Используйте промокод для оплаты одного будущего путешествия <b>в течение 2-х лет</b>`
+let mainTxt = 'UIA will credit the full ticket price +25% in case the flight is canceled due to COVID-19',
+    descr = `Credit will be in the form of a promocode, which may be used to pay for a trip <b>within 2 years of the flight cancelation</b>`
 
-if (url.includes('/EN/')) {
-    // mainTxt = ''
-    // descr = ``
+
+if (url.includes('/UK/')) {
+    mainTxt = 'Повернемо бонусами повну вартість квитка + додатково 25% від авіакомпанії МАУ, якщо рейс буде скасовано через COVID-19',
+    descr = `Використайте бонуси (промокод) для оплати однієї майбутньої подорожі <b>впродовж наступних 2-х років</b>`
     console.log('english')
-} else if (url.includes('/UK/')) {
-    mainTxt = 'Повернемо бонусами повну вартість квитка +25% від авіакомпанії МАУ, якщо рейс буде скасовано через COVID-19'
-    descr = `Використайте промокод для оплати однієї майбутрньої подорожі <b>впродовж наступних 2-х років</b>`
+} else if (url.includes('/RU/')) {
+    mainTxt = 'Вернём бонусами полную стоимость билета + дополнительно 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19'
+    descr = `Используйте бонусы (промокод) для оплаты одного будущего путешествия <b>в течение 2-х лет </b>`
     console.log('ukrainian')
 }
 
@@ -103,19 +104,18 @@ function startBanner() {
 
     let infoCode1 = document.querySelectorAll('.info-code')[0].textContent.toLowerCase()
     let infoCode2 = document.querySelectorAll('.info-code')[1].textContent.toLowerCase()
-
+    let bannerBlock = document.querySelector('.banner_wrapper')
     if (
         !(((infoCode1 === "kbp" || infoCode1 === "ist") && (infoCode2 === "kbp" || infoCode2 === "ist")) ||
             ((infoCode1 === "kbp" || infoCode1 === "lgw") && (infoCode2 === "kbp" || infoCode2 === "lgw")) ||
             ((infoCode1 === "kbp" || infoCode1 === "tlv") && (infoCode2 === "kbp" || infoCode2 === "tlv")) ||
             ((infoCode1 === "kbp" || infoCode1 === "dxb") && (infoCode2 === "kbp" || infoCode2 === "dxb")))
     ) {
-        let bannerBlock = document.querySelector('.banner_wrapper')
+
         if (!bannerBlock) {
             document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner)
         }
     } else {
-        let bannerBlock = document.querySelector('.banner_wrapper')
         if(bannerBlock) {
             bannerBlock.remove()
         }
@@ -123,14 +123,16 @@ function startBanner() {
 
     let url = window.location.href
     if (url.includes('/RU/')) {
-        document.querySelector('.banner_wrapper .text p:first-child').innerHTML = 'Вернём бонусами полную стоимость билета + 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19'
-        document.querySelector('.banner_wrapper .text p:last-child').innerHTML = `Используйте промокод для оплаты одного будущего путешествия <b>в течение 2-х лет</b>`
+        document.querySelector('.banner_wrapper .text p:first-child').innerHTML = 'Вернём бонусами полную стоимость билета + дополнительно 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19'
+        document.querySelector('.banner_wrapper .text p:last-child').innerHTML = `Используйте бонусы (промокод) для оплаты одного будущего путешествия <b>в течение 2-х лет </b>`
     } else if (url.includes('/UK/')) {
-        document.querySelector('.banner_wrapper .text p:first-child').innerHTML = 'Повернемо бонусами повну вартість квитка +25% від авіакомпанії МАУ, якщо рейс буде скасовано через COVID-19'
-        document.querySelector('.banner_wrapper .text p:last-child').innerHTML = `Використайте промокод для оплати однієї майбутрньої подорожі <b>впродовж наступних 2-х років</b>`
-    } else {
-        document.querySelector('.banner_wrapper .text p:first-child').innerHTML = 'Вернём бонусами полную стоимость билета + 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19'
-        document.querySelector('.banner_wrapper .text p:last-child').innerHTML = `Используйте промокод для оплаты одного будущего путешествия <b>в течение 2-х лет</b>`
+        document.querySelector('.banner_wrapper .text p:first-child').innerHTML = 'Повернемо бонусами повну вартість квитка + додатково 25% від авіакомпанії МАУ, якщо рейс буде скасовано через COVID-19'
+        document.querySelector('.banner_wrapper .text p:last-child').innerHTML = `Використайте бонуси (промокод) для оплати однієї майбутньої подорожі <b>впродовж наступних 2-х років</b>`
+    } else if (url.includes('/EN/')) {
+        document.querySelector('.banner_wrapper .text p:first-child').innerHTML = 'UIA will credit the full ticket price +25% in case the flight is canceled due to COVID-19'
+        document.querySelector('.banner_wrapper .text p:last-child').innerHTML = `Credit will be in the form of a promocode, which may be used to pay for a trip <b>within 2 years of the flight cancelation</b>`
+    } else  {
+        bannerBlock.remove()
     }
 }
 let info = document.querySelectorAll('.info-code')[0]
