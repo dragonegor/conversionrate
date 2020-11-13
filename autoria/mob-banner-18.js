@@ -234,6 +234,19 @@ document.querySelector('.vin_checked').insertAdjacentHTML('afterend', banner);
 
 
 document.querySelector('.high-demand-wrap').addEventListener('click', function () {
+    try {
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:1953436,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+  hj('trigger', 'pdp_highly_demand_banner');
+}
+catch(e) {}
   document.querySelectorAll(".phone.bold")[0].click();
   $('html').on('mouseleave', 'body', function () {
     window.dataLayer = window.dataLayer || []
@@ -356,19 +369,7 @@ document.querySelector('.high-demand-wrap').addEventListener('click', function (
   })
 })
 
-try {
-  (function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:1953436,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
-  hj('trigger', 'pdp_highly_demand_banner');
-}
-catch(e) {}
+
 
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
