@@ -32,17 +32,7 @@ function abjqlr(o) {
     console.log("%cTest come", "background:red;color:wite;");
     var a, t, d, n, l, r, i, s, _, p;
     window.customer_click = location.href, console.log("customer_click is " + window.customer_click);
-    try {
-        a = window, t = document, a.hj = a.hj || function () {
-            (a.hj.q = a.hj.q || []).push(arguments)
-        }, a._hjSettings = {
-            hjid: 1953436,
-            hjsv: 6
-        }, d = t.getElementsByTagName("head")[0], (n = t.createElement("script")).async = 1, n.src = "https://static.hotjar.com/c/hotjar-" + a._hjSettings.hjid + ".js?sv=" + a._hjSettings.hjsv, d.appendChild(n), window.hj = window.hj || function () {
-            (hj.q = hj.q || []).push(arguments)
-        }, hj("trigger", "pdp_highly_demand_banner")
-    } catch (e) {
-    }
+
     l = window, r = document.documentElement, i = "async-hide", s = "dataLayer", _ = {"GTM-P46SHG8": !0}, r.className += " " + i, _.start = +new Date, _.end = p = function () {
         r.className = r.className.replace(RegExp(" ?" + i), "")
     }, (l[s] = l[s] || []).hide = _, setTimeout(function () {
@@ -52,6 +42,17 @@ function abjqlr(o) {
         eventCategory: "pdp highly demand banner",
         eventAction: "loaded"
     }), console.log("loaded"), o(document).on("click", ".high-demand-wrap", function () {
+        try {
+            a = window, t = document, a.hj = a.hj || function () {
+                (a.hj.q = a.hj.q || []).push(arguments)
+            }, a._hjSettings = {
+                hjid: 1953436,
+                hjsv: 6
+            }, d = t.getElementsByTagName("head")[0], (n = t.createElement("script")).async = 1, n.src = "https://static.hotjar.com/c/hotjar-" + a._hjSettings.hjid + ".js?sv=" + a._hjSettings.hjsv, d.appendChild(n), window.hj = window.hj || function () {
+                (hj.q = hj.q || []).push(arguments)
+            }, hj("trigger", "pdp_highly_demand_banner")
+        } catch (e) {
+        }
         window.dataLayer = window.dataLayer || [], dataLayer.push({
             event: "event-to-ga",
             eventCategory: "PDP highly demand banner",
