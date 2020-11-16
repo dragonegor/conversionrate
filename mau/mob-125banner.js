@@ -105,7 +105,8 @@ let banner = `
   </div>
 `
 document.body.insertAdjacentHTML('afterbegin', style)
-let search = document.querySelector('.flights-section')
+let search = document.querySelector('body')
+
 let mut = new MutationObserver((mutations) => {
     let infoCont = document.querySelector('.flights-section .info-container')
     mutations.forEach((mutation) => {
@@ -124,19 +125,12 @@ mut.observe(search, {
 function startBanner() {
     let infoCode1 = document.querySelectorAll('.info-code')[0].textContent.toLowerCase()
     let infoCode2 = document.querySelectorAll('.info-code')[1].textContent.toLowerCase()
-
-    if (true
-//       !(((infoCode1 === "kbp" || infoCode1 === "ist") && (infoCode2 === "kbp" || infoCode2 === "ist")) ||
-//           ((infoCode1 === "kbp" || infoCode1 === "lgw") && (infoCode2 === "kbp" || infoCode2 === "lgw")) ||
-//           ((infoCode1 === "kbp" || infoCode1 === "tlv") && (infoCode2 === "kbp" || infoCode2 === "tlv")) ||
-//           ((infoCode1 === "kbp" || infoCode1 === "dxb") && (infoCode2 === "kbp" || infoCode2 === "dxb")))
-    ) {
         let bannerBlock = document.querySelector('.banner_wrapper')
         if (!bannerBlock) {
             document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner);
             document.querySelector('.banner_wrapper').addEventListener('click', function () {
                 let open = document.querySelector('.banner_wrapper').classList.contains('open')
-                if(!open) {
+                if (!open) {
                     document.querySelector('.banner_wrapper').classList.add('open')
                     window.dataLayerUamaster = window.dataLayerUamaster || [];
                     dataLayerUamaster.push({
@@ -159,11 +153,9 @@ function startBanner() {
                         'eventNonInteraction': 1
                     })
                 }
-
-
             })
-
         }
+
         let url = window.location.href
         if (url.includes('/RU/')) {
             document.querySelector('.banner_wrapper .text').innerHTML = 'Вернём бонусами полную стоимость билета + дополнительно 25% от авиакомпании МАУ, если рейс будет отменен в связи с COVID-19'
@@ -174,17 +166,13 @@ function startBanner() {
         } else if (url.includes('/EN/')) {
             document.querySelector('.banner_wrapper .text').innerHTML = 'UIA will credit the full ticket price +25% in case the flight is canceled due to COVID-19'
             document.querySelector('.banner_wrapper .descr_banner').innerHTML = `Credit will be in the form of a promocode, which may be used to pay for a trip within 2 years`
-        } else  {
+        } else {
             document.querySelector('.banner_wrapper').remove()
         }
-
-    } else {
-        let bannerBlock = document.querySelector('.banner_wrapper')
-        if(bannerBlock) {
-            bannerBlock.remove();
-        }
-    }
 }
 
-startBanner()
+let info = document.querySelectorAll('.info-code')[0]
+if (info) {
+    startBanner()
+}
 
