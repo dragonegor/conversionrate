@@ -268,14 +268,14 @@ let htmlBlock = `
     <div class="popup-content">
       <h3>${mainTitle}</h3>
       <p class="step">
-          <b>1</b> Позвоните менеджеру автосалона и назовите модель данного авто.
+          <b>1</b> ${p1}
         <p>
       <div class="popup-phone-block">
         <a href="tel:${phones}" class="phone">${phones}</a> 
         <p class="work-time">${timeWork}</p>
       </div>
-      <p class="step"><b>2</b>Объясните, какие именно фото вы хотите увидеть.</p>
-      <p class="step"><b>3</b>Договоритесь, каким способом вам удобно получить фото (Viber, Telegram, email и др.).</p>
+      <p class="step"><b>2</b>${p2}</p>
+      <p class="step"><b>3</b>${p3}</p>
     </div>
 `
 
