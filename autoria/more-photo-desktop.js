@@ -410,6 +410,9 @@ function counter () {
     document.querySelectorAll('.image-gallery-nav').forEach((item) => {
       item.removeEventListener('click', counter);
     })
+    document.querySelectorAll('.image-gallery-thumbnail').forEach((item) => {
+      item.removeEventListener('click', counter);
+    })
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
       'event': 'event-to-ga',
@@ -422,6 +425,10 @@ function counter () {
 }
 
 document.querySelectorAll('.image-gallery-nav').forEach((item) => {
+  item.addEventListener('click', counter);
+});
+
+document.querySelectorAll('.image-gallery-thumbnail').forEach((item) => {
   item.addEventListener('click', counter);
 });
 
