@@ -364,7 +364,7 @@ function activePopUp () {
       });
     })
 
-    document.querySelector('.react_modal__body .svg').addEventListener('click', function () {
+    document.querySelector('.react_modal__body .rating-group').addEventListener('click', function () {
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
         'event': 'event-to-ga',
