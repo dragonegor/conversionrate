@@ -95,6 +95,14 @@ let style = `
     text-align: center;
   }
   
+  .react_modal__body {
+    text-align: center;
+  }
+  
+  .react_modal__body .icons_list {
+    margin: 0 auto 15px;
+  }
+  
 </style>
 `
 
@@ -190,12 +198,33 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
       if(this.classList.contains('fuel_info')) {
         document.querySelector('.react_modal__header').childNodes[0].remove();
         document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', p1);
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event': 'event-to-ga',
+          'eventCategory': 'pdp_more_characteristics',
+          'eventAction': 'click on characteristics area',
+          'eventLabel' : 'fuel consumption'
+        });
       } else if (this.classList.contains('char')) {
         document.querySelector('.react_modal__header').childNodes[0].remove();
         document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', p2);
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event': 'event-to-ga',
+          'eventCategory': 'pdp_more_characteristics',
+          'eventAction':  'click on characteristics area',
+          'eventLabel' : 'more characteristics'
+        });
       } else if (this.classList.contains('equip')) {
         document.querySelector('.react_modal__header').childNodes[0].remove();
         document.querySelector('.react_modal__header').insertAdjacentHTML('afterbegin', p3);
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event': 'event-to-ga',
+          'eventCategory': 'pdp_more_characteristics',
+          'eventAction':  'click on characteristics area',
+          'eventLabel' : 'deliveries'
+        });
       }
 
       mut.disconnect();
@@ -210,6 +239,74 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
 
     let event = new Event('click', {bubbles: true});
     document.querySelector("span.button.button--green").dispatchEvent(event);
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'event-to-ga',
+      'eventCategory': 'pdp_more_characteristics',
+      'eventAction':  'popUp loaded'
+    });
 
+    document.querySelectorAll('.load_phone__item').forEach((item) => {
+      item.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event': 'event-to-ga',
+          'eventCategory': 'pdp_more_characteristics',
+          'eventAction':  'click on popUp',
+          'eventLabel' : 'phone number'
+        });
+      })
+    })
+
+    document.querySelector('.react_modal__body .rating-group').addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'pdp_more_characteristics',
+        'eventAction': 'click on popUp rate'
+      });
+    });
+
+    document.querySelector('.react_modal__close').addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'pdp_more_characteristics',
+        'eventAction': 'click on popUp',
+        'eventLabel': 'close'
+      });
+    });
+
+    document.querySelector('.react_modal__backdrop').addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'pdp_more_characteristics',
+        'eventAction': 'click out of popUp',
+        'eventLabel': 'close'
+      });
+    });
   })
 })
+
+
+try {
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:1953436,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+  hj('trigger', 'pdp_more_characteristics');
+}
+catch(e) {}
+
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+  'event': 'event-to-ga',
+  'eventCategory': 'pdp_more_characteristics',
+  'eventAction': 'loaded'
+});
