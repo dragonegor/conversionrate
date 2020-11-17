@@ -227,6 +227,47 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
         });
       }
 
+      document.querySelectorAll('.load_phone__item').forEach((item) => {
+        item.addEventListener('click', function () {
+          window.dataLayer = window.dataLayer || [];
+          dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'pdp_more_characteristics',
+            'eventAction':  'click on popUp',
+            'eventLabel' : 'phone number'
+          });
+        })
+      })
+
+      document.querySelector('.react_modal__body .rating-group').addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event': 'event-to-ga',
+          'eventCategory': 'pdp_more_characteristics',
+          'eventAction': 'click on popUp rate'
+        });
+      });
+
+      document.querySelector('.react_modal__close').addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event': 'event-to-ga',
+          'eventCategory': 'pdp_more_characteristics',
+          'eventAction': 'click on popUp',
+          'eventLabel': 'close'
+        });
+      });
+
+      document.querySelector('.react_modal__backdrop').addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event': 'event-to-ga',
+          'eventCategory': 'pdp_more_characteristics',
+          'eventAction': 'click out of popUp',
+          'eventLabel': 'close'
+        });
+      });
+
       mut.disconnect();
     })
 
@@ -246,46 +287,7 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
       'eventAction':  'popUp loaded'
     });
 
-    document.querySelectorAll('.load_phone__item').forEach((item) => {
-      item.addEventListener('click', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-          'event': 'event-to-ga',
-          'eventCategory': 'pdp_more_characteristics',
-          'eventAction':  'click on popUp',
-          'eventLabel' : 'phone number'
-        });
-      })
-    })
-
-    document.querySelector('.react_modal__body .rating-group').addEventListener('click', function () {
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'pdp_more_characteristics',
-        'eventAction': 'click on popUp rate'
-      });
-    });
-
-    document.querySelector('.react_modal__close').addEventListener('click', function () {
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'pdp_more_characteristics',
-        'eventAction': 'click on popUp',
-        'eventLabel': 'close'
-      });
-    });
-
-    document.querySelector('.react_modal__backdrop').addEventListener('click', function () {
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'pdp_more_characteristics',
-        'eventAction': 'click out of popUp',
-        'eventLabel': 'close'
-      });
-    });
+    
   })
 })
 
