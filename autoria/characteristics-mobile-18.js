@@ -369,6 +369,16 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
       }
       document.querySelector('.react_modal .react_modal__body').innerHTML = htmlBlock
 
+      document.querySelector('.react_modal__body .input_number').addEventListener("focus", function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event': 'event-to-ga',
+          'eventCategory': 'pdp_more_characteristics',
+          'eventAction': 'click on popUp',
+          'eventLabel': 'number input'
+        });
+      })
+
       document.querySelector('.react_modal__body .input_number').addEventListener("focusout", function (e) {
         let phone = document.querySelector('.react_modal__body .input_number').value.length
         if(phone < 10 || phone > 10) {
@@ -396,6 +406,13 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
           $(".react_modal__body").remove()
           $(".react_modal__header h4").text(thx1)
           $(".react_modal__header p").text(thx2)
+          window.dataLayer = window.dataLayer || []
+          dataLayer.push({
+            event: "event-to-ga",
+            eventCategory: "pdp_more_characteristics",
+            eventAction: "click on popUp",
+            eventLabel: "call me"
+          })
         } else {
           document.querySelector('.react_modal__body').classList.add('error');
         }
