@@ -94,6 +94,7 @@ let style = `
     color: white;
     padding: 10px 15px;
     border: none;
+    cursor: pointer;
   }
   .info-block .close {
     position: absolute;
