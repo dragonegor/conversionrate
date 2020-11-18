@@ -145,18 +145,18 @@ let style = `
     z-index: 99;
   }
   
-  .react_modal__container {
+  .test_banner .react_modal__container {
       max-width: 800px !important;
     }
     
-  .react_modal__body {
+  .test_banner .react_modal__body {
       z-index: 100;
       display:flex;
       flex-wrap:wrap;
       padding: 0 15px 30px;
   }
   
-  .react_modal.calls_modal .react_modal__header {
+  .test_banner.react_modal.calls_modal .react_modal__header {
       z-index: 2;
       color: white;
   }
@@ -193,30 +193,30 @@ let style = `
     font-size: 14px;
   }
   
-  .phones_modal_wrap {
+  .test_banner .phones_modal_wrap {
     padding-left: 15px;
   }
   
-  .react_modal__body>div {
+  .test_banner .react_modal__body>div {
     width: 50%;
     min-width: 380px;
   }
   
   @media (max-width: 768px) {
-    .react_modal__body>div {
+    .test_banner .react_modal__body>div {
       width: 100%;;
     }
   }
   
-  .react_modal__body>div:first-child {
+  .test_banner .react_modal__body>div:first-child {
     display:flex;
     align-items: center;
   }
-  .react_modal__body .mt-20 {
+  .test_banner .react_modal__body .mt-20 {
     margin-top: 5px;
   }
   
-  .react_modal__body>div:first-child img {
+  .test_banner .react_modal__body>div:first-child img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -341,11 +341,13 @@ document.querySelector('.info-block button').addEventListener('click', function 
 function activePopUp () {
   let mut = new MutationObserver((mutations) => {
     console.log(mutations)
+    document.querySelector(".react_modal").classList.add('test_banner');
     document.querySelector('.react_modal .react_modal__body .phones_modal__item').innerHTML = htmlBlock
     document.querySelector('.react_modal .react_modal__body').insertAdjacentHTML('afterbegin', `<div><img src="${imgSrc}" alt="auto"></div>`)
     mut.disconnect()
 
     document.querySelector('.react_modal__backdrop').addEventListener("click", function() {
+      setTimeout(function (){document.querySelector(".react_modal").classList.remove('test_banner');}, 500)
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
         'event': 'event-to-ga',
@@ -356,6 +358,7 @@ function activePopUp () {
     })
 
     document.querySelector('.react_modal:not(.thankyou) .react_modal__close').addEventListener('click', function () {
+      setTimeout(function (){document.querySelector(".react_modal").classList.remove('test_banner');}, 500)
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
         'event': 'event-to-ga',
