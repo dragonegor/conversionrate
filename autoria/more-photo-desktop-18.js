@@ -154,6 +154,7 @@ let style = `
   
   .react_modal__container {
       max-width: 800px !important;
+      width: auto !important;
     }
     
     .react_modal__body {
