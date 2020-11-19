@@ -178,7 +178,9 @@ window.onload = function() {
   });
 
   document.querySelectorAll('.owl-buttons>div').forEach((item) => {
-    item.addEventListener('click', function () {
+    console.log(item)
+    item.addEventListener('touchstart', function () {
+      console.log('owlBtn')
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
         'event': 'event-to-ga',
@@ -189,7 +191,7 @@ window.onload = function() {
   })
 
   document.querySelectorAll('.owl-item').forEach((item) => {
-    item.addEventListener('click', function () {
+    item.addEventListener('touchstart', function () {
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
         'event': 'event-to-ga',
@@ -198,6 +200,7 @@ window.onload = function() {
       });
     });
   })
+  
 
   document.querySelector('#addToCart').addEventListener('click', function () {
     window.dataLayer = window.dataLayer || [];
