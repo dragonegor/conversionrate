@@ -651,6 +651,13 @@ try {
 }
 catch(e) {}
 
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'result_page_copy',
+    'eventAction': 'loaded'
+});
+
 document.querySelector('.options .button_confirm').addEventListener('click', function () {
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
