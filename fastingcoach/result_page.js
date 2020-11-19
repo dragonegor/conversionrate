@@ -1,6 +1,6 @@
 let scriptSlider = document.createElement('script');
 scriptSlider.src = 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js';
-scriptSlider.async = false;
+scriptSlider.async = true;
 document.head.appendChild(scriptSlider);
 
 let style = `
@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function () {
         genderText = 'Male'
     }
     $('.summary__profile-row .summary__profile-col:first-child dd').text(genderText)
-    
+
     let expBlock = `
         <div class="exp padding_mobile">
           <h3>But That’s Not All… </h3>
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <img src="${genderImg}" alt="gender">
         </div>
     `
-    
+
     let other = `
     <div class="options padding_mobile">
       <p class="preHeader"><b>So… Are You Ready to Try Intermittent Fasting?</b></p>
