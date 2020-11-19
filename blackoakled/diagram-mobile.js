@@ -38,7 +38,7 @@ window.onload = function() {
      margin: 10px;
    }
    .flx img:first-child {
-     width: 120px;
+     width: 120px !important;
    }
    
    .flx img:last-child {
