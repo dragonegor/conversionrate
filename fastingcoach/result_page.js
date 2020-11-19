@@ -634,6 +634,36 @@ document.addEventListener('DOMContentLoaded', function () {
         navPosition: 'bottom',
         preventScrollOnTouch: 'auto'
     })
+
+    document.querySelector('.options .button_confirm').addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'result_page_copy',
+            'eventAction': 'click on "Subscribe" button',
+            'eventLabel': 'after Options'
+        });
+    })
+
+    document.querySelector('.red_block .button_confirm').addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'result_page_copy',
+            'eventAction': 'click on "Subscribe" button',
+            'eventLabel': 'after Program'
+        });
+    })
+
+    document.querySelector('.total_price .button_confirm').addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'result_page_copy',
+            'eventAction': 'click on "Subscribe" button',
+            'eventLabel': 'after Total price'
+        });
+    })
 })
 
 
@@ -658,32 +688,3 @@ dataLayer.push({
     'eventAction': 'loaded'
 });
 
-document.querySelector('.options .button_confirm').addEventListener('click', function () {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'result_page_copy',
-        'eventAction': 'click on "Subscribe" button',
-        'eventLabel': 'after Options'
-    });
-})
-
-document.querySelector('.red_block .button_confirm').addEventListener('click', function () {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'result_page_copy',
-        'eventAction': 'click on "Subscribe" button',
-        'eventLabel': 'after Program'
-    });
-})
-
-document.querySelector('.total_price .button_confirm').addEventListener('click', function () {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'result_page_copy',
-        'eventAction': 'click on "Subscribe" button',
-        'eventLabel': 'after Total price'
-    });
-})
