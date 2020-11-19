@@ -42,7 +42,7 @@ window.onload = function() {
    }
    
    .flx img:last-child {
-     width: 120px;
+     width: 120px !important;
      height: 60px;
    }
    
@@ -200,7 +200,7 @@ window.onload = function() {
       });
     });
   })
-  
+
 
   document.querySelector('#addToCart').addEventListener('click', function () {
     window.dataLayer = window.dataLayer || [];
