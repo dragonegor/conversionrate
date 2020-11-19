@@ -626,9 +626,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.wrapper.summary:not(.summary_a) .summary__reviews-row').forEach((item) => {
         document.querySelector('.slider_reviews').append(item)
     })
-})
 
-window.onload = function () {
     let slider = tns({
         container: '.slider_reviews',
         items: 1,
@@ -636,7 +634,8 @@ window.onload = function () {
         navPosition: 'bottom',
         preventScrollOnTouch: 'auto'
     })
-}
+})
+
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
