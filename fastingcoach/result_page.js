@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let gender = $('.summary__profile-row .summary__profile-col:first-child dd').text().toLowerCase(),
         genderImg = 'https://i.ibb.co/YQyn03T/woman.jpg',
         genderText = 'Female'
-    if(gender === 'man') {
+    if(gender === 'men') {
         genderImg = 'https://i.ibb.co/12Pk80h/man.jpg'
         genderText = 'Male'
     }
