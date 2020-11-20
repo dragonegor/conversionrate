@@ -382,7 +382,7 @@ let style = `
        }
     </style>
 `
-body.onload = function () {
+document.body.onload = function () {
     let gender = $('.summary__profile-row .summary__profile-col:first-child dd').text().toLowerCase(),
         genderImg = 'https://i.ibb.co/YQyn03T/woman.jpg',
         genderText = 'Female'
