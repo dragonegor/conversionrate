@@ -1,5 +1,9 @@
+
 let style = `
     <style>
+        main.main {
+opacity: 0;
+}
         img {
           width: 100%;
         }
