@@ -1,9 +1,6 @@
-
+document.querySelectorAll('main.main')[1].style.opacity = 0
 let style = `
     <style>
-        main.main {
-opacity: 0;
-}
         img {
           width: 100%;
         }
