@@ -1,4 +1,4 @@
-
+document.body.style.opacity = 0
 let style = `
     <style>
         img {
@@ -534,7 +534,7 @@ document.body.onload = function () {
         <h4>PERSONALIZED WATER TRACKING</h4>
         <p>You’ve heard a million times how important it is to drink enough water every day, especially when fasting... But you’ve probably never had anyone to track your water intake and remind you to drink it.</p>
         <p>Well, now you do.</p>
-        <p class="price">Regular price: <b>$9 value</b></p>
+        <p class="price">Regular price: <b>$5 value</b></p>
       </div>
       <div class="item">
         <svg width="68" height="39" viewBox="0 0 68 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -668,6 +668,7 @@ document.body.onload = function () {
             'eventLabel': 'after Total price'
         });
     })
+    document.body.style.opacity = 1
 }
 
 
