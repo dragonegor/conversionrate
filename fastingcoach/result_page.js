@@ -484,16 +484,16 @@ document.body.onload = function () {
         <h4>TAILOR-MADE FASTING PROGRAM</h4>
         <p>We will tell you exactly what, when and how much to eat, so you don’t have to waste a second of your time thinking about you next meal.</p>
         <p>Most importantly, every meal will be 100% adjusted to your taste, so you’ll be eating your favorite foods every single day</p>
-        <p class="price">Regular price: <b>$97 per Month</b></p>
+        <p class="price">Regular price: <b>$19 per Month</b></p>
       </div>
       <div class="item">
         <svg viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M22.9999 0.215332C10.8242 0.215332 0.919922 10.1197 0.919922 22.2953C0.919922 34.471 10.8242 44.3753 22.9999 44.3753C25.3711 44.3753 27.6541 43.996 29.7968 43.301C29.2016 42.844 28.6038 42.3416 28.0268 41.7953C26.4159 42.211 24.7385 42.4553 22.9999 42.4553C11.8841 42.4553 2.83992 33.4112 2.83992 22.2953C2.83992 11.1795 11.8841 2.13533 22.9999 2.13533C34.1158 2.13533 43.1599 11.1795 43.1599 22.2953C43.1599 23.3801 43.0504 24.4385 42.8843 25.4772C43.5333 25.651 44.1515 25.8954 44.7255 26.2122C44.955 24.9402 45.0799 23.6326 45.0799 22.2953C45.0799 10.1197 35.1756 0.215332 22.9999 0.215332ZM22.9849 5.00221C22.7306 5.00618 22.4883 5.11088 22.3112 5.29332C22.134 5.47576 22.0364 5.72104 22.0399 5.97533V19.5841C21.6601 19.719 21.3128 19.9322 21.0206 20.2097C20.7283 20.4873 20.4976 20.8232 20.3433 21.1955C20.189 21.5679 20.1146 21.9685 20.1249 22.3715C20.1352 22.7744 20.23 23.1707 20.403 23.5347L14.6412 29.2966C14.549 29.385 14.4755 29.491 14.4248 29.6082C14.3741 29.7255 14.3474 29.8517 14.3461 29.9794C14.3448 30.1071 14.369 30.2338 14.4172 30.352C14.4655 30.4703 14.5369 30.5777 14.6272 30.668C14.7175 30.7584 14.825 30.8297 14.9432 30.878C15.0615 30.9263 15.1882 30.9505 15.3159 30.9492C15.4436 30.9479 15.5698 30.9211 15.687 30.8704C15.8043 30.8198 15.9102 30.7462 15.9987 30.6541L21.7587 24.8941C22.1463 25.0792 22.5704 25.1753 22.9999 25.1753C23.6792 25.1751 24.3365 24.9349 24.8557 24.497C25.375 24.0591 25.7228 23.4518 25.8376 22.7824C25.9525 22.1129 25.827 21.4244 25.4835 20.8385C25.1399 20.2526 24.6002 19.8069 23.9599 19.5803V5.97533C23.9617 5.84689 23.9377 5.71941 23.8893 5.60043C23.8409 5.48144 23.7691 5.37338 23.6782 5.28264C23.5872 5.1919 23.479 5.12033 23.36 5.07216C23.2409 5.02399 23.1134 5.0002 22.9849 5.00221ZM32.1199 27.1103C28.6639 27.1103 25.8799 29.8947 25.8799 33.2547C25.8799 38.5347 30.6792 41.7031 33.7512 43.7191C34.6152 44.2951 35.2887 44.6791 35.7687 45.1591L36.3443 45.6391L36.9199 45.1591C37.1599 44.9671 37.4719 44.7503 37.8199 44.5103C38.1679 44.2703 38.5515 44.0071 38.9355 43.7191C42.1995 41.6071 46.9999 38.5347 46.9999 33.2547C46.9999 29.8947 44.2159 27.1103 40.7599 27.1103C40.5559 27.1103 40.3529 27.1218 40.1524 27.1422C38.9498 27.2648 37.8225 27.7437 36.8899 28.4603C36.7345 28.5798 36.5839 28.7071 36.4399 28.8391C35.2879 27.7831 33.7519 27.1103 32.1199 27.1103ZM32.1199 29.0303C33.5599 29.0303 34.8072 29.7023 35.6712 30.9503L36.4399 32.1035L37.2087 30.9503C37.3047 30.8063 37.4087 30.6691 37.5218 30.5378C38.3132 29.6191 39.4999 29.0303 40.7599 29.0303C43.1599 29.0303 45.0799 30.9507 45.0799 33.2547C45.0799 37.4787 41.0472 40.166 38.0712 42.086C37.3992 42.47 36.9199 42.8555 36.4399 43.1435C35.9599 42.7595 35.4807 42.47 34.8087 42.086C31.8327 40.166 27.7999 37.4787 27.7999 33.2547C27.7999 32.9667 27.829 32.684 27.8862 32.411C28.2865 30.5 30.0199 29.0303 32.1199 29.0303Z" fill="#EF4E44"/>
         </svg>
-        <h4>FASTING TIMER </h4>
+        <h4>FASTING TIMER</h4>
         <p>The only kinda-frustrating thing about Intermittent Fasting is having to track time between eating and fasting windows.</p>
         <p>We’ll do that for you. Plus, we’ll show you what’s going on inside your body during each phase of your fasting window, so you can understand the process better.</p>
-        <p class="price">Regular price: <b>$97 per Month</b></p>
+        <p class="price">Regular price: <b>$9 per Month</b></p>
       </div>
       <div class="item">
         <svg width="42" height="49" viewBox="0 0 42 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -508,6 +508,7 @@ document.body.onload = function () {
         <h4>MEAL PLANNING AND FOOD LOG</h4>
         <p>Keeping a food diary helps you understand your habits and increases your likelihood of hitting your goals. </p>
         <p>We make this as effortless as possible. No need to carry around one of those old-school journals… Just make a few taps on your phone</p>
+        <p class="price">Regular price: <b>$9 per Month</b></p>
       </div>
       <div class="item">
         <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -522,6 +523,7 @@ document.body.onload = function () {
         <h4>DAILY AND WEEKLY GROCERY LIST</h4>
         <p>The only thing worse than spending 2 hours putting together a grocery list… Is spending 2 hours in the store, because you don’t have a grocery list.</p>
         <p>We ensure this never happens to you by telling you exactly what & how much to buy come shopping time.</p>
+        <p class="price">Regular price: <b>$5 per Month</b></p>
       </div>
       <div class="item">
         <svg width="43" height="53" viewBox="0 0 43 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -532,7 +534,7 @@ document.body.onload = function () {
         <h4>PERSONALIZED WATER TRACKING</h4>
         <p>You’ve heard a million times how important it is to drink enough water every day, especially when fasting... But you’ve probably never had anyone to track your water intake and remind you to drink it.</p>
         <p>Well, now you do.</p>
-        <p class="price_long">App With Fasting Timer + 7-Day Onboarding + Meal Tracking and Food Log + Daily and Weekly Grocery Lists - <b>$47 Value</b></p>
+        <p class="price">Regular price: <b>$5 value</b></p>
       </div>
       <div class="item">
         <svg width="68" height="39" viewBox="0 0 68 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -542,7 +544,7 @@ document.body.onload = function () {
         </svg>
         <h4>SIMPLE AT-HOME WORKOUTS</h4>
         <p>If you want to REALLY kickstart your weight loss… And ensure your body is toned and beach-ready once you burn the fat… These workouts will be your secret weapon.</p>
-        <p class="price">Regular price: <b>$47 per Month</b></p>
+        <p class="price">Regular price: <b>$27 per Month</b></p>
       </div>
     </div>
     
@@ -553,7 +555,7 @@ document.body.onload = function () {
     
     <div class="red_block padding_mobile">
       <div class="red">
-        <p>Customized Meal Plan and Workout Program Alone Are Worth Well Over $100 per Month…</p>
+        <p>Customized Meal Plan and Workout Program Alone Are Worth Well Over $78 per Month…</p>
         <p><b>You Get EVERYTHING for Just $5 per Month</b></p>
       </div>
       <a href="?checkout" class="button_confirm">YES! I WANT CUSTOM FASTING PLAN</a>
@@ -591,16 +593,18 @@ document.body.onload = function () {
           <p>Here’s Everything You Get When You Order Your Custom Fasting Plan</p>
           <div class="cost">
             <ul>
-              <li>Tailor-Made Fasting Program - <span>$97 per Month</span></li>
-              <li>Workout Programs - <span>$47 per Month</span></li>
-              <li>App With Fasting Timer + 7-Day Onboarding + Meal Tracking and Food Log + Daily and Weekly Grocery Lists -
-                <span>$47 Value</span></li>
+              <li>Tailor-Made Fasting Program - <span>$29 per Month</span></li>
+              <li>Workout Programs - <span>$27 per Month</span></li>
+              <li>App With Fasting Timer - <span>$9 per Month</span></li>
+              <li>Meal Tracking and Food Log - <span>$9 per Month</span></li>
+              <li>Daily and Weekly Grocery Lists - <span>$5 per Month</span></li>
+              <li>Personalized Water Tracking - <span>$9 Value</span></li>
               <li><b>BONUS 1:</b> 28-Day Fasting Masterclass - <span>$197 Value</span></li>
               <li><b>BONUS 2:</b> Fasting EBooks - <span>$57 Value</span></li>
             </ul>
             <div class="total">
-              <p>Total value: <span>$550</span></p>
-              <p>FOR THE FIRST MONTH <br><span>($250 PER MONTH AFTER THAT)</span></p>
+              <p>Total value: <span>$332</span></p>
+              <p>FOR THE FIRST MONTH <br><span>($78 PER MONTH AFTER THAT)</span></p>
             </div>
           </div>
           <p class="fair">FAIR PRICE: <span><b>$39 PER MONTH</b></span></p>
