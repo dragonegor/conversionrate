@@ -1,4 +1,3 @@
-document.body.style.opacity = 0
 let style = `
     <style>
         img {
@@ -668,7 +667,6 @@ document.body.onload = function () {
             'eventLabel': 'after Total price'
         });
     })
-    document.body.style.opacity = 1
 }
 
 
