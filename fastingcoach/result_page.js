@@ -616,7 +616,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.body.insertAdjacentHTML('afterbegin', style)
     $(".result_chart h4").html("<b>Your Results Are In!</b> Based on Your Answers...")
-    let resultTxt = $(".result_chart h5").text()
+    let resultTxt = document.querySelectorAll('.result_chart h5')[1].innerText
     $(".result_chart h5").text('If You Started Fasting Today, You Would Reach' + resultTxt)
     $(".result_chart h6").text('Here Is What You Can Expect in the First Month of Intermittent Fasting:');
     $('.summary__reviews h2').html('14,586 Users Similar to You <strong>Have Lost 16 Kg</strong> (on Average) With <strong>Intermittent Fasting</strong>')
