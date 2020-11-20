@@ -382,7 +382,7 @@ let style = `
        }
     </style>
 `
-document.addEventListener('DOMContentLoaded', function () {
+body.onload = function () {
     let gender = $('.summary__profile-row .summary__profile-col:first-child dd').text().toLowerCase(),
         genderImg = 'https://i.ibb.co/YQyn03T/woman.jpg',
         genderText = 'Female'
@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'eventLabel': 'after Total price'
         });
     })
-})
+}
 
 
 try {
