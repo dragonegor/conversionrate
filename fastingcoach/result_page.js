@@ -236,7 +236,7 @@ let style = `
         }
         .total_price .bg {
           padding: 25px;
-          background: url("https://i.ibb.co/4V1jTFx/berry.jpg") center center no-repeat;
+          background: url("https://i.ibb.co/XWF0p52/berry.jpg") center center no-repeat;
           background-size: cover;
         }
         .total_price .bg > div {
@@ -384,10 +384,10 @@ let style = `
 `
 document.body.onload = function () {
     let gender = $('.summary__profile-row .summary__profile-col:first-child dd').text().toLowerCase(),
-        genderImg = 'https://i.ibb.co/YQyn03T/woman.jpg',
+        genderImg = 'https://i.ibb.co/527mbhg/woman.jpg',
         genderText = 'Female'
     if(gender === 'men') {
-        genderImg = 'https://i.ibb.co/12Pk80h/man.jpg'
+        genderImg = 'https://i.ibb.co/QP8g6dN/man.jpg'
         genderText = 'Male'
     }
     $('.summary__profile-row .summary__profile-col:first-child dd').text(genderText)
@@ -569,7 +569,7 @@ document.body.onload = function () {
         <p>Taught by our certified nutritionist, Justin Nault, this 28-day masterclass teaches you the science behind intermittent fasting in a simple, easy-to-understand way.</p>
         <p>With this knowledge, you’ll be able to see exactly what’s working for your body… And adjust your fasting plan accordingly, to get even better results, even faster.</p>
         <p class="price">Value: <b>$197</b></p>
-        <img src="https://i.ibb.co/M6VcQWM/food.jpg" alt="food">
+        <img src="https://i.ibb.co/fpCgWrv/food.jpg" alt="food">
       </div>
       <div class="variant">
         <div class="var_name">Bonus #2:</div>
@@ -577,7 +577,7 @@ document.body.onload = function () {
         <p>These three cover EVERYTHING there is to know about Intermittent Fasting and nutrition in general.</p>
         <p>They will take you from a mere instruction follower to a legit diet expert, allowing you to optimize your lifestyle for even better results and even more freedom.</p>
         <p class="price">Value: <b>3 x $19</b></p>
-        <img src="https://i.ibb.co/sHk3p0d/books.jpg" alt="books">
+        <img src="https://i.ibb.co/MM5SD2Q/books.jpg" alt="books">
       </div>
     </div>
     
