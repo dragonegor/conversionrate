@@ -667,6 +667,7 @@ document.body.onload = function () {
             'eventLabel': 'after Total price'
         });
     })
+    document.querySelectorAll('main.main')[1].style.opacity = 1
 }
 
 
