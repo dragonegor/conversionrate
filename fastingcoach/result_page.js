@@ -1,6 +1,9 @@
-document.querySelectorAll('main.main')[1].style.opacity = 0
 let style = `
     <style>
+        main.main {
+          opacity: 0;
+        }
+        
         img {
           width: 100%;
         }
@@ -93,9 +96,6 @@ let style = `
           border: 15px solid #f3b2ae;
         }
         
-        .options {
-          margin: 0 0 80px;
-        }
         .options .variant {
           padding: 40px 20px 20px;
           margin: 0 -20px;
@@ -238,6 +238,7 @@ let style = `
           padding: 25px;
           background: url("https://i.ibb.co/XWF0p52/berry.jpg") center center no-repeat;
           background-size: cover;
+          margin-bottom: 80px;
         }
         .total_price .bg > div {
           padding: 30px 20px 10px;
@@ -382,12 +383,15 @@ let style = `
        }
     </style>
 `
-document.body.onload = function () {
+
+document.body.insertAdjacentHTML('afterbegin', style)
+
+// document.body.onload = function () {
     let gender = $('.summary__profile-row .summary__profile-col:first-child dd').text().toLowerCase(),
-        genderImg = 'https://i.ibb.co/527mbhg/woman.jpg',
+        // genderImg = 'https://i.ibb.co/527mbhg/woman.jpg',
         genderText = 'Female'
     if(gender === 'men') {
-        genderImg = 'https://i.ibb.co/QP8g6dN/man.jpg'
+        // genderImg = 'https://i.ibb.co/QP8g6dN/man.jpg'
         genderText = 'Male'
     }
     $('.summary__profile-row .summary__profile-col:first-child dd').text(genderText)
@@ -403,73 +407,11 @@ document.body.onload = function () {
             <li>IMPROVED LEVELS OF GOOD CHOLESTEROL</li>
             <li>BETTER BLOOD PRESSURE</li>
           </ul>
-          <img src="${genderImg}" alt="gender">
+<!--          <img src="{genderImg}" alt="gender">-->
         </div>
     `
 
     let other = `
-    <div class="options padding_mobile">
-      <p class="preHeader"><b>So… Are You Ready to Try Intermittent Fasting?</b></p>
-      <h2>You Have Two Options:</h2>
-      <div class="variant">
-        <div class="var_name">option #1:</div>
-        <p class="title">YOU CAN TRY TO FIGURE IT OUT BY YOURSELF</p>
-        <p>This is a good option if you are already an experienced dieter and you have plenty of free time to do your research.</p>
-        <p>On the other hand, if you are a beginner, it might be tricky.</p>
-        <p>There are at least a DOZEN popular intermittent fasting regimens - most of which simply wouldn’t fit your body type, lifestyle, etc.</p>
-        <p>So in order to get it right, you will end up spending HOURS every day reading articles and forum threads, trying to figure it out </p>
-        <p>This can be quite frustrating - Especially if you are impatient to begin your transformation and see some progress ASAP</p>
-      </div>
-      <div class="variant">
-        <div class="var_name">option #2:</div>
-        <p class="title">YOU CAN LET US DO ALL THE THINKING FOR YOU</p>
-        <p>Remember, you gave us all your information - including your favorite foods.</p>
-        <p>Remember, you gave us all your information - including your favorite foods.
-          We were free enough to use that information to create a tailor-made intermittent fasting plan for YOU.
-          It includes:</p>
-        <p>It includes:</p>
-        <ul>
-          <li>
-            <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7778 0.29541H2.75556C1.2337 0.29541 0 1.52911 0 3.05097V16.8287C0 18.3506 1.2337 19.5843 2.75556 19.5843H13.7778C13.8552 19.5843 13.9319 19.5811 14.0078 19.5748C14.045 19.5811 14.0832 19.5843 14.1222 19.5843C14.1656 19.5843 14.2267 19.5864 14.3027 19.589C14.7399 19.6039 15.6669 19.6356 16.5019 19.3824C17.0119 19.2278 17.5479 18.9539 17.9555 18.4643C18.3706 17.9658 18.6 17.3068 18.6 16.4843V4.77319C18.6 3.58513 18.217 2.76417 17.599 2.25918C17.1352 1.8802 16.6062 1.73517 16.1745 1.69028C15.7005 0.857226 14.8048 0.29541 13.7778 0.29541ZM16.5333 3.20071V16.8287C16.5333 17.2502 16.4387 17.6495 16.2696 18.0066C16.5328 17.9053 16.744 17.7662 16.8967 17.5827C17.0731 17.3709 17.2222 17.0396 17.2222 16.4843V4.77319C17.2222 3.89458 16.9523 3.50998 16.7272 3.32609C16.6669 3.27676 16.6017 3.23528 16.5333 3.20071ZM1.37778 3.05097C1.37778 2.29004 1.99463 1.67319 2.75556 1.67319H13.7778C14.5387 1.67319 15.1556 2.29004 15.1556 3.05097V16.8287C15.1556 17.5897 14.5387 18.2065 13.7778 18.2065H2.75556C1.99463 18.2065 1.37778 17.5897 1.37778 16.8287V3.05097ZM3.44444 4.42874C3.44444 4.80921 3.75287 5.11763 4.13333 5.11763H12.4C12.7805 5.11763 13.0889 4.80921 13.0889 4.42874C13.0889 4.04828 12.7805 3.73986 12.4 3.73986H4.13333C3.75287 3.73986 3.44444 4.04828 3.44444 4.42874ZM3.44444 7.1843C3.44444 7.56476 3.75287 7.87319 4.13333 7.87319H10.6778C11.0582 7.87319 11.3667 7.56476 11.3667 7.1843C11.3667 6.80384 11.0582 6.49541 10.6778 6.49541H4.13333C3.75287 6.49541 3.44444 6.80384 3.44444 7.1843ZM3.44444 9.93986C3.44444 10.3203 3.75287 10.6287 4.13333 10.6287H12.4C12.7805 10.6287 13.0889 10.3203 13.0889 9.93986C13.0889 9.55939 12.7805 9.25097 12.4 9.25097H4.13333C3.75287 9.25097 3.44444 9.55939 3.44444 9.93986Z" fill="#EF4E44"/>
-            </svg>
-            <p><b>Different Protocols</b>, so you can choose between the most popular fasting regimens or customize your own</p>
-          </li>
-          <li>
-            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.2 18.9984V14.1984C17.2 13.9775 17.2896 13.7775 17.4344 13.6328C17.5791 13.488 17.7791 13.3984 18 13.3984C19.9883 13.3984 21.6 11.7867 21.6 9.79844C21.6 8.09336 20.4147 6.66514 18.823 6.29293C19.0675 7.01675 19.2 7.79211 19.2 8.59844C19.2 9.04027 18.8419 9.39844 18.4 9.39844C17.9582 9.39844 17.6 9.04027 17.6 8.59844C17.6 5.50564 15.0928 2.99844 12 2.99844C8.90725 2.99844 6.40005 5.50564 6.40005 8.59844C6.40005 9.04027 6.04188 9.39844 5.60005 9.39844C5.15822 9.39844 4.80005 9.04027 4.80005 8.59844C4.80005 7.79211 4.93259 7.01675 5.17708 6.29293C3.58544 6.66514 2.40005 8.09336 2.40005 9.79844C2.40005 11.7867 4.01182 13.3984 6.00005 13.3984C6.44188 13.3984 6.80005 13.7566 6.80005 14.1984V18.9984H17.2ZM17.2 20.5984H6.80005V22.1984H17.2V20.5984ZM5.20005 14.9373C2.70798 14.5525 0.800049 12.3983 0.800049 9.79844C0.800049 6.92656 3.12817 4.59844 6.00005 4.59844C6.00418 4.59844 6.00831 4.59847 6.01243 4.59853C7.30404 2.6689 9.50368 1.39844 12 1.39844C14.4964 1.39844 16.6961 2.6689 17.9877 4.59853C17.9918 4.59847 17.9959 4.59844 18 4.59844C20.8719 4.59844 23.2 6.92656 23.2 9.79844C23.2 12.3983 21.2921 14.5525 18.8 14.9373V22.1984C18.8 23.0821 18.0837 23.7984 17.2 23.7984H6.80005C5.91639 23.7984 5.20005 23.0821 5.20005 22.1984V14.9373Z" fill="#EF4E44"/>
-            </svg>
-            <p><b>Fasting Timer</b> that does all the counting and tracking for you, so you don’t have to look at the clock
-              every 20 minutes</p>
-          </li>
-          <li>
-            <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11 22.5986C4.92487 22.5986 0 17.6738 0 11.5986C0 5.5235 4.92487 0.598633 11 0.598633C17.0751 0.598633 22 5.5235 22 11.5986C22 17.6738 17.0751 22.5986 11 22.5986ZM11 21.132C16.2651 21.132 20.5333 16.8637 20.5333 11.5986C20.5333 6.33352 16.2651 2.0653 11 2.0653C5.73489 2.0653 1.46667 6.33352 1.46667 11.5986C1.46667 16.8637 5.73489 21.132 11 21.132ZM11 4.99863C10.595 4.99863 10.2667 4.67031 10.2667 4.2653C10.2667 3.86029 10.595 3.53197 11 3.53197C11.405 3.53197 11.7333 3.86029 11.7333 4.2653C11.7333 4.67031 11.405 4.99863 11 4.99863ZM11 19.6653C10.595 19.6653 10.2667 19.337 10.2667 18.932C10.2667 18.527 10.595 18.1986 11 18.1986C11.405 18.1986 11.7333 18.527 11.7333 18.932C11.7333 19.337 11.405 19.6653 11 19.6653ZM15.6669 6.93173C15.3805 6.64534 15.3805 6.18102 15.6669 5.89464C15.9533 5.60825 16.4176 5.60825 16.704 5.89464C16.9904 6.18102 16.9904 6.64534 16.704 6.93173C16.4176 7.21811 15.9533 7.21811 15.6669 6.93173ZM5.29601 17.3026C5.00962 17.0162 5.00962 16.5519 5.29601 16.2655C5.58239 15.9792 6.04671 15.9792 6.3331 16.2655C6.61948 16.5519 6.61948 17.0162 6.3331 17.3026C6.04671 17.589 5.58239 17.589 5.29601 17.3026ZM17.6 11.5986C17.6 11.1936 17.9283 10.8653 18.3333 10.8653C18.7383 10.8653 19.0667 11.1936 19.0667 11.5986C19.0667 12.0036 18.7383 12.332 18.3333 12.332C17.9283 12.332 17.6 12.0036 17.6 11.5986ZM2.93333 11.5986C2.93333 11.1936 3.26166 10.8653 3.66667 10.8653C4.07168 10.8653 4.4 11.1936 4.4 11.5986C4.4 12.0036 4.07168 12.332 3.66667 12.332C3.26166 12.332 2.93333 12.0036 2.93333 11.5986ZM15.6669 16.2655C15.9533 15.9792 16.4176 15.9792 16.704 16.2655C16.9904 16.5519 16.9904 17.0162 16.704 17.3026C16.4176 17.589 15.9533 17.589 15.6669 17.3026C15.3805 17.0162 15.3805 16.5519 15.6669 16.2655ZM5.29601 5.89464C5.58239 5.60825 6.04671 5.60825 6.3331 5.89464C6.61948 6.18102 6.61948 6.64534 6.3331 6.93173C6.04671 7.21811 5.58239 7.21811 5.29601 6.93173C5.00962 6.64534 5.00962 6.18102 5.29601 5.89464ZM11.7333 11.2949L14.4519 14.0134C14.7383 14.2998 14.7383 14.7641 14.4519 15.0505C14.1655 15.3369 13.7012 15.3369 13.4148 15.0505L10.2667 11.9024V7.19863C10.2667 6.79362 10.595 6.4653 11 6.4653C11.405 6.4653 11.7333 6.79362 11.7333 7.19863V11.2949Z" fill="#EF4E44"/>
-            </svg>
-            <p><b>Fasting States</b> to help you understand exactly what’s going on inside your body during different phases
-              of fasting</p>
-          </li>
-          <li>
-            <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0)">
-                <path d="M22 11.5986C22 12.0036 21.6717 12.332 21.2667 12.332C20.8617 12.332 20.5333 12.0036 20.5333 11.5986C20.5333 6.33352 16.2651 2.0653 11 2.0653C10.595 2.0653 10.2667 1.73697 10.2667 1.33197C10.2667 0.926957 10.595 0.598633 11 0.598633C17.0751 0.598633 22 5.5235 22 11.5986ZM11 14.532C9.37996 14.532 8.06667 13.2187 8.06667 11.5986C8.06667 9.9786 9.37996 8.6653 11 8.6653C12.62 8.6653 13.9333 9.9786 13.9333 11.5986C13.9333 13.2187 12.62 14.532 11 14.532ZM11 13.0653C11.81 13.0653 12.4667 12.4087 12.4667 11.5986C12.4667 10.7886 11.81 10.132 11 10.132C10.19 10.132 9.53333 10.7886 9.53333 11.5986C9.53333 12.4087 10.19 13.0653 11 13.0653ZM11 22.5986C10.19 22.5986 9.53333 21.942 9.53333 21.132C9.53333 20.3219 10.19 19.6653 11 19.6653C11.81 19.6653 12.4667 20.3219 12.4667 21.132C12.4667 21.942 11.81 22.5986 11 22.5986ZM3.22183 19.3768C2.64906 18.804 2.64906 17.8754 3.22183 17.3026C3.79459 16.7299 4.72324 16.7299 5.29601 17.3026C5.86877 17.8754 5.86877 18.804 5.29601 19.3768C4.72324 19.9496 3.79459 19.9496 3.22183 19.3768ZM0 11.5986C0 10.7886 0.656649 10.132 1.46667 10.132C2.27668 10.132 2.93333 10.7886 2.93333 11.5986C2.93333 12.4087 2.27668 13.0653 1.46667 13.0653C0.656649 13.0653 0 12.4087 0 11.5986ZM16.704 17.3026C17.2768 16.7299 18.2054 16.7299 18.7782 17.3026C19.3509 17.8754 19.3509 18.804 18.7782 19.3768C18.2054 19.9496 17.2768 19.9496 16.704 19.3768C16.1312 18.804 16.1312 17.8754 16.704 17.3026ZM3.22183 3.82046C3.79459 3.24769 4.72324 3.24769 5.29601 3.82046C5.86877 4.39323 5.86877 5.32187 5.29601 5.89464C4.72324 6.46741 3.79459 6.46741 3.22183 5.89464C2.64906 5.32187 2.64906 4.39323 3.22183 3.82046Z" fill="#EF4E44"/>
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <rect width="22" height="22" fill="white" transform="translate(0 0.598633)"/>
-                </clipPath>
-              </defs>
-            </svg>
-            <p><b>Tailored Meal Plan</b> that’s made of your favorite foods, to ensure you enjoy every single meal</p>
-          </li>
-        </ul>
-        <p>..and more</p>
-        <p>Just say a word and you’ll get the download link to get the MyFastingCoach app with your tailor-made fasting program… For just $5 per month.</p>
-        <a href="?checkout" class="button_confirm">YES! I WANT CUSTOM FASTING PLAN</a>
-      </div>
-    </div>
-    
-    
     <div class="program padding_mobile">
       <h2>Here Is What's Included in Your Personalized Program</h2>
       <div class="item">
@@ -616,9 +558,69 @@ document.body.onload = function () {
         </div>
       </div>
     </div>
+    
+     <div class="options padding_mobile">
+      <p class="preHeader"><b>So… Are You Ready to Try Intermittent Fasting?</b></p>
+      <h2>You Have Two Options:</h2>
+      <div class="variant">
+        <div class="var_name">option #1:</div>
+        <p class="title">YOU CAN TRY TO FIGURE IT OUT BY YOURSELF</p>
+        <p>This is a good option if you are already an experienced dieter and you have plenty of free time to do your research.</p>
+        <p>On the other hand, if you are a beginner, it might be tricky.</p>
+        <p>There are at least a DOZEN popular intermittent fasting regimens - most of which simply wouldn’t fit your body type, lifestyle, etc.</p>
+        <p>So in order to get it right, you will end up spending HOURS every day reading articles and forum threads, trying to figure it out </p>
+        <p>This can be quite frustrating - Especially if you are impatient to begin your transformation and see some progress ASAP</p>
+      </div>
+      <div class="variant">
+        <div class="var_name">option #2:</div>
+        <p class="title">YOU CAN LET US DO ALL THE THINKING FOR YOU</p>
+        <p>Remember, you gave us all your information - including your favorite foods.</p>
+        <p>Remember, you gave us all your information - including your favorite foods.
+          We were free enough to use that information to create a tailor-made intermittent fasting plan for YOU.
+          It includes:</p>
+        <p>It includes:</p>
+        <ul>
+          <li>
+            <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7778 0.29541H2.75556C1.2337 0.29541 0 1.52911 0 3.05097V16.8287C0 18.3506 1.2337 19.5843 2.75556 19.5843H13.7778C13.8552 19.5843 13.9319 19.5811 14.0078 19.5748C14.045 19.5811 14.0832 19.5843 14.1222 19.5843C14.1656 19.5843 14.2267 19.5864 14.3027 19.589C14.7399 19.6039 15.6669 19.6356 16.5019 19.3824C17.0119 19.2278 17.5479 18.9539 17.9555 18.4643C18.3706 17.9658 18.6 17.3068 18.6 16.4843V4.77319C18.6 3.58513 18.217 2.76417 17.599 2.25918C17.1352 1.8802 16.6062 1.73517 16.1745 1.69028C15.7005 0.857226 14.8048 0.29541 13.7778 0.29541ZM16.5333 3.20071V16.8287C16.5333 17.2502 16.4387 17.6495 16.2696 18.0066C16.5328 17.9053 16.744 17.7662 16.8967 17.5827C17.0731 17.3709 17.2222 17.0396 17.2222 16.4843V4.77319C17.2222 3.89458 16.9523 3.50998 16.7272 3.32609C16.6669 3.27676 16.6017 3.23528 16.5333 3.20071ZM1.37778 3.05097C1.37778 2.29004 1.99463 1.67319 2.75556 1.67319H13.7778C14.5387 1.67319 15.1556 2.29004 15.1556 3.05097V16.8287C15.1556 17.5897 14.5387 18.2065 13.7778 18.2065H2.75556C1.99463 18.2065 1.37778 17.5897 1.37778 16.8287V3.05097ZM3.44444 4.42874C3.44444 4.80921 3.75287 5.11763 4.13333 5.11763H12.4C12.7805 5.11763 13.0889 4.80921 13.0889 4.42874C13.0889 4.04828 12.7805 3.73986 12.4 3.73986H4.13333C3.75287 3.73986 3.44444 4.04828 3.44444 4.42874ZM3.44444 7.1843C3.44444 7.56476 3.75287 7.87319 4.13333 7.87319H10.6778C11.0582 7.87319 11.3667 7.56476 11.3667 7.1843C11.3667 6.80384 11.0582 6.49541 10.6778 6.49541H4.13333C3.75287 6.49541 3.44444 6.80384 3.44444 7.1843ZM3.44444 9.93986C3.44444 10.3203 3.75287 10.6287 4.13333 10.6287H12.4C12.7805 10.6287 13.0889 10.3203 13.0889 9.93986C13.0889 9.55939 12.7805 9.25097 12.4 9.25097H4.13333C3.75287 9.25097 3.44444 9.55939 3.44444 9.93986Z" fill="#EF4E44"/>
+            </svg>
+            <p><b>Different Protocols</b>, so you can choose between the most popular fasting regimens or customize your own</p>
+          </li>
+          <li>
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.2 18.9984V14.1984C17.2 13.9775 17.2896 13.7775 17.4344 13.6328C17.5791 13.488 17.7791 13.3984 18 13.3984C19.9883 13.3984 21.6 11.7867 21.6 9.79844C21.6 8.09336 20.4147 6.66514 18.823 6.29293C19.0675 7.01675 19.2 7.79211 19.2 8.59844C19.2 9.04027 18.8419 9.39844 18.4 9.39844C17.9582 9.39844 17.6 9.04027 17.6 8.59844C17.6 5.50564 15.0928 2.99844 12 2.99844C8.90725 2.99844 6.40005 5.50564 6.40005 8.59844C6.40005 9.04027 6.04188 9.39844 5.60005 9.39844C5.15822 9.39844 4.80005 9.04027 4.80005 8.59844C4.80005 7.79211 4.93259 7.01675 5.17708 6.29293C3.58544 6.66514 2.40005 8.09336 2.40005 9.79844C2.40005 11.7867 4.01182 13.3984 6.00005 13.3984C6.44188 13.3984 6.80005 13.7566 6.80005 14.1984V18.9984H17.2ZM17.2 20.5984H6.80005V22.1984H17.2V20.5984ZM5.20005 14.9373C2.70798 14.5525 0.800049 12.3983 0.800049 9.79844C0.800049 6.92656 3.12817 4.59844 6.00005 4.59844C6.00418 4.59844 6.00831 4.59847 6.01243 4.59853C7.30404 2.6689 9.50368 1.39844 12 1.39844C14.4964 1.39844 16.6961 2.6689 17.9877 4.59853C17.9918 4.59847 17.9959 4.59844 18 4.59844C20.8719 4.59844 23.2 6.92656 23.2 9.79844C23.2 12.3983 21.2921 14.5525 18.8 14.9373V22.1984C18.8 23.0821 18.0837 23.7984 17.2 23.7984H6.80005C5.91639 23.7984 5.20005 23.0821 5.20005 22.1984V14.9373Z" fill="#EF4E44"/>
+            </svg>
+            <p><b>Fasting Timer</b> that does all the counting and tracking for you, so you don’t have to look at the clock
+              every 20 minutes</p>
+          </li>
+          <li>
+            <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 22.5986C4.92487 22.5986 0 17.6738 0 11.5986C0 5.5235 4.92487 0.598633 11 0.598633C17.0751 0.598633 22 5.5235 22 11.5986C22 17.6738 17.0751 22.5986 11 22.5986ZM11 21.132C16.2651 21.132 20.5333 16.8637 20.5333 11.5986C20.5333 6.33352 16.2651 2.0653 11 2.0653C5.73489 2.0653 1.46667 6.33352 1.46667 11.5986C1.46667 16.8637 5.73489 21.132 11 21.132ZM11 4.99863C10.595 4.99863 10.2667 4.67031 10.2667 4.2653C10.2667 3.86029 10.595 3.53197 11 3.53197C11.405 3.53197 11.7333 3.86029 11.7333 4.2653C11.7333 4.67031 11.405 4.99863 11 4.99863ZM11 19.6653C10.595 19.6653 10.2667 19.337 10.2667 18.932C10.2667 18.527 10.595 18.1986 11 18.1986C11.405 18.1986 11.7333 18.527 11.7333 18.932C11.7333 19.337 11.405 19.6653 11 19.6653ZM15.6669 6.93173C15.3805 6.64534 15.3805 6.18102 15.6669 5.89464C15.9533 5.60825 16.4176 5.60825 16.704 5.89464C16.9904 6.18102 16.9904 6.64534 16.704 6.93173C16.4176 7.21811 15.9533 7.21811 15.6669 6.93173ZM5.29601 17.3026C5.00962 17.0162 5.00962 16.5519 5.29601 16.2655C5.58239 15.9792 6.04671 15.9792 6.3331 16.2655C6.61948 16.5519 6.61948 17.0162 6.3331 17.3026C6.04671 17.589 5.58239 17.589 5.29601 17.3026ZM17.6 11.5986C17.6 11.1936 17.9283 10.8653 18.3333 10.8653C18.7383 10.8653 19.0667 11.1936 19.0667 11.5986C19.0667 12.0036 18.7383 12.332 18.3333 12.332C17.9283 12.332 17.6 12.0036 17.6 11.5986ZM2.93333 11.5986C2.93333 11.1936 3.26166 10.8653 3.66667 10.8653C4.07168 10.8653 4.4 11.1936 4.4 11.5986C4.4 12.0036 4.07168 12.332 3.66667 12.332C3.26166 12.332 2.93333 12.0036 2.93333 11.5986ZM15.6669 16.2655C15.9533 15.9792 16.4176 15.9792 16.704 16.2655C16.9904 16.5519 16.9904 17.0162 16.704 17.3026C16.4176 17.589 15.9533 17.589 15.6669 17.3026C15.3805 17.0162 15.3805 16.5519 15.6669 16.2655ZM5.29601 5.89464C5.58239 5.60825 6.04671 5.60825 6.3331 5.89464C6.61948 6.18102 6.61948 6.64534 6.3331 6.93173C6.04671 7.21811 5.58239 7.21811 5.29601 6.93173C5.00962 6.64534 5.00962 6.18102 5.29601 5.89464ZM11.7333 11.2949L14.4519 14.0134C14.7383 14.2998 14.7383 14.7641 14.4519 15.0505C14.1655 15.3369 13.7012 15.3369 13.4148 15.0505L10.2667 11.9024V7.19863C10.2667 6.79362 10.595 6.4653 11 6.4653C11.405 6.4653 11.7333 6.79362 11.7333 7.19863V11.2949Z" fill="#EF4E44"/>
+            </svg>
+            <p><b>Fasting States</b> to help you understand exactly what’s going on inside your body during different phases
+              of fasting</p>
+          </li>
+          <li>
+            <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0)">
+                <path d="M22 11.5986C22 12.0036 21.6717 12.332 21.2667 12.332C20.8617 12.332 20.5333 12.0036 20.5333 11.5986C20.5333 6.33352 16.2651 2.0653 11 2.0653C10.595 2.0653 10.2667 1.73697 10.2667 1.33197C10.2667 0.926957 10.595 0.598633 11 0.598633C17.0751 0.598633 22 5.5235 22 11.5986ZM11 14.532C9.37996 14.532 8.06667 13.2187 8.06667 11.5986C8.06667 9.9786 9.37996 8.6653 11 8.6653C12.62 8.6653 13.9333 9.9786 13.9333 11.5986C13.9333 13.2187 12.62 14.532 11 14.532ZM11 13.0653C11.81 13.0653 12.4667 12.4087 12.4667 11.5986C12.4667 10.7886 11.81 10.132 11 10.132C10.19 10.132 9.53333 10.7886 9.53333 11.5986C9.53333 12.4087 10.19 13.0653 11 13.0653ZM11 22.5986C10.19 22.5986 9.53333 21.942 9.53333 21.132C9.53333 20.3219 10.19 19.6653 11 19.6653C11.81 19.6653 12.4667 20.3219 12.4667 21.132C12.4667 21.942 11.81 22.5986 11 22.5986ZM3.22183 19.3768C2.64906 18.804 2.64906 17.8754 3.22183 17.3026C3.79459 16.7299 4.72324 16.7299 5.29601 17.3026C5.86877 17.8754 5.86877 18.804 5.29601 19.3768C4.72324 19.9496 3.79459 19.9496 3.22183 19.3768ZM0 11.5986C0 10.7886 0.656649 10.132 1.46667 10.132C2.27668 10.132 2.93333 10.7886 2.93333 11.5986C2.93333 12.4087 2.27668 13.0653 1.46667 13.0653C0.656649 13.0653 0 12.4087 0 11.5986ZM16.704 17.3026C17.2768 16.7299 18.2054 16.7299 18.7782 17.3026C19.3509 17.8754 19.3509 18.804 18.7782 19.3768C18.2054 19.9496 17.2768 19.9496 16.704 19.3768C16.1312 18.804 16.1312 17.8754 16.704 17.3026ZM3.22183 3.82046C3.79459 3.24769 4.72324 3.24769 5.29601 3.82046C5.86877 4.39323 5.86877 5.32187 5.29601 5.89464C4.72324 6.46741 3.79459 6.46741 3.22183 5.89464C2.64906 5.32187 2.64906 4.39323 3.22183 3.82046Z" fill="#EF4E44"/>
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect width="22" height="22" fill="white" transform="translate(0 0.598633)"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <p><b>Tailored Meal Plan</b> that’s made of your favorite foods, to ensure you enjoy every single meal</p>
+          </li>
+        </ul>
+        <p>..and more</p>
+        <p>Just say a word and you’ll get the download link to get the MyFastingCoach app with your tailor-made fasting program… For just $5 per month.</p>
+        <a href="?checkout" class="button_confirm">YES! I WANT CUSTOM FASTING PLAN</a>
+      </div>
+    </div>
     `
 
-    document.body.insertAdjacentHTML('afterbegin', style)
     $(".result_chart h4").html("<b>Your Results Are In!</b> Based on Your Answers...")
     let resultTxt = document.querySelectorAll('.result_chart h5')[1].innerText
     $(".result_chart h5").text('If You Started Fasting Today, You Would Reach ' + resultTxt)
@@ -631,13 +633,13 @@ document.body.onload = function () {
         document.querySelector('.slider_reviews').append(item)
     })
 
-    let slider = tns({
-        container: '.slider_reviews',
-        items: 1,
-        controls: false,
-        navPosition: 'bottom',
-        preventScrollOnTouch: 'auto'
-    })
+    // let slider = tns({
+    //     container: '.slider_reviews',
+    //     items: 1,
+    //     controls: false,
+    //     navPosition: 'bottom',
+    //     preventScrollOnTouch: 'auto'
+    // })
 
     document.querySelector('.options .button_confirm').addEventListener('click', function () {
         window.dataLayer = window.dataLayer || [];
@@ -669,7 +671,7 @@ document.body.onload = function () {
         });
     })
     document.querySelectorAll('main.main')[1].style.opacity = 1
-}
+// }
 
 
 try {
