@@ -239,7 +239,7 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
         })
       })
 
-      document.querySelector('.react_modal__body .rating-group').addEventListener('click', function () {
+      document.querySelector('.rating-group').addEventListener('click', function () {
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
           'event': 'event-to-ga',
