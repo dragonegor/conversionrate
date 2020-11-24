@@ -27,7 +27,7 @@ let style = `
         }
         
         .exp {
-        padding-bottom: 80px;
+        padding-bottom: 40px;
         }
         
         .exp h3 {
@@ -633,13 +633,13 @@ document.body.insertAdjacentHTML('afterbegin', style)
         document.querySelector('.slider_reviews').append(item)
     })
 
-    // let slider = tns({
-    //     container: '.slider_reviews',
-    //     items: 1,
-    //     controls: false,
-    //     navPosition: 'bottom',
-    //     preventScrollOnTouch: 'auto'
-    // })
+    let slider = tns({
+        container: '.slider_reviews',
+        items: 1,
+        controls: false,
+        navPosition: 'bottom',
+        preventScrollOnTouch: 'auto'
+    })
 
     document.querySelector('.options .button_confirm').addEventListener('click', function () {
         window.dataLayer = window.dataLayer || [];
