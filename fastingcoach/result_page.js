@@ -386,7 +386,7 @@ let style = `
 
 document.body.insertAdjacentHTML('afterbegin', style)
 
-// document.body.onload = function () {
+document.body.onload = function () {
     let gender = $('.summary__profile-row .summary__profile-col:first-child dd').text().toLowerCase(),
         // genderImg = 'https://i.ibb.co/527mbhg/woman.jpg',
         genderText = 'Female'
@@ -671,7 +671,7 @@ document.body.insertAdjacentHTML('afterbegin', style)
         });
     })
     document.querySelectorAll('main.main')[1].style.opacity = 1
-// }
+}
 
 
 try {
