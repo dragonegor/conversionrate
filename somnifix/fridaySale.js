@@ -92,6 +92,7 @@ window.onload =  function () {
             let price = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
             let count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
             let element = e.target
+            console.log(price);
             while (element && !element.classList.contains("swatch-element")) {
                 element = element.parentElement;
             }
@@ -100,7 +101,7 @@ window.onload =  function () {
             }
             console.log(price)
             elem.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
-                e.innerHTML = `$${price * count} USD`
+                e.innerHTML = `$${(price * count).toString().slice(0, 7)} USD`
             })
             mut.disconnect()
         })
@@ -128,7 +129,7 @@ window.onload =  function () {
             console.log(count)
             console.log(price)
             elem.querySelectorAll('.on-pack-wrapper .money').forEach(function (e) {
-                e.innerHTML = `$${price * count} USD`
+                e.innerHTML = `$${(price * count).toString().slice(0, 7)} USD`
             })
             mut.disconnect()
         })
