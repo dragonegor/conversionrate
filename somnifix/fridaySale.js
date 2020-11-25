@@ -102,32 +102,20 @@ window.onload =  function () {
     document.body.addEventListener('click', function (e) {
         let elem = document.querySelectorAll('.product__information')[1]
         let price = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
-        let count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
+        let count = +document.querySelectorAll('.on-pack-wrapper.active span.on-count')[1].innerText
         let element = e.target
-        let mut = new MutationObserver(function (items) {
-            console.log(items)
-            price = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
-            count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
-            while (element && !element.classList.contains("swatch-element")) {
-                element = element.parentElement;
-            }
-            if (element) {
-                count = 1
-            }
-            mut.disconnect()
-        })
-        mut.observe(elem, {
-            childList: true,
-            characterData: true,
-            subtree: true
-        })
-        console.log(element)
-        console.log(count)
+        while (element && !element.classList.contains("swatch")) {
+            console.log(element)
+            console.log(element.classList.contains("swatch"))
+            element = element.parentElement;
+        }
+        if (element) {
+            count = 1
+        }
+
         elem.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
             e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
         })
-
-
     })
 
 
