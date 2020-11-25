@@ -89,11 +89,13 @@ window.onload =  function () {
         let elem = this
         let mut = new MutationObserver(function (items) {
             console.log(items)
-            let tm = elem.querySelector('.on-pack-wrapper.active .on-qty-minus')
-            let tp = elem.querySelector('.on-pack-wrapper.active .on-qty-plus')
             let price = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
             let count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
-            if(e.target != tm && e.target != tp){
+            let element = e.target
+            while (element && !element.classList.contains("swatch-element")) {
+                element = element.parentElement;
+            }
+            if (element) {
                 count = 1
             }
             console.log(price)
@@ -114,7 +116,6 @@ window.onload =  function () {
         let elem = this
         let mut = new MutationObserver(function (items) {
             console.log(items)
-            let tm = elem.querySelector('.on-pack-wrapper.active .on-qty-minus')
             let price = +document.querySelector('.swatch_options input:checked+.swatch-element .friday_new_price').innerText.slice(1)
             let count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
             let element = e.target
