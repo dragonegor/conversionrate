@@ -55,9 +55,9 @@ let lite = `
 <span class="save-label">Save 15%</span>
 <span class="old-price-label">$19.97</span>
 `
-document.body.insertAdjacentHTML('afterbegin', style)
-window.onload =  function () {
 
+window.onload =  function () {
+    document.body.insertAdjacentHTML('afterbegin', style)
     document.querySelectorAll('.on-variant-label[data-index="1"] .on-price')[0].style.display = 'none'
     document.querySelectorAll('.on-variant-label[data-index="2"] .on-price')[0].style.display = 'none'
     document.querySelectorAll('.on-variant-label[data-index="3"] .on-price')[0].style.display = 'none'
@@ -74,7 +74,7 @@ window.onload =  function () {
     document.querySelectorAll('.on-variant-label[data-index="1"] .on-save')[0].innerHTML = 'Save 15%'
     document.querySelectorAll('.on-variant-label[data-index="2"] .on-save')[0].innerHTML = 'Save 15%'
     document.querySelectorAll('.on-variant-label[data-index="3"] .on-save')[0].innerHTML = 'Save 33%'
-    
+
 
     document.querySelectorAll('.on-variant-label[data-index="1"]')[0].innerHTML += `
         <div class="friday_price">
