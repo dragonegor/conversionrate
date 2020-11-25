@@ -17,6 +17,15 @@ let style = `
       top: 0;
     }
     
+    @media (max-width: 769px) {
+    .friday_price {
+      position:absolute;
+      right: 1px;
+      top: 50%;
+      transform: translateY(-50%);
+      }
+    }
+    
     .friday_price span {
       display: block;
       margin: 5px;
@@ -43,7 +52,11 @@ let lite = `
 <span class="old-price-label">$19.97</span>
 `
 document.body.insertAdjacentHTML('afterbegin', style)
-window.onload =  function () {
+// window.onload =  function () {
+
+    document.querySelectorAll('.on-variant-label[data-index="1"] .on-price')[0].style.opacity = '0'
+    document.querySelectorAll('.on-variant-label[data-index="2"] .on-price')[0].style.opacity = '0'
+    document.querySelectorAll('.on-variant-label[data-index="3"] .on-price')[0].style.opacity = '0'
 
     document.querySelectorAll('.on-variant-label[data-index="1"] .crossed-out')[1].insertAdjacentHTML('afterend', lite)
     document.querySelector('.on-variant-label[data-index="2"] .save-label').innerHTML = 'Save 15%'
@@ -85,7 +98,8 @@ window.onload =  function () {
         e.innerHTML = `$${p2} USD`
     })
 
-    document.querySelectorAll('.shopify-product-form')[1].addEventListener('click', function (e) {
+
+    document.querySelectorAll('.product__information')[1].addEventListener('click', function (e) {
         let elem = this
         let mut = new MutationObserver(function (items) {
             console.log(items)
@@ -101,7 +115,7 @@ window.onload =  function () {
             }
             console.log(price)
             elem.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
-                e.innerHTML = `$${(price * count).toString().slice(0, 7)} USD`
+                e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
             })
             mut.disconnect()
         })
@@ -129,7 +143,7 @@ window.onload =  function () {
             console.log(count)
             console.log(price)
             elem.querySelectorAll('.on-pack-wrapper .money').forEach(function (e) {
-                e.innerHTML = `$${(price * count).toString().slice(0, 7)} USD`
+                e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
             })
             mut.disconnect()
         })
@@ -139,4 +153,4 @@ window.onload =  function () {
             subtree: true
         })
     })
-}
+// }
