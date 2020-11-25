@@ -73,6 +73,11 @@ window.onload =  function () {
         document.querySelector('.on-variant-label[data-index="2"] .new-price-label').innerHTML = '$47.58'
         document.querySelector('.on-variant-label[data-index="3"] .new-price-label').innerHTML = '$33.48'
 
+
+        let p = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
+        document.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
+            e.innerHTML = `$${p} USD`
+        })
     }
 
 
@@ -106,10 +111,7 @@ window.onload =  function () {
     })
 
 
-    let p = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
-    document.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
-        e.innerHTML = `$${p} USD`
-    })
+
 
 
     document.body.addEventListener('click', function (e) {
