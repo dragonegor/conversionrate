@@ -35,6 +35,12 @@ let style = `
         
         .on-save-icon {
           background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjIiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCA2MiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMjY2NTkgMC44QzkuOTU4OTcgMC4yODA3MTEgMTAuODAxMSAwIDExLjY2NjYgMEg1Ny4zMzMzQzU5LjU0MjQgMCA2MS4zMzMzIDEuNzkwODYgNjEuMzMzMyA0VjExQzYxLjMzMzMgMTMuMjA5MSA1OS41NDI0IDE1IDU3LjMzMzMgMTVIMTEuNjY2NkMxMC44MDExIDE1IDkuOTU4OTcgMTQuNzE5MyA5LjI2NjU5IDE0LjJMNC41OTk5MiAxMC43QzIuNDY2NTkgOS4xIDIuNDY2NTkgNS45IDQuNTk5OTIgNC4zTDkuMjY2NTkgMC44WiIgZmlsbD0iIzQwOTBEMSIvPgo8Y2lyY2xlIGN4PSI5LjgzMzI1IiBjeT0iNy41IiByPSIxLjUiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
+          color: white;
+          font-size: 10px;
+          padding-left: 15px;
+          display:flex;
+          align-items: center;
+          justify-content:center;
         }
     }
     
