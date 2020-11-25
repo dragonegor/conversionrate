@@ -62,14 +62,42 @@ window.onload =  function () {
     document.querySelectorAll('.on-variant-label[data-index="2"] .on-price')[0].style.display = 'none'
     document.querySelectorAll('.on-variant-label[data-index="3"] .on-price')[0].style.display = 'none'
 
-    document.querySelectorAll('.on-variant-label[data-index="1"] .crossed-out')[1].insertAdjacentHTML('afterend', lite)
-    document.querySelector('.on-variant-label[data-index="2"] .save-label').innerHTML = 'Save 15%'
-    document.querySelector('.on-variant-label[data-index="3"] .save-label').innerHTML = 'Save 33%'
-    document.querySelector('.on-variant-label[data-index="2"] .old-price-label').innerHTML = '$55.97'
-    document.querySelector('.on-variant-label[data-index="3"] .old-price-label').innerHTML = '$49.97'
-    document.querySelector('.on-variant-label[data-index="1"] .new-price-label').innerHTML = '$16.98'
-    document.querySelector('.on-variant-label[data-index="2"] .new-price-label').innerHTML = '$47.58'
-    document.querySelector('.on-variant-label[data-index="3"] .new-price-label').innerHTML = '$33.48'
+
+    if(window.location.pathname.includes('products')){
+        document.querySelectorAll('.on-variant-label[data-index="1"] .crossed-out')[1].insertAdjacentHTML('afterend', lite)
+        document.querySelector('.on-variant-label[data-index="2"] .save-label').innerHTML = 'Save 15%'
+        document.querySelector('.on-variant-label[data-index="3"] .save-label').innerHTML = 'Save 33%'
+        document.querySelector('.on-variant-label[data-index="2"] .old-price-label').innerHTML = '$55.97'
+        document.querySelector('.on-variant-label[data-index="3"] .old-price-label').innerHTML = '$49.97'
+        document.querySelector('.on-variant-label[data-index="1"] .new-price-label').innerHTML = '$16.98'
+        document.querySelector('.on-variant-label[data-index="2"] .new-price-label').innerHTML = '$47.58'
+        document.querySelector('.on-variant-label[data-index="3"] .new-price-label').innerHTML = '$33.48'
+
+        let p = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
+        document.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
+            e.innerHTML = `$${p} USD`
+        })
+
+
+        document.body.addEventListener('click', function (e) {
+            let elem = document.querySelectorAll('.product__information')[1]
+            let price = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
+            let count = +document.querySelectorAll('.on-pack-wrapper.active span.on-count')[1].innerText
+            let element = e.target
+            while (element && !element.classList.contains("swatch")) {
+                element = element.parentElement;
+            }
+            if (element) {
+                count = 1
+            }
+
+            elem.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
+                e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
+            })
+        })
+
+    }
+
 
     document.querySelectorAll('.on-variant-label[data-index="1"] .on-save')[0].innerHTML = 'Save 15%'
     document.querySelectorAll('.on-variant-label[data-index="2"] .on-save')[0].innerHTML = 'Save 15%'
@@ -94,32 +122,14 @@ window.onload =  function () {
           <span class="friday_new_price">$33.48</span>
         </div>
     `
-    let p = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
-    document.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
-        e.innerHTML = `$${p} USD`
-    })
+
     let p2 = +document.querySelector('.swatch_options input:checked+.swatch-element .friday_new_price').innerText.slice(1)
     document.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
         e.innerHTML = `$${p2} USD`
     })
 
 
-    document.body.addEventListener('click', function (e) {
-        let elem = document.querySelectorAll('.product__information')[1]
-        let price = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
-        let count = +document.querySelectorAll('.on-pack-wrapper.active span.on-count')[1].innerText
-        let element = e.target
-        while (element && !element.classList.contains("swatch")) {
-            element = element.parentElement;
-        }
-        if (element) {
-            count = 1
-        }
 
-        elem.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
-            e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
-        })
-    })
 
 
     document.querySelector('.on-card-dwrapper').addEventListener('click', function (e) {
