@@ -78,6 +78,23 @@ window.onload =  function () {
         document.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
             e.innerHTML = `$${p} USD`
         })
+
+        document.body.addEventListener('click', function (e) {
+            let elem = document.querySelectorAll('.product__information')[1]
+            let price = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
+            let count = +document.querySelectorAll('.on-pack-wrapper.active span.on-count')[1].innerText
+            let element = e.target
+            while (element && !element.classList.contains("swatch")) {
+                element = element.parentElement;
+            }
+            if (element) {
+                count = 1
+            }
+
+            elem.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
+                e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
+            })
+        })
     }
 
 
@@ -114,22 +131,7 @@ window.onload =  function () {
 
 
 
-    document.body.addEventListener('click', function (e) {
-        let elem = document.querySelectorAll('.product__information')[1]
-        let price = +document.querySelector('.swatch_options input:checked+.swatch-element .new-price-label').innerText.slice(1)
-        let count = +document.querySelectorAll('.on-pack-wrapper.active span.on-count')[1].innerText
-        let element = e.target
-        while (element && !element.classList.contains("swatch")) {
-            element = element.parentElement;
-        }
-        if (element) {
-            count = 1
-        }
-
-        elem.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
-            e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
-        })
-    })
+   
 
 
 
