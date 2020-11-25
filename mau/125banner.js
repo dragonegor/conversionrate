@@ -106,13 +106,7 @@ function startBanner() {
     let infoCode1 = document.querySelectorAll('.info-code')[0].textContent.toLowerCase()
     let infoCode2 = document.querySelectorAll('.info-code')[1].textContent.toLowerCase()
     let bannerBlock = document.querySelector('.banner_wrapper')
-    if (
-        !(((infoCode1 === "kbp" || infoCode1 === "ist") && (infoCode2 === "kbp" || infoCode2 === "ist")) ||
-            ((infoCode1 === "kbp" || infoCode1 === "lgw") && (infoCode2 === "kbp" || infoCode2 === "lgw")) ||
-            ((infoCode1 === "kbp" || infoCode1 === "tlv") && (infoCode2 === "kbp" || infoCode2 === "tlv")) ||
-            ((infoCode1 === "kbp" || infoCode1 === "dxb") && (infoCode2 === "kbp" || infoCode2 === "dxb")))
-    ) {
-
+    if (true) {
         if (!bannerBlock) {
             document.querySelector('.outbound-section .product__title').insertAdjacentHTML('afterend', banner)
             document.querySelector('.banner_wrapper').addEventListener('click', function () {
