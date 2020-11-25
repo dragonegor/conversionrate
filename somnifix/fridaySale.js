@@ -18,12 +18,16 @@ let style = `
     }
     
     @media (max-width: 769px) {
-    .friday_price {
-      position:absolute;
-      right: 1px;
-      top: 50%;
-      transform: translateY(-50%);
-      }
+        .friday_price {
+          position:absolute;
+          right: 1px;
+          top: 50%;
+          transform: translateY(-50%);
+          }
+          
+        .on-card-dwrapper .product_section .swatch label.on-variant-label {
+          padding-right: 53px;
+        }
     }
     
     .friday_price span {
@@ -54,9 +58,9 @@ let lite = `
 document.body.insertAdjacentHTML('afterbegin', style)
 window.onload =  function () {
 
-    document.querySelectorAll('.on-variant-label[data-index="1"] .on-price')[0].style.opacity = '0'
-    document.querySelectorAll('.on-variant-label[data-index="2"] .on-price')[0].style.opacity = '0'
-    document.querySelectorAll('.on-variant-label[data-index="3"] .on-price')[0].style.opacity = '0'
+    document.querySelectorAll('.on-variant-label[data-index="1"] .on-price')[0].style.display = 'none'
+    document.querySelectorAll('.on-variant-label[data-index="2"] .on-price')[0].style.display = 'none'
+    document.querySelectorAll('.on-variant-label[data-index="3"] .on-price')[0].style.display = 'none'
 
     document.querySelectorAll('.on-variant-label[data-index="1"] .crossed-out')[1].insertAdjacentHTML('afterend', lite)
     document.querySelector('.on-variant-label[data-index="2"] .save-label').innerHTML = 'Save 15%'
