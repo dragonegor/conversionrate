@@ -43,8 +43,8 @@ let lite = `
 <span class="old-price-label">$19.97</span>
 `
 document.body.insertAdjacentHTML('afterbegin', style)
-document.addEventListener('DOMContentLoaded', function () {
-    
+window.onload =  function () {
+
     document.querySelectorAll('.on-variant-label[data-index="1"] .crossed-out')[1].insertAdjacentHTML('afterend', lite)
     document.querySelector('.on-variant-label[data-index="2"] .save-label').innerHTML = 'Save 15%'
     document.querySelector('.on-variant-label[data-index="3"] .save-label').innerHTML = 'Save 33%'
@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.on-variant-label[data-index="1"] .new-price-label').innerHTML = '$16.98'
     document.querySelector('.on-variant-label[data-index="2"] .new-price-label').innerHTML = '$47.58'
     document.querySelector('.on-variant-label[data-index="3"] .new-price-label').innerHTML = '$33.48'
-    
+
     document.querySelectorAll('.on-variant-label[data-index="1"] .on-save')[0].innerHTML = 'Save 15%'
     document.querySelectorAll('.on-variant-label[data-index="2"] .on-save')[0].innerHTML = 'Save 15%'
     document.querySelectorAll('.on-variant-label[data-index="3"] .on-save')[0].innerHTML = 'Save 33%'
-    
+
     document.querySelectorAll('.on-variant-label[data-index="1"]')[0].innerHTML += `
         <div class="friday_price">
           <span class="friday_old_price">$19.97</span>
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.shopify-product-form .on-pack-wrapper .money').forEach(function (e) {
         e.innerHTML = `$${p2} USD`
     })
-    
+
     document.querySelectorAll('.shopify-product-form')[1].addEventListener('click', function (e) {
         let elem = this
         let mut = new MutationObserver(function (items) {
@@ -108,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
             subtree: true
         })
     })
-    
-    
+
+
     document.querySelector('.on-card-dwrapper').addEventListener('click', function (e) {
         let elem = this
         let mut = new MutationObserver(function (items) {
@@ -137,4 +137,4 @@ document.addEventListener('DOMContentLoaded', function () {
             subtree: true
         })
     })
-})
+}
