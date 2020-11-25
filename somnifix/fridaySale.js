@@ -52,7 +52,7 @@ let lite = `
 <span class="old-price-label">$19.97</span>
 `
 document.body.insertAdjacentHTML('afterbegin', style)
-// window.onload =  function () {
+window.onload =  function () {
 
     document.querySelectorAll('.on-variant-label[data-index="1"] .on-price')[0].style.opacity = '0'
     document.querySelectorAll('.on-variant-label[data-index="2"] .on-price')[0].style.opacity = '0'
@@ -153,4 +153,4 @@ document.body.insertAdjacentHTML('afterbegin', style)
             subtree: true
         })
     })
-// }
+}
