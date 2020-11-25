@@ -24,23 +24,9 @@ let style = `
           top: 50%;
           transform: translateY(-50%);
           }
-          
-        .on-card-dwrapper .product_section .swatch label.on-variant-label {
-          padding-right: 53px;
-        }
-        
-        .on-card-dwrapper .swatch label.on-variant-label .on-mb-swatch-item .on-item-details {
-              width: 100% !important;
-        }
         
         .on-save-icon {
-          background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjIiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCA2MiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMjY2NTkgMC44QzkuOTU4OTcgMC4yODA3MTEgMTAuODAxMSAwIDExLjY2NjYgMEg1Ny4zMzMzQzU5LjU0MjQgMCA2MS4zMzMzIDEuNzkwODYgNjEuMzMzMyA0VjExQzYxLjMzMzMgMTMuMjA5MSA1OS41NDI0IDE1IDU3LjMzMzMgMTVIMTEuNjY2NkMxMC44MDExIDE1IDkuOTU4OTcgMTQuNzE5MyA5LjI2NjU5IDE0LjJMNC41OTk5MiAxMC43QzIuNDY2NTkgOS4xIDIuNDY2NTkgNS45IDQuNTk5OTIgNC4zTDkuMjY2NTkgMC44WiIgZmlsbD0iIzQwOTBEMSIvPgo8Y2lyY2xlIGN4PSI5LjgzMzI1IiBjeT0iNy41IiByPSIxLjUiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
-          color: white;
-          font-size: 10px;
-          padding-left: 15px;
-          display:flex;
-          align-items: center;
-          justify-content:center;
+          display: none;
         }
     }
     
@@ -88,11 +74,7 @@ window.onload =  function () {
     document.querySelectorAll('.on-variant-label[data-index="1"] .on-save')[0].innerHTML = 'Save 15%'
     document.querySelectorAll('.on-variant-label[data-index="2"] .on-save')[0].innerHTML = 'Save 15%'
     document.querySelectorAll('.on-variant-label[data-index="3"] .on-save')[0].innerHTML = 'Save 33%'
-
-
-    document.querySelectorAll('.on-variant-label[data-index="1"] .on-item-details')[0].insertAdjacentHTML('afterbegin', `<span class="on-save-icon">Save 15%</span>`)
-    document.querySelectorAll('.on-variant-label[data-index="2"] .on-save-icon')[0].innerHTML = 'Save 15%'
-    document.querySelectorAll('.on-variant-label[data-index="3"] .on-save-icon')[0].innerHTML = 'Save 33%'
+    
 
     document.querySelectorAll('.on-variant-label[data-index="1"]')[0].innerHTML += `
         <div class="friday_price">
