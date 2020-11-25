@@ -134,25 +134,41 @@ window.onload =  function () {
 
     document.querySelector('.on-card-dwrapper').addEventListener('click', function (e) {
         let elem = this
-        let mut = new MutationObserver(function (items) {
-            let price = +document.querySelector('.swatch_options input:checked+.swatch-element .friday_new_price').innerText.slice(1)
-            let count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
-            let element = e.target
-            while (element && !element.classList.contains("swatch-element")) {
-                element = element.parentElement;
-            }
-            if (element) {
-                count = 1
-            }
-            elem.querySelectorAll('.on-pack-wrapper .money').forEach(function (e) {
-                e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
-            })
-            mut.disconnect()
+        let price = +document.querySelector('.swatch_options input:checked+.swatch-element .friday_new_price').innerText.slice(1)
+        let count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
+        let element = e.target
+        while (element && !element.classList.contains("swatch")) {
+            element = element.parentElement;
+        }
+        if (element) {
+            count = 1
+        }
+
+        elem.querySelectorAll('.on-pack-wrapper .money').forEach(function (e) {
+            e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
         })
-        mut.observe(elem, {
-            childList: true,
-            characterData: true,
-            subtree: true
-        })
+
+
+
+        // let mut = new MutationObserver(function (items) {
+        //     let price = +document.querySelector('.swatch_options input:checked+.swatch-element .friday_new_price').innerText.slice(1)
+        //     let count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
+        //     let element = e.target
+        //     while (element && !element.classList.contains("swatch-element")) {
+        //         element = element.parentElement;
+        //     }
+        //     if (element) {
+        //         count = 1
+        //     }
+        //     elem.querySelectorAll('.on-pack-wrapper .money').forEach(function (e) {
+        //         e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
+        //     })
+        //     mut.disconnect()
+        // })
+        // mut.observe(elem, {
+        //     childList: true,
+        //     characterData: true,
+        //     subtree: true
+        // })
     })
 }
