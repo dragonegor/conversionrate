@@ -105,8 +105,6 @@ window.onload =  function () {
         let count = +document.querySelectorAll('.on-pack-wrapper.active span.on-count')[1].innerText
         let element = e.target
         while (element && !element.classList.contains("swatch")) {
-            console.log(element)
-            console.log(element.classList.contains("swatch"))
             element = element.parentElement;
         }
         if (element) {
@@ -122,7 +120,6 @@ window.onload =  function () {
     document.querySelector('.on-card-dwrapper').addEventListener('click', function (e) {
         let elem = this
         let mut = new MutationObserver(function (items) {
-            console.log(items)
             let price = +document.querySelector('.swatch_options input:checked+.swatch-element .friday_new_price').innerText.slice(1)
             let count = +elem.querySelector('.on-pack-wrapper.active span.on-count').innerText
             let element = e.target
@@ -132,8 +129,6 @@ window.onload =  function () {
             if (element) {
                 count = 1
             }
-            console.log(count)
-            console.log(price)
             elem.querySelectorAll('.on-pack-wrapper .money').forEach(function (e) {
                 e.innerHTML = `$${(price * count).toString().slice(0, 6)} USD`
             })
