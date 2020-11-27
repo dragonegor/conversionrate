@@ -367,15 +367,17 @@ function activePopUp () {
         'eventLabel': 'close'
       });
     })
-
-    document.querySelector('.test_banner .rating-group').addEventListener('click', function () {
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'pdp_extra_photos',
-        'eventAction': 'click on popUp rate'
-      });
-    });
+    setTimeout(function () {
+     document.querySelector('.test_banner .rating-group').addEventListener('click', function () {
+          window.dataLayer = window.dataLayer || [];
+          dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'pdp_extra_photos',
+            'eventAction': 'click on popUp rate'
+          });
+        });
+}, 200)
+   
     document.querySelector('.react_modal__body .phone').addEventListener('click', function () {
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
