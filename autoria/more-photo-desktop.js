@@ -368,7 +368,7 @@ function activePopUp () {
       });
     })
     setTimeout(function () {
-     document.querySelectorAll('.test_banner .rating-group-label')forEach((item) => {
+     document.querySelectorAll('.test_banner .rating-group-label').forEach((item) => {
         item.addEventListener('click', function () {
           window.dataLayer = window.dataLayer || [];
           dataLayer.push({
