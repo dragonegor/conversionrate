@@ -368,7 +368,8 @@ function activePopUp () {
       });
     })
     setTimeout(function () {
-     document.querySelector('.test_banner .rating-group-label').addEventListener('click', function () {
+     document.querySelectorAll('.test_banner .rating-group-label')forEach((item) => {
+        item.addEventListener('click', function () {
           window.dataLayer = window.dataLayer || [];
           dataLayer.push({
             'event': 'event-to-ga',
@@ -376,7 +377,8 @@ function activePopUp () {
             'eventAction': 'click on popUp rate'
           });
         });
-}, 200)
+     })
+}, 400)
    
     document.querySelector('.react_modal__body .phone').addEventListener('click', function () {
       window.dataLayer = window.dataLayer || [];
