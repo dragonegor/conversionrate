@@ -368,7 +368,7 @@ function activePopUp () {
       });
     })
     setTimeout(function () {
-     document.querySelector('.test_banner .rating-group').addEventListener('click', function () {
+     document.querySelector('.test_banner .rating-group-label').addEventListener('click', function () {
           window.dataLayer = window.dataLayer || [];
           dataLayer.push({
             'event': 'event-to-ga',
