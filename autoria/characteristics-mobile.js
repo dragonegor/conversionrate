@@ -193,6 +193,7 @@ if(complectationBlock) {
 
 document.querySelectorAll('.test-popup').forEach((item)=> {
   item.addEventListener('click', function () {
+    document.querySelectorAll("#react_phones_bottom .phones_item:first-child .cro-button")[0].click()
 
     let mut = new MutationObserver((mutations) => {
       if(this.classList.contains('fuel_info')) {
@@ -238,7 +239,6 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
           });
         })
       })
-
       document.querySelector('.rating-group').addEventListener('click', function () {
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
@@ -278,8 +278,9 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
       characterDataOldValue: true
     });
 
-    let event = new Event('click', {bubbles: true});
-    document.querySelector("span.button.button--green").dispatchEvent(event);
+
+    // let event = new Event('click', {bubbles: true});
+    // document.querySelector("span.button.button--green").dispatchEvent(event);
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
       'event': 'event-to-ga',
@@ -287,7 +288,7 @@ document.querySelectorAll('.test-popup').forEach((item)=> {
       'eventAction':  'popUp loaded'
     });
 
-    
+
   })
 })
 
