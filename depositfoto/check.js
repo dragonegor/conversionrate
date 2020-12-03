@@ -150,8 +150,8 @@ body .billing-process__label_desktop {display: block; width: 80%; margin-left: a
                             $('.order-info__price-table .order-info__price-row:last-child .order-info__price-cell:first-child').text(totalText + ' ' + $('.order-info__price-full').text())
                         }
 
-                        // $('.order-info__price-table .order-info__price-row:last-child .billing-page__cell:first-child').append($('._process'));
-                        $('.order-info__price-table .order-info__price-row:last-child .billing-page__cell:first-child').append($('.billing-settings.billing-settings_custom'));
+                        $('.order-info__price-table .order-info__price-row:last-child .billing-page__cell:first-child').append($('._process'));
+                        // $('.order-info__price-table .order-info__price-row:last-child .billing-page__cell:first-child').append($('.billing-settings.billing-settings_custom'));
                     } else {
                         if ($('.billing-form__address').length == 0) {
                             $('.order-info__price-table .order-info__price-row:last-child .order-info__price-cell:first-child').text(totalText)
