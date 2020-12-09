@@ -24,16 +24,16 @@ let p1 = 'оставьте свой номер телефона',
     thx2 = 'Мы с вами свяжемся в ближайшее время'
 
 if (window.location.pathname.includes('/uk/')) {
-  p1 = 'залиште свій номер телефону'
-  p2 = 'ми зателефонуємо і надамо інформацію про наявність'
-  callMe = 'Зателефонувати мені'
-  wrongNumber = 'Мобільний телефон некоректний. Приклад 0931234567'
-  info = 'На це авто підвищений попит!'
-  infoBtn = 'Дізнатися про наявність цієї комплектації'
-  timeWork = `Відділ продажу салону працює<br>з ${openTimeTxt} до ${closeTimeTxt}`
-  rate = 'Оцініть автосалон'
-  thx1 = 'Дякуємо за вашу заявку!'
-  thx2 = 'Ми зателефонуємо вам у найближчий час'
+    p1 = 'залиште свій номер телефону'
+    p2 = 'ми зателефонуємо і надамо інформацію про наявність'
+    callMe = 'Зателефонувати мені'
+    wrongNumber = 'Мобільний телефон некоректний. Приклад 0931234567'
+    info = 'На це авто підвищений попит!'
+    infoBtn = 'Дізнатися про наявність цієї комплектації'
+    timeWork = `Відділ продажу салону працює<br>з ${openTimeTxt} до ${closeTimeTxt}`
+    rate = 'Оцініть автосалон'
+    thx1 = 'Дякуємо за вашу заявку!'
+    thx2 = 'Ми зателефонуємо вам у найближчий час'
 }
 
 let style = `
@@ -44,7 +44,8 @@ let style = `
       color:#414042;
       padding:20px 17px;
       margin:0 0 22px;
-      text-align: center;
+      display:flex;
+      align-items:center
     }
     .high-demand-wrap .title-holder{display:flex}
     .high-demand-wrap .high-demand-text{
@@ -64,7 +65,7 @@ let style = `
       text-align:center
     }
     .react_modal__container {
-      max-width: 100% !important;
+      max-width: 800px !important;
     }
     
     .react_modal__body {
@@ -72,8 +73,7 @@ let style = `
     }
     
     .react_modal__body {
-      padding: 20px;
-      margin-top: -20px;
+      padding: 30px;
     }
     
     .react_modal.calls_modal .react_modal__header {
@@ -82,18 +82,20 @@ let style = `
     }
     
     .react_modal__body .popup-content {
+      display: flex;
+      justify-content: space-between;
       color: #414042;
+      align-items: stretch;
     }
     .react_modal__body .popup-content > div:last-child > *:not(:last-child) {
       margin-bottom: 12px;
     }
     .react_modal__body .popup-content > div {
-      width: 100%;
+      width: 47%;
     }
     .react_modal__body .popup-content > div:first-child {
       display: flex;
       align-items: center;
-      margin-bottom: 15px;
     }
     .react_modal__body .popup-content > div:first-child img {
       height: 100%;
@@ -123,7 +125,7 @@ let style = `
 
     .react_modal__body .popup-content .popup-phone-block .work-time {
       color: #9B9B9B;
-      padding: 15px 0 7px;
+      padding: 25px 0 17px;
     }
 
     .react_modal__body .popup-content .popup-phone-block form {
@@ -162,7 +164,7 @@ let style = `
     .react_modal__body .popup-content .popup-phone-block form button {
       width: 50%;
       height: 100%;
-      background-color: #79be00;
+      background-color: #3C9806;
       color: white;
       font-size: 13px;
       font-weight: 700;
@@ -193,6 +195,21 @@ let style = `
     .thx_holder .modal_title{padding:0;font-size:20px; font-weight: 700;}
     .thx_holder .info_text{padding:4px 0 0; color: #9B9B9B}
     .thx_holder .info_text p{margin-bottom: 0;}
+    
+    @media (max-width: 769px) {
+      .high-demand-wrap {
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+      }
+      .react_modal__body .popup-content {
+        flex-wrap:wrap;
+      }
+      .react_modal__body .popup-content > div {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
   </style>
 `
 
@@ -234,148 +251,146 @@ document.querySelector('.vin_checked').insertAdjacentHTML('afterend', banner);
 
 
 document.querySelector('.high-demand-wrap').addEventListener('click', function () {
-    try {
-  (function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:1953436,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
-  hj('trigger', 'pdp_highly_demand_banner');
-}
-catch(e) {}
-  document.querySelectorAll(".phone.bold")[0].click();
-  $('html').on('mouseleave', 'body', function () {
-    window.dataLayer = window.dataLayer || []
-    dataLayer.push({
-      event: "event-to-ga",
-      eventCategory: "PDP highly demand banner",
-      eventAction: "leave page",
-      eventLabel: "leave"
-    })
-    console.log('leave');})
-  let mut = new MutationObserver((mutations) => {
-    console.log(mutations)
-    document.querySelector('.react_modal .react_modal__body').innerHTML = htmlBlock
-    mut.disconnect()
-
-    document.querySelector('.react_modal__backdrop').addEventListener("click", function() {
-      $('html').off('mouseleave', 'body')
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'PDP highly demand banner',
-        'eventAction': 'click out of Pop up',
-        'eventLabel': 'close'
-      });
-    })
-
-    document.querySelector('.react_modal__body .input_number').addEventListener("focus", function () {
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'PDP highly demand banner',
-        'eventAction': 'click Pop up loan',
-        'eventLabel': 'number input'
-      });
-    })
-
-    document.querySelector('.react_modal:not(.thankyou) .react_modal__close').addEventListener('click', function () {
-      $('html').off('mouseleave', 'body')
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'PDP highly demand banner',
-        'eventAction': 'click Pop up loan',
-        'eventLabel': 'close'
-      });
-    })
-
-    // document.querySelector('.react_modal__body .input_number').addEventListener("change", function (e) {
-    //   let phone = document.querySelector('.react_modal__body .input_number').value.length
-    //   if(phone < 10 || phone > 10) {
-    //     document.querySelector('.react_modal__body').classList.add('error');
-    //   } else {
-    //     document.querySelector('.react_modal__body').classList.remove('error');
-    //   }
-    // })
-
-    document.querySelector('.react_modal__body .modal_btn').addEventListener('click', function (e) {
-      e.preventDefault()
-      console.log(e.type)
-      let phone = document.querySelector('.react_modal__body .input_number').value
-      if(phone.length === 10) {
-        let formdata = new FormData()
-        formdata.append('phone', phone)
-        formdata.append('page', window.location.href)
-        fetch('https://devxy.site/api/save', {
-          method: 'POST',
-          body: formdata,
-          redirect: 'follow'
-        })
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error))
-        $.ajax({
-          url: "https://dev.aim-it.com.ua/test-save-json/",
-          type: "POST",
-          data: {url: window.location.href, phone: phone},
-          dataType: "json"
-        }).done(function (e) {
-          console.log(e.is_send)
-        })
-        $(".react_modal").addClass("thankyou")
-        $(".react_modal__body .popup-content > div:first-child").remove()
-        $(".popup-phone-block").empty()
-        $(".popup-phone-block").append(`<div class="thx_holder"><div class="modal_title"><p>${thx1}</p></div><div class="info_text"><p>${thx2}</p></div></div>`)
+    document.querySelectorAll(".phone.bold")[0].click();
+    $('html').on('mouseleave', 'body', function () {
         window.dataLayer = window.dataLayer || []
         dataLayer.push({
-          event: "event-to-ga",
-          eventCategory: "PDP highly demand banner",
-          eventAction: "click Pop up loan",
-          eventLabel: "Позвонить мне"
+            event: "event-to-ga",
+            eventCategory: "PDP highly demand banner",
+            eventAction: "leave page",
+            eventLabel: "leave"
         })
-        document.querySelector('.react_modal.thankyou .react_modal__close').addEventListener('click', function () {
-          $('html').off('mouseleave', 'body')
-          window.dataLayer = window.dataLayer || [];
-          dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'PDP highly demand banner',
-            'eventAction': 'click Pop up TY',
-            'eventLabel': 'close'
-          });
+        console.log('leave');})
+    let mut = new MutationObserver((mutations) => {
+        console.log(mutations)
+        document.querySelector('.react_modal .react_modal__body').innerHTML = htmlBlock
+        mut.disconnect()
+
+        document.querySelector('.react_modal__backdrop').addEventListener("click", function() {
+            $('html').off('mouseleave', 'body')
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'PDP highly demand banner',
+                'eventAction': 'click out of Pop up',
+                'eventLabel': 'close'
+            });
         })
-      } else {
-        document.querySelector('.react_modal__body').classList.add('error');
-      }
+
+        document.querySelector('.react_modal__body .input_number').addEventListener("focus", function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'PDP highly demand banner',
+                'eventAction': 'click Pop up loan',
+                'eventLabel': 'number input'
+            });
+        })
+
+        document.querySelector('.react_modal:not(.thankyou) .react_modal__close').addEventListener('click', function () {
+            $('html').off('mouseleave', 'body')
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'PDP highly demand banner',
+                'eventAction': 'click Pop up loan',
+                'eventLabel': 'close'
+            });
+        })
+
+        document.querySelector('.react_modal__body .input_number').addEventListener("focusout", function (e) {
+            let phone = document.querySelector('.react_modal__body .input_number').value.length
+            if(phone < 10 || phone > 10) {
+                document.querySelector('.react_modal__body').classList.add('error');
+            } else {
+                document.querySelector('.react_modal__body').classList.remove('error');
+            }
+        })
+
+        document.querySelector('.react_modal__body .modal_btn').addEventListener('click', function (e) {
+            e.preventDefault()
+            let phone = document.querySelector('.react_modal__body .input_number').value
+            if(phone.length === 10) {
+                let formdata = new FormData()
+                formdata.append('phone', phone)
+                formdata.append('page', window.location.href)
+                fetch('https://devxy.site/api/save', {
+                    method: 'POST',
+                    body: formdata,
+                    redirect: 'follow'
+                })
+                    .then(response => response.text())
+                    .then(result => console.log(result))
+                    .catch(error => console.log('error', error))
+                $.ajax({
+                    url: "https://dev.aim-it.com.ua/test-save-json/",
+                    type: "POST",
+                    data: {url: window.location.href, phone: phone},
+                    dataType: "json"
+                }).done(function (e) {
+                    console.log(e.is_send)
+                })
+                $(".react_modal").addClass("thankyou")
+                $(".react_modal__body .popup-content > div:first-child").remove()
+                $(".popup-phone-block").empty()
+                $(".popup-phone-block").append(`<div class="thx_holder"><div class="modal_title"><p>${thx1}</p></div><div class="info_text"><p>${thx2}</p></div></div>`)
+                window.dataLayer = window.dataLayer || []
+                dataLayer.push({
+                    event: "event-to-ga",
+                    eventCategory: "PDP highly demand banner",
+                    eventAction: "click Pop up loan",
+                    eventLabel: "Позвонить мне"
+                })
+                document.querySelector('.react_modal.thankyou .react_modal__close').addEventListener('click', function () {
+                    $('html').off('mouseleave', 'body')
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'PDP highly demand banner',
+                        'eventAction': 'click Pop up TY',
+                        'eventLabel': 'close'
+                    });
+                })
+            } else {
+                document.querySelector('.react_modal__body').classList.add('error');
+            }
+        })
     })
-  })
 
-  mut.observe(document.body, {
-    characterData: true,
-    childList: true,
-    subtree: true,
-    characterDataOldValue: true
-  })
+    mut.observe(document.body, {
+        characterData: true,
+        childList: true,
+        subtree: true,
+        characterDataOldValue: true
+    })
 
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({
-    'event': 'event-to-ga',
-    'eventCategory': 'PDP highly demand banner',
-    'eventAction': 'Уточнить о наличии'
-  })
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'PDP highly demand banner',
+        'eventAction': 'Уточнить о наличии'
+    })
 })
 
-
+try {
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1953436,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+    hj('trigger', 'pdp_highly_demand_banner');
+}
+catch(e) {}
 
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
-  'event': 'event-to-ga',
-  'eventCategory': 'pdp highly demand banner',
-  'eventAction': 'loaded'
+    'event': 'event-to-ga',
+    'eventCategory': 'pdp highly demand banner',
+    'eventAction': 'loaded'
 });
 
 
