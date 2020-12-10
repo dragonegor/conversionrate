@@ -18,6 +18,7 @@ html {
 .app_block {
   padding: 20px 23px;
   background-color: #f3f3f3;
+  margin-bottom: 15px;
 }
 
 .app_included {
