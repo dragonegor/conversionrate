@@ -83,6 +83,7 @@ html {
   color: #EF4E44;
   font-weight: 700;
   padding-bottom: 0;
+  margin-bottom: 15px;
 }
 .total .new span {
   font-size: 14px;
