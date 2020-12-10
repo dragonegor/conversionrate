@@ -153,14 +153,14 @@ let block = `
         <img src="https://i.ibb.co/F8MYW4N/5img.png" alt="icon">
         <div class="flx">
           <p>Daily and Weekly Grocery Lists</p>
-          <p class="price">$9/mo</p>
+          <p class="price">$3/mo</p>
         </div>
       </li>
       <li>
         <img src="https://i.ibb.co/Vtm1YPJ/6img.png" alt="icon">
         <div class="flx">
           <p>Personalized Water Tracking</p>
-          <p class="price">$9/mo</p>
+          <p class="price">$3/mo</p>
         </div>
       </li>
     </ul>
