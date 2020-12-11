@@ -54,7 +54,8 @@ let block = `
      </p>
   </div>
 `
-
-document.body.insertAdjacentHTML('afterbegin', style)
-document.querySelector('.sizing__chart--description-layout').insertAdjacentHTML('afterend', block)
-document.querySelector('#sizingModalSubtitle1').insertAdjacentHTML('beforeend', block)
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.insertAdjacentHTML('afterbegin', style)
+    document.querySelector('.sizing__chart--description-layout').insertAdjacentHTML('afterend', block)
+    document.querySelector('#sizingModalSubtitle1').insertAdjacentHTML('beforeend', block)
+})
