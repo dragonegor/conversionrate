@@ -1,4 +1,4 @@
-let style = `
+let mystyle = `
   <style>
      .return60 {
         margin: 15px -15px;
@@ -55,7 +55,7 @@ let block = `
   </div>
 `
 document.addEventListener('DOMContentLoaded', function () {
-    document.body.insertAdjacentHTML('afterbegin', style)
+    document.body.insertAdjacentHTML('afterbegin', mystyle)
     document.querySelector('.sizing__chart--description-layout').insertAdjacentHTML('afterend', block)
     document.querySelector('#sizingModalSubtitle1').insertAdjacentHTML('beforeend', block)
 })
