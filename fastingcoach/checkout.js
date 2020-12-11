@@ -129,13 +129,13 @@ let block = `
           <p class="price">$12/mo</p>
         </div>
       </li>
-      <li>
-        <img src="https://i.ibb.co/1qznMqz/2img.png" alt="icon">
-        <div class="flx">
-          <p>Workout Programs</p>
-          <p class="price">$9/mo</p>
-        </div>
-      </li>
+//       <li>
+//         <img src="https://i.ibb.co/1qznMqz/2img.png" alt="icon">
+//         <div class="flx">
+//           <p>Workout Programs</p>
+//           <p class="price">$9/mo</p>
+//         </div>
+//       </li>
       <li>
         <img src="https://i.ibb.co/6PwqmdK/3img.png" alt="icon">
         <div class="flx">
@@ -178,7 +178,7 @@ let block = `
     </div>
   </div>
   <div class="total">
-    <p class="old">Total value:  <span>$45/mo</span></p>
+    <p class="old">Total value:  <span>$36/mo</span></p>
     <h2>You pay a fair price:</h2>
     <p class="new">$4.6 per month<span> (that’s $1.15/week)</span></p>
   </div>
