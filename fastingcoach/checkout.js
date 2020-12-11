@@ -129,13 +129,6 @@ let block = `
           <p class="price">$12/mo</p>
         </div>
       </li>
-//       <li>
-//         <img src="https://i.ibb.co/1qznMqz/2img.png" alt="icon">
-//         <div class="flx">
-//           <p>Workout Programs</p>
-//           <p class="price">$9/mo</p>
-//         </div>
-//       </li>
       <li>
         <img src="https://i.ibb.co/6PwqmdK/3img.png" alt="icon">
         <div class="flx">
