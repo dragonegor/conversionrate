@@ -58,7 +58,7 @@ function abjqlr(o) {
             eventCategory: "PDP highly demand banner",
             eventAction: "Уточнить о наличии"
         }), console.log("Уточнить о наличии")
-        document.querySelectorAll(".phone.bold")[0].click(), o('html').on('mouseleave', 'body', function () {
+        document.querySelectorAll(".seller .button--green")[0].click(), o('html').on('mouseleave', 'body', function () {
             window.dataLayer = window.dataLayer || []
             dataLayer.push({
                 event: "event-to-ga",
