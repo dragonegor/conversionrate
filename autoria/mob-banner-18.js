@@ -251,7 +251,7 @@ document.querySelector('.vin_checked').insertAdjacentHTML('afterend', banner);
 
 
 document.querySelector('.high-demand-wrap').addEventListener('click', function () {
-    document.querySelectorAll(".phone.bold")[0].click();
+    document.querySelectorAll(".seller .button--green")[0].click();
     $('html').on('mouseleave', 'body', function () {
         window.dataLayer = window.dataLayer || []
         dataLayer.push({
