@@ -54,9 +54,9 @@ let style = `
 let tabs = `
     <div class="btm_tabs">
       <div class="tabs">
-        <a class="btm_tab_1" href="#">What doctors say</a>
-        <a class="btm_tab_2" href="#">How to use</a>
-        <a class="btm_tab_3" href="#">Comparison with other sleep products</a>
+        <a class="btm_tab_1" data-scroll="howandwhysomnifixworks1" href=".howandwhysomnifixworks">How SomniFix works</a>
+        <a class="btm_tab_2" data-scroll="donotusesomnifixifyou1" href=".donotusesomnifixifyou">When to not use SomniFix</a>
+        <a class="btm_tab_3" data-scroll="somnifixvsothersleepproducts1" href=".somnifixvsothersleepproducts">Comparison with other sleep products</a>
       </div>
     </div>
 `
@@ -111,6 +111,16 @@ document.addEventListener('DOMContentLoaded', function () {
             'eventLabel': 'Right tab — ...'
         });
     });
+
+$('.btm_tabs a').on('click', function(e){
+    e.preventDefault();
+    var anchor = $(this).attr('href');
+    console.log(anchor)
+
+    $('html,body').stop().animate({
+        scrollTop: $(anchor).offset().top - 70
+    }, 300);
+});
 
 });
 
