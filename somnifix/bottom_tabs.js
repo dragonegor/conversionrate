@@ -133,7 +133,7 @@ $('.btm_tabs a').on('click', function(e){
     a.appendChild(r);
 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
-hj('trigger', 'add_3_buttons_near_sticky_button');
+hj('trigger', 'optimize_pdp');
 
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
