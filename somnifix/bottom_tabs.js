@@ -60,7 +60,7 @@ let tabs = `
       </div>
     </div>
 `
-window.onload = function() {
+// window.onload = function() {
 // document.addEventListener('DOMContentLoaded', function () {
 
     document.body.insertAdjacentHTML('afterbegin', style)
@@ -68,7 +68,7 @@ window.onload = function() {
 
     let lastPos = 0
     window.addEventListener('scroll', function () {
-        window.pageYOffset > lastPos ? show() : hide()
+        window.pageYOffset > lastPos && window.pageYOffset > 100 ? show() : hide()
         lastPos = window.pageYOffset;
     })
 
@@ -112,17 +112,17 @@ window.onload = function() {
         });
     });
 
-$('.btm_tabs a').on('click', function(e){
-    e.preventDefault();
-    var anchor = $(this).attr('href');
-    console.log(anchor)
+    $('.btm_tabs a').on('click', function(e){
+        e.preventDefault();
+        var anchor = $(this).attr('href');
+        console.log(anchor)
+    
+        $('html,body').stop().animate({
+            scrollTop: $(anchor).offset().top - 70
+        }, 300);
+    });
 
-    $('html,body').stop().animate({
-        scrollTop: $(anchor).offset().top - 70
-    }, 300);
-});
-
-};
+// };
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
