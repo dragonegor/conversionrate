@@ -60,8 +60,8 @@ let tabs = `
       </div>
     </div>
 `
-
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function() {
+// document.addEventListener('DOMContentLoaded', function () {
 
     document.body.insertAdjacentHTML('afterbegin', style)
     document.body.insertAdjacentHTML('beforeend', tabs)
@@ -122,7 +122,7 @@ $('.btm_tabs a').on('click', function(e){
     }, 300);
 });
 
-});
+};
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -133,7 +133,7 @@ $('.btm_tabs a').on('click', function(e){
     a.appendChild(r);
 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
-hj('trigger', 'optimize_pdp');
+hj('trigger', 'add_3_buttons_near_sticky_button');
 
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
