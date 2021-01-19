@@ -98,13 +98,13 @@ let style = `
 
 
 window.onload = function () {
-let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
+//let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
 let block = `
     <div class="first_discount">
       <p>First 2 weeks for special price</p>
       <p class="discount_percent">30% OFF</p>
-      <p class="total_sum">${totalOrderSum}</p>
+      <p class="total_sum"></p>
       <div class="close_first_discount">
       </div>
     </div>
