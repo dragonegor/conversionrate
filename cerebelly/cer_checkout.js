@@ -170,7 +170,7 @@ update Rolpf’s behaviour characteristics as he grows to receive new food recom
             });
         })
 
-        if (document.querySelectorAll('.sum-row.total')[0]) {
+        if (document.querySelectorAll('.sum-row.total')[0].innerHTML.includes('Subtotal')) {
             let subtotal = document.querySelectorAll('.sum-row.total')[0]
             let discount = document.querySelectorAll('.sum-row.total')[1]
 
