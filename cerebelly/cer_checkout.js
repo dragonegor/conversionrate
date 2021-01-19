@@ -1,7 +1,7 @@
 let style = `
     <style>
       p.subtitleAdd {
-        font-size: 12px;
+        font-size: 12px !important;
         color: #3856A7;
         font-weight: 400;
       }
@@ -33,7 +33,7 @@ let style = `
       }
       
       .first_discount p {
-        font-size: 12px;
+        font-size: 12px !important;
         font-weight: 500;
         color: #15226A;
         margin-bottom: 0;
@@ -86,11 +86,11 @@ let style = `
       }
       
       .sum-row.total:nth-child(5) {
-        display: none;
+        display: none !important;
       }
       
       .sum-row.total.coupon:nth-child(8) {
-        display: none;
+        display: none !important;
       }
     </style>
 `
