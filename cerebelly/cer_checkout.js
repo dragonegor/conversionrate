@@ -274,12 +274,5 @@ update Rolpf’s behaviour characteristics as he grows to receive new food recom
     })
 }
 
-mut.observe(document.body,{
-    childList: true,
-    subtree: true
-});
-
-
-
-
+redrawing()
 
