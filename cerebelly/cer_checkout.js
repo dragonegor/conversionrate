@@ -118,9 +118,7 @@ dataLayer.push({
 
 let mut = new MutationObserver((mutations) => {
     mut.disconnect()
-    
-        redrawing()
-    }
+    redrawing()
 })
 
 
@@ -269,7 +267,7 @@ update Rolpf’s behaviour characteristics as he grows to receive new food recom
         childList: true,
         subtree: true
     })
-        
+
 }
 
 redrawing()
