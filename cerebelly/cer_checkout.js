@@ -86,7 +86,7 @@ let style = `
       }
       
       .sum-row.total:nth-child(5) {
-        display: none !important;
+        display: none;
       }
       
       .sum-row.total.coupon:nth-child(8) {
@@ -170,7 +170,7 @@ update Rolpf’s behaviour characteristics as he grows to receive new food recom
             });
         })
 
-        if (document.querySelector('.form-wrap .checkout-block:first-child input[name=password]')) {
+        if (document.querySelectorAll('.sum-row.total')[0]) {
             let subtotal = document.querySelectorAll('.sum-row.total')[0]
             let discount = document.querySelectorAll('.sum-row.total')[1]
 
