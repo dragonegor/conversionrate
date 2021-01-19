@@ -97,7 +97,7 @@ let style = `
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
 let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
 let block = `
@@ -254,7 +254,7 @@ redrawing()
 
 
 
-});
+};
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
