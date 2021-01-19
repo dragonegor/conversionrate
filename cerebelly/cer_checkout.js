@@ -95,70 +95,93 @@ let style = `
     </style>
 `
 
+document.head.insertAdjacentHTML('beforeend', style);
+
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2171597,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
+hj('trigger', 'checkout_improvement');
 
 
-window.onload = function () {
-//let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp: Checkout Improvement',
+    'eventAction': 'loaded'
+});
 
-let block = `
+let mut = new MutationObserver((mutations) => {
+    mut.disconnect()
+    if(document.querySelector('.sum-row.order-total .total')) {
+        redrawing()
+    }
+})
+
+
+
+
+function redrawing() {
+    let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
+
+
+
+    let block = `
     <div class="first_discount">
       <p>First 2 weeks for special price</p>
       <p class="discount_percent">30% OFF</p>
-      <p class="total_sum"></p>
+      <p class="total_sum">${totalOrderSum}</p>
       <div class="close_first_discount">
       </div>
     </div>
     <div class="promo_btn">I have a coupon code</div>
 `
 
+    if(!document.querySelector('.form-wrap .checkout-block:last-child input[name=email]')) {
+        let accountForm = document.querySelector('.form-wrap .checkout-block:first-child')
+        let payments = document.querySelector('.form-wrap .checkout-block:last-child .inputs')
 
-document.body.insertAdjacentHTML('afterbegin', style)
+        payments.after(accountForm)
 
-let accountForm = document.querySelector('.form-wrap .checkout-block:first-child')
-let payments = document.querySelector('.form-wrap .checkout-block:last-child .inputs')
-
-document.querySelector('.form-wrap .checkout-block:first-child input[name=email]').addEventListener('focus', function () {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'Exp: Checkout Improvement',
-        'eventAction': 'click to Focus on the email address field'
-    });
-})
-
-document.querySelector('.form-wrap .checkout-block:first-child input[name=password]').addEventListener('focus', function () {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'Exp: Checkout Improvement',
-        'eventAction': 'click to Focus on the password field'
-    });
-})
-
-payments.after(accountForm)
-
-let subtotal = document.querySelectorAll('.sum-row.total')[0]
-let discount = document.querySelectorAll('.sum-row.total')[1]
-
-
-discount.after(subtotal)
-
-
-
-accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
-accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend',`<p class="subtitleAdd">Also in an account you can 
+        accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
+        accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend',`<p class="subtitleAdd">Also in an account you can 
 update Rolpf’s behaviour characteristics as he grows to receive new food recommendations and adjust the content of boxes.</p>`)
-
-subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
-
-let mut = new MutationObserver((mutations) => {
-    mut.disconnect()
-    redrawing()
-})
+    }
 
 
 
-function redrawing() {
+    document.querySelector('.form-wrap .checkout-block:last-child input[name=email]').addEventListener('focus', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp: Checkout Improvement',
+            'eventAction': 'click to Focus on the email address field'
+        });
+    })
+
+    document.querySelector('.form-wrap .checkout-block:last-child input[name=password]').addEventListener('focus', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp: Checkout Improvement',
+            'eventAction': 'click to Focus on the password field'
+        });
+    })
+
+    if (document.querySelector('.form-wrap .checkout-block:first-child input[name=password]')) {
+        let subtotal = document.querySelectorAll('.sum-row.total')[0]
+        let discount = document.querySelectorAll('.sum-row.total')[1]
+
+        discount.after(subtotal)
+        subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
+    }
+
+
     let totalSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
     if(!document.querySelector('.promo_btn')) {
@@ -217,9 +240,9 @@ function redrawing() {
     }
 
     if(!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)') && !document.querySelector('.first_discount')){
-        subtotal.querySelector('.total').style.textDecoration = 'none'
+        document.querySelectorAll('.sum-row.total')[0].querySelector('.total').style.textDecoration = 'none'
     } else {
-        subtotal.querySelector('.total').style.textDecoration = 'line-through'
+        document.querySelectorAll('.sum-row.total')[0].querySelector('.total').style.textDecoration = 'line-through'
     }
 
     if(document.querySelector('.apply-btn')) {
@@ -250,27 +273,12 @@ function redrawing() {
     })
 }
 
-redrawing()
-
-
-
-};
-
-(function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:2171597,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
-hj('trigger', 'checkout_improvement');
-
-
-window.dataLayer = window.dataLayer || [];
-dataLayer.push({
-    'event': 'event-to-ga',
-    'eventCategory': 'Exp: Checkout Improvement',
-    'eventAction': 'loaded'
+mut.observe(document.body,{
+    childList: true,
+    subtree: true
 });
+
+
+
+
+
