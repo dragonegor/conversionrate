@@ -118,9 +118,8 @@ dataLayer.push({
 
 let mut = new MutationObserver((mutations) => {
     mut.disconnect()
-    if(document.querySelector('.sum-row.order-total .total')) {
+    
         redrawing()
-        console.log(mutations)
     }
 })
 
@@ -128,11 +127,11 @@ let mut = new MutationObserver((mutations) => {
 
 
 function redrawing() {
-    let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
+    if(document.querySelector('.sum-row.order-total .total')) {
+        let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
 
-
-    let block = `
+        let block = `
     <div class="first_discount">
       <p>First 2 weeks for special price</p>
       <p class="discount_percent">30% OFF</p>
@@ -143,136 +142,134 @@ function redrawing() {
     <div class="promo_btn">I have a coupon code</div>
 `
 
-    if(!document.querySelector('.form-wrap .checkout-block:last-child input[name=email]')) {
-        let accountForm = document.querySelector('.form-wrap .checkout-block:first-child')
-        let payments = document.querySelector('.form-wrap .checkout-block:last-child .inputs')
+        if (!document.querySelector('.form-wrap .checkout-block:last-child input[name=email]')) {
+            let accountForm = document.querySelector('.form-wrap .checkout-block:first-child')
+            let payments = document.querySelector('.form-wrap .checkout-block:last-child .inputs')
 
-        payments.after(accountForm)
+            payments.after(accountForm)
 
-        accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
-        accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend',`<p class="subtitleAdd">Also in an account you can 
+            accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
+            accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">Also in an account you can 
 update Rolpf’s behaviour characteristics as he grows to receive new food recommendations and adjust the content of boxes.</p>`)
-    }
+        }
 
 
+        document.querySelector('.form-wrap .checkout-block:last-child input[name=email]').addEventListener('focus', function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp: Checkout Improvement',
+                'eventAction': 'click to Focus on the email address field'
+            });
+        })
 
-    document.querySelector('.form-wrap .checkout-block:last-child input[name=email]').addEventListener('focus', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp: Checkout Improvement',
-            'eventAction': 'click to Focus on the email address field'
-        });
-    })
+        document.querySelector('.form-wrap .checkout-block:last-child input[name=password]').addEventListener('focus', function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp: Checkout Improvement',
+                'eventAction': 'click to Focus on the password field'
+            });
+        })
 
-    document.querySelector('.form-wrap .checkout-block:last-child input[name=password]').addEventListener('focus', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp: Checkout Improvement',
-            'eventAction': 'click to Focus on the password field'
-        });
-    })
+        if (document.querySelector('.form-wrap .checkout-block:first-child input[name=password]')) {
+            let subtotal = document.querySelectorAll('.sum-row.total')[0]
+            let discount = document.querySelectorAll('.sum-row.total')[1]
 
-    if (document.querySelector('.form-wrap .checkout-block:first-child input[name=password]')) {
-        let subtotal = document.querySelectorAll('.sum-row.total')[0]
-        let discount = document.querySelectorAll('.sum-row.total')[1]
-
-        discount.after(subtotal)
-        subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
-    }
+            discount.after(subtotal)
+            subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
+        }
 
 
-    let totalSum = document.querySelector('.sum-row.order-total .total').innerHTML
+        let totalSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
-    if(!document.querySelector('.promo_btn')) {
-        document.querySelectorAll('.sum-row.total')[2].insertAdjacentHTML('afterend', block)
-        if (!document.querySelector('.sum-row.total.coupon:nth-child(5)')) {
-            document.querySelector('.first_discount').remove()
-        } else {
-            document.querySelector('.first_discount .total_sum').innerHTML = totalSum
-            document.querySelector('.first_discount .close_first_discount').addEventListener('click', function () {
+        if (!document.querySelector('.promo_btn')) {
+            document.querySelectorAll('.sum-row.total')[2].insertAdjacentHTML('afterend', block)
+            if (!document.querySelector('.sum-row.total.coupon:nth-child(5)')) {
                 document.querySelector('.first_discount').remove()
-                document.querySelector('.coupon-remove-btn').click()
+            } else {
+                document.querySelector('.first_discount .total_sum').innerHTML = totalSum
+                document.querySelector('.first_discount .close_first_discount').addEventListener('click', function () {
+                    document.querySelector('.first_discount').remove()
+                    document.querySelector('.coupon-remove-btn').click()
+                })
+            }
+            document.querySelector('.promo_btn').addEventListener('click', function () {
+                if (document.querySelector('.promo_btn').classList.contains('active')) {
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'Exp: Checkout Improvement',
+                        'eventAction': 'click on I have a coupon code - collapse'
+                    });
+                } else {
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'Exp: Checkout Improvement',
+                        'eventAction': 'click on I have a coupon code - expand'
+                    });
+                }
+                document.querySelector('.sum-row.promo-code').classList.toggle('active')
+                document.querySelector('.promo_btn').classList.toggle('active')
             })
         }
-        document.querySelector('.promo_btn').addEventListener('click', function () {
-            if(document.querySelector('.promo_btn').classList.contains('active')) {
+        if (document.querySelector('.first_discount')) {
+            document.querySelector('.first_discount .total_sum').innerHTML = totalSum
+        }
+
+        if (document.querySelector('.sum-row.promo-code .promo-add')) {
+            document.querySelector('.sum-row.promo-code .promo-add').click()
+        }
+        if (document.querySelectorAll('.sum-row-hr')[2]) {
+            document.querySelectorAll('.sum-row-hr')[2].style.display = 'none'
+        }
+
+        if (document.querySelector('.sum-row.promo-code')) {
+            document.querySelector('.promo_btn').after(document.querySelector('.sum-row.promo-code'))
+        }
+
+        if (document.querySelector('.promo_btn').classList.contains('active') && document.querySelector('.sum-row.promo-code')) {
+            document.querySelector('.sum-row.promo-code').classList.add('active')
+        }
+
+        if (document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)')) {
+            document.querySelectorAll('.sum-row.total')[1].after(document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)'))
+            document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)').style.display = 'flex'
+        }
+
+        if (!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)') && !document.querySelector('.first_discount')) {
+            document.querySelectorAll('.sum-row.total')[0].querySelector('.total').style.textDecoration = 'none'
+        } else {
+            document.querySelectorAll('.sum-row.total')[0].querySelector('.total').style.textDecoration = 'line-through'
+        }
+
+        if (document.querySelector('.apply-btn')) {
+            document.querySelector('.apply-btn').addEventListener('click', function () {
                 window.dataLayer = window.dataLayer || [];
                 dataLayer.push({
                     'event': 'event-to-ga',
                     'eventCategory': 'Exp: Checkout Improvement',
-                    'eventAction': 'click on I have a coupon code - collapse'
+                    'eventAction': 'click on Apply coupon'
                 });
-            } else {
+            })
+
+            document.querySelector('.input-holder input').addEventListener('focus', function () {
                 window.dataLayer = window.dataLayer || [];
                 dataLayer.push({
                     'event': 'event-to-ga',
                     'eventCategory': 'Exp: Checkout Improvement',
-                    'eventAction': 'click on I have a coupon code - expand'
+                    'eventAction': 'click to Focus on the coupon code field'
                 });
-            }
-            document.querySelector('.sum-row.promo-code').classList.toggle('active')
-            document.querySelector('.promo_btn').classList.toggle('active')
-        })
+            })
+        }
     }
-    if(document.querySelector('.first_discount')) {
-        document.querySelector('.first_discount .total_sum').innerHTML = totalSum
-    }
-
-    if(document.querySelector('.sum-row.promo-code .promo-add')) {
-        document.querySelector('.sum-row.promo-code .promo-add').click()
-    }
-    if (document.querySelectorAll('.sum-row-hr')[2]) {
-        document.querySelectorAll('.sum-row-hr')[2].style.display = 'none'
-    }
-
-    if (document.querySelector('.sum-row.promo-code')) {
-        document.querySelector('.promo_btn').after(document.querySelector('.sum-row.promo-code'))
-    }
-
-    if (document.querySelector('.promo_btn').classList.contains('active') && document.querySelector('.sum-row.promo-code')) {
-        document.querySelector('.sum-row.promo-code').classList.add('active')
-    }
-
-    if (document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)')) {
-        document.querySelectorAll('.sum-row.total')[1].after(document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)'))
-        document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)').style.display = 'flex'
-    }
-
-    if(!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)') && !document.querySelector('.first_discount')){
-        document.querySelectorAll('.sum-row.total')[0].querySelector('.total').style.textDecoration = 'none'
-    } else {
-        document.querySelectorAll('.sum-row.total')[0].querySelector('.total').style.textDecoration = 'line-through'
-    }
-
-    if(document.querySelector('.apply-btn')) {
-        document.querySelector('.apply-btn').addEventListener('click', function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp: Checkout Improvement',
-                'eventAction': 'click on Apply coupon'
-            });
-        })
-
-        document.querySelector('.input-holder input').addEventListener('focus', function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp: Checkout Improvement',
-                'eventAction': 'click to Focus on the coupon code field'
-            });
-        })
-    }
-
-
 
     mut.observe(document.body,{
         childList: true,
         subtree: true
     })
+        
 }
 
 redrawing()
-
