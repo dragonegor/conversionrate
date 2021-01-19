@@ -120,6 +120,7 @@ let mut = new MutationObserver((mutations) => {
     mut.disconnect()
     if(document.querySelector('.sum-row.order-total .total')) {
         redrawing()
+        console.log(mutations)
     }
 })
 
