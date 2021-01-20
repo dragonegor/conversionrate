@@ -113,7 +113,6 @@ dataLayer.push({
 });
 
 let mut = new MutationObserver((mutations) => {
-    console.log('in mutations')
     mut.disconnect()
     redrawing()
 })
@@ -158,6 +157,7 @@ function redrawing() {
 
         if (document.querySelector('.sum-row.total:nth-child(5)') && document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
+            document.querySelector('.first_discount').style.display = 'block'
         } else if (document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         }
@@ -192,7 +192,7 @@ function redrawing() {
             } else {
                 document.querySelector('.first_discount .total_sum').innerHTML = totalSum
                 document.querySelector('.first_discount .close_first_discount').addEventListener('click', function () {
-                    document.querySelector('.first_discount').remove()
+                    document.querySelector('.first_discount').style.display = 'none'
                     document.querySelector('.coupon-remove-btn').click()
                 })
             }
@@ -267,8 +267,8 @@ function redrawing() {
             })
         }
     }
-    
-    console.log('start mutations')
+
+    console.log(document.querySelector('.apply-btn').click)
 
     mut.observe(document.body,{
         childList: true,
