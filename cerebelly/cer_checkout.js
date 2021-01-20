@@ -113,7 +113,7 @@ dataLayer.push({
 });
 
 let mut = new MutationObserver((mutations) => {
-    console.log(mutations)
+    console.log('in mutations')
     mut.disconnect()
     redrawing()
 })
@@ -158,7 +158,7 @@ function redrawing() {
 
         if (document.querySelector('.sum-row.total:nth-child(5)') && document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
-        } else if (document.querySelector(document.querySelector('.sum-row.total:nth-child(8)') && '.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
+        } else if (document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         }
 
@@ -267,6 +267,8 @@ function redrawing() {
             })
         }
     }
+    
+    console.log('start mutations')
 
     mut.observe(document.body,{
         childList: true,
