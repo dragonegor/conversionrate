@@ -165,11 +165,15 @@ function redrawing() {
         `
 
 
-        if (document.querySelectorAll('.sum-row.total')[0].innerHTML.includes('Subtotal')) {
-            let subtotal = document.querySelectorAll('.sum-row.total')[0]
+        if (document.querySelectorAll('.sum-row.total')[1]) {
+            let subtotal = document.querySelector('.sum-row.total:not(.coupon)')
             let discount = document.querySelectorAll('.sum-row.total')[1]
             subtotal.querySelector('.total').style.textDecoration = 'line-through'
             discount.after(subtotal)
+            subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
+        } else {
+            let subtotal = document.querySelector('.sum-row.total:not(.coupon)')
+            subtotal.querySelector('.total').style.textDecoration = 'line-through'
             subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
         }
 
@@ -177,7 +181,7 @@ function redrawing() {
         let totalSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
         if (!document.querySelector('.promo_btn')) {
-            document.querySelectorAll('.sum-row.total')[2].insertAdjacentHTML('afterend', block)
+            document.querySelector('.sum-row.total:not(.coupon)').insertAdjacentHTML('afterend', block)
             if (!document.querySelector('.sum-row.total.coupon:nth-child(5)')) {
                 document.querySelector('.first_discount').style.display = 'none'
             } else {
@@ -248,7 +252,7 @@ function redrawing() {
         }
 
         if (document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)')) {
-            document.querySelectorAll('.sum-row.total')[1].after(document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)'))
+            document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)'))
             document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)').style.display = 'flex'
         }
 
@@ -266,7 +270,7 @@ function redrawing() {
         document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         document.querySelector('.first_discount').style.display = 'flex'
     } else if (document.querySelector('.sum-row.total:nth-child(8)')) {
-        document.querySelectorAll('.sum-row.total')[1].after(document.querySelector('.sum-row.total:nth-child(8)'))
+        document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.sum-row.total:nth-child(8)'))
     }
 
 
