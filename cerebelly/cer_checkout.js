@@ -114,7 +114,28 @@ dataLayer.push({
 
 let mut = new MutationObserver((mutations) => {
     mutations.forEach((m) => {
-        console.log(m.target === document.querySelector('.summary-table'))
+
+        if(m.target === document.querySelector('.summary-table')) {
+            if (document.querySelector('.apply-btn')) {
+                document.querySelector('.apply-btn').addEventListener('click', function () {
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'Exp: Checkout Improvement',
+                        'eventAction': 'click on Apply coupon'
+                    });
+                })
+
+                document.querySelector('.input-holder input').addEventListener('focus', function () {
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'Exp: Checkout Improvement',
+                        'eventAction': 'click to Focus on the coupon code field'
+                    });
+                })
+            }
+        }
     })
     mut.disconnect()
     redrawing()
@@ -228,6 +249,25 @@ function redrawing() {
 
         if (document.querySelector('.sum-row.promo-code .promo-add')) {
             document.querySelector('.sum-row.promo-code .promo-add').click()
+            if (document.querySelector('.apply-btn')) {
+                document.querySelector('.apply-btn').addEventListener('click', function () {
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'Exp: Checkout Improvement',
+                        'eventAction': 'click on Apply coupon'
+                    });
+                })
+
+                document.querySelector('.input-holder input').addEventListener('focus', function () {
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'Exp: Checkout Improvement',
+                        'eventAction': 'click to Focus on the coupon code field'
+                    });
+                })
+            }
         }
         if (document.querySelectorAll('.sum-row-hr')[2]) {
             document.querySelectorAll('.sum-row-hr')[2].style.display = 'none'
@@ -251,30 +291,6 @@ function redrawing() {
         } else {
             document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'line-through'
         }
-
-
-            if (document.querySelector('.apply-btn')) {
-                document.querySelector('.apply-btn').addEventListener('click', function () {
-                    window.dataLayer = window.dataLayer || [];
-                    dataLayer.push({
-                        'event': 'event-to-ga',
-                        'eventCategory': 'Exp: Checkout Improvement',
-                        'eventAction': 'click on Apply coupon'
-                    });
-                })
-
-                document.querySelector('.input-holder input').addEventListener('focus', function () {
-                    window.dataLayer = window.dataLayer || [];
-                    dataLayer.push({
-                        'event': 'event-to-ga',
-                        'eventCategory': 'Exp: Checkout Improvement',
-                        'eventAction': 'click to Focus on the coupon code field'
-                    });
-                })
-            }
-
-
-
     }
 
 
