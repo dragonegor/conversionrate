@@ -78,7 +78,7 @@ let style = `
       }
       
       .sum-row.total.coupon .caption,  .sum-row.total.coupon .total {
-          font-size: 11px;
+          font-size: 11px !important;
       }
       
       .summary-table .sum-row.total:nth-child(4) .caption, .summary-table .sum-row.total:nth-child(4) .total {
@@ -256,7 +256,7 @@ function redrawing() {
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'none'
             document.querySelector('.first_discount').style.display = 'flex'
         } else if (document.querySelectorAll('.sum-row.total.coupon').length === 0){
-            
+
         }
         else {
             document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelectorAll('.summary-table .sum-row.total.coupon')[0])
