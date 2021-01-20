@@ -279,7 +279,7 @@ function redrawing() {
         document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         document.querySelector('.first_discount').style.display = 'flex'
     } else if (document.querySelector('.sum-row.total:nth-child(8)')) {
-        document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.sum-row.total:nth-child(5)'))
+        document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.sum-row.total:nth-child(8)'))
     }
 
 
