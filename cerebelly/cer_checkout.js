@@ -252,17 +252,20 @@ function redrawing() {
         if (document.querySelector('.promo_btn').classList.contains('active') && document.querySelector('.sum-row.promo-code')) {
             document.querySelector('.sum-row.promo-code').classList.add('active')
         }
+
         if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'none'
             document.querySelector('.first_discount').style.display = 'flex'
+            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
         } else if (document.querySelectorAll('.sum-row.total.coupon').length === 0){
-
+            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
         }
         else {
             document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelectorAll('.summary-table .sum-row.total.coupon')[0])
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
         }
-        if (!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(8)') && document.querySelector('.first_discount').style.display === 'none') {
+
+        if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('')) {
             document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
         } else {
             document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
@@ -275,9 +278,7 @@ function redrawing() {
     } else if(document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
         document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         document.querySelector('.first_discount').style.display = 'flex'
-    } else if (document.querySelector('.sum-row.total:nth-child(8)')) {
-        document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.sum-row.total:nth-child(8)'))
-    }
+    } 
 
 
     mut.observe(document.body,{
