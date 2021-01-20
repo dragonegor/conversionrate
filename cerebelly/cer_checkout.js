@@ -113,7 +113,9 @@ dataLayer.push({
 });
 
 let mut = new MutationObserver((mutations) => {
-    console.log(mutations)
+    mutations.forEach((m) => {
+        console.log(m.target === document.querySelector('.summary-table'))
+    })
     mut.disconnect()
     redrawing()
 })
