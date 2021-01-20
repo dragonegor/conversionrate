@@ -204,7 +204,7 @@ function redrawing() {
             })
         }
 
-        if (!document.querySelector('.sum-row.total.coupon:nth-child(8)')) {
+        if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && !document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
             document.querySelector('.first_discount').style.display = 'none'
         } else {
             document.querySelector('.first_discount .total_sum').innerHTML = totalSum
