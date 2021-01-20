@@ -126,24 +126,6 @@ function redrawing() {
 
             accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
             accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">Also in an account you can update your child’s behaviour characteristics as he/she grows to receive new food recommendations and adjust the content of boxes.</p>`)
-
-            document.querySelector('.form-wrap .checkout-block:last-child input[name=email]').addEventListener('focus', function () {
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Exp: Checkout Improvement',
-                    'eventAction': 'click to Focus on the email address field'
-                });
-            })
-
-            document.querySelector('.form-wrap .checkout-block:last-child input[name=password]').addEventListener('focus', function () {
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Exp: Checkout Improvement',
-                    'eventAction': 'click to Focus on the password field'
-                });
-            })
         }
 
 
@@ -221,23 +203,7 @@ function redrawing() {
             document.querySelector('.sum-row.promo-code .promo-add').click()
         }
         if(document.querySelectorAll('.sum-row-hr')[2] && document.querySelectorAll('.sum-row-hr')[2].style.display !== 'none') {
-            document.querySelector('.apply-btn').addEventListener('click', function () {
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Exp: Checkout Improvement',
-                    'eventAction': 'click on Apply coupon'
-                });
-            })
-
-            document.querySelector('.input-holder input').addEventListener('focus', function () {
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Exp: Checkout Improvement',
-                    'eventAction': 'click to Focus on the coupon code field'
-                });
-            })
+            
         }
 
         if (document.querySelectorAll('.sum-row-hr')[2]) {
