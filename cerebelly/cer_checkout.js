@@ -259,9 +259,9 @@ function redrawing() {
         }
 
         if (!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(8)') && document.querySelector('.first_discount').style.display === 'none') {
-            document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'none'
+            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
         } else {
-            document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'line-through'
+            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
         }
     }
 
