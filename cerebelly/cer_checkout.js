@@ -266,9 +266,9 @@ function redrawing() {
         }
 
         if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
-            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
-        } else {
             document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
+        } else {
+            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
         }
     }
 
