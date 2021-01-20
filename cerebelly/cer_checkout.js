@@ -155,13 +155,6 @@ function redrawing() {
 
         let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
-        if (document.querySelector('.sum-row.total:nth-child(5)') && document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
-            document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
-            document.querySelector('.first_discount').style.display = 'block'
-        } else if (document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
-            document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
-        }
-
         let block = `
             <div class="first_discount">
               <p>First 2 weeks for special price</p>
@@ -215,6 +208,13 @@ function redrawing() {
                 document.querySelector('.sum-row.promo-code').classList.toggle('active')
                 document.querySelector('.promo_btn').classList.toggle('active')
             })
+        }
+
+        if (document.querySelector('.sum-row.total:nth-child(5)') && document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
+            document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
+            document.querySelector('.first_discount').style.display = 'block'
+        } else if (document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
+            document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         }
 
         if (document.querySelector('.first_discount')) {
