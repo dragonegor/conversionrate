@@ -85,10 +85,6 @@ let style = `
         font-size: 12px;
       }
       
-      .sum-row.total:nth-child(5) {
-        display: none;
-      }
-      
       .sum-row.total.coupon:nth-child(8) {
         display: none !important;
       }
@@ -128,6 +124,9 @@ function redrawing() {
     if(document.querySelector('.sum-row.order-total .total')) {
         let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
+        if (document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
+            document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
+        }
 
         let block = `
     <div class="first_discount">
@@ -148,9 +147,10 @@ function redrawing() {
 
             accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
             accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">Also in an account you can 
-update Rolpf’s behaviour characteristics as he grows to receive new food recommendations and adjust the content of boxes.</p>`)
+              update Rolpf’s behaviour characteristics as he grows to receive new food recommendations and adjust the content of boxes.</p>`)
         }
 
+        
 
         document.querySelector('.form-wrap .checkout-block:last-child input[name=email]').addEventListener('focus', function () {
             window.dataLayer = window.dataLayer || [];
@@ -173,7 +173,7 @@ update Rolpf’s behaviour characteristics as he grows to receive new food recom
         if (document.querySelectorAll('.sum-row.total')[0].innerHTML.includes('Subtotal')) {
             let subtotal = document.querySelectorAll('.sum-row.total')[0]
             let discount = document.querySelectorAll('.sum-row.total')[1]
-
+            subtotal.querySelector('.total').style.textDecoration = 'line-through'
             discount.after(subtotal)
             subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
         }
@@ -212,6 +212,7 @@ update Rolpf’s behaviour characteristics as he grows to receive new food recom
                 document.querySelector('.promo_btn').classList.toggle('active')
             })
         }
+        
         if (document.querySelector('.first_discount')) {
             document.querySelector('.first_discount .total_sum').innerHTML = totalSum
         }
@@ -237,9 +238,9 @@ update Rolpf’s behaviour characteristics as he grows to receive new food recom
         }
 
         if (!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)') && !document.querySelector('.first_discount')) {
-            document.querySelectorAll('.sum-row.total')[0].querySelector('.total').style.textDecoration = 'none'
+            document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'none'
         } else {
-            document.querySelectorAll('.sum-row.total')[0].querySelector('.total').style.textDecoration = 'line-through'
+            document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'line-through'
         }
 
         if (document.querySelector('.apply-btn')) {
@@ -267,7 +268,6 @@ update Rolpf’s behaviour characteristics as he grows to receive new food recom
         childList: true,
         subtree: true
     })
-
 }
 
 redrawing()
