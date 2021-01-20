@@ -268,7 +268,6 @@ function redrawing() {
         }
     }
 
-    console.log(document.querySelector('.apply-btn').click)
 
     mut.observe(document.body,{
         childList: true,
