@@ -169,7 +169,7 @@ function redrawing() {
             let subtotal = document.querySelector('.sum-row.total:not(.coupon)')
             let discount = document.querySelectorAll('.sum-row.total')[1]
             subtotal.querySelector('.total').style.textDecoration = 'line-through'
-            discount.after(subtotal)
+            // discount.after(subtotal)
             subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
         } else {
             let subtotal = document.querySelector('.sum-row.total:not(.coupon)')
@@ -261,7 +261,7 @@ function redrawing() {
             document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
         }
         else {
-            // document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelectorAll('.summary-table .sum-row.total.coupon')[0])
+            document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelectorAll('.summary-table .sum-row.total.coupon')[0])
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
         }
 
