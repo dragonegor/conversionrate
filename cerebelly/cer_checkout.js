@@ -261,7 +261,7 @@ function redrawing() {
             document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
         }
         else {
-            document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelectorAll('.summary-table .sum-row.total.coupon')[0])
+            // document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelectorAll('.summary-table .sum-row.total.coupon')[0])
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
         }
 
@@ -278,7 +278,7 @@ function redrawing() {
     } else if(document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
         document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         document.querySelector('.first_discount').style.display = 'flex'
-    } 
+    }
 
 
     mut.observe(document.body,{
