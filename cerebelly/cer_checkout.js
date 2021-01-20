@@ -182,7 +182,7 @@ function redrawing() {
 
         if (!document.querySelector('.promo_btn')) {
             document.querySelector('.sum-row.total:not(.coupon)').insertAdjacentHTML('afterend', block)
-            if (!document.querySelector('.sum-row.total.coupon:nth-child(5)')) {
+            if (!document.querySelector('.sum-row.total.coupon:nth-child(8)')) {
                 document.querySelector('.first_discount').style.display = 'none'
             } else {
                 document.querySelector('.first_discount .total_sum').innerHTML = totalSum
