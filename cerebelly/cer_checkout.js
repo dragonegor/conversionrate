@@ -181,6 +181,7 @@ function redrawing() {
         let totalSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
         if (!document.querySelector('.promo_btn')) {
+            console.log('!!!!')
             document.querySelector('.sum-row.total:not(.coupon)').insertAdjacentHTML('afterend', block)
             if (!document.querySelector('.sum-row.total.coupon:nth-child(8)')) {
                 document.querySelector('.first_discount').style.display = 'none'
