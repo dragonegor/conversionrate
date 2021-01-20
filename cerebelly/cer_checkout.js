@@ -249,7 +249,7 @@ function redrawing() {
         } else {
             document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'line-through'
         }
-        
+
         if(!localStorage.getItem('event')) {
             if (document.querySelector('.apply-btn')) {
                 document.querySelector('.apply-btn').addEventListener('click', function () {
@@ -271,9 +271,10 @@ function redrawing() {
                     });
                 })
             }
+            localStorage.setItem('event', 'yes')
         }
-        localStorage.setItem('event', 'yes')
         
+
     }
 
 
