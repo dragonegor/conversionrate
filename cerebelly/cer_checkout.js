@@ -113,29 +113,6 @@ dataLayer.push({
 });
 
 let mut = new MutationObserver((mutations) => {
-    mutations.forEach((m) => {
-        if(m.target === document.querySelector('.summary-table')) {
-            if (document.querySelector('.apply-btn')) {
-                document.querySelector('.apply-btn').addEventListener('click', function () {
-                    window.dataLayer = window.dataLayer || [];
-                    dataLayer.push({
-                        'event': 'event-to-ga',
-                        'eventCategory': 'Exp: Checkout Improvement',
-                        'eventAction': 'click on Apply coupon'
-                    });
-                })
-
-                document.querySelector('.input-holder input').addEventListener('focus', function () {
-                    window.dataLayer = window.dataLayer || [];
-                    dataLayer.push({
-                        'event': 'event-to-ga',
-                        'eventCategory': 'Exp: Checkout Improvement',
-                        'eventAction': 'click to Focus on the coupon code field'
-                    });
-                })
-            }
-        }
-    })
     mut.disconnect()
     redrawing()
 })
@@ -287,7 +264,7 @@ function redrawing() {
                 });
             })
         }
-        
+
         if (document.querySelectorAll('.sum-row-hr')[2]) {
             document.querySelectorAll('.sum-row-hr')[2].style.display = 'none'
         }
