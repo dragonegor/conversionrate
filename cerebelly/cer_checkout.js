@@ -252,7 +252,7 @@ function redrawing() {
             document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)').style.display = 'flex'
         }
 
-        if (!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)') && document.querySelector('.first_discount').style.display === 'none') {
+        if (!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(8)') && document.querySelector('.first_discount').style.display === 'none') {
             document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'none'
         } else {
             document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'line-through'
