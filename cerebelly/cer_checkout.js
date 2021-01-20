@@ -153,7 +153,7 @@ function redrawing() {
 
 
 
-        
+
 
         let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
@@ -189,6 +189,7 @@ function redrawing() {
                 document.querySelector('.first_discount .close_first_discount').addEventListener('click', function () {
                     document.querySelector('.first_discount').style.display = 'none'
                     document.querySelector('.coupon-remove-btn').click()
+                    localStorage.removeItem('event')
                 })
             }
             document.querySelector('.promo_btn').addEventListener('click', function () {
@@ -248,26 +249,31 @@ function redrawing() {
         } else {
             document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'line-through'
         }
+        
+        if(!localStorage.getItem('event')) {
+            if (document.querySelector('.apply-btn')) {
+                document.querySelector('.apply-btn').addEventListener('click', function () {
+                    localStorage.removeItem('event')
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'Exp: Checkout Improvement',
+                        'eventAction': 'click on Apply coupon'
+                    });
+                })
 
-        if (document.querySelector('.apply-btn')) {
-            document.querySelector('.apply-btn').addEventListener('click', function () {
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Exp: Checkout Improvement',
-                    'eventAction': 'click on Apply coupon'
-                });
-            })
-
-            document.querySelector('.input-holder input').addEventListener('focus', function () {
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Exp: Checkout Improvement',
-                    'eventAction': 'click to Focus on the coupon code field'
-                });
-            })
+                document.querySelector('.input-holder input').addEventListener('focus', function () {
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'event-to-ga',
+                        'eventCategory': 'Exp: Checkout Improvement',
+                        'eventAction': 'click to Focus on the coupon code field'
+                    });
+                })
+            }
         }
+        localStorage.setItem('event', 'yes')
+        
     }
 
 
