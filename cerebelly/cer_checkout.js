@@ -255,7 +255,10 @@ function redrawing() {
         if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'none'
             document.querySelector('.first_discount').style.display = 'flex'
-        } else {
+        } else if (document.querySelectorAll('.sum-row.total.coupon').length === 0){
+            
+        }
+        else {
             document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.summary-table .sum-row.total.coupon'))
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
         }
