@@ -113,6 +113,7 @@ dataLayer.push({
 });
 
 let mut = new MutationObserver((mutations) => {
+    console.log(mutations)
     mut.disconnect()
     redrawing()
 })
@@ -189,7 +190,6 @@ function redrawing() {
                 document.querySelector('.first_discount .close_first_discount').addEventListener('click', function () {
                     document.querySelector('.first_discount').style.display = 'none'
                     document.querySelector('.coupon-remove-btn').click()
-                    localStorage.removeItem('event')
                 })
             }
             document.querySelector('.promo_btn').addEventListener('click', function () {
@@ -250,10 +250,9 @@ function redrawing() {
             document.querySelectorAll('.sum-row.total')[1].querySelector('.total').style.textDecoration = 'line-through'
         }
 
-        if(!localStorage.getItem('event')) {
+
             if (document.querySelector('.apply-btn')) {
                 document.querySelector('.apply-btn').addEventListener('click', function () {
-                    localStorage.removeItem('event')
                     window.dataLayer = window.dataLayer || [];
                     dataLayer.push({
                         'event': 'event-to-ga',
@@ -271,9 +270,8 @@ function redrawing() {
                     });
                 })
             }
-            localStorage.setItem('event', 'yes')
-        }
-        
+
+
 
     }
 
