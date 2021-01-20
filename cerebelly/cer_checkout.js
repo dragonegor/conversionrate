@@ -212,7 +212,7 @@ function redrawing() {
 
         if (document.querySelector('.sum-row.total:nth-child(5)') && document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
-            document.querySelector('.first_discount').style.display = 'block'
+            document.querySelector('.first_discount').style.display = 'flex'
         } else if (document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         }
