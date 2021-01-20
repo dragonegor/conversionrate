@@ -125,8 +125,7 @@ function redrawing() {
             payments.after(accountForm)
 
             accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
-            accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">Also in an account you can 
-              update Rolpf’s behaviour characteristics as he grows to receive new food recommendations and adjust the content of boxes.</p>`)
+            accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">Also in an account you can update your child’s behaviour characteristics as he/she grows to receive new food recommendations and adjust the content of boxes.</p>`)
 
             document.querySelector('.form-wrap .checkout-block:last-child input[name=email]').addEventListener('focus', function () {
                 window.dataLayer = window.dataLayer || [];
