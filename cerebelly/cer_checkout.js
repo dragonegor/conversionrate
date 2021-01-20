@@ -265,7 +265,7 @@ function redrawing() {
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
         }
 
-        if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('Box size')) {
+        if ((document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('Box size')) || document.querySelectorAll('.sum-row.total.coupon').length === 0) {
             document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
         } else {
             document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
