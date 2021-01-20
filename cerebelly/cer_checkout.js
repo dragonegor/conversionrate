@@ -156,9 +156,9 @@ function redrawing() {
 
         let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
-        if (document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
+        if (document.querySelector('.sum-row.total:nth-child(5)') && document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
-        } else if (document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
+        } else if (document.querySelector(document.querySelector('.sum-row.total:nth-child(8)') && '.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         }
 
