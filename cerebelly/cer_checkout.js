@@ -252,12 +252,10 @@ function redrawing() {
         if (document.querySelector('.promo_btn').classList.contains('active') && document.querySelector('.sum-row.promo-code')) {
             document.querySelector('.sum-row.promo-code').classList.add('active')
         }
-
-        if (document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)')) {
-            document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.summary-table .sum-row.total.coupon:nth-child(7)'))
-            document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)').style.display = 'flex'
+        if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && !document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
+            document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.summary-table .sum-row.total.coupon'))
+            document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
         }
-
         if (!document.querySelector('.summary-table .sum-row.total.coupon:nth-child(5)') && !document.querySelector('.summary-table .sum-row.total.coupon:nth-child(8)') && document.querySelector('.first_discount').style.display === 'none') {
             document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
         } else {
