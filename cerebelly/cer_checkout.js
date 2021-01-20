@@ -252,7 +252,10 @@ function redrawing() {
         if (document.querySelector('.promo_btn').classList.contains('active') && document.querySelector('.sum-row.promo-code')) {
             document.querySelector('.sum-row.promo-code').classList.add('active')
         }
-        if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && !document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
+        if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
+            document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'none'
+            document.querySelector('.first_discount').style.display = 'flex'
+        } else {
             document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.summary-table .sum-row.total.coupon'))
             document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
         }
