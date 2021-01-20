@@ -113,6 +113,7 @@ dataLayer.push({
 });
 
 let mut = new MutationObserver((mutations) => {
+    console.log(mutations)
     mut.disconnect()
     redrawing()
 })
@@ -122,23 +123,6 @@ let mut = new MutationObserver((mutations) => {
 
 function redrawing() {
     if(document.querySelector('.sum-row.order-total .total')) {
-        let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
-
-        if (document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
-            document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
-        }
-
-        let block = `
-    <div class="first_discount">
-      <p>First 2 weeks for special price</p>
-      <p class="discount_percent">30% OFF</p>
-      <p class="total_sum">${totalOrderSum}</p>
-      <div class="close_first_discount">
-      </div>
-    </div>
-    <div class="promo_btn">I have a coupon code</div>
-`
-
         if (!document.querySelector('.form-wrap .checkout-block:last-child input[name=email]')) {
             let accountForm = document.querySelector('.form-wrap .checkout-block:first-child')
             let payments = document.querySelector('.form-wrap .checkout-block:last-child .inputs')
@@ -150,7 +134,7 @@ function redrawing() {
               update Rolpf’s behaviour characteristics as he grows to receive new food recommendations and adjust the content of boxes.</p>`)
         }
 
-        
+
 
         document.querySelector('.form-wrap .checkout-block:last-child input[name=email]').addEventListener('focus', function () {
             window.dataLayer = window.dataLayer || [];
@@ -169,6 +153,26 @@ function redrawing() {
                 'eventAction': 'click to Focus on the password field'
             });
         })
+
+        let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
+
+        if (document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
+            document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
+        } else if (document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
+            document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
+        }
+
+        let block = `
+            <div class="first_discount">
+              <p>First 2 weeks for special price</p>
+              <p class="discount_percent">30% OFF</p>
+              <p class="total_sum">${totalOrderSum}</p>
+              <div class="close_first_discount">
+              </div>
+            </div>
+            <div class="promo_btn">I have a coupon code</div>
+        `
+
 
         if (document.querySelectorAll('.sum-row.total')[0].innerHTML.includes('Subtotal')) {
             let subtotal = document.querySelectorAll('.sum-row.total')[0]
@@ -212,7 +216,7 @@ function redrawing() {
                 document.querySelector('.promo_btn').classList.toggle('active')
             })
         }
-        
+
         if (document.querySelector('.first_discount')) {
             document.querySelector('.first_discount .total_sum').innerHTML = totalSum
         }
