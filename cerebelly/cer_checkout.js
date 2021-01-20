@@ -245,7 +245,7 @@ function redrawing() {
                 })
             }
         }
-        if(document.querySelectorAll('.sum-row-hr')[2].style.display !== 'none') {
+        if(document.querySelectorAll('.sum-row-hr')[2] && document.querySelectorAll('.sum-row-hr')[2].style.display !== 'none') {
             document.querySelector('.apply-btn').addEventListener('click', function () {
                 window.dataLayer = window.dataLayer || [];
                 dataLayer.push({
