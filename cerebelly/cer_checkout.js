@@ -214,7 +214,7 @@ function redrawing() {
         } else if (document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
             document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
         } else if (document.querySelector('.sum-row.total:nth-child(8)')) {
-            document.querySelector('.sum-row.total:nth-child(8)').after(document.querySelectorAll('.sum-row.total')[1])
+            document.querySelectorAll('.sum-row.total')[1].after(document.querySelector('.sum-row.total:nth-child(8)'))
         }
 
         if (document.querySelector('.first_discount')) {
