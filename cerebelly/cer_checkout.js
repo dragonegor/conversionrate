@@ -125,7 +125,7 @@ function redrawing() {
             payments.after(accountForm)
 
             accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
-            accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">Also in an account you can update your child’s behaviour characteristics as he/she grows to receive new food recommendations and adjust the content of boxes.</p>`)
+            // accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">Also in an account you can update your child’s behaviour characteristics as he/she grows to receive new food recommendations and adjust the content of boxes.</p>`)
         }
 
 
@@ -136,7 +136,7 @@ function redrawing() {
 
         let block = `
             <div class="first_discount">
-              <p>First 2 weeks for special price</p>
+              <p>First Box Special Savings</p>
               <p class="discount_percent">30% OFF</p>
               <p class="total_sum">${totalOrderSum}</p>
               <div class="close_first_discount">
@@ -203,7 +203,7 @@ function redrawing() {
             document.querySelector('.sum-row.promo-code .promo-add').click()
         }
         if(document.querySelectorAll('.sum-row-hr')[2] && document.querySelectorAll('.sum-row-hr')[2].style.display !== 'none') {
-            
+
         }
 
         if (document.querySelectorAll('.sum-row-hr')[2]) {
