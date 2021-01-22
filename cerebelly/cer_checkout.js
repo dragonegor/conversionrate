@@ -124,8 +124,8 @@ function redrawing() {
 
             payments.after(accountForm)
 
-            accountForm.querySelector('.checkout-title').innerHTML = 'Create an account to manage your orders'
-            // accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">Also in an account you can update your child’s behaviour characteristics as he/she grows to receive new food recommendations and adjust the content of boxes.</p>`)
+            accountForm.querySelector('.checkout-title').innerHTML = 'Create an account'
+            accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">See order history, manage your meals, and receive personalized content</p>`)
         }
 
 
@@ -136,7 +136,7 @@ function redrawing() {
 
         let block = `
             <div class="first_discount">
-              <p>First Box Special Savings</p>
+              <p>First order price after promotion</p>
               <p class="discount_percent">30% OFF</p>
               <p class="total_sum">${totalOrderSum}</p>
               <div class="close_first_discount">
