@@ -115,17 +115,16 @@ let upgradeList = {
     3465: ['3466', '20', '40', '89.99']
 }
 
-window.onload = function () {
-    console.log('in')
 
     if (window.location.href.includes('checkout')) {
         document.querySelector('#discount-code').value = 'airpop10'
         document.querySelector('#discount-form .action-apply').click()
         console.log('checkout')
     } else {
+        
         console.log('product')
         document.head.insertAdjacentHTML('beforeend', style)
-
+        document.querySelector('.minicart-wrapper').addEventListener('click', function () {
         let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
         if (cartItems === 1) {
 
@@ -158,15 +157,12 @@ window.onload = function () {
                     }).done(function (response) {
                         document.querySelector('.block-minicart .product-item .delete').click()
                         document.querySelector('#top-cart-btn-checkout').click()
-
                     })
                 })
             }
-
-
+            
         } else if (cartItems > 1) {
-
-
+            
             let btnSale = `
                 <div class="btn-sale">
                   <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
@@ -174,7 +170,7 @@ window.onload = function () {
             `
             document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
         }
-
+        })
     }
 
-}
+    
