@@ -114,8 +114,8 @@ let upgradeList = {
     3464: ['3465', '12', '33', '59.99'],
     3465: ['3466', '20', '40', '89.99']
 }
-console.log('create')
-document.addEventListener('DOMContentLoaded', function () {
+
+// document.addEventListener('DOMContentLoaded', function () {
     console.log('in')
 
     if (window.location.href.includes('checkout')) {
@@ -177,4 +177,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-})
+// })
