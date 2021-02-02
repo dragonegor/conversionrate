@@ -117,9 +117,11 @@ let upgradeList = {
 
 
     if (window.location.href.includes('checkout')) {
-        document.querySelector('#discount-code').value = 'airpop10'
-        document.querySelector('#discount-form .action-apply').click()
-        console.log('checkout')
+        window.onload = function () {
+            document.querySelector('#discount-code').value = 'airpop10'
+            document.querySelector('#discount-form .action-apply').click()
+            console.log('checkout')
+        }
     } else {
 
         console.log('product')
