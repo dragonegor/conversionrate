@@ -121,12 +121,14 @@ let upgradeList = {
         document.querySelector('#discount-form .action-apply').click()
         console.log('checkout')
     } else {
-        
+
         console.log('product')
         document.head.insertAdjacentHTML('beforeend', style)
         document.querySelector('.minicart-wrapper').addEventListener('click', function () {
+            console.log('cart')
         let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
         if (cartItems === 1) {
+            console.log('cart1')
 
             let prodId = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.items[0].product_id
             if (upgradeList[prodId]) {
@@ -160,9 +162,9 @@ let upgradeList = {
                     })
                 })
             }
-            
+
         } else if (cartItems > 1) {
-            
+
             let btnSale = `
                 <div class="btn-sale">
                   <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
@@ -173,4 +175,3 @@ let upgradeList = {
         })
     }
 
-    
