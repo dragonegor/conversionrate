@@ -124,7 +124,7 @@ let upgradeList = {
 
         console.log('product')
         document.head.insertAdjacentHTML('beforeend', style)
-        document.querySelector('.minicart-wrapper').addEventListener('click', function () {
+        document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
             console.log('cart')
         let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
         if (cartItems === 1) {
