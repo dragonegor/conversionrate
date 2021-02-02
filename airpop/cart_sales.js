@@ -127,11 +127,11 @@ let upgradeList = {
         document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
             console.log('cart')
         let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
-        if (cartItems === 1) {
+        if (cartItems === 1 ) {
             console.log('cart1')
 
             let prodId = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.items[0].product_id
-            if (upgradeList[prodId]) {
+            if (upgradeList[prodId] && !document.querySelector('.big-sale')) {
                 let bigSaleBlock = `
                 <div class="big-sale">
                   <p><b>${upgradeList[prodId][2]}% off + FREE SHIPPING</b><br>when you buy ${upgradeList[prodId][1]} masks</p>
