@@ -115,7 +115,7 @@ let upgradeList = {
     3465: ['3466', '20', '40', '89.99']
 }
 
-// document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
     console.log('in')
 
     if (window.location.href.includes('checkout')) {
@@ -134,7 +134,7 @@ let upgradeList = {
                 let bigSaleBlock = `
                 <div class="big-sale">
                   <p><b>${upgradeList[prodId][2]}% off + FREE SHIPPING</b><br>when you buy ${upgradeList[prodId][1]} masks</p>
-                  <p class="sale-price">Special Price: <b>$${(+upgradeList[prodId][3]*0.9).toFixed(2)}</b></p>
+                  <p class="sale-price">Special Price: <b>$${(+upgradeList[prodId][3] * 0.9).toFixed(2)}</b></p>
                   <button class="upgrade-cart" type="button">upgrade</button>
                   <p class="sale-coupon">Welcome coupon “AIRPOP10” applied.</p>
                   <div class="sale-block">${upgradeList[prodId][2]}%<span>OFF</span></div>
@@ -177,4 +177,4 @@ let upgradeList = {
 
     }
 
-// })
+}
