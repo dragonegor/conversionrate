@@ -120,8 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.location.href.includes('checkout')) {
         document.querySelector('#discount-code').value = 'airpop10'
         document.querySelector('#discount-form .action-apply').click()
+        console.log('checkout')
     } else {
-
+        console.log('product')
         document.head.insertAdjacentHTML('beforeend', style)
 
         let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
