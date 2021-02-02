@@ -114,8 +114,9 @@ let upgradeList = {
     3464: ['3465', '12', '33', '59.99'],
     3465: ['3466', '20', '40', '89.99']
 }
-
+console.log('create')
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('in')
 
     if (window.location.href.includes('checkout')) {
         document.querySelector('#discount-code').value = 'airpop10'
@@ -142,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 document.querySelector('.block-minicart .bottom').insertAdjacentHTML('beforebegin', bigSaleBlock)
                 document.querySelector('.upgrade-cart').addEventListener('click', function () {
-
 
                     jQuery.ajax({
                         url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
