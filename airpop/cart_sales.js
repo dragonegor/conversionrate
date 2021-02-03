@@ -115,13 +115,14 @@ let upgradeList = {
     // 3465: ['3466', '20', '40', '89.99']
 }
 
+document.head.insertAdjacentHTML('beforeend', style)
 
-        document.head.insertAdjacentHTML('beforeend', style)
-        document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
-            console.log('cart')
-            let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
+function bannerDraw() {
+
+
+        let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
         let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
-        if (cartItems === 1 ) {
+        if (cartItems === 1) {
             console.log('cart1')
 
             let prodId = cart.items[0].product_id
@@ -158,12 +159,15 @@ let upgradeList = {
 
         } else if (cartItems > 1) {
             let count = 0;
-            for (let i=0; i<cart.items.length; i++) {
-                if(cart.items[i].product_id in upgradeList) {
+            for (let i = 0; i < cart.items.length; i++) {
+                if (cart.items[i].product_id in upgradeList) {
                     count++
                 }
             }
             console.log(count)
+            if (count === 1) {
+
+            }
 
             // let btnSale = `
             //     <div class="btn-sale">
@@ -172,4 +176,15 @@ let upgradeList = {
             // `
             // document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
         }
-        })
+
+}
+
+document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
+    setTimeout(bannerDraw(), 1500)
+})
+
+if (document.querySelector('#product-addtocart-button')) {
+    document.querySelector('#product-addtocart-button').addEventListener('click', function () {
+        setTimeout(bannerDraw(), 1500)
+    })
+}
