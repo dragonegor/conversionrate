@@ -152,7 +152,7 @@ function bannerDraw() {
               <p>UPGRADE to ${upgradeList[prodId][1]} masks<br><span>${upgradeList[prodId][2]}% off + FREE SHIPPING</span></p>
             </div>
         `
-            if(!document.querySelector('.block-minicart .bottom .subtotal')) {
+            if(!document.querySelector('.btn-sale')) {
                 document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
             }
         }
