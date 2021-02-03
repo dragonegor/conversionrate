@@ -152,8 +152,8 @@ function bannerDraw() {
                   <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
                 </div>
             `
-            }
             document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
+            }
         }
             document.querySelector('.to_checkout').addEventListener('click', function () {
 
