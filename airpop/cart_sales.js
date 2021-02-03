@@ -130,30 +130,12 @@ function bannerDraw() {
                 <div class="big-sale">
                   <p><b>${upgradeList[prodId][2]}% off + FREE SHIPPING</b><br>when you buy ${upgradeList[prodId][1]} masks</p>
                   <p class="sale-price">Special Price: <b>$${upgradeList[prodId][3]}</b></p>
-                  <button class="upgrade-cart" type="button">upgrade</button>
+                  <button class="upgrade-cart to_checkout" type="button">upgrade</button>
                   <div class="sale-block">${upgradeList[prodId][2]}%<span>OFF</span></div>
                 </div>
             `
 
                 document.querySelector('.block-minicart .bottom').insertAdjacentHTML('beforebegin', bigSaleBlock)
-                document.querySelector('.upgrade-cart').addEventListener('click', function () {
-
-                    jQuery.ajax({
-                        url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
-                        type: 'POST',
-                        data: {
-                            product: upgradeList[prodId][0],
-                            selected_configurable_option: '',
-                            related_product: '',
-                            item: upgradeList[prodId][0],
-                            form_key: jQuery.cookie('form_key'),
-                            qty: 1
-                        }
-                    }).done(function (response) {
-                        document.querySelector('.block-minicart .product-item .delete').click()
-                        setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
-                    })
-                })
             }
 
         } else if (cartItems > 1) {
@@ -165,22 +147,39 @@ function bannerDraw() {
             }
             console.log(count)
             if (count === 1) {
-
+                let btnSale = `
+                <div class="btn-sale to_checkout">
+                  <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
+                </div>
+            `
             }
-
-            // let btnSale = `
-            //     <div class="btn-sale">
-            //       <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
-            //     </div>
-            // `
-            // document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
+            document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
         }
+            document.querySelector('.to_checkout').addEventListener('click', function () {
 
+                jQuery.ajax({
+                    url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
+                    type: 'POST',
+                    data: {
+                        product: upgradeList[prodId][0],
+                        selected_configurable_option: '',
+                        related_product: '',
+                        item: upgradeList[prodId][0],
+                        form_key: jQuery.cookie('form_key'),
+                        qty: 1
+                    }
+                }).done(function (response) {
+                    document.querySelector('.block-minicart .product-item .delete').click()
+                    setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
+                })
+            })
 }
 
-document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
-    bannerDraw()
-})
+if (document.querySelector('.minicart-wrapper .counter')) {
+    document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
+        bannerDraw()
+    })
+}
 
 if (document.querySelector('#product-addtocart-button')) {
     document.querySelector('#product-addtocart-button').addEventListener('click', function () {
