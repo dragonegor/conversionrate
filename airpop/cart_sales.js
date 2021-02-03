@@ -118,8 +118,7 @@ let upgradeList = {
 document.head.insertAdjacentHTML('beforeend', style)
 
 function bannerDraw() {
-
-
+    
         let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
         let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
         if (cartItems === 1) {
@@ -130,7 +129,7 @@ function bannerDraw() {
                 let bigSaleBlock = `
                 <div class="big-sale">
                   <p><b>${upgradeList[prodId][2]}% off + FREE SHIPPING</b><br>when you buy ${upgradeList[prodId][1]} masks</p>
-                  <p class="sale-price">Special Price: <b>$${(+upgradeList[prodId][3] * 0.9).toFixed(2)}</b></p>
+                  <p class="sale-price">Special Price: <b>$${upgradeList[prodId][3]}</b></p>
                   <button class="upgrade-cart" type="button">upgrade</button>
                   <div class="sale-block">${upgradeList[prodId][2]}%<span>OFF</span></div>
                 </div>
@@ -180,11 +179,11 @@ function bannerDraw() {
 }
 
 document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
-    setTimeout(bannerDraw(), 1500)
+    setTimeout(bannerDraw, 1500)
 })
 
 if (document.querySelector('#product-addtocart-button')) {
     document.querySelector('#product-addtocart-button').addEventListener('click', function () {
-        setTimeout(bannerDraw(), 2500)
+        setTimeout(bannerDraw, 2500)
     })
 }
