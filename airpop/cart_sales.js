@@ -155,6 +155,7 @@ function bannerDraw() {
         document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
         }
     }
+    if (document.querySelector('.to_checkout')) {
         document.querySelector('.to_checkout').addEventListener('click', function () {
 
             jQuery.ajax({
@@ -173,6 +174,7 @@ function bannerDraw() {
                 setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
             })
         })
+    }
 }
 
 if (document.querySelector('.minicart-wrapper .counter')) {
