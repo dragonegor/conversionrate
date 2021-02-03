@@ -90,57 +90,47 @@ let style = `
 let upgradeList = {
     3175: ['3462', '8', '8', '54.99'],
     3462: ['3463', '12', '22', '69.99'],
-    3463: ['3177', '20', '33', '99.99'],
+    // 3463: ['3177', '20', '33', '99.99'],
     3174: ['3460', '8', '31', '54.99'],
     3176: ['3460', '8', '31', '54.99'],
     3460: ['3461', '12', '42', '69.99'],
-    3461: ['3178', '20', '50', '99.99'],
+    // 3461: ['3178', '20', '50', '99.99'],
     3160: ['3458', '8', '25', '44.99'],
     3167: ['3458', '8', '25', '44.99'],
     3458: ['3459', '12', '33', '59.99'],
-    3459: ['3319', '20', '40', '89.99'],
+    // 3459: ['3319', '20', '40', '89.99'],
     3159: ['3456', '8', '25', '44.99'],
     3166: ['3456', '8', '25', '44.99'],
     3456: ['3457', '12', '33', '59.99'],
-    3457: ['3318', '20', '40', '89.99'],
+    // 3457: ['3318', '20', '40', '89.99'],
     3162: ['3470', '8', '25', '44.99'],
     3470: ['3471', '12', '33', '59.99'],
-    3471: ['3472', '20', '40', '89.99'],
+    // 3471: ['3472', '20', '40', '89.99'],
     3180: ['3467', '8', '25', '44.99'],
     3163: ['3467', '8', '25', '44.99'],
     3467: ['3468', '12', '33', '59.99'],
-    3468: ['3469', '20', '40', '89.99'],
+    // 3468: ['3469', '20', '40', '89.99'],
     3179: ['3464', '8', '25', '44.99'],
     3464: ['3465', '12', '33', '59.99'],
-    3465: ['3466', '20', '40', '89.99']
+    // 3465: ['3466', '20', '40', '89.99']
 }
 
 
-    if (window.location.href.includes('checkout')) {
-        setTimeout(function () {
-            document.querySelector('.discount-code').click()
-            document.querySelector('#discount-code').value = 'airpop10'
-            setTimeout(document.querySelector('#discount-form .action-apply').click(), 1000)
-            console.log('checkout')
-        }, 3000)
-    } else {
-
-        console.log('product')
         document.head.insertAdjacentHTML('beforeend', style)
         document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
             console.log('cart')
+            let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
         let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
         if (cartItems === 1 ) {
             console.log('cart1')
 
-            let prodId = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.items[0].product_id
+            let prodId = cart.items[0].product_id
             if (upgradeList[prodId] && !document.querySelector('.big-sale')) {
                 let bigSaleBlock = `
                 <div class="big-sale">
                   <p><b>${upgradeList[prodId][2]}% off + FREE SHIPPING</b><br>when you buy ${upgradeList[prodId][1]} masks</p>
                   <p class="sale-price">Special Price: <b>$${(+upgradeList[prodId][3] * 0.9).toFixed(2)}</b></p>
                   <button class="upgrade-cart" type="button">upgrade</button>
-                  <p class="sale-coupon">Welcome coupon “AIRPOP10” applied.</p>
                   <div class="sale-block">${upgradeList[prodId][2]}%<span>OFF</span></div>
                 </div>
             `
@@ -167,14 +157,19 @@ let upgradeList = {
             }
 
         } else if (cartItems > 1) {
+            let count = 0;
+            for (i=0; i<cart.length; i++) {
+                if(+cart.items[0].product_id in upgradeList) {
+                    count++
+                }
+            }
+            console.log(count)
 
-            let btnSale = `
-                <div class="btn-sale">
-                  <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
-                </div>
-            `
-            document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
+            // let btnSale = `
+            //     <div class="btn-sale">
+            //       <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
+            //     </div>
+            // `
+            // document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
         }
         })
-    }
-
