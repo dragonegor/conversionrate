@@ -119,7 +119,7 @@ let upgradeList = {
     if (window.location.href.includes('checkout')) {
         setTimeout(function () {
             document.querySelector('#discount-code').value = 'airpop10'
-            document.querySelector('#discount-form .action-apply').click()
+            setTimeout(document.querySelector('#discount-form .action-apply').click(), 1000)
             console.log('checkout')
         }, 3000)
     } else {
