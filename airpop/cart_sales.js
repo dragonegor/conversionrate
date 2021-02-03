@@ -149,7 +149,7 @@ function bannerDraw() {
         if (count === 1) {
             let btnSale = `
             <div class="btn-sale to_checkout">
-              <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
+              <p>UPGRADE to ${upgradeList[prodId][1]} masks<br><span>${upgradeList[prodId][2]}% off + FREE SHIPPING</span></p>
             </div>
         `
         document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
