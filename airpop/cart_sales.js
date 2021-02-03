@@ -119,60 +119,60 @@ document.head.insertAdjacentHTML('beforeend', style)
 
 function bannerDraw() {
 
-        let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
-        let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
-        if (cartItems === 1) {
-            console.log('cart1')
+    let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
+    let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
+    let prodId = cart.items[0].product_id
+    if (cartItems === 1) {
+        console.log('cart1')
+        if (upgradeList[prodId] && !document.querySelector('.big-sale')) {
+            let bigSaleBlock = `
+            <div class="big-sale">
+              <p><b>${upgradeList[prodId][2]}% off + FREE SHIPPING</b><br>when you buy ${upgradeList[prodId][1]} masks</p>
+              <p class="sale-price">Special Price: <b>$${upgradeList[prodId][3]}</b></p>
+              <button class="upgrade-cart to_checkout" type="button">upgrade</button>
+              <div class="sale-block">${upgradeList[prodId][2]}%<span>OFF</span></div>
+            </div>
+        `
 
-            let prodId = cart.items[0].product_id
-            if (upgradeList[prodId] && !document.querySelector('.big-sale')) {
-                let bigSaleBlock = `
-                <div class="big-sale">
-                  <p><b>${upgradeList[prodId][2]}% off + FREE SHIPPING</b><br>when you buy ${upgradeList[prodId][1]} masks</p>
-                  <p class="sale-price">Special Price: <b>$${upgradeList[prodId][3]}</b></p>
-                  <button class="upgrade-cart to_checkout" type="button">upgrade</button>
-                  <div class="sale-block">${upgradeList[prodId][2]}%<span>OFF</span></div>
-                </div>
-            `
+            document.querySelector('.block-minicart .bottom').insertAdjacentHTML('beforebegin', bigSaleBlock)
+        }
 
-                document.querySelector('.block-minicart .bottom').insertAdjacentHTML('beforebegin', bigSaleBlock)
-            }
-
-        } else if (cartItems > 1) {
-            let count = 0;
-            for (let i = 0; i < cart.items.length; i++) {
-                if (cart.items[i].product_id in upgradeList) {
-                    count++
-                }
-            }
-            console.log(count)
-            if (count === 1) {
-                let btnSale = `
-                <div class="btn-sale to_checkout">
-                  <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
-                </div>
-            `
-            document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
+    } else if (cartItems > 1) {
+        let count = 0;
+        for (let i = 0; i < cart.items.length; i++) {
+            if (cart.items[i].product_id in upgradeList) {
+                count++
+                prodId = cart.items[i].product_id
             }
         }
-            document.querySelector('.to_checkout').addEventListener('click', function () {
+        console.log(count)
+        if (count === 1) {
+            let btnSale = `
+            <div class="btn-sale to_checkout">
+              <p>UPGRADE to 8 masks<br><span>25% off + FREE SHIPPING</span></p>
+            </div>
+        `
+        document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
+        }
+    }
+        document.querySelector('.to_checkout').addEventListener('click', function () {
 
-                jQuery.ajax({
-                    url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
-                    type: 'POST',
-                    data: {
-                        product: upgradeList[prodId][0],
-                        selected_configurable_option: '',
-                        related_product: '',
-                        item: upgradeList[prodId][0],
-                        form_key: jQuery.cookie('form_key'),
-                        qty: 1
-                    }
-                }).done(function (response) {
-                    document.querySelector('.block-minicart .product-item .delete').click()
-                    setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
-                })
+            jQuery.ajax({
+                url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
+                type: 'POST',
+                data: {
+                    product: upgradeList[prodId][0],
+                    selected_configurable_option: '',
+                    related_product: '',
+                    item: upgradeList[prodId][0],
+                    form_key: jQuery.cookie('form_key'),
+                    qty: 1
+                }
+            }).done(function (response) {
+                document.querySelector('.block-minicart .product-item .delete').click()
+                setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
             })
+        })
 }
 
 if (document.querySelector('.minicart-wrapper .counter')) {
