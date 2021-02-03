@@ -160,7 +160,7 @@ let upgradeList = {
                         }
                     }).done(function (response) {
                         document.querySelector('.block-minicart .product-item .delete').click()
-                        document.querySelector('#top-cart-btn-checkout').click()
+                        setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
                     })
                 })
             }
