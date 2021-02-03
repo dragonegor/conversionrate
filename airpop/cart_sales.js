@@ -158,7 +158,7 @@ let upgradeList = {
 
         } else if (cartItems > 1) {
             let count = 0;
-            for (i=0; i<cart.items.length; i++) {
+            for (let i=0; i<cart.items.length; i++) {
                 if(cart.items[i].product_id in upgradeList) {
                     count++
                 }
