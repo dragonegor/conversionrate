@@ -185,6 +185,6 @@ document.querySelector('.minicart-wrapper .counter').addEventListener('click', f
 
 if (document.querySelector('#product-addtocart-button')) {
     document.querySelector('#product-addtocart-button').addEventListener('click', function () {
-        setTimeout(bannerDraw(), 1500)
+        setTimeout(bannerDraw(), 2500)
     })
 }
