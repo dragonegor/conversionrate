@@ -152,7 +152,9 @@ function bannerDraw() {
               <p>UPGRADE to ${upgradeList[prodId][1]} masks<br><span>${upgradeList[prodId][2]}% off + FREE SHIPPING</span></p>
             </div>
         `
-        document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
+            if(!document.querySelector('.block-minicart .bottom .subtotal')) {
+                document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
+            }
         }
     }
     if (document.querySelector('.to_checkout')) {
@@ -185,6 +187,6 @@ if (document.querySelector('.minicart-wrapper .counter')) {
 
 if (document.querySelector('#product-addtocart-button')) {
     document.querySelector('#product-addtocart-button').addEventListener('click', function () {
-        setTimeout(bannerDraw, 1500)
+        setTimeout(bannerDraw, 2500)
     })
 }
