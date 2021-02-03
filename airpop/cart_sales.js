@@ -118,7 +118,7 @@ let upgradeList = {
 document.head.insertAdjacentHTML('beforeend', style)
 
 function bannerDraw() {
-    
+
     let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
     let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
     let prodId = cart.items[0].product_id
@@ -181,7 +181,7 @@ function bannerDraw() {
             })
         })
     }
-    if(cart.items.length > 0) {
+    if(document.querySelectorAll('.block-minicart .product-item .delete')) {
         document.querySelectorAll('.block-minicart .product-item .delete').forEach((item) => {
             item.removeEventListener('click', bannerDraw)
             item.addEventListener('click', bannerDraw)
