@@ -123,6 +123,9 @@ function bannerDraw() {
     let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
     let prodId = cart.items[0].product_id
     if (cartItems === 1) {
+        if(document.querySelector('.btn-sale')) {
+            document.querySelector('.btn-sale').remove()
+        }
         console.log('cart1')
         if (upgradeList[prodId] && !document.querySelector('.big-sale')) {
             let bigSaleBlock = `
@@ -153,6 +156,9 @@ function bannerDraw() {
             </div>
         `
             if(!document.querySelector('.btn-sale')) {
+                if(document.querySelector('.big-sale')) {
+                    document.querySelector('.big-sale').remove()
+                }
                 document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
             }
         } else {
