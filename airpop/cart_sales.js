@@ -212,9 +212,17 @@ function bannerDraw() {
             }
         }
     }
-    
+
     if (document.querySelector('.to_checkout')) {
         document.querySelector('.to_checkout').addEventListener('click', function () {
+            let y = 0
+
+            for (let i = 0; i < cart.items.length; i++) {
+                if (cart.items[i].product_id in upgradeList) {
+                    y=i
+                }
+            }
+            
             jQuery.ajax({
                 url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
                 type: 'POST',
@@ -227,12 +235,14 @@ function bannerDraw() {
                     qty: 1
                 }
             }).done(function (response) {
-                document.querySelector('.block-minicart .product-item .delete').click()
+                
+                
+                document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
                 setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
             })
         })
     }
-    
+
     if(document.querySelectorAll('.block-minicart .product-item .delete')) {
         document.querySelectorAll('.block-minicart .product-item .delete').forEach((item) => {
             item.removeEventListener('click', bannerDraw)
