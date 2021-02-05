@@ -222,7 +222,7 @@ function bannerDraw() {
                     y=i
                 }
             }
-            
+
             jQuery.ajax({
                 url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
                 type: 'POST',
@@ -235,8 +235,8 @@ function bannerDraw() {
                     qty: 1
                 }
             }).done(function (response) {
-                
-                
+
+
                 document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
                 setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
             })
@@ -251,14 +251,22 @@ function bannerDraw() {
     }
 }
 
-if (document.querySelector('.minicart-wrapper .counter')) {
-    document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
-        bannerDraw()
-    })
-}
+// if (document.querySelector('.minicart-wrapper .counter')) {
+//     document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
+//         bannerDraw()
+//     })
+// }
+//
+// if (document.querySelector('#product-addtocart-button')) {
+//     document.querySelector('#product-addtocart-button').addEventListener('click', function () {
+//         setTimeout(bannerDraw, 2500)
+//     })
+// }
+let mut = new MutationObserver(mutations => {
+    bannerDraw()
+} )
 
-if (document.querySelector('#product-addtocart-button')) {
-    document.querySelector('#product-addtocart-button').addEventListener('click', function () {
-        setTimeout(bannerDraw, 2500)
-    })
-}
+mut.observe(document.querySelector('.block-minicart'), {
+    childList: true,
+    subtree: true
+})
