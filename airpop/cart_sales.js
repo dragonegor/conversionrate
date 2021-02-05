@@ -86,6 +86,52 @@ let style = `
     </style>
 `
 
+let tL = {
+    1: 'off + FREE SHIPPING',
+    2: 'when you buy',
+    3: 'masks',
+    4: 'Special Price:',
+    5: '',
+    6: 'off',
+    7: 'UPGRADE to',
+    8: 'Upgrade'
+}
+
+if (window.location.href.includes('/de/')) {
+    tL = {
+        1: 'Rabatt + KOSTENLOSER VERSAND',
+        2: 'beim Kauf von',
+        3: 'Masken',
+        4: 'Sonderpreis:',
+        5: '-',
+        6: '',
+        7: 'UPGRADE zu',
+        8: 'Aktualisierung'
+    }
+} else if(window.location.href.includes('/nl/')) {
+    tL = {
+        1: 'korting + GRATIS VERZENDING',
+        2: 'bij aankoop van',
+        3: 'maskers',
+        4: 'Speciale prijs:',
+        5: '-',
+        6: '',
+        7: 'UPGRADE naar',
+        8: 'Upgrade'
+    }
+} else if(window.location.href.includes('/it/')) {
+    tL = {
+        1: 'di sconto + SPEDIZIONE GRATUITA',
+        2: 'quando acquisti',
+        3: 'maschere',
+        4: 'Prezzo speciale:',
+        5: '-',
+        6: '',
+        7: 'AGGIORNA a',
+        8: 'Upgrade'
+    }
+}
+
 
 let upgradeList = {
     3175: ['3462', '8', '8', '54.99'],
@@ -129,15 +175,14 @@ function bannerDraw() {
         console.log('cart1')
         if (upgradeList[prodId] && !document.querySelector('.big-sale')) {
             let bigSaleBlock = `
-            <div class="big-sale">
-              <p><b>${upgradeList[prodId][2]}% off + FREE SHIPPING</b><br>when you buy ${upgradeList[prodId][1]} masks</p>
-              <p class="sale-price">Special Price: <b>$${upgradeList[prodId][3]}</b></p>
-              <button class="upgrade-cart to_checkout" type="button">upgrade</button>
-              <div class="sale-block">${upgradeList[prodId][2]}%<span>OFF</span></div>
-            </div>
-        `
-
-            document.querySelector('.block-minicart .bottom').insertAdjacentHTML('beforebegin', bigSaleBlock)
+                <div class="big-sale">
+                  <p><b>${upgradeList[prodId][2]}% ${tL["1"]}</b><br>${tL["2"]} ${upgradeList[prodId][1]} ${tL["3"]}</p>
+                  <p class="sale-price">${tL["4"]} <b>$${upgradeList[prodId][3]}</b></p>
+                  <button class="upgrade-cart to_checkout" type="button">${tL["8"]}</button>
+                  <div class="sale-block">${tL["5"]}${upgradeList[prodId][2]}%<span>${tL["6"]}</span></div>
+                </div>
+            `
+            document.querySelector('.block-minicart .minicart-items-wrapper').insertAdjacentHTML('afterend', bigSaleBlock)
         }
 
     } else if (cartItems > 1) {
@@ -152,7 +197,7 @@ function bannerDraw() {
         if (count === 1) {
             let btnSale = `
             <div class="btn-sale to_checkout">
-              <p>UPGRADE to ${upgradeList[prodId][1]} masks<br><span>${upgradeList[prodId][2]}% off + FREE SHIPPING</span></p>
+              <p>${tL["7"]} ${upgradeList[prodId][1]} ${tL["3"]}<br><span>${upgradeList[prodId][2]}% ${tL["1"]}</span></p>
             </div>
         `
             if(!document.querySelector('.btn-sale')) {
@@ -167,9 +212,9 @@ function bannerDraw() {
             }
         }
     }
+    
     if (document.querySelector('.to_checkout')) {
         document.querySelector('.to_checkout').addEventListener('click', function () {
-
             jQuery.ajax({
                 url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
                 type: 'POST',
@@ -187,6 +232,7 @@ function bannerDraw() {
             })
         })
     }
+    
     if(document.querySelectorAll('.block-minicart .product-item .delete')) {
         document.querySelectorAll('.block-minicart .product-item .delete').forEach((item) => {
             item.removeEventListener('click', bannerDraw)
