@@ -217,6 +217,32 @@ function bannerDraw() {
         }
     }
 
+    function addToCart() {
+        let y = 0
+
+        for (let i = 0; i < cart.items.length; i++) {
+            if (cart.items[i].product_id in upgradeList) {
+                y=i
+            }
+        }
+
+        jQuery.ajax({
+            url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
+            type: 'POST',
+            data: {
+                product: upgradeList[prodId][0],
+                selected_configurable_option: '',
+                related_product: '',
+                item: upgradeList[prodId][0],
+                form_key: jQuery.cookie('form_key'),
+                qty: 1
+            }
+        }).done(function (response) {
+            document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
+            setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
+        })
+    }
+
     if (document.querySelector('.to_checkout')) {
         document.querySelector('.to_checkout').removeEventListener('click', addToCart)
         document.querySelector('.to_checkout').addEventListener('click', addToCart)
@@ -231,29 +257,3 @@ mut.observe(document.querySelector('.block-minicart'), {
     childList: true,
     subtree: true
 })
-
-function addToCart() {
-    let y = 0
-
-    for (let i = 0; i < cart.items.length; i++) {
-        if (cart.items[i].product_id in upgradeList) {
-            y=i
-        }
-    }
-
-    jQuery.ajax({
-        url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
-        type: 'POST',
-        data: {
-            product: upgradeList[prodId][0],
-            selected_configurable_option: '',
-            related_product: '',
-            item: upgradeList[prodId][0],
-            form_key: jQuery.cookie('form_key'),
-            qty: 1
-        }
-    }).done(function (response) {
-        document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
-        setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
-    })
-}
