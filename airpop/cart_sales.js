@@ -218,7 +218,6 @@ function bannerDraw() {
     }
 
     function addToCart() {
-        mut.disconnect()
         let y = 0
 
         for (let i = 0; i < cart.items.length; i++) {
@@ -245,6 +244,7 @@ function bannerDraw() {
     }
 
     if (document.querySelector('.to_checkout')) {
+        mut.disconnect()
         document.querySelector('.to_checkout').removeEventListener('click', addToCart)
         document.querySelector('.to_checkout').addEventListener('click', addToCart)
     }
