@@ -162,12 +162,13 @@ let upgradeList = {
 }
 
 document.head.insertAdjacentHTML('beforeend', style)
-
+let cartItems, prodId, cart
 function bannerDraw() {
-
-    let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
-    let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
-    let prodId = cart.items[0].product_id
+    if (JSON.parse(localStorage.getItem('mage-cache-storage'))) {
+        cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
+        cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
+        prodId = cart.items[0].product_id
+    }
     if (cartItems === 1) {
         if(document.querySelector('.btn-sale')) {
             document.querySelector('.btn-sale').remove()
