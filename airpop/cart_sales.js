@@ -182,7 +182,7 @@ function bannerDraw() {
                 <div class="big-sale">
                   <p><b>${upgradeList[prodId][2]}% ${tL["1"]}</b><br>${tL["2"]} ${upgradeList[prodId][1]} ${tL["3"]}</p>
                   <p class="sale-price">${tL["4"]} <b>$${upgradeList[prodId][3]}</b></p>
-                  <button class="upgrade-cart to_checkout" type="button">${tL["8"]}</button>
+                  <button class="upgrade-cart to_checkout" type="button" onclick="addToCart()">${tL["8"]}</button>
                   <div class="sale-block">${tL["5"]}${upgradeList[prodId][2]}%<span>${tL["6"]}</span></div>
                 </div>
             `
@@ -200,7 +200,7 @@ function bannerDraw() {
         console.log(count)
         if (count === 1) {
             let btnSale = `
-            <div class="btn-sale to_checkout">
+            <div class="btn-sale to_checkout" onclick="addToCart()">
               <p>${tL["7"]} ${upgradeList[prodId][1]} ${tL["3"]}<br><span>${upgradeList[prodId][2]}% ${tL["1"]}</span></p>
             </div>
         `
@@ -217,34 +217,7 @@ function bannerDraw() {
         }
     }
 
-    function addToCart() {
-        let y = 0
-
-        for (let i = 0; i < cart.items.length; i++) {
-            if (cart.items[i].product_id in upgradeList) {
-                y=i
-            }
-        }
-
-        jQuery.ajax({
-            url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
-            type: 'POST',
-            data: {
-                product: upgradeList[prodId][0],
-                selected_configurable_option: '',
-                related_product: '',
-                item: upgradeList[prodId][0],
-                form_key: jQuery.cookie('form_key'),
-                qty: 1
-            }
-        }).done(function (response) {
-            document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
-            setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
-        })
-    }
-
     if (document.querySelector('.to_checkout')) {
-        mut.disconnect()
         document.querySelector('.to_checkout').removeEventListener('click', addToCart)
         document.querySelector('.to_checkout').addEventListener('click', addToCart)
     }
@@ -258,3 +231,35 @@ mut.observe(document.querySelector('.block-minicart'), {
     childList: true,
     subtree: true
 })
+
+function addToCart() {
+    let prodId
+    let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
+    let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
+    if (cart.items[0]) {
+        prodId = cart.items[0].product_id
+    }
+    let y = 0
+
+    for (let i = 0; i < cart.items.length; i++) {
+        if (cart.items[i].product_id in upgradeList) {
+            y=i
+        }
+    }
+
+    jQuery.ajax({
+        url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
+        type: 'POST',
+        data: {
+            product: upgradeList[prodId][0],
+            selected_configurable_option: '',
+            related_product: '',
+            item: upgradeList[prodId][0],
+            form_key: jQuery.cookie('form_key'),
+            qty: 1
+        }
+    }).done(function (response) {
+        document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
+        setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
+    })
+}
