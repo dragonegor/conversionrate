@@ -199,6 +199,10 @@ function bannerDraw() {
         }
         console.log(count)
         if (count === 1) {
+            if (document.querySelector('.big-sale')) {
+                document.querySelector('.big-sale').remove()
+            }
+
             let btnSale = `
             <div class="btn-sale to_checkout" onclick="addToCart()">
               <p>${tL["7"]} ${upgradeList[prodId][1]} ${tL["3"]}<br><span>${upgradeList[prodId][2]}% ${tL["1"]}</span></p>
@@ -211,6 +215,10 @@ function bannerDraw() {
                 document.querySelector('.block-minicart .bottom .subtotal').insertAdjacentHTML('afterend', btnSale)
             }
         } else {
+            if (document.querySelector('.big-sale')) {
+                document.querySelector('.big-sale').remove()
+            }
+            
             if(document.querySelector('.btn-sale')) {
                 document.querySelector('.btn-sale').remove()
             }
