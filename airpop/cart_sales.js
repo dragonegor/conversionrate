@@ -164,7 +164,7 @@ let upgradeList = {
 document.head.insertAdjacentHTML('beforeend', style)
 
 function bannerDraw() {
-    let cart, cartItem, prodId
+    let cart, cartItems, prodId
     if (JSON.parse(localStorage.getItem('mage-cache-storage')).cart) {
         cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
         cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
