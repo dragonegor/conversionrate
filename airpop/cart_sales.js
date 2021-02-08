@@ -239,8 +239,7 @@ function bannerDraw() {
                     qty: 1
                 }
             }).done(function (response) {
-
-
+                mut.disconnect()
                 document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
                 setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
             })
