@@ -246,28 +246,9 @@ function bannerDraw() {
             })
         })
     }
-
-    if(document.querySelectorAll('.block-minicart .product-item .delete')) {
-        document.querySelectorAll('.block-minicart .product-item .delete').forEach((item) => {
-            item.removeEventListener('click', bannerDraw)
-            item.addEventListener('click', bannerDraw)
-        })
-    }
 }
 
-// if (document.querySelector('.minicart-wrapper .counter')) {
-//     document.querySelector('.minicart-wrapper .counter').addEventListener('click', function () {
-//         bannerDraw()
-//     })
-// }
-//
-// if (document.querySelector('#product-addtocart-button')) {
-//     document.querySelector('#product-addtocart-button').addEventListener('click', function () {
-//         setTimeout(bannerDraw, 2500)
-//     })
-// }
 let mut = new MutationObserver(mutations => {
-    console.log(mutations)
     bannerDraw()
 } )
 
