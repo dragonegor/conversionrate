@@ -216,11 +216,6 @@ function bannerDraw() {
             }
         }
     }
-
-    if (document.querySelector('.to_checkout')) {
-        document.querySelector('.to_checkout').removeEventListener('click', addToCart)
-        document.querySelector('.to_checkout').addEventListener('click', addToCart)
-    }
 }
 
 let mut = new MutationObserver(mutations => {
@@ -235,7 +230,6 @@ mut.observe(document.querySelector('.block-minicart'), {
 function addToCart() {
     let prodId
     let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
-    let cartItems = JSON.parse(localStorage.getItem('mage-cache-storage')).cart.summary_count
     if (cart.items[0]) {
         prodId = cart.items[0].product_id
     }
