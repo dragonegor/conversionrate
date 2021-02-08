@@ -264,6 +264,7 @@ function bannerDraw() {
 //     })
 // }
 let mut = new MutationObserver(mutations => {
+    console.log(mutations)
     bannerDraw()
 } )
 
