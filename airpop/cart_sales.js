@@ -269,6 +269,7 @@ function addToCart() {
         }
     }).done(function (response) {
         document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
+        document.querySelector('.btn-sale').remove()
         setTimeout(bannerDraw, 1000)
     })
 }
@@ -307,6 +308,7 @@ function addToCart2() {
         }
     }).done(function (response) {
         document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
+        document.querySelector('.btn-sale').remove()
         setTimeout(bannerDraw, 1000)
     })
 }
