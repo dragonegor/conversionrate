@@ -269,7 +269,7 @@ function addToCart() {
         }
     }).done(function (response) {
         document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
-        document.querySelector('.btn-sale').remove()
+        document.querySelector('.big-sale').remove()
         setTimeout(bannerDraw, 1000)
     })
 }
