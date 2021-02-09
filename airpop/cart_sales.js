@@ -204,7 +204,7 @@ function bannerDraw() {
             }
 
             let btnSale = `
-            <div class="btn-sale to_checkout" onclick="addToCart()">
+            <div class="btn-sale to_checkout" onclick="addToCart2()">
               <p>${tL["7"]} ${upgradeList[prodId][1]} ${tL["3"]}<br><span>${upgradeList[prodId][2]}% ${tL["1"]}</span></p>
             </div>
         `
@@ -218,7 +218,7 @@ function bannerDraw() {
             if (document.querySelector('.big-sale')) {
                 document.querySelector('.big-sale').remove()
             }
-            
+
             if(document.querySelector('.btn-sale')) {
                 document.querySelector('.btn-sale').remove()
             }
@@ -236,6 +236,13 @@ mut.observe(document.querySelector('.block-minicart'), {
 })
 
 function addToCart() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp — PDP improvements',
+        'eventAction': 'click on button',
+        'eventLabel': 'Upgrade'
+    });
     let prodId
     let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
     if (cart.items[0]) {
@@ -265,3 +272,62 @@ function addToCart() {
         setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
     })
 }
+
+function addToCart2() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp — PDP improvements',
+        'eventAction': 'click on button',
+        'eventLabel': 'Upgrade to x masks'
+    });
+    let prodId
+    let cart = JSON.parse(localStorage.getItem('mage-cache-storage')).cart
+    if (cart.items[0]) {
+        prodId = cart.items[0].product_id
+    }
+    let y = 0
+
+    for (let i = 0; i < cart.items.length; i++) {
+        if (cart.items[i].product_id in upgradeList) {
+            y=i
+        }
+    }
+
+    jQuery.ajax({
+        url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + upgradeList[prodId][0] + '/',
+        type: 'POST',
+        data: {
+            product: upgradeList[prodId][0],
+            selected_configurable_option: '',
+            related_product: '',
+            item: upgradeList[prodId][0],
+            form_key: jQuery.cookie('form_key'),
+            qty: 1
+        }
+    }).done(function (response) {
+        document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
+        setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
+    })
+}
+
+
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2078786,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
+hj('trigger', 'upgrade_offer_in_cart');
+
+
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp — Upgrade offer in the cart',
+    'eventAction': 'loaded'
+});
+
