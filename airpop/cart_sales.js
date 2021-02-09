@@ -269,7 +269,7 @@ function addToCart() {
         }
     }).done(function (response) {
         document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
-        setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
+        // setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
     })
 }
 
@@ -307,7 +307,7 @@ function addToCart2() {
         }
     }).done(function (response) {
         document.querySelectorAll('.block-minicart .product-item .delete')[y].click()
-        setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
+       // setTimeout(document.querySelector('#top-cart-btn-checkout').click(), 2000)
     })
 }
 
