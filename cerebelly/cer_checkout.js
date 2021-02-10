@@ -90,12 +90,12 @@ let style = `
 document.head.insertAdjacentHTML('beforeend', style);
 
 (function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:2171597,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
+  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+  h._hjSettings={hjid:2171597,hjsv:6};
+  a=o.getElementsByTagName('head')[0];
+  r=o.createElement('script');r.async=1;
+  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+  a.appendChild(r);
 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
 hj('trigger', 'checkout_improvement');
@@ -103,38 +103,50 @@ hj('trigger', 'checkout_improvement');
 
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
-    'event': 'event-to-ga',
-    'eventCategory': 'Exp: Checkout Improvement',
-    'eventAction': 'loaded'
+  'event': 'event-to-ga',
+  'eventCategory': 'Exp: Checkout Improvement',
+  'eventAction': 'loaded'
 });
 
 let mut = new MutationObserver((mutations) => {
-    mut.disconnect()
-    redrawing()
+  mut.disconnect()
+  redrawing()
 })
 
 
 
 
 function redrawing() {
-    if(document.querySelector('.sum-row.order-total .total')) {
-        if (!document.querySelector('.form-wrap .checkout-block:last-child input[name=email]')) {
-            let accountForm = document.querySelector('.form-wrap .checkout-block:first-child')
-            let payments = document.querySelector('.form-wrap .checkout-block:last-child .inputs')
+  document.querySelector('.first_discount .close_first_discount').removeEventListener('click', cancel)
+  function cancel() {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp: Checkout Improvement',
+        'eventAction': 'cancel promo code'
+      });
+      document.querySelector('.first_discount').style.display = 'none'
+      document.querySelector('.coupon-remove-btn').click()
+  }
+  
+  if(document.querySelector('.sum-row.order-total .total')) {
+    if (!document.querySelector('.form-wrap .checkout-block:last-child input[name=email]')) {
+      let accountForm = document.querySelector('.form-wrap .checkout-block:first-child')
+      let payments = document.querySelector('.form-wrap .checkout-block:last-child .inputs')
 
-            payments.after(accountForm)
+      payments.after(accountForm)
 
-            accountForm.querySelector('.checkout-title').innerHTML = 'Create an account'
-            accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">See order history, manage your meals, and receive personalized content</p>`)
-        }
-
-
+      accountForm.querySelector('.checkout-title').innerHTML = 'Create an account'
+      accountForm.querySelector('.checkout-title').insertAdjacentHTML('afterend', `<p class="subtitleAdd">See order history, manage your meals, and receive personalized content</p>`)
+    }
 
 
 
-        let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
 
-        let block = `
+
+    let totalOrderSum = document.querySelector('.sum-row.order-total .total').innerHTML
+
+    let block = `
             <div class="first_discount">
               <p>First order price after promotion</p>
               <p class="discount_percent">30% OFF</p>
@@ -146,118 +158,110 @@ function redrawing() {
         `
 
 
-        if (document.querySelectorAll('.sum-row.total')[1]) {
-            let subtotal = document.querySelector('.sum-row.total:not(.coupon)')
-            let discount = document.querySelectorAll('.sum-row.total')[1]
-            subtotal.querySelector('.total').style.textDecoration = 'line-through'
-            // discount.after(subtotal)
-            subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
-        } else {
-            let subtotal = document.querySelector('.sum-row.total:not(.coupon)')
-            subtotal.querySelector('.total').style.textDecoration = 'line-through'
-            subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
-        }
-
-
-        let totalSum = document.querySelector('.sum-row.order-total .total').innerHTML
-
-        if (!document.querySelector('.promo_btn')) {
-
-            document.querySelector('.sum-row.total:not(.coupon)').insertAdjacentHTML('afterend', block)
-            document.querySelector('.promo_btn').addEventListener('click', function () {
-                if (document.querySelector('.promo_btn').classList.contains('active')) {
-                    window.dataLayer = window.dataLayer || [];
-                    dataLayer.push({
-                        'event': 'event-to-ga',
-                        'eventCategory': 'Exp: Checkout Improvement',
-                        'eventAction': 'click on I have a coupon code - collapse'
-                    });
-                } else {
-                    window.dataLayer = window.dataLayer || [];
-                    dataLayer.push({
-                        'event': 'event-to-ga',
-                        'eventCategory': 'Exp: Checkout Improvement',
-                        'eventAction': 'click on I have a coupon code - expand'
-                    });
-                }
-                document.querySelector('.sum-row.promo-code').classList.toggle('active')
-                document.querySelector('.promo_btn').classList.toggle('active')
-            })
-        }
-
-        if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && !document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
-            document.querySelector('.first_discount').style.display = 'none'
-        } else {
-            document.querySelector('.first_discount .total_sum').innerHTML = totalSum
-            document.querySelector('.first_discount .close_first_discount').addEventListener('click', function () {
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                  'event': 'event-to-ga',
-                  'eventCategory': 'Exp: Checkout Improvement',
-                  'eventAction': 'cancel promo code'
-                });
-                document.querySelector('.first_discount').style.display = 'none'
-                document.querySelector('.coupon-remove-btn').click()
-            })
-        }
-
-        if (document.querySelector('.first_discount')) {
-            document.querySelector('.first_discount .total_sum').innerHTML = totalSum
-        }
-
-        if (document.querySelector('.sum-row.promo-code .promo-add')) {
-            document.querySelector('.sum-row.promo-code .promo-add').click()
-        }
-        if(document.querySelectorAll('.sum-row-hr')[2] && document.querySelectorAll('.sum-row-hr')[2].style.display !== 'none') {
-
-        }
-
-        if (document.querySelectorAll('.sum-row-hr')[2]) {
-            document.querySelectorAll('.sum-row-hr')[2].style.display = 'none'
-        }
-
-        if (document.querySelector('.sum-row.promo-code') ) {
-            document.querySelector('.promo_btn').after(document.querySelector('.sum-row.promo-code'))
-        }
-
-        if (document.querySelector('.promo_btn').classList.contains('active') && document.querySelector('.sum-row.promo-code')) {
-            document.querySelector('.sum-row.promo-code').classList.add('active')
-        }
-
-        if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
-            document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'none'
-            document.querySelector('.first_discount').style.display = 'flex'
-            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
-        } else if (document.querySelectorAll('.sum-row.total.coupon').length === 0){
-            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
-        }
-        else {
-            document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelectorAll('.summary-table .sum-row.total.coupon')[0])
-            document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
-        }
-
-        if ((document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('Box size')) || document.querySelectorAll('.sum-row.total.coupon').length === 0) {
-            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
-        } else {
-            document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
-        }
-    }
-
-    if (document.querySelector('.sum-row.total:nth-child(5)') && document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
-        document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
-        document.querySelector('.first_discount').style.display = 'flex'
-    } else if(document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
-        document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
-        document.querySelector('.first_discount').style.display = 'flex'
-    } else if (document.querySelector('.sum-row.total:nth-child(8)')) {
-        document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.sum-row.total:nth-child(8)'))
+    if (document.querySelectorAll('.sum-row.total')[1]) {
+      let subtotal = document.querySelector('.sum-row.total:not(.coupon)')
+      let discount = document.querySelectorAll('.sum-row.total')[1]
+      subtotal.querySelector('.total').style.textDecoration = 'line-through'
+      // discount.after(subtotal)
+      subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
+    } else {
+      let subtotal = document.querySelector('.sum-row.total:not(.coupon)')
+      subtotal.querySelector('.total').style.textDecoration = 'line-through'
+      subtotal.querySelector('.caption').innerHTML = 'Subtotal (2 weeks of food)'
     }
 
 
-    mut.observe(document.body,{
-        childList: true,
-        subtree: true
-    })
+    let totalSum = document.querySelector('.sum-row.order-total .total').innerHTML
+
+    if (!document.querySelector('.promo_btn')) {
+
+      document.querySelector('.sum-row.total:not(.coupon)').insertAdjacentHTML('afterend', block)
+      document.querySelector('.promo_btn').addEventListener('click', function () {
+        if (document.querySelector('.promo_btn').classList.contains('active')) {
+          window.dataLayer = window.dataLayer || [];
+          dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp: Checkout Improvement',
+            'eventAction': 'click on I have a coupon code - collapse'
+          });
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp: Checkout Improvement',
+            'eventAction': 'click on I have a coupon code - expand'
+          });
+        }
+        document.querySelector('.sum-row.promo-code').classList.toggle('active')
+        document.querySelector('.promo_btn').classList.toggle('active')
+      })
+    }
+
+    if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && !document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
+      document.querySelector('.first_discount').style.display = 'none'
+      
+    } else {
+      document.querySelector('.first_discount .total_sum').innerHTML = totalSum
+      document.querySelector('.first_discount .close_first_discount').addEventListener('click', cancel)
+    }
+
+    if (document.querySelector('.first_discount')) {
+      document.querySelector('.first_discount .total_sum').innerHTML = totalSum
+    }
+
+    if (document.querySelector('.sum-row.promo-code .promo-add')) {
+      document.querySelector('.sum-row.promo-code .promo-add').click()
+    }
+    if(document.querySelectorAll('.sum-row-hr')[2] && document.querySelectorAll('.sum-row-hr')[2].style.display !== 'none') {
+
+    }
+
+    if (document.querySelectorAll('.sum-row-hr')[2]) {
+      document.querySelectorAll('.sum-row-hr')[2].style.display = 'none'
+    }
+
+    if (document.querySelector('.sum-row.promo-code') ) {
+      document.querySelector('.promo_btn').after(document.querySelector('.sum-row.promo-code'))
+    }
+
+    if (document.querySelector('.promo_btn').classList.contains('active') && document.querySelector('.sum-row.promo-code')) {
+      document.querySelector('.sum-row.promo-code').classList.add('active')
+    }
+
+    if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
+      document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'none'
+      document.querySelector('.first_discount').style.display = 'flex'
+      document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
+    } else if (document.querySelectorAll('.sum-row.total.coupon').length === 0){
+      document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
+    }
+    else {
+      document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelectorAll('.summary-table .sum-row.total.coupon')[0])
+      document.querySelector('.summary-table .sum-row.total.coupon').style.display = 'flex'
+    }
+
+    if ((document.querySelectorAll('.sum-row.total.coupon').length === 1 && document.querySelector('.sum-row.total.coupon').innerHTML.includes('Box size')) || document.querySelectorAll('.sum-row.total.coupon').length === 0) {
+      document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'none'
+    } else {
+      document.querySelector('.sum-row.total:not(.coupon)').querySelector('.total').style.textDecoration = 'line-through'
+    }
+  }
+
+  if (document.querySelector('.sum-row.total:nth-child(5)') && document.querySelector('.sum-row.total:nth-child(5)').innerHTML.includes('firstorder30')) {
+    document.querySelector('.sum-row.total:nth-child(5)').style.display = 'none'
+    document.querySelector('.first_discount').style.display = 'flex'
+  } else if(document.querySelector('.sum-row.total:nth-child(8)') && document.querySelector('.sum-row.total:nth-child(8)').innerHTML.includes('firstorder30')) {
+    document.querySelector('.sum-row.total:nth-child(8)').style.display = 'none'
+    document.querySelector('.first_discount').style.display = 'flex'
+  } else if (document.querySelector('.sum-row.total:nth-child(8)')) {
+    document.querySelector('.sum-row.total:not(.coupon)').after(document.querySelector('.sum-row.total:nth-child(8)'))
+  }
+
+
+  mut.observe(document.body,{
+    childList: true,
+    subtree: true
+  })
 }
 
 redrawing()
