@@ -255,7 +255,6 @@ function addToCart() {
   for (let i = 0; i < cart.items.length; i++) {
     if (cart.items[i].product_id in upgradeList) {
       y=i
-      prodId = cart.items[i].product_id
     }
   }
 
@@ -295,6 +294,7 @@ function addToCart2() {
   for (let i = 0; i < cart.items.length; i++) {
     if (cart.items[i].product_id in upgradeList) {
       y=i
+      prodId = cart.items[i].product_id
     }
   }
 
