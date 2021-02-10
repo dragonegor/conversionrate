@@ -113,22 +113,31 @@ let mut = new MutationObserver((mutations) => {
   redrawing()
 })
 
-
+function cancel() {
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp: Checkout Improvement',
+    'eventAction': 'cancel promo code'
+  });
+}
 
 
 function redrawing() {
-  document.querySelectorAll('.sum-row.coupon').forEach((item) => {
-    if (item.innerHTML.includes('firstorder30')) {
-      item.querySelector('.coupon-remove-btn').addEventListener('click', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-          'event': 'event-to-ga',
-          'eventCategory': 'Exp: Checkout Improvement',
-          'eventAction': 'cancel promo code'
-        });
-      })
-    }
-  })
+  // document.querySelectorAll('.sum-row.coupon').forEach((item) => {
+  //   if (item.innerHTML.includes('firstorder30')) {
+  //     item.querySelector('.coupon-remove-btn').addEventListener('click', function () {
+  //       window.dataLayer = window.dataLayer || [];
+  //       dataLayer.push({
+  //         'event': 'event-to-ga',
+  //         'eventCategory': 'Exp: Checkout Improvement',
+  //         'eventAction': 'cancel promo code'
+  //       });
+  //     })
+  //   }
+  // })
+  
+  
 
   if(document.querySelector('.sum-row.order-total .total')) {
     if (!document.querySelector('.form-wrap .checkout-block:last-child input[name=email]')) {
@@ -204,6 +213,8 @@ function redrawing() {
       document.querySelector('.first_discount .total_sum').innerHTML = totalSum
       document.querySelector('.first_discount .close_first_discount').addEventListener('click', function () {
         document.querySelector('.first_discount').style.display = 'none'
+        document.querySelector('.coupon-remove-btn').removeEventListener('click', cancel)
+        document.querySelector('.coupon-remove-btn').addEventListener('click', cancel)
         document.querySelector('.coupon-remove-btn').click()
       })
     }
