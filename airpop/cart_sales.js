@@ -226,6 +226,8 @@ function bannerDraw() {
     }
 }
 
+bannerDraw()
+
 let mut = new MutationObserver(mutations => {
     bannerDraw()
 } )
