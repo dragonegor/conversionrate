@@ -117,7 +117,6 @@ let mut = new MutationObserver((mutations) => {
 
 
 function redrawing() {
-  document.querySelector('.first_discount .close_first_discount').removeEventListener('click', cancel)
   function cancel() {
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
@@ -128,7 +127,7 @@ function redrawing() {
       document.querySelector('.first_discount').style.display = 'none'
       document.querySelector('.coupon-remove-btn').click()
   }
-  
+
   if(document.querySelector('.sum-row.order-total .total')) {
     if (!document.querySelector('.form-wrap .checkout-block:last-child input[name=email]')) {
       let accountForm = document.querySelector('.form-wrap .checkout-block:first-child')
@@ -199,9 +198,9 @@ function redrawing() {
 
     if (document.querySelectorAll('.sum-row.total.coupon').length === 1 && !document.querySelector('.sum-row.total.coupon').innerHTML.includes('firstorder30')) {
       document.querySelector('.first_discount').style.display = 'none'
-      
     } else {
       document.querySelector('.first_discount .total_sum').innerHTML = totalSum
+      document.querySelector('.first_discount .close_first_discount').removeEventListener('click', cancel)
       document.querySelector('.first_discount .close_first_discount').addEventListener('click', cancel)
     }
 
