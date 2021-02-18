@@ -311,7 +311,7 @@ window.onload = function () {
         })
     })
 
-    
+
 
     $('.collapsible-trigger-btn--borders:not(.is-open)').click(function () {
         window.dataLayer = window.dataLayer || []
@@ -333,7 +333,7 @@ window.onload = function () {
         })
     })
 
-}
+};
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
