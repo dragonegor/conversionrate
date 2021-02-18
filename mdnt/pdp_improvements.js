@@ -311,15 +311,7 @@ window.onload = function () {
         })
     })
 
-    $('.collapsible-trigger-btn--borders.is-open').click(function () {
-        window.dataLayer = window.dataLayer || []
-        dataLayer.push({
-            event: "event-to-ga",
-            eventCategory: "PDP improvement",
-            eventAction: "Click on tab",
-            eventLabel: "Collapse tab"
-        })
-    })
+    
 
     $('.collapsible-trigger-btn--borders:not(.is-open)').click(function () {
         window.dataLayer = window.dataLayer || []
@@ -329,9 +321,19 @@ window.onload = function () {
             eventAction: "Click on tab",
             eventLabel: "Open tab"
         })
+
+        $('.collapsible-trigger-btn--borders.is-open').click(function () {
+            window.dataLayer = window.dataLayer || []
+            dataLayer.push({
+                event: "event-to-ga",
+                eventCategory: "PDP improvement",
+                eventAction: "Click on tab",
+                eventLabel: "Collapse tab"
+            })
+        })
     })
 
-};
+}
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
