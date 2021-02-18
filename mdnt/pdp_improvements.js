@@ -257,7 +257,9 @@ window.onload = function () {
     let price = $('.product__price').eq(0)
     $('.loox-rating').before(price)
 
-    $('h1.h2.product-single__title').append(`<img src="https://i.ibb.co/BPqs99F/image-18.png" alt="heart">`)
+    let heartImg = (document.querySelector('.swym-add-to-wishlist').innerHTML.toLowerCase().includes('added'))?'https://i.ibb.co/CP49yR1/image-19.png':'https://i.ibb.co/BPqs99F/image-18.png'
+
+    $('h1.h2.product-single__title').append(`<img src="${heartImg}" alt="heart">`)
     $('h1.h2.product-single__title img').click(function () {
         window.dataLayer = window.dataLayer || []
         dataLayer.push({
@@ -266,6 +268,7 @@ window.onload = function () {
             eventAction: "Add to wishlist",
         })
         $('.payment-buttons .swym-button').click()
+        $('h1.h2.product-single__title img').attr('src', 'https://i.ibb.co/CP49yR1/image-19.png')
     })
 
     $('.payment-buttons').before(info)
@@ -276,6 +279,12 @@ window.onload = function () {
 
     $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
     setTimeout(function () {
+        document.querySelectorAll('.ProductCardMultiselect_picky-product-options-container_1fxk3>div').forEach((item) => {
+            if(!item.innerHTML.includes('Size')){
+                item.style.display = 'none'
+            }
+        })
+
         let howSize = $('.collapsible-content__inner.rte').eq(0).find('.ks-chart-container')
         let sizeChart1 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(0)
         let sizeChart2 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(1)
@@ -356,3 +365,5 @@ dataLayer.push({
     eventCategory: "PDP improvement",
     eventAction: "loaded",
 })
+
+
