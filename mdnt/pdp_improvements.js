@@ -243,7 +243,6 @@ document.body.insertAdjacentHTML('beforeend', size)
 window.onload = function () {
 
     if (prodName !== '') {
-        $('.product__photos').eq(0).closest('div').before(backBtn)
         $('.back-btn').click(function () {
             window.dataLayer = window.dataLayer || []
             dataLayer.push({
@@ -284,7 +283,7 @@ window.onload = function () {
         $('.size_chart_popup').append(howSize)
         $('.size_chart_popup').append(sizeChart1)
         $('.size_chart_popup').append(sizeChart2)
-        
+
         $('.picky-widget').after($('#looxReviews'))
         $('#looxReviews').before(tagBlock)
         $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
