@@ -235,7 +235,7 @@ let info = `
 
 document.body.insertAdjacentHTML('afterbegin', style)
 document.body.insertAdjacentHTML('beforeend', size)
-window.onload = function () {
+// window.onload = function () {
 
     if (prodName !== '') {
         $('.product__photos').eq(0).closest('div').before(backBtn)
@@ -251,8 +251,6 @@ window.onload = function () {
     $('h1.h2.product-single__title img').click(function () {
         $('.payment-buttons .swym-button').click()
     })
-
-    $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
 
     $('.payment-buttons').before(info)
 
@@ -270,6 +268,7 @@ window.onload = function () {
 setTimeout(function () {
     $('.picky-widget').after($('#looxReviews'))
     $('#looxReviews').before(tagBlock)
+    $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
 }, 5000)
 
 
@@ -284,6 +283,4 @@ setTimeout(function () {
         $('.size_chart_popup').removeClass('active')
     })
 
-    $('.picky-widget img').closest('div').closest('div').next()
-
-}
+// }
