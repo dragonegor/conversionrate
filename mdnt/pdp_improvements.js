@@ -267,7 +267,7 @@ $('.size_chart_popup').append(sizeChart2)
 
 $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
 
-document.querySelector('#looxReviews').after(document.querySelector('.picky-widget'))
+document.querySelector('.picky-widget').after(document.querySelector('#looxReviews'))
 $('#looxReviews').before(tagBlock)
 
 
