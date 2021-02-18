@@ -268,9 +268,9 @@ $('.size_chart_popup').append(sizeChart2)
 $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
 
 $('.picky-widget').after($('#looxReviews'))
-
-if (hr.includes())
 $('#looxReviews').before(tagBlock)
+
+
 
 $('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').prepend($('.product-single__description').eq(0))
 
