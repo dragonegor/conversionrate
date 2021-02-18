@@ -270,8 +270,8 @@ window.onload = function () {
 setTimeout(function () {
     $('.picky-widget').after($('#looxReviews'))
     $('#looxReviews').before(tagBlock)
-}, 2000)
-    
+}, 5000)
+
 
 
     $('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').prepend($('.product-single__description').eq(0))
