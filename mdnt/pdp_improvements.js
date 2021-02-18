@@ -298,21 +298,23 @@ window.onload = function () {
         $('.picky-widget').after($('#looxReviews'))
         $('#looxReviews').before(tagBlock)
         $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
-    }, 7000)
+
+        $('.show_size_chart').click(function () {
+            $('.size_chart_popup').addClass('active')
+            window.dataLayer = window.dataLayer || []
+            dataLayer.push({
+                event: "event-to-ga",
+                eventCategory: "PDP improvement",
+                eventAction: "Click on Size guide",
+            })
+        })
+    }, 4000)
 
 
 
     $('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').prepend($('.product-single__description').eq(0))
 
-    $('.show_size_chart').click(function () {
-        $('.size_chart_popup').addClass('active')
-        window.dataLayer = window.dataLayer || []
-        dataLayer.push({
-            event: "event-to-ga",
-            eventCategory: "PDP improvement",
-            eventAction: "Click on Size guide",
-        })
-    })
+    
 
     $('.size_chart_popup .head .close').click(function () {
         $('.size_chart_popup').removeClass('active')
