@@ -235,8 +235,7 @@ let info = `
 
 document.body.insertAdjacentHTML('afterbegin', style)
 document.body.insertAdjacentHTML('beforeend', size)
-document.addEventListener('DOMContentLoaded', function () {
-
+window.onload = function () {
 
     if (prodName !== '') {
         $('.product__photos').eq(0).closest('div').before(backBtn)
@@ -285,4 +284,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('.picky-widget img').closest('div').closest('div').next()
 
-})
+}
