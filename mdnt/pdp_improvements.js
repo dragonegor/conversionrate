@@ -283,7 +283,7 @@ window.onload = function () {
             if(!item.innerHTML.includes('Size')){
                 item.style.display = 'none'
             } else {
-                item.after(`<div class="show_size_chart">Size Guige</div>`)
+                item.insertAdjacentHTML('afterend',`<div class="show_size_chart">Size Guige</div>`)
             }
         })
 
