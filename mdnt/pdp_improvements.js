@@ -269,7 +269,7 @@ setTimeout(function () {
     $('.picky-widget').after($('#looxReviews'))
     $('#looxReviews').before(tagBlock)
     $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
-}, 5000)
+}, 7000)
 
 
 
