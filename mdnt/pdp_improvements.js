@@ -235,7 +235,7 @@ let info = `
 `
 
 if (prodName !== '') {
-    $('.product__photos').eq(0).closest('div').before(backBtn)
+    document.querySelectorAll('.product__photos')[0].closest('div').insertAdjacentHTML('beforebegin',backBtn)
 }
 
 document.body.insertAdjacentHTML('afterbegin', style)
@@ -308,13 +308,13 @@ window.onload = function () {
                 eventAction: "Click on Size guide",
             })
         })
-    }, 4000)
+    }, 5000)
 
 
 
     $('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').prepend($('.product-single__description').eq(0))
 
-    
+
 
     $('.size_chart_popup .head .close').click(function () {
         $('.size_chart_popup').removeClass('active')
