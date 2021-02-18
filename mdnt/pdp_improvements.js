@@ -284,7 +284,7 @@ window.onload = function () {
         $('.picky-widget').after($('#looxReviews'))
         $('#looxReviews').before(tagBlock)
         $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
-    }, 7000)
+    }, 4000)
 
 
 
