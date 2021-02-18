@@ -235,51 +235,54 @@ let info = `
 
 document.body.insertAdjacentHTML('afterbegin', style)
 document.body.insertAdjacentHTML('beforeend', size)
+document.addEventListener('DOMContentLoaded', function () {
 
-if (prodName !== '') {
-    $('.product__photos').eq(0).closest('div').before(backBtn)
-    $('.back-btn').click(function () {
-        document.querySelector('.btn--small.return-link').click()
+
+    if (prodName !== '') {
+        $('.product__photos').eq(0).closest('div').before(backBtn)
+        $('.back-btn').click(function () {
+            document.querySelector('.btn--small.return-link').click()
+        })
+    }
+
+    let price = $('.product__price').eq(0)
+    $('.loox-rating').before(price)
+
+    $('h1.h2.product-single__title').append(`<img src="https://i.ibb.co/BPqs99F/image-18.png" alt="heart">`)
+    $('h1.h2.product-single__title img').click(function () {
+        $('.payment-buttons .swym-button').click()
     })
-}
 
-let price = $('.product__price').eq(0)
-$('.loox-rating').before(price)
+    $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
 
-$('h1.h2.product-single__title').append(`<img src="https://i.ibb.co/BPqs99F/image-18.png" alt="heart">`)
-$('h1.h2.product-single__title img').click(function () {
-    $('.payment-buttons .swym-button').click()
+    $('.payment-buttons').before(info)
+
+    document.querySelectorAll('.collapsible-trigger-btn')[0].childNodes[0].textContent = 'Product details'
+
+    let sizeChart1 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(0)
+    let sizeChart2 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(1)
+    let howSize = $('.collapsible-content__inner.rte').eq(0).find('.ks-chart-container')
+
+    $('.size_chart_popup').append(howSize)
+    $('.size_chart_popup').append(sizeChart1)
+    $('.size_chart_popup').append(sizeChart2)
+
+    $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
+
+    document.querySelector('.picky-widget').after(document.querySelector('#looxReviews'))
+    $('#looxReviews').before(tagBlock)
+
+
+    $('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').prepend($('.product-single__description').eq(0))
+
+    $('.show_size_chart').click(function () {
+        $('.size_chart_popup').addClass('active')
+    })
+
+    $('.size_chart_popup .head .close').click(function () {
+        $('.size_chart_popup').removeClass('active')
+    })
+
+    $('.picky-widget img').closest('div').closest('div').next()
+
 })
-
-$('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
-
-$('.payment-buttons').before(info)
-
-document.querySelectorAll('.collapsible-trigger-btn')[0].childNodes[0].textContent = 'Product details'
-
-let sizeChart1 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(0)
-let sizeChart2 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(1)
-let howSize = $('.collapsible-content__inner.rte').eq(0).find('.ks-chart-container')
-
-$('.size_chart_popup').append(howSize)
-$('.size_chart_popup').append(sizeChart1)
-$('.size_chart_popup').append(sizeChart2)
-
-$('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
-
-document.querySelector('.picky-widget').after(document.querySelector('#looxReviews'))
-$('#looxReviews').before(tagBlock)
-
-
-
-$('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').prepend($('.product-single__description').eq(0))
-
-$('.show_size_chart').click(function () {
-    $('.size_chart_popup').addClass('active')
-})
-
-$('.size_chart_popup .head .close').click(function () {
-    $('.size_chart_popup').removeClass('active')
-})
-
-$('.picky-widget img').closest('div').closest('div').next()
