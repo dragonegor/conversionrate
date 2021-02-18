@@ -268,7 +268,7 @@ window.onload = function () {
 
     $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
 
-    document.querySelector('.picky-widget').after(document.querySelector('#looxReviews'))
+    $('.picky-widget').after($('#looxReviews'))
     $('#looxReviews').before(tagBlock)
 
 
