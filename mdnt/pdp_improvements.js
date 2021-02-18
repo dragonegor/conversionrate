@@ -267,9 +267,11 @@ window.onload = function () {
     $('.size_chart_popup').append(sizeChart2)
 
     $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
-
+setTimeout(function () {
     $('.picky-widget').after($('#looxReviews'))
     $('#looxReviews').before(tagBlock)
+}, 2000)
+    
 
 
     $('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').prepend($('.product-single__description').eq(0))
