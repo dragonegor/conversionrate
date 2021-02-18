@@ -234,6 +234,10 @@ let info = `
     </ul>
 `
 
+if (prodName !== '') {
+    $('.product__photos').eq(0).closest('div').before(backBtn)
+}
+
 document.body.insertAdjacentHTML('afterbegin', style)
 document.body.insertAdjacentHTML('beforeend', size)
 window.onload = function () {
@@ -268,8 +272,8 @@ window.onload = function () {
     $('.payment-buttons').before(info)
 
     document.querySelectorAll('.collapsible-trigger-btn')[0].childNodes[0].textContent = 'Product details'
-    
-    
+
+
 
     $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
     setTimeout(function () {
@@ -284,7 +288,7 @@ window.onload = function () {
         $('.picky-widget').after($('#looxReviews'))
         $('#looxReviews').before(tagBlock)
         $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
-    }, 4000)
+    }, 7000)
 
 
 
