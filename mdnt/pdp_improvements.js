@@ -184,16 +184,17 @@ let size = `
 let tagBlock = `
   <div class="tags_block">
     <a href="https://mdnt45.com/collections/women">All women wear</a>
-    <a href="#">T-Shirts</a>
-    <a href="#">Coats</a>
-    <a href="#">Cardigans</a>
-    <a href="#">Pants</a>
-    <a href="#">Shorts</a>
-    <a href="#">Hoodies</a>
-    <a href="#">Jumpsuits</a>
-    <a href="#">Homewear</a>
-    <a href="#">Raincoats</a>
-    <a href="#">Longsleeves</a>
+    <a href="https://mdnt45.com/collections/t-shirts-1">T-Shirts</a>
+    <a href="https://mdnt45.com/collections/longsleeves">Longsleeves</a>
+    <a href="https://mdnt45.com/collections/sweatshirts">Sweatshirts</a>
+    <a href="https://mdnt45.com/collections/dresses">Dresses</a>
+    <a href="https://mdnt45.com/collections/pants-womens">Pants</a>
+    <a href="https://mdnt45.com/collections/skirts">Skirts</a>
+    <a href="https://mdnt45.com/collections/jumpsuits">Jumpsuits</a>
+    <a href="https://mdnt45.com/collections/cardigans">Cardigans</a>
+    <a href="https://mdnt45.com/collections/jackets">Jackets</a>
+    <a href="https://mdnt45.com/collections/raincoats">Coats</a>
+    <a href="https://mdnt45.com/collections/new-line-homewear-for-her">Homewear</a>
   </div>
 `
 
@@ -235,11 +236,17 @@ let info = `
 
 document.body.insertAdjacentHTML('afterbegin', style)
 document.body.insertAdjacentHTML('beforeend', size)
-// window.onload = function () {
+window.onload = function () {
 
     if (prodName !== '') {
         $('.product__photos').eq(0).closest('div').before(backBtn)
         $('.back-btn').click(function () {
+            window.dataLayer = window.dataLayer || []
+            dataLayer.push({
+                event: "event-to-ga",
+                eventCategory: "PDP improvement",
+                eventAction: "Back to categories",
+            })
             document.querySelector('.btn--small.return-link').click()
         })
     }
@@ -249,6 +256,12 @@ document.body.insertAdjacentHTML('beforeend', size)
 
     $('h1.h2.product-single__title').append(`<img src="https://i.ibb.co/BPqs99F/image-18.png" alt="heart">`)
     $('h1.h2.product-single__title img').click(function () {
+        window.dataLayer = window.dataLayer || []
+        dataLayer.push({
+            event: "event-to-ga",
+            eventCategory: "PDP improvement",
+            eventAction: "Add to wishlist",
+        })
         $('.payment-buttons .swym-button').click()
     })
 
@@ -265,11 +278,11 @@ document.body.insertAdjacentHTML('beforeend', size)
     $('.size_chart_popup').append(sizeChart2)
 
     $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
-setTimeout(function () {
-    $('.picky-widget').after($('#looxReviews'))
-    $('#looxReviews').before(tagBlock)
-    $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
-}, 7000)
+    setTimeout(function () {
+        $('.picky-widget').after($('#looxReviews'))
+        $('#looxReviews').before(tagBlock)
+        $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
+    }, 7000)
 
 
 
@@ -277,10 +290,62 @@ setTimeout(function () {
 
     $('.show_size_chart').click(function () {
         $('.size_chart_popup').addClass('active')
+        window.dataLayer = window.dataLayer || []
+        dataLayer.push({
+            event: "event-to-ga",
+            eventCategory: "PDP improvement",
+            eventAction: "Click on Size guide",
+        })
     })
 
     $('.size_chart_popup .head .close').click(function () {
         $('.size_chart_popup').removeClass('active')
     })
 
-// }
+    $('.tags_block a').click(function () {
+        window.dataLayer = window.dataLayer || []
+        dataLayer.push({
+            event: "event-to-ga",
+            eventCategory: "PDP improvement",
+            eventAction: "Click on tags",
+        })
+    })
+
+    $('.collapsible-trigger-btn--borders.is-open').click(function () {
+        window.dataLayer = window.dataLayer || []
+        dataLayer.push({
+            event: "event-to-ga",
+            eventCategory: "PDP improvement",
+            eventAction: "Click on tab",
+            eventLabel: "Collapse tab"
+        })
+    })
+
+    $('.collapsible-trigger-btn--borders:not(.is-open)').click(function () {
+        window.dataLayer = window.dataLayer || []
+        dataLayer.push({
+            event: "event-to-ga",
+            eventCategory: "PDP improvement",
+            eventAction: "Click on tab",
+            eventLabel: "Open tab"
+        })
+    })
+
+}
+
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:1382816,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+hj('trigger', 'pdp_improvement');
+
+window.dataLayer = window.dataLayer || []
+dataLayer.push({
+    event: "event-to-ga",
+    eventCategory: "PDP improvement",
+    eventAction: "loaded",
+})
