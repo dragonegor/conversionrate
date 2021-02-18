@@ -268,17 +268,19 @@ window.onload = function () {
     $('.payment-buttons').before(info)
 
     document.querySelectorAll('.collapsible-trigger-btn')[0].childNodes[0].textContent = 'Product details'
-
-    let sizeChart1 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(0)
-    let sizeChart2 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(1)
-    let howSize = $('.collapsible-content__inner.rte').eq(0).find('.ks-chart-container')
-
-    $('.size_chart_popup').append(howSize)
-    $('.size_chart_popup').append(sizeChart1)
-    $('.size_chart_popup').append(sizeChart2)
+    
+    
 
     $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
     setTimeout(function () {
+        let howSize = $('.collapsible-content__inner.rte').eq(0).find('.ks-chart-container')
+        let sizeChart1 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(0)
+        let sizeChart2 = $('.collapsible-content__inner.rte').eq(0).find('.container-size-chart').eq(1)
+
+        $('.size_chart_popup').append(howSize)
+        $('.size_chart_popup').append(sizeChart1)
+        $('.size_chart_popup').append(sizeChart2)
+        
         $('.picky-widget').after($('#looxReviews'))
         $('#looxReviews').before(tagBlock)
         $('.picky-widget img').parents('div').eq(1).next().after($('.picky-widget img').parents('div').eq(1))
