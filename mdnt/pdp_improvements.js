@@ -310,10 +310,7 @@ window.onload = function () {
         })
     }, 5000)
 
-
-
-    $('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').prepend($('.product-single__description').eq(0))
-
+    $('.collapsibles-wrapper .collapsible-content .collapsible-content__inner.rte').eq(0).prepend($('.product-single__description').eq(0))
 
 
     $('.size_chart_popup .head .close').click(function () {
