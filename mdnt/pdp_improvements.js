@@ -153,6 +153,10 @@ let style = `
           height: 12px;
           margin-right: 10px;
         }
+        
+        .back-btn a {
+          text-transform:uppercase;
+        }
  
     </style>
 `
