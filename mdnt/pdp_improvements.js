@@ -161,6 +161,8 @@ let hr = window.location.href
 let prodName = ''
 if (document.querySelector('.btn--small.return-link')) {
     prodName = document.querySelector('.btn--small.return-link').innerText
+} else {
+    prodName = `<a href="https://mdnt45.com/collections/spring-collection">to all collection</a>`
 }
 
 
@@ -234,9 +236,10 @@ let info = `
     </ul>
 `
 
-if (prodName !== '') {
+document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.product__photos')[0].closest('div').insertAdjacentHTML('beforebegin',backBtn)
-}
+})
+
 
 document.body.insertAdjacentHTML('afterbegin', style)
 document.body.insertAdjacentHTML('beforeend', size)
@@ -352,7 +355,7 @@ window.onload = function () {
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:2215981,hjsv:6};
+    h._hjSettings={hjid:1382816,hjsv:6};
     a=o.getElementsByTagName('head')[0];
     r=o.createElement('script');r.async=1;
     r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
