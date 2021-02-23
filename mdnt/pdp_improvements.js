@@ -157,16 +157,6 @@ let style = `
     </style>
 `
 
-let hr = window.location.href
-let prodName = ''
-if (document.querySelector('.btn--small.return-link')) {
-    prodName = document.querySelector('.btn--small.return-link').innerText
-} else {
-    prodName = `<a href="https://mdnt45.com/collections/spring-collection">to all collection</a>`
-}
-
-
-
 let backBtn = `
     <div class="back-btn">
       <img src="https://i.ibb.co/Nrp8syw/Vector-4.png" alt="back">
@@ -235,10 +225,13 @@ let info = `
       </li>
     </ul>
 `
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.product__photos')[0].closest('div').insertAdjacentHTML('beforebegin',backBtn)
-})
+let hr = window.location.href
+let prodName = ''
+if (document.querySelector('.btn--small.return-link')) {
+    prodName = document.querySelector('.btn--small.return-link').innerText
+} else {
+    prodName = `<a href="https://mdnt45.com/collections/spring-collection">to all collection</a>`
+}
 
 
 document.body.insertAdjacentHTML('afterbegin', style)
@@ -246,6 +239,7 @@ document.body.insertAdjacentHTML('beforeend', size)
 window.onload = function () {
 
     if (prodName !== '') {
+        document.querySelectorAll('.product__photos')[0].closest('div').insertAdjacentHTML('beforebegin',backBtn)
         $('.back-btn').click(function () {
             window.dataLayer = window.dataLayer || []
             dataLayer.push({
