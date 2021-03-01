@@ -1112,7 +1112,7 @@ let products = {
             console.log(list)
             for (let item in list) {
                 let classList = ''
-                if (+item === id) {
+                if (+item === +id) {
                     classList += 'selected'
                 }
                 if (list[item][0] === '4') {
