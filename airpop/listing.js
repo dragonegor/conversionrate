@@ -457,7 +457,7 @@ let styleListing = `
     }
     .custom_select ul li.popular::after {
       position: absolute;
-      content: "MOST POPULAR";
+      content: "${t[33]}";
       color: white;
       font-size: 9px;
       padding: 3px 5px;
@@ -465,6 +465,7 @@ let styleListing = `
       right: 40%;
       background-color: #26CAD3;
       font-weight: 400;
+      text-transform: uppercase;
     }
     .custom_select button {
       border: none;
