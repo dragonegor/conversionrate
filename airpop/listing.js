@@ -912,12 +912,11 @@ let products = {
 
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    document.body.insertAdjacentHTML('afterbegin', styleListing)
-    document.querySelector('#maincontent').innerHTML = listing
-    let $ = jQuery;
+    
     setTimeout(function () {
+        document.body.insertAdjacentHTML('afterbegin', styleListing)
+        document.querySelector('#maincontent').innerHTML = listing
+        let $ = jQuery;
 
         $('.category_tabs').on('click', '.tab', function () {
             let i = $(this).index()
@@ -1048,5 +1047,3 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.lds-spinner').removeClass('active')
         })
     }
-
-})
