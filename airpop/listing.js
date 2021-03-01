@@ -1106,6 +1106,7 @@ let products = {
             let color = $(this).closest('.item').data('color')
             let id = $(this).closest('.item').data('id')
             $('.custom_select').data('category', cat)
+            console.log(cat, color)
             let list = products[cat][color]
             console.log(list)
             for (let item in list) {
