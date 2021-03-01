@@ -1,8 +1,182 @@
+let text = {
+    en: [
+        'One Layer Protection',
+        'Multiple Layer Protection',
+        'Smart Mask',
+        'items',
+        'for',
+        ['mask', 'masks'],
+        'Filtration Efficacy',
+        '99.3% of particles and 99.9% of bacteria',
+        'Re-usable, washable, sustainable',
+        '40 Hours of Use',
+        'Adaptive mask size',
+        'Small mask size',
+        'Anti-fogging with eyewear',
+        'Soft touch silicone seal, contoured to fit the nose bridge',
+        'Ergo-foam seal, cushions and conforms  to the nose bridge',
+        'Less pressure on ears',
+        'Compatible with Airpop hygienic storage case',
+        '4 replaceable filters included',
+        '40-hour use for each',
+        '3D aerodome shape',
+        'Adaptively seals to face contours',
+        'Easy breathing',
+        '3D structure creates a canopy of air that keeps the mask slightly away from the face for effortless breathability',
+        'Moisture-wicking performance',
+        'Fabric',
+        'Airknit shell',
+        'Microfiber shell',
+        'Personal dashboard on real-time protection level',
+        'Get meaningful feedback about your breathing and mask performance in the app',
+        'Learn more',
+        'Never run out of filters',
+        'NEW',
+        'Cancel',
+        'Most popular',
+        'Add to Cart',
+        'Reviews',
+        'Set of',
+        'filters',
+        'Monitors Local Air Quality'
+    ],
+    it: [
+        'Protezione a uno strato',
+        'Protezione a più livelli',
+        'Maschera intelligente',
+        'elementi',
+        'for',
+        ['mask', 'masks'],
+        'Efficacia di filtrazione',
+        '99,3% di particelle e 99,9% di batteri',
+        'Riutilizzabile, lavabile, sostenibile',
+        '40 ore di utilizzo',
+        'Dimensione della maschera adattiva',
+        'Piccola dimensione della maschera',
+        'Anti-appannamento con gli occhiali',
+        'Guarnizione in silicone soft touch, sagomata per adattarsi al ponte nasale',
+        'Guarnizione in schiuma ergonomica, cuscini e si conforma al ponte del naso',
+        'Meno pressione sulle orecchie',
+        'Compatibile con la custodia igienica Airpop',
+        '4 filtri sostituibili inclusi',
+        '40 ore di utilizzo per ciascuno',
+        'Forma aerodome 3D',
+        'Sigilla in modo adattivo ai contorni del viso',
+        'Respirazione facile',
+        'La struttura 3D crea una copertura d\'aria che mantiene la maschera leggermente lontana dal viso per una traspirazione senza sforzo',
+        'Prestazioni di assorbimento dell\'umidità',
+        'Tessuto',
+        'Guscio Airknit',
+        'Scocca in microfibra',
+        'Dashboard personale sul livello di protezione in tempo reale',
+        'Ottieni un feedback significativo sulla tua respirazione e sulle prestazioni della maschera nell\'app',
+        'Per saperne di più',
+        'Non rimanere mai senza filtri',
+        'NUOVO',
+        'Annulla',
+        'Più popolare',
+        'Aggiungi al Carrello',
+        'Recensisci',
+        'Set di',
+        'filtri',
+        'Monitora la qualità dell\'aria locale',
+    ],
+    nl: [
+        'Eén laag bescherming',
+        'Meerdere lagen bescherming',
+        'Smart Mask',
+        'stuks',
+        'voor',
+        ['masker', 'maskers'],
+        'Filtratie-efficiëntie',
+        '99,3% van de deeltjes en 99,9% van de bacteriën',
+        'Herbruikbaar, wasbaar, duurzaam',
+        '40 uur gebruik',
+        'Adaptieve maskergrootte',
+        'Kleine maskergrootte',
+        'Anticondens met brillen',
+        'Zacht aanvoelende siliconen afdichting, gevormd om op de neusbrug te passen',
+        'Ergo-schuimrubber, kussens en vormt zich naar de neusbrug',
+        'Minder druk op de oren',
+        'Compatibel met Airpop hygiënische opbergkoffer',
+        '4 vervangbare filters inbegrepen',
+        '40 uur gebruik voor elk',
+        '3D aerodome-vorm',
+        'Past zich aan de contouren aan',
+        'Gemakkelijk ademen',
+        'De 3D-structuur creëert een luchtkoepel die het masker enigszins van het gezicht af houdt voor moeiteloos ademend vermogen',
+        'Vochtafvoerende prestaties',
+        'Kleding stof',
+        'Airknit schaal',
+        'Microfiber schaal',
+        'Persoonlijk dashboard op realtime beschermingsniveau',
+        'Krijg zinvolle feedback over uw ademhaling en maskerprestaties in de app',
+        'Kom meer te weten',
+        'Nooit zonder filters komen te zitten',
+        'NIEUW',
+        'Annuleren',
+        'Meest populair',
+        'VOEG TOE AAN WINKELMAND',
+        'Schrijf een review',
+        'Set van',
+        'filters',
+        'Bewaakt de lokale luchtkwaliteit'
+    ],
+    de: [
+        'Einschichtiger Schutz',
+        'Mehrschichtschutz',
+        'Intelligente Maske',
+        'artikel',
+        'für',
+        ['maske', 'masken'],
+        'Wirksamkeit der Filtration',
+        '99,3% der Partikel und 99,9% der Bakterien',
+        'Wiederverwendbar, waschbar, nachhaltig',
+        '40 Betriebsstunden',
+        'Adaptive Maskengröße',
+        'Kleine Maskengröße',
+        'Antibeschlag mit Brille',
+        'Soft-Touch-Silikondichtung, passend zum Nasenrücken geformt',
+        'Ergo-Schaum-Dichtung, polstert und passt sich dem Nasenrücken an',
+        'Weniger Druck auf die Ohren',
+        'Kompatibel mit dem hygienischen Aufbewahrungskoffer von Airpop',
+        '4 austauschbare Filter enthalten',
+        '40-Stunden-Nutzung für jeden',
+        '3D-Flugplatzform',
+        'Dichtet adaptiv an Konturen ab',
+        'Leichtes Atmen',
+        'Die 3D-Struktur erzeugt ein Luftdach, das die Maske für mühelose Atmungsaktivität leicht vom Gesicht entfernt hält',
+        'Feuchtigkeitsableitende Leistung',
+        'Stoff',
+        'Airknit-Schale',
+        'Mikrofaserschale',
+        'Persönliches Dashboard in Echtzeit',
+        'Erhalten Sie in der App aussagekräftiges Feedback zu Ihrer Atmungs- und Maskenleistung',
+        'Mehr erfahren',
+        'Niemals die Filter ausgehen',
+        'NEU',
+        'Stornieren',
+        'Am beliebtesten',
+        'IN DEN EINKAUFSWAGEN LEGEN',
+        'Eine Bewertung schreiben',
+        'Set von',
+        'filter',
+        'Überwacht die lokale Luftqualität'
+    ]
+}
+
+let t = text.en
+let href = window.location.href
+if(href.includes('it')) {
+    t = text.it
+} else if (href.includes('nl')) {
+    t = text.nl
+} else if (href.includes('de')) {
+    t = text.de
+}
+
 let styleListing = `
     <style>
-    /**, *::before, *::after {*/
-    /* 
-    /*}*/
     
     .new_listing *, .custom_select, .custom_select * {
       font-family: "Cabin", sans-serif;
@@ -230,7 +404,7 @@ let styleListing = `
       right: 15px;
       top: 15px;
       padding: 5px;
-      content: "NEW";
+      content: "${t[31]}";
       color: white;
       background-color: #26CAD3;
       border-radius: 20px;
@@ -396,14 +570,14 @@ let styleListing = `
 let listing = `
     <div class="new_listing">
     <div class="category_tabs flx">
-      <div class="tab active">One Layer Protection</div>
-      <div class="tab">Multiple Layer Protection</div>
-      <div class="tab">Smart Mask</div>
+      <div class="tab active">${t[0]}</div>
+      <div class="tab">${t[1]}</div>
+      <div class="tab">${t[2]}</div>
     </div>
     <div class="mask_listing">
       <div class="category active">
-        <h2>ONE LAYER PROTECTION</h2>
-        <p>3 items</p>
+        <h2>${t[0]}</h2>
+        <p>3 ${t[3]}</p>
         <div class="flx">
           <div class="item" data-category="se" data-id="3175" data-color="white">
             <div class="bg">
@@ -414,51 +588,51 @@ let listing = `
                 <div class="product_name">Airpop Light SE</div>
               </a>
               <div class="product_select">
-                4 masks
+                4 ${t[5][1]}
               </div>
-              <div class="product_price">$29.99 for 4 masks</div>
+              <div class="product_price">$29.99 ${t[4]} 4 ${t[5][1]}</div>
               <div class="product_color flx">
                 <div class="white selected" data-color="white"></div>
                 <div class="black" data-color="black"></div>
               </div>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 Reviews</p>
+                <p>34 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
                   <img src="https://i.ibb.co/178f9Qc/microorganisms.png" alt="">
-                  <p class="title">Filtration Efficacy</p>
-                  <p>99.3% of particles and 99.9% of bacteria</p>
+                  <p class="title">${t[6]}</p>
+                  <p>${t[7]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/HGf7bQD/water.png" alt="">
-                  <p>Re-usable, washable, sustainable</p>
+                  <p>${t[8]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/48BKysr/time.png" alt="">
-                  <p>40 Hours of Use</p>
+                  <p>${t[9]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/F0cW9b6/full-size.png" alt="">
-                  <p>Adaptive mask size</p>
+                  <p>${t[10]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/bg1vphj/eyeglasses.png" alt="">
-                  <p class="title">Anti-fogging with eyewear</p>
-                  <p>Soft touch silicone seal, contoured to fit the nose bridge</p>
+                  <p class="title">${t[12]}</p>
+                  <p>${t[13]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/2SXWfwm/icons8-hearing-1.png" alt="">
-                  <p>Less pressure on ears</p>
+                  <p>${t[15]}</p>
                 </li>
                 <li>
                   <div class="minus"></div>
                 </li>
               </ul>
             </div>
-            <button class="add_to_cart">Add to Cart</button>
-            <a href="https://www.airpophealth.com/eu/airpop-light-se-4pcs-white" class="to_pdp">Learn more<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <button class="add_to_cart">${t[34]}</button>
+            <a href="https://www.airpophealth.com/eu/airpop-light-se-4pcs-white" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
           <div class="item" data-category="pocket" data-id="3166" data-color="black">
             <div class="bg">
@@ -469,51 +643,51 @@ let listing = `
                 <div class="product_name">Airpop Pocket</div>
               </a>
               <div class="product_select">
-                4 masks
+                4 ${t[5][1]}
               </div>
-              <div class="product_price">$29.99 for 4 masks</div>
+              <div class="product_price">$29.99 ${t[4]} 4 ${t[5][1]}</div>
               <div class="product_color flx">
                 <div class="black selected" data-color="black"></div>
                 <div class="white" data-color="white"></div>
               </div>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 Reviews</p>
+                <p>34 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
                   <img src="https://i.ibb.co/178f9Qc/microorganisms.png" alt="">
-                  <p class="title">Filtration Efficacy</p>
-                  <p>99.3% of particles and 99.9% of bacteria</p>
+                  <p class="title">${t[6]}</p>
+                  <p>${t[7]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/HGf7bQD/water.png" alt="">
-                  <p>Re-usable, washable, sustainable</p>
+                  <p>${t[8]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/48BKysr/time.png" alt="">
-                  <p>40 Hours of Use</p>
+                  <p>${t[9]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/F0cW9b6/full-size.png" alt="">
-                  <p>Adaptive mask size</p>
+                  <p>${t[10]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/bg1vphj/eyeglasses.png" alt="">
-                  <p class="title">Anti-fogging with eyewear</p>
-                  <p>Ergo-foam seal, cushions and conforms to the nose bridge</p>
+                  <p class="title">${t[12]}</p>
+                  <p>${t[14]}</p>
                 </li>
                 <li>
                   <div class="minus"></div>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/74jR5Yg/case.png" alt="">
-                  <p>Compatible with Airpop hygienic storage case</p>
+                  <p>${t[16]}</p>
                 </li>
               </ul>
             </div>
-            <button class="add_to_cart">Add to Cart</button>
-            <a href="https://www.airpophealth.com/eu/airpop-pocket-4pcs-black" class="to_pdp">Learn more<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <button class="add_to_cart">${t[34]}</button>
+            <a href="https://www.airpophealth.com/eu/airpop-pocket-4pcs-black" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
           <div class="item" data-category="kids" data-id="3162" data-color="pink">
             <div class="bg">
@@ -524,9 +698,9 @@ let listing = `
                 <div class="product_name">Airpop Kids</div>
               </a>
               <div class="product_select">
-                4 masks
+                4 ${t[5][1]}
               </div>
-              <div class="product_price">$29.99 for 4 masks</div>
+              <div class="product_price">$29.99 ${t[4]} 4 ${t[5][1]}</div>
               <div class="product_color flx">
                 <div class="pink selected" data-color="pink"></div>
                 <div class="blue" data-color="blue"></div>
@@ -534,47 +708,47 @@ let listing = `
               </div>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 Reviews</p>
+                <p>34 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
                   <img src="https://i.ibb.co/178f9Qc/microorganisms.png" alt="">
-                  <p class="title">Filtration Efficacy</p>
-                  <p>99.3% of particles and 99.9% of bacteria</p>
+                  <p class="title">${t[0]}</p>
+                  <p>${t[7]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/HGf7bQD/water.png" alt="">
-                  <p>Re-usable, washable, sustainable</p>
+                  <p>${t[8]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/48BKysr/time.png" alt="">
-                  <p>40 Hours of Use</p>
+                  <p>${t[9]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/rb7RdF0/small-size.png" alt="">
-                  <p class="title">Small mask size</p>
+                  <p class="title">${t[11]}</p>
                   <p>88-121 mm<br>
                     3.4 - 4.8 inch</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/bg1vphj/eyeglasses.png" alt="">
-                  <p class="title">Anti-fogging with eyewear</p>
-                  <p>Ergo-foam seal, cushions and conforms to the nose bridge</p>
+                  <p class="title">${t[12]}</p>
+                  <p>${t[14]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/74jR5Yg/case.png" alt="">
-                  <p>Compatible with Airpop hygienic storage case</p>
+                  <p>${t[16]}</p>
                 </li>
               </ul>
             </div>
-            <button class="add_to_cart">Add to Cart</button>
-            <a href="https://www.airpophealth.com/eu/airpop-kid-4pcs-pink" class="to_pdp">Learn more<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <button class="add_to_cart">${t[34]}</button>
+            <a href="https://www.airpophealth.com/eu/airpop-kid-4pcs-pink" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
         </div>
       </div>
       <div class="category">
-        <h2>MULTIPLE LAYER PROTECTION</h2>
-        <p>2 items</p>
+        <h2>${t[1]}</h2>
+        <p>2 ${t[3]}</p>
         <div class="flx">
           <div class="item" data-category="active" data-color="yellow" data-id="3184">
             <div class="bg">
@@ -583,7 +757,7 @@ let listing = `
                   alt="mask">
                 <div class="product_name">Airpop Active</div>
               </a>
-              <div class="product_price">$69.99 for 1 mask</div>
+              <div class="product_price">$69.99 ${t[4]} 1 ${t[5][0]}</div>
               <div class="product_color flx">
                 <div class="yellow selected" data-color="yellow"></div>
                 <div class="black" data-color="black"></div>
@@ -591,55 +765,55 @@ let listing = `
               </div>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 Reviews</p>
+                <p>34 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
                   <img src="https://i.ibb.co/178f9Qc/microorganisms.png" alt="">
-                  <p class="title">Filtration Efficacy</p>
-                  <p>99.3% of particles and 99.9% of bacteria</p>
+                  <p class="title">${t[6]}</p>
+                  <p>${t[7]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/HGf7bQD/water.png" alt="">
-                  <p>Re-usable, washable, sustainable</p>
+                  <p>${t[8]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/bN9r8CC/4masks.png" alt="">
-                  <p class="title">4 replaceable filters included</p>
-                  <p>40-hour use for each</p>
+                  <p class="title">${t[17]}</p>
+                  <p>${t[18]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/F0cW9b6/full-size.png" alt="">
-                  <p>Adaptive mask size</p>
+                  <p>${t[10]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/JdTvv4h/eyeglasses-1.png" alt="">
-                  <p class="title">3D aerodome shape</p>
-                  <p>Adaptively seals to face contours</p>
+                  <p class="title">${t[19]}</p>
+                  <p>${t[20]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/YBFDrSy/wind.png" alt="">
-                  <p class="title">Easy breathing</p>
-                  <p>3D structure creates a canopy of air that keeps the mask slightly away from the face for effortless breathability</p>
+                  <p class="title">${t[21]}</p>
+                  <p>${t[22]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/bg1vphj/eyeglasses.png" alt="">
-                  <p class="title">Anti-fogging with eyewear</p>
-                  <p>Soft touch silicone seal, specifically contoured to fit the nose bridge</p>
+                  <p class="title">${t[12]}</p>
+                  <p>${t[13]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/7bdgJJ3/drop.png" alt="">
-                  <p>Moisture-wicking performance</p>
+                  <p>${t[23]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/CBwLw1z/fiber1.png" alt="">
-                  <p class="title">Fabric</p>
-                  <p>Airknit shell</p>
+                  <p class="title">${t[24]}</p>
+                  <p>${t[25]}</p>
                 </li>
               </ul>
             </div>
-            <button class="add_to_cart">Add to Cart</button>
-            <a href="https://www.airpophealth.com/eu/airpop-active-yellow-black" class="to_pdp">Learn more<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <button class="add_to_cart">${t[34]}</button>
+            <a href="https://www.airpophealth.com/eu/airpop-active-yellow-black" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
           <div class="item" data-category="original" data-color="brown" data-id="3183">
             <div class="bg">
@@ -649,7 +823,7 @@ let listing = `
                   alt="mask">
                 <div class="product_name">Airpop Original</div>
               </a>
-              <div class="product_price">$59.99 for 1 mask</div>
+              <div class="product_price">$59.99 ${t[4]} 1 ${t[5][0]}</div>
               <div class="product_color flx">
                 <div class="brown selected" data-color="brown"></div>
                 <div class="grey" data-color="grey"></div>
@@ -657,59 +831,59 @@ let listing = `
               </div>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 Reviews</p>
+                <p>34 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
                   <img src="https://i.ibb.co/178f9Qc/microorganisms.png" alt="">
-                  <p class="title">Filtration Efficacy</p>
-                  <p>99.3% of particles and 99.9% of bacteria</p>
+                  <p class="title">${t[6]}</p>
+                  <p>${t[7]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/HGf7bQD/water.png" alt="">
-                  <p>Re-usable, washable, sustainable</p>
+                  <p>${t[8]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/bN9r8CC/4masks.png" alt="">
-                  <p class="title">4 replaceable filters included</p>
-                  <p>40-hour use for each</p>
+                  <p class="title">${t[17]}</p>
+                  <p>${t[18]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/F0cW9b6/full-size.png" alt="">
-                  <p>Adaptive mask size</p>
+                  <p>${t[10]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/JdTvv4h/eyeglasses-1.png" alt="">
-                  <p class="title">3D aerodome shape</p>
-                  <p>Adaptively seals to face contours</p>
+                  <p class="title">${t[19]}</p>
+                  <p>${t[20]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/YBFDrSy/wind.png" alt="">
-                  <p class="title">Easy breathing</p>
-                  <p>3D structure creates a canopy of air that keeps the mask slightly away from the face for effortless breathability</p>
+                  <p class="title">${t[21]}</p>
+                  <p>${t[22]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/bg1vphj/eyeglasses.png" alt="">
-                  <p class="title">Anti-fogging with eyewear</p>
-                  <p>Soft touch silicone seal, specifically contoured to fit the nose bridge</p>
+                  <p class="title">${t[12]}</p>
+                  <p>${t[13]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/7bdgJJ3/drop.png" alt="">
-                  <p>Moisture-wicking performance</p>
+                  <p>${t[23]}</p>
                 </li>
                 <li>
                   <img src="https://i.ibb.co/7YMbbHW/fiber2.png" alt="">
-                  <p class="title">Fabric</p>
-                  <p>Microfiber shell</p>
+                  <p class="title">${t[24]}</p>
+                  <p>${t[26]}</p>
                 </li>
               </ul>
             </div>
-            <button class="add_to_cart">Add to Cart</button>
-            <a href="https://www.airpophealth.com/eu/airpop-original-beige" class="to_pdp">Learn more<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <button class="add_to_cart">${t[34]}</button>
+            <a href="https://www.airpophealth.com/eu/airpop-original-beige" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
         </div>
         <div class="filter">
-          <h3>Never run out of filters</h3>
+          <h3>${t[30]}</h3>
           <div class="item" data-id="3182">
             <div class="bg">
               <a href="https://www.airpophealth.com/eu/airpop-filter-refill-white" class="to_pdp">
@@ -718,20 +892,20 @@ let listing = `
                   alt="mask">
                 <div class="product_name">Airpop Filter refill white</div>
               </a>
-              <div class="product_price">Set of 4 filters $24.99 </div>
+              <div class="product_price">${t[36]} 4 ${t[37]} $24.99</div>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 Reviews</p>
+                <p>34 ${t[35]}</p>
               </div>
             </div>
-            <button class="add_to_cart">Add to Cart</button>
-            <a href="https://www.airpophealth.com/eu/airpop-filter-refill-white" class="to_pdp">Learn more<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <button class="add_to_cart">${t[34]}</button>
+            <a href="https://www.airpophealth.com/eu/airpop-filter-refill-white" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
         </div>
       </div>
       <div class="category">
-        <h2>SMART MASK</h2>
-        <p>Monitors Local Air Quality</p>
+        <h2>${t[2]}</h2>
+        <p>${t[38]}</p>
         <div class="item" data-id="3168">
           <div class="bg new">
             <a href="https://www.airpophealth.com/eu/airpop-active-smart-black-yellow" class="to_pdp">
@@ -743,63 +917,63 @@ let listing = `
             <div class="product_price">$149.99</div>
             <div class="product_reviews">
               <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-              <p>34 Reviews</p>
+              <p>34 ${t[35]}</p>
             </div>
             <ul class="specialization">
               <li>
                 <img src="https://i.ibb.co/178f9Qc/microorganisms.png" alt="">
-                <p class="title">Filtration Efficacy</p>
-                <p>99.3% of particles and 99.9% of bacteria</p>
+                <p class="title">${t[6]}</p>
+                <p>${t[7]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/HGf7bQD/water.png" alt="">
-                <p>Re-usable, washable, sustainable</p>
+                <p>${t[8]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/qj3F2rT/phone.png" alt="">
-                <p class="title">Personal dashboard on real-time protection level</p>
-                <p>Get meaningful feedback about your breathing and mask performance in the app</p>
+                <p class="title">${t[27]}</p>
+                <p>${t[28]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/bN9r8CC/4masks.png" alt="">
-                <p class="title">4 replaceable filters included</p>
-                <p>40-hour use for each</p>
+                <p class="title">${t[17]}</p>
+                <p>${t[18]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/F0cW9b6/full-size.png" alt="">
-                <p>Adaptive mask size</p>
+                <p>${t[10]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/JdTvv4h/eyeglasses-1.png" alt="">
-                <p class="title">3D aerodome shape</p>
-                <p>Adaptively seals to face contours</p>
+                <p class="title">${t[19]}</p>
+                <p>${t[20]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/YBFDrSy/wind.png" alt="">
-                <p class="title">Easy breathing</p>
-                <p>3D structure creates a canopy of air that keeps the mask slightly away from the face for effortless breathability</p>
+                <p class="title">${t[21]}</p>
+                <p>${t[22]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/bg1vphj/eyeglasses.png" alt="">
-                <p class="title">Anti-fogging with eyewear</p>
-                <p>Soft touch silicone seal, specifically contoured to fit the nose bridge</p>
+                <p class="title">${t[12]}</p>
+                <p>${t[13]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/7bdgJJ3/drop.png" alt="">
-                <p>Moisture-wicking performance</p>
+                <p>${t[23]}</p>
               </li>
               <li>
                 <img src="https://i.ibb.co/CBwLw1z/fiber1.png" alt="">
-                <p class="title">Fabric</p>
-                <p>Airknit shell</p>
+                <p class="title">${t[24]}</p>
+                <p>${t[25]}</p>
               </li>
             </ul>
           </div>
-          <button class="add_to_cart">Add to Cart</button>
-          <a href="https://www.airpophealth.com/eu/airpop-active-smart-black-yellow" class="to_pdp">Learn more<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+          <button class="add_to_cart">${t[34]}</button>
+          <a href="https://www.airpophealth.com/eu/airpop-active-smart-black-yellow" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
         </div>
         <div class="filter">
-          <h3>Never run out of filters</h3>
+          <h3>${t[30]}</h3>
           <div class="item" data-id="3182">
             <div class="bg">
               <a href="https://www.airpophealth.com/eu/airpop-filter-refill-white" class="to_pdp">
@@ -808,14 +982,14 @@ let listing = `
                   alt="mask">
                 <div class="product_name">Airpop Filter refill white</div>
               </a>
-              <div class="product_price">Set of 4 filters $24.99 </div>
+              <div class="product_price">${t[36]} 4 ${t[37]} $24.99</div>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 Reviews</p>
+                <p>34 ${t[35]}</p>
               </div>
             </div>
-            <button class="add_to_cart">Add to Cart</button>
-            <a href="https://www.airpophealth.com/eu/airpop-filter-refill-white" class="to_pdp">Learn more<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <button class="add_to_cart">${t[34]}</button>
+            <a href="https://www.airpophealth.com/eu/airpop-filter-refill-white" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
         </div>
       </div>
@@ -827,7 +1001,7 @@ let listing = `
     <ul>
 
     </ul>
-    <button class="cancel">Cancel</button>
+    <button class="cancel">${t[32]}</button>
   </div>
   
   <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
@@ -942,7 +1116,7 @@ let products = {
                 if (list[item][0] === '4') {
                     classList += ' popular'
                 }
-                let li = `<li class="${classList}" data-sku="${list[item][2]}" data-qty="${list[item][0]}" data-newid="${+item}">${list[item][0]} masks <span>$${list[item][1]}</span></li>`
+                let li = `<li class="${classList}" data-sku="${list[item][2]}" data-qty="${list[item][0]}" data-newid="${+item}">${list[item][0]} ${(+list[item][0] === 1)? t[5][0]:t[5][0]} <span>$${list[item][1]}</span></li>`
                 $('.custom_select ul').append(li)
             }
 
@@ -967,9 +1141,9 @@ let products = {
                     success: function (response) {
                         console.log(response);
                         $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                        $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                        $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
                         $(`.item[data-category='${cat}']`).find('.to_pdp').attr('href', `https://www.airpophealth.com/eu/catalog/product/view/id/${newid}/s/${response.custom_attributes[4].value}`)
-                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
                         $(`.item[data-category='${cat}']`).data('id', newid)
 
                         $('.dark_bg').removeClass('active')
@@ -1007,9 +1181,9 @@ let products = {
                     success: function (response) {
                         console.log(response);
                         $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                        $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                        $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
                         $(`.item[data-category='${cat}']`).find('.to_pdp').attr('href', `https://www.airpophealth.com/eu/catalog/product/view/id/${newid}/s/${response.custom_attributes[4].value}`)
-                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
                         aim.closest('.item').attr('data-id', newid)
                         aim.closest('.item').attr('data-color', color)
                         aim.addClass('selected').siblings('div').removeClass('selected')
