@@ -179,7 +179,7 @@ let styleListing = `
     <style>
     
     .new_listing *, .custom_select, .custom_select * {
-      font-family: "Cabin", sans-serif;
+       font-family: "Cabin", sans-serif;
        margin: 0;
        padding: 0;
        box-sizing: border-box;
@@ -376,7 +376,7 @@ let styleListing = `
     }
     .category .specialization li {
       padding: 15px 0;
-      min-height: 130px;
+      min-height: 160px;
       display:flex;
       flex-direction: column;
       justify-content:center;
@@ -391,7 +391,7 @@ let styleListing = `
       margin-bottom: 10px;
     }
     .category .specialization .minus {
-      margin: 90px auto;
+      margin: 0 auto;
       height: 1px;
       width: 24px;
       background-color: #000;
