@@ -1188,6 +1188,8 @@ let products = {
                         $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
                         aim.closest('.item').attr('data-id', newid)
                         aim.closest('.item').attr('data-color', color)
+                        aim.closest('.item').data('id', newid)
+                        aim.closest('.item').data('color', color)
                         aim.addClass('selected').siblings('div').removeClass('selected')
                         $('.dark_bg').removeClass('active')
                         $('.lds-spinner').removeClass('active')
