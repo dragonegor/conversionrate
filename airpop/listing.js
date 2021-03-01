@@ -885,7 +885,7 @@ let listing = `
         </div>
         <div class="filter">
           <h3>${t[30]}</h3>
-          <div class="item" data-id="3182">
+          <div class="item" data-id="3182" data-category="filter">
             <div class="bg">
               <a href="https://www.airpophealth.com/eu/airpop-filter-refill-white" class="to_pdp">
                 <img
@@ -907,7 +907,7 @@ let listing = `
       <div class="category">
         <h2>${t[2]}</h2>
         <p>${t[38]}</p>
-        <div class="item" data-id="3168">
+        <div class="item" data-id="3168" data-category="smart">
           <div class="bg new">
             <a href="https://www.airpophealth.com/eu/airpop-active-smart-black-yellow" class="to_pdp">
               <img
@@ -975,7 +975,7 @@ let listing = `
         </div>
         <div class="filter">
           <h3>${t[30]}</h3>
-          <div class="item" data-id="3182">
+          <div class="item" data-id="3182" data-category="filter">
             <div class="bg">
               <a href="https://www.airpophealth.com/eu/airpop-filter-refill-white" class="to_pdp">
                 <img
@@ -1099,10 +1099,25 @@ let products = {
                 $(this).addClass('active').siblings('div').removeClass('active')
                 $(this).closest('.new_listing').find('.mask_listing .category').eq(i).addClass('active').siblings('div').removeClass('active')
                 $("html, body").animate({scrollTop: $(document).height(0)}, 1);
+
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    'event': 'event-to-ga',
+                    'eventCategory': 'Updated product listing',
+                    'eventAction': 'change categories',
+                    'eventLabel': i+1 + ' type'
+                });
             }
         })
 
         $('.product_select').click(function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Updated product listing',
+                'eventAction': 'change quantity'
+            });
+
             let cat = $(this).closest('.item').data('category')
             let color = $(this).closest('.item').data('color')
             let id = $(this).closest('.item').data('id')
@@ -1133,6 +1148,15 @@ let products = {
                 $('.custom_select ul').empty()
                 $('.custom_select').removeClass('active')
                 $('.lds-spinner').addClass('active')
+
+
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    'event': 'event-to-ga',
+                    'eventCategory': 'Updated product listing',
+                    'eventAction': 'select quantity',
+                    'eventLabel': qty
+                });
                 jQuery.ajax({
                     type: "GET",
                     url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries,custom_attributes`,
@@ -1168,6 +1192,14 @@ let products = {
                 $('.lds-spinner').addClass('active')
                 $('.dark_bg').addClass('active')
 
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    'event': 'event-to-ga',
+                    'eventCategory': 'Updated product listing',
+                    'eventAction': 'change color',
+                    'eventLabel': cat + color
+                });
+
                 jQuery.ajax({
                     type: "GET",
                     url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries,custom_attributes`,
@@ -1199,16 +1231,42 @@ let products = {
         })
 
         $('.custom_select .cancel').click(function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Updated product listing',
+                'eventAction': 'Cancel change quantity'
+            });
+            
             $('.custom_select ul').empty()
             $('.dark_bg').removeClass('active')
             $('.custom_select').removeClass('active')
         })
 
         $('.add_to_cart').click(function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Updated product listing',
+                'eventAction': 'Add to Cart'
+            });
+
             let id = $(this).closest('.item').data('id')
             $('.dark_bg').addClass('active')
             $('.lds-spinner').addClass('active')
             to_cart(id)
+        })
+
+        $('.to_pdp').click(function () {
+            let cat = $(this).closest('.item').data('category')
+
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Updated product listing',
+                'eventAction': 'Learn more',
+                'eventLabel': cat
+            });
         })
 
     }, 1000)
@@ -1234,4 +1292,22 @@ let products = {
             $('.dark_bg').removeClass('active')
             $('.lds-spinner').removeClass('active')
         })
-    }
+    };
+
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2078786,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+hj('trigger', 'product_listing');
+
+
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Updated product listing',
+    'eventAction': 'loaded'
+});
