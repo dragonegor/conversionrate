@@ -335,7 +335,7 @@ let review1 = `
 
 let review2 = `
      <div class="review_second">
-    <h3> What people say about SomniFixmouth strips <img src="https://i.ibb.co/RhLx4jP/heart.png" alt="heart"></h3>
+    <h3> What people say about SomniFix mouth strips <img src="https://i.ibb.co/RhLx4jP/heart.png" alt="heart"></h3>
     <div class="slider_block">
       <div class="slider_dry">
         <div class="slider_item">
