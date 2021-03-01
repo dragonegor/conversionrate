@@ -999,6 +999,11 @@ let products = {
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
                     },
+                    error: function (response) {
+                        $('.dark_bg').removeClass('active')
+                        $('.lds-spinner').removeClass('active')
+                        console.log(response)
+                    },
                     success: function (response) {
                         console.log(response);
                         $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
@@ -1041,6 +1046,11 @@ let products = {
                 item: id,
                 form_key: jQuery.cookie('form_key'),
                 qty: 1
+            },
+            error: function (response) {
+                $('.dark_bg').removeClass('active')
+                $('.lds-spinner').removeClass('active')
+                console.log(response)
             }
         }).done(function (response) {
             $('.dark_bg').removeClass('active')
