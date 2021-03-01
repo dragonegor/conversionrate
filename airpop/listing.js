@@ -912,7 +912,7 @@ let products = {
 
 }
 
-    
+
     setTimeout(function () {
         document.body.insertAdjacentHTML('afterbegin', styleListing)
         document.querySelector('#maincontent').innerHTML = listing
@@ -969,7 +969,7 @@ let products = {
                         $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
                         $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
                         $(`.item[data-category='${cat}']`).find('.to_pdp').attr('href', `https://www.airpophealth.com/eu/catalog/product/view/id/${newid}/s/${response.custom_attributes[4].value}`)
-                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} masks`)
+                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
                         $(`.item[data-category='${cat}']`).data('id', newid)
 
                         $('.dark_bg').removeClass('active')
@@ -1002,9 +1002,9 @@ let products = {
                     success: function (response) {
                         console.log(response);
                         $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                        $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} mask`)
+                        $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
                         $(`.item[data-category='${cat}']`).find('.to_pdp').attr('href', `https://www.airpophealth.com/eu/catalog/product/view/id/${newid}/s/${response.custom_attributes[4].value}`)
-                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} masks`)
+                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
                         aim.closest('.item').attr('data-id', newid)
                         aim.closest('.item').attr('data-color', color)
                         aim.addClass('selected').siblings('div').removeClass('selected')
