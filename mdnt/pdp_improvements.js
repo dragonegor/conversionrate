@@ -278,7 +278,7 @@ window.onload = function () {
 
 
 
-    $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guige</div>`)
+    $('.blaster-select--Size').append(`<div class="show_size_chart">Size Guide</div>`)
     setTimeout(function () {
         document.querySelectorAll('.ProductCardMultiselect_picky-product-options-container_1fxk3>div').forEach((item) => {
             if(!item.innerHTML.includes('Size')){
