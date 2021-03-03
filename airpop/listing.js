@@ -596,6 +596,7 @@ let listing = `
                 <div class="white selected" data-color="white"></div>
                 <div class="black" data-color="black"></div>
               </div>
+              <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
                 <p>34 ${t[35]}</p>
@@ -651,6 +652,7 @@ let listing = `
                 <div class="black selected" data-color="black"></div>
                 <div class="white" data-color="white"></div>
               </div>
+              <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
                 <p>34 ${t[35]}</p>
@@ -707,6 +709,7 @@ let listing = `
                 <div class="blue" data-color="blue"></div>
                 <div class="white" data-color="white"></div>
               </div>
+              <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
                 <p>34 ${t[35]}</p>
@@ -764,6 +767,7 @@ let listing = `
                 <div class="black" data-color="black"></div>
                 <div class="grey" data-color="grey"></div>
               </div>
+              <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
                 <p>34 ${t[35]}</p>
@@ -830,6 +834,7 @@ let listing = `
                 <div class="grey" data-color="grey"></div>
                 <div class="black" data-color="black"></div>
               </div>
+              <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
                 <p>34 ${t[35]}</p>
@@ -894,6 +899,7 @@ let listing = `
                 <div class="product_name">Airpop Filter refill white</div>
               </a>
               <div class="product_price">${t[36]} 4 ${t[37]} $24.99</div>
+              <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
                 <p>34 ${t[35]}</p>
@@ -1237,7 +1243,7 @@ let products = {
                 'eventCategory': 'Updated product listing',
                 'eventAction': 'Cancel change quantity'
             });
-            
+
             $('.custom_select ul').empty()
             $('.dark_bg').removeClass('active')
             $('.custom_select').removeClass('active')
