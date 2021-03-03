@@ -353,6 +353,11 @@ let styleListing = `
       padding: 20px 10px;
       border-radius: 50px;
     }
+    
+    .category .bg .add_to_cart {
+      margin: 10px 0;
+    }
+    
     .category .item > .to_pdp {
       font-weight: 500;
       text-align: center;
@@ -1095,6 +1100,7 @@ let products = {
 
 
     setTimeout(function () {
+        document.querySelector('#maincontent').style.opacity = '1'
         document.body.insertAdjacentHTML('afterbegin', styleListing)
         document.querySelector('#maincontent').innerHTML = listing
         let $ = jQuery;
