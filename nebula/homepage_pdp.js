@@ -577,18 +577,21 @@ let miniPdp = `
 
 document.body.insertAdjacentHTML('afterbegin', homepageStyle)
 function drawHomepage() {
-    document.querySelector('.navbar-image img').setAttribute('src', 'https://i.ibb.co/Pc5JBYq/logo.png')
+    if (document.querySelector('.navbar-image img')) {
+        document.querySelector('.navbar-image img').setAttribute('src', 'https://i.ibb.co/Pc5JBYq/logo.png')
+    }
     let path = window.location.pathname
     if(path.includes('whole-genome-sequencing-dna-test')) {
         if(!document.querySelector('.main_section')) {
-            document.querySelector('.mainpage').innerHTML = mainsection
-            document.querySelector('.choose-plan-1 .right').innerHTML = `<img src="https://portal.nebula.org/api/public-images/brochure/30xProduct/choose-product-bg.png">`
-            document.querySelector('.choose-plan-1').insertAdjacentHTML('afterbegin', `<h2>About Our DNA tests, reports and technology</h2>`)
-            document.querySelector('.choose-plan-1').insertAdjacentHTML('afterend', miniPdp)
-            document.querySelector('.mini-faqs').insertAdjacentHTML('beforebegin', btn)
-            document.querySelector('.mini-faqs').insertAdjacentHTML('afterend', btn)
-            document.querySelector('.comparison-chart-component').insertAdjacentHTML('beforeend', `<a href="#choose" class="btn_choose">Choose your plan</a>`)
-
+            if (document.querySelector('.mainpage') && document.querySelector('.choose-plan-1')){
+                document.querySelector('.mainpage').innerHTML = mainsection
+                document.querySelector('.choose-plan-1 .right').innerHTML = `<img src="https://portal.nebula.org/api/public-images/brochure/30xProduct/choose-product-bg.png">`
+                document.querySelector('.choose-plan-1').insertAdjacentHTML('afterbegin', `<h2>About Our DNA tests, reports and technology</h2>`)
+                document.querySelector('.choose-plan-1').insertAdjacentHTML('afterend', miniPdp)
+                document.querySelector('.mini-faqs').insertAdjacentHTML('beforebegin', btn)
+                document.querySelector('.mini-faqs').insertAdjacentHTML('afterend', btn)
+                document.querySelector('.comparison-chart-component').insertAdjacentHTML('beforeend', `<a href="#choose" class="btn_choose">Choose your plan</a>`)
+            }
 
             const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -610,7 +613,7 @@ function drawHomepage() {
 
 function links() {
     if (document.querySelector('.get-started-button a') && (document.querySelector('.get-started-button a').innerText !== 'Choose your plan') || (document.querySelector('a.link-tag') && document.querySelector('a.link-tag').innerHTML !== 'Choose your plan')) {
-
+        let clickLink = new Event('click')
 
         document.querySelectorAll('.purchase-button').forEach((item) => {
             item.innerText = 'Choose your plan'
@@ -619,7 +622,6 @@ function links() {
         document.querySelectorAll('a.link-tag').forEach((item) => {
             item.addEventListener('click', function (e) {
                 e.preventDefault()
-                let clickLink = new Event('click')
                 document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
             })
         })
@@ -631,7 +633,6 @@ function links() {
         document.querySelectorAll('a.button-div').forEach((item) => {
             item.addEventListener('click', function (e) {
                 e.preventDefault()
-                let clickLink = new Event('click')
                 document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
             })
         })
@@ -640,7 +641,6 @@ function links() {
             item.innerHTML = 'Choose your plan'
             item.addEventListener('click', function (e) {
                 e.preventDefault()
-                let clickLink = new Event('click')
                 document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
             })
         })
