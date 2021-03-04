@@ -1302,8 +1302,10 @@ function to_cart(id) {
     }).done(function (response) {
         $('.dark_bg').removeClass('active')
         $('.lds-spinner').removeClass('active')
-        let c = new Event('click')
-        document.querySelector('.action.showcart').dispatchEvent(c)
+        setTimeout(function () {
+            let c = new Event('click')
+            document.querySelector('.action.showcart').dispatchEvent(c)
+        }, 1000)
     })
 };
 
