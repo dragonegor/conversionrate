@@ -207,7 +207,7 @@ let styleListing = `
       position: sticky;
       top: 93px;
       background-color: #fff;
-      z-index: 999;
+      z-index: 998;
       border-bottom: 1px solid #bababa;
     }
     
