@@ -191,7 +191,7 @@ let styleListing = `
 
     .section-items.slider-nav-sections-items {
       display: none;
-}
+    }
     
     .flx {
       display: flex;
@@ -589,11 +589,11 @@ let listing = `
         <h2>${t[0]}</h2>
         <p>3 ${t[3]}</p>
         <div class="flx">
-          <div class="item" data-category="se" data-id="3175" data-color="white">
+          <div class="item" data-category="se" data-id="3176" data-color="black">
             <div class="bg">
-              <a href="https://www.airpophealth.com/eu/airpop-light-se-4pcs-white" class="to_pdp">
+              <a href="https://www.airpophealth.com/eu/airpop-light-se-4pcs-black" class="to_pdp">
                 <img
-                  src="https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/4/3/43575_1.png"
+                  src="https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/4/3/43514_1_1_1.png"
                   alt="mask">
                 <div class="product_name">Airpop Light SE</div>
               </a>
@@ -607,7 +607,7 @@ let listing = `
               </div>
               <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
-                <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
+                <img src="https://i.ibb.co/FHybMJS/stars4-5.png" alt="stars">
                 <p>34 ${t[35]}</p>
               </div>
               <ul class="specialization">
@@ -643,13 +643,13 @@ let listing = `
               </ul>
             </div>
             <button class="add_to_cart">${t[34]}</button>
-            <a href="https://www.airpophealth.com/eu/airpop-light-se-4pcs-white" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <a href="https://www.airpophealth.com/eu/airpop-light-se-4pcs-black" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
-          <div class="item" data-category="pocket" data-id="3166" data-color="black">
+          <div class="item" data-category="pocket" data-id="3167" data-color="white">
             <div class="bg">
-              <a href="https://www.airpophealth.com/eu/airpop-pocket-4pcs-black" class="to_pdp">
+              <a href="https://www.airpophealth.com/eu/airpop-pocket-4pcs-white" class="to_pdp">
                 <img
-                  src="https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/4/3/43311_1.png"
+                  src="https://www.airpophealth.com/media/catalog/product/cache/6c07725d11cf11164242a71cef72688e/4/3/43347_1.png"
                   alt="mask">
                 <div class="product_name">Airpop Pocket</div>
               </a>
@@ -658,13 +658,13 @@ let listing = `
               </div>
               <div class="product_price">$29.99 ${t[4]} 4 ${t[5][1]}</div>
               <div class="product_color flx">
-                <div class="black selected" data-color="black"></div>
-                <div class="white" data-color="white"></div>
+                <div class="black" data-color="black"></div>
+                <div class="white selected" data-color="white"></div>
               </div>
               <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 ${t[35]}</p>
+                <p>2 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
@@ -699,13 +699,13 @@ let listing = `
               </ul>
             </div>
             <button class="add_to_cart">${t[34]}</button>
-            <a href="https://www.airpophealth.com/eu/airpop-pocket-4pcs-black" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <a href="https://www.airpophealth.com/eu/airpop-pocket-4pcs-white" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
-          <div class="item" data-category="kids" data-id="3162" data-color="pink">
+          <div class="item" data-category="kids" data-id="3163" data-color="blue">
             <div class="bg">
-              <a href="https://www.airpophealth.com/eu/airpop-kid-4pcs-pink" class="to_pdp">
+              <a href="https://www.airpophealth.com/eu/airpop-kid-4pcs-blue" class="to_pdp">
                 <img
-                  src="https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/4/3/43316_2.png"
+                  src="https://www.airpophealth.com/media/catalog/product/cache/6c07725d11cf11164242a71cef72688e/4/3/43317_2_1.png"
                   alt="mask">
                 <div class="product_name">Airpop Kids</div>
               </a>
@@ -714,14 +714,14 @@ let listing = `
               </div>
               <div class="product_price">$29.99 ${t[4]} 4 ${t[5][1]}</div>
               <div class="product_color flx">
-                <div class="pink selected" data-color="pink"></div>
-                <div class="blue" data-color="blue"></div>
+                <div class="pink" data-color="pink"></div>
+                <div class="blue selected" data-color="blue"></div>
                 <div class="white" data-color="white"></div>
               </div>
               <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 ${t[35]}</p>
+                <p>5 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
@@ -755,7 +755,7 @@ let listing = `
               </ul>
             </div>
             <button class="add_to_cart">${t[34]}</button>
-            <a href="https://www.airpophealth.com/eu/airpop-kid-4pcs-pink" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
+            <a href="https://www.airpophealth.com/eu/airpop-kid-4pcs-blue" class="to_pdp">${t[29]}<img src="https://i.ibb.co/xsG543Z/arr-d.png" alt="arrow"></a>
           </div>
         </div>
       </div>
@@ -779,7 +779,7 @@ let listing = `
               <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 ${t[35]}</p>
+                <p>2 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
@@ -845,8 +845,8 @@ let listing = `
               </div>
               <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
-                <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 ${t[35]}</p>
+                <img src="https://i.ibb.co/FHybMJS/stars4-5.png" alt="stars">
+                <p>2 ${t[35]}</p>
               </div>
               <ul class="specialization">
                 <li>
@@ -1029,14 +1029,14 @@ let products = {
             '+3175': ['4', '29,99', '43575'],
             '+3462': ['8', '54.99', '44780'],
             '+3463': ['12', '69.99', '44781'],
-           // '+3177': ['20', '99.99', '43577']
+            // '+3177': ['20', '99.99', '43577']
         },
         black: {
             '+3174': ['1', '9.99', '43514'],
             '+3176': ['4', '29,99', '43576'],
             '+3460': ['8', '54.99', '44778'],
             '+3461': ['12', '69.99', '44779'],
-         //   '+3178': ['20', '99.99', '43578']
+            //   '+3178': ['20', '99.99', '43578']
         }
     },
     pocket: {
@@ -1045,14 +1045,14 @@ let products = {
             '+3166': ['4', '24,99', '43346'],
             '+3456': ['8', '44.99', '44774'],
             '+3457': ['12', '59.99', '44775'],
-         //   '+3318': ['20', '89.99', '43798']
+            //   '+3318': ['20', '89.99', '43798']
         },
         white: {
             '+3160': ['2', '14.99', '43312'],
             '+3167': ['4', '24,99', '43347'],
             '+3458': ['8', '44.99', '44776'],
             '+3459': ['12', '59.99', '44777'],
-          //  '+3319': ['20', '89.99', '43799']
+            //  '+3319': ['20', '89.99', '43799']
         }
     },
     kids: {
@@ -1060,21 +1060,21 @@ let products = {
             '+3162': ['4', '24.99', '43316'],
             '+3470': ['8', '44.99', '44788'],
             '+3471': ['12', '59.99', '44789'],
-          //  '+3472': ['20', '89.99', '44790'],
+            //  '+3472': ['20', '89.99', '44790'],
         },
         blue: {
             '+3180': ['2', '14.99', '43580'],
             '+3163': ['4', '24.99', '43317'],
             '+3467': ['8', '44.99', '44785'],
             '+3468': ['12', '59.99', '44786'],
-          //  '+3469': ['20', '89.99', '44787'],
+            //  '+3469': ['20', '89.99', '44787'],
         },
         white: {
             '+3179': ['2', '14.99', '43579'],
             '+3171': ['4', '24.99', '43352'],
             '+3464': ['8', '44.99', '44782'],
             '+3465': ['12', '59.99', '44783'],
-         //   '+3466': ['20', '89.99', '44784']
+            //   '+3466': ['20', '89.99', '44784']
         }
     },
     active: {
@@ -1103,212 +1103,212 @@ let products = {
 }
 
 
-    setTimeout(function () {
-        document.querySelector('#maincontent').style.opacity = '1'
-        document.body.insertAdjacentHTML('afterbegin', styleListing)
-        document.querySelector('#maincontent').innerHTML = listing
-        let $ = jQuery;
+setTimeout(function () {
+    document.querySelector('#maincontent').style.opacity = '1'
+    document.body.insertAdjacentHTML('afterbegin', styleListing)
+    document.querySelector('#maincontent').innerHTML = listing
+    let $ = jQuery;
 
-        $('.category_tabs').on('click', '.tab', function () {
-            let i = $(this).index()
-            if (!$(this).hasClass('active')) {
-                $(this).addClass('active').siblings('div').removeClass('active')
-                $(this).closest('.new_listing').find('.mask_listing .category').eq(i).addClass('active').siblings('div').removeClass('active')
-                $("html, body").animate({scrollTop: $(document).height(0)}, 1);
+    $('.category_tabs').on('click', '.tab', function () {
+        let i = $(this).index()
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active').siblings('div').removeClass('active')
+            $(this).closest('.new_listing').find('.mask_listing .category').eq(i).addClass('active').siblings('div').removeClass('active')
+            $("html, body").animate({scrollTop: $(document).height(0)}, 1);
 
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Updated product listing',
-                    'eventAction': 'change categories',
-                    'eventLabel': i+1 + ' type'
-                });
-            }
-        })
-
-        $('.product_select').click(function () {
             window.dataLayer = window.dataLayer || [];
             dataLayer.push({
                 'event': 'event-to-ga',
                 'eventCategory': 'Updated product listing',
-                'eventAction': 'change quantity'
+                'eventAction': 'change categories',
+                'eventLabel': i+1 + ' type'
             });
+        }
+    })
 
-            let cat = $(this).closest('.item').data('category')
-            let color = $(this).closest('.item').data('color')
-            let id = $(this).closest('.item').data('id')
-            $('.custom_select').data('category', cat)
-            console.log(cat, color, id)
-            let list = products[cat][color]
-            console.log(list)
-            for (let item in list) {
-                let classList = ''
-                if (+item === +id) {
-                    classList += 'selected'
-                }
-                if (list[item][0] === '4') {
-                    classList += ' popular'
-                }
-                let li = `<li class="${classList}" data-sku="${list[item][2]}" data-qty="${list[item][0]}" data-newid="${+item}">${list[item][0]} ${(+list[item][0] === 1)? t[5][0]:t[5][0]} <span>$${list[item][1]}</span></li>`
-                $('.custom_select ul').append(li)
+    $('.product_select').click(function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Updated product listing',
+            'eventAction': 'change quantity'
+        });
+
+        let cat = $(this).closest('.item').data('category')
+        let color = $(this).closest('.item').data('color')
+        let id = $(this).closest('.item').data('id')
+        $('.custom_select').data('category', cat)
+        console.log(cat, color, id)
+        let list = products[cat][color]
+        console.log(list)
+        for (let item in list) {
+            let classList = ''
+            if (+item === +id) {
+                classList += 'selected'
             }
-
-            $('.dark_bg').addClass('active')
-            $('.custom_select').addClass('active')
-
-
-            $('.custom_select li').click(function () {
-                let sku = $(this).data('sku')
-                let qty = $(this).data('qty')
-                let newid = $(this).data('newid')
-                $('.custom_select ul').empty()
-                $('.custom_select').removeClass('active')
-                $('.lds-spinner').addClass('active')
-
-
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Updated product listing',
-                    'eventAction': 'select quantity',
-                    'eventLabel': qty
-                });
-                jQuery.ajax({
-                    type: "GET",
-                    url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries,custom_attributes`,
-                    data: {},
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
-                    },
-                    success: function (response) {
-                        console.log(response);
-                        $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                        $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
-                        $(`.item[data-category='${cat}']`).find('.to_pdp').attr('href', `https://www.airpophealth.com/eu/catalog/product/view/id/${newid}/s/${response.custom_attributes[4].value}`)
-                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
-                        $(`.item[data-category='${cat}']`).data('id', newid)
-
-                        $('.dark_bg').removeClass('active')
-                        $('.lds-spinner').removeClass('active')
-                    }
-                });
-            })
-        })
-
-        $('.product_color').on('click', 'div', function () {
-            let aim = $(this)
-            if (!aim.hasClass('selected')) {
-                let cat = $(this).closest('.item').data('category')
-                let color = aim.data('color')
-                let sku = Object.values(products[cat][color])[0][2]
-                let qty = Object.values(products[cat][color])[0][0]
-                let newid = `${+Object.keys(products[cat][color])[0]}`
-                console.log(color, sku, qty, newid)
-
-                $('.lds-spinner').addClass('active')
-                $('.dark_bg').addClass('active')
-
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Updated product listing',
-                    'eventAction': 'change color',
-                    'eventLabel': cat + color
-                });
-
-                jQuery.ajax({
-                    type: "GET",
-                    url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries,custom_attributes`,
-                    data: {},
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
-                    },
-                    error: function (response) {
-                        $('.dark_bg').removeClass('active')
-                        $('.lds-spinner').removeClass('active')
-                        console.log(response)
-                    },
-                    success: function (response) {
-                        console.log(response);
-                        $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                        $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
-                        $(`.item[data-category='${cat}']`).find('.to_pdp').attr('href', `https://www.airpophealth.com/eu/catalog/product/view/id/${newid}/s/${response.custom_attributes[4].value}`)
-                        $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
-                        aim.closest('.item').attr('data-id', newid)
-                        aim.closest('.item').attr('data-color', color)
-                        aim.closest('.item').data('id', newid)
-                        aim.closest('.item').data('color', color)
-                        aim.addClass('selected').siblings('div').removeClass('selected')
-                        $('.dark_bg').removeClass('active')
-                        $('.lds-spinner').removeClass('active')
-                    }
-                });
+            if (list[item][0] === '4') {
+                classList += ' popular'
             }
-        })
+            let li = `<li class="${classList}" data-sku="${list[item][2]}" data-qty="${list[item][0]}" data-newid="${+item}">${list[item][0]} ${(+list[item][0] === 1)? t[5][0]:t[5][0]} <span>$${list[item][1]}</span></li>`
+            $('.custom_select ul').append(li)
+        }
 
-        $('.custom_select .cancel').click(function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Updated product listing',
-                'eventAction': 'Cancel change quantity'
-            });
+        $('.dark_bg').addClass('active')
+        $('.custom_select').addClass('active')
 
+
+        $('.custom_select li').click(function () {
+            let sku = $(this).data('sku')
+            let qty = $(this).data('qty')
+            let newid = $(this).data('newid')
             $('.custom_select ul').empty()
-            $('.dark_bg').removeClass('active')
             $('.custom_select').removeClass('active')
-        })
-
-        $('.add_to_cart').click(function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Updated product listing',
-                'eventAction': 'Add to Cart'
-            });
-
-            let id = $(this).closest('.item').data('id')
-            $('.dark_bg').addClass('active')
             $('.lds-spinner').addClass('active')
-            to_cart(id)
-        })
 
-        $('.to_pdp').click(function () {
-            let cat = $(this).closest('.item').data('category')
 
             window.dataLayer = window.dataLayer || [];
             dataLayer.push({
                 'event': 'event-to-ga',
                 'eventCategory': 'Updated product listing',
-                'eventAction': 'Learn more',
-                'eventLabel': cat
+                'eventAction': 'select quantity',
+                'eventLabel': qty
+            });
+            jQuery.ajax({
+                type: "GET",
+                url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries,custom_attributes`,
+                data: {},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
+                },
+                success: function (response) {
+                    console.log(response);
+                    $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
+                    $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
+                    $(`.item[data-category='${cat}']`).find('.to_pdp').attr('href', `https://www.airpophealth.com/eu/catalog/product/view/id/${newid}/s/${response.custom_attributes[4].value}`)
+                    $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
+                    $(`.item[data-category='${cat}']`).data('id', newid)
+
+                    $('.dark_bg').removeClass('active')
+                    $('.lds-spinner').removeClass('active')
+                }
             });
         })
+    })
 
-    }, 1000)
+    $('.product_color').on('click', 'div', function () {
+        let aim = $(this)
+        if (!aim.hasClass('selected')) {
+            let cat = $(this).closest('.item').data('category')
+            let color = aim.data('color')
+            let sku = Object.values(products[cat][color])[0][2]
+            let qty = Object.values(products[cat][color])[0][0]
+            let newid = `${+Object.keys(products[cat][color])[0]}`
+            console.log(color, sku, qty, newid)
 
-    function to_cart(id) {
-        jQuery.ajax({
-            url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + id + '/',
-            type: 'POST',
-            data: {
-                product: id,
-                selected_configurable_option: '',
-                related_product: '',
-                item: id,
-                form_key: jQuery.cookie('form_key'),
-                qty: 1
-            },
-            error: function (response) {
-                $('.dark_bg').removeClass('active')
-                $('.lds-spinner').removeClass('active')
-                console.log(response)
-            }
-        }).done(function (response) {
+            $('.lds-spinner').addClass('active')
+            $('.dark_bg').addClass('active')
+
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Updated product listing',
+                'eventAction': 'change color',
+                'eventLabel': cat + color
+            });
+
+            jQuery.ajax({
+                type: "GET",
+                url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries,custom_attributes`,
+                data: {},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
+                },
+                error: function (response) {
+                    $('.dark_bg').removeClass('active')
+                    $('.lds-spinner').removeClass('active')
+                    console.log(response)
+                },
+                success: function (response) {
+                    console.log(response);
+                    $(`.item[data-category='${cat}']`).find('.bg>a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
+                    $(`.item[data-category='${cat}']`).find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
+                    $(`.item[data-category='${cat}']`).find('.to_pdp').attr('href', `https://www.airpophealth.com/eu/catalog/product/view/id/${newid}/s/${response.custom_attributes[4].value}`)
+                    $(`.item[data-category='${cat}']`).find('.product_select').html(`${qty} ${(+qty === 1) ? t[5][0] : t[5][1]}`)
+                    aim.closest('.item').attr('data-id', newid)
+                    aim.closest('.item').attr('data-color', color)
+                    aim.closest('.item').data('id', newid)
+                    aim.closest('.item').data('color', color)
+                    aim.addClass('selected').siblings('div').removeClass('selected')
+                    $('.dark_bg').removeClass('active')
+                    $('.lds-spinner').removeClass('active')
+                }
+            });
+        }
+    })
+
+    $('.custom_select .cancel').click(function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Updated product listing',
+            'eventAction': 'Cancel change quantity'
+        });
+
+        $('.custom_select ul').empty()
+        $('.dark_bg').removeClass('active')
+        $('.custom_select').removeClass('active')
+    })
+
+    $('.add_to_cart').click(function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Updated product listing',
+            'eventAction': 'Add to Cart'
+        });
+
+        let id = $(this).closest('.item').data('id')
+        $('.dark_bg').addClass('active')
+        $('.lds-spinner').addClass('active')
+        to_cart(id)
+    })
+
+    $('.to_pdp').click(function () {
+        let cat = $(this).closest('.item').data('category')
+
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Updated product listing',
+            'eventAction': 'Learn more',
+            'eventLabel': cat
+        });
+    })
+
+}, 1000)
+
+function to_cart(id) {
+    jQuery.ajax({
+        url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + id + '/',
+        type: 'POST',
+        data: {
+            product: id,
+            selected_configurable_option: '',
+            related_product: '',
+            item: id,
+            form_key: jQuery.cookie('form_key'),
+            qty: 1
+        },
+        error: function (response) {
             $('.dark_bg').removeClass('active')
             $('.lds-spinner').removeClass('active')
-        })
-    };
+            console.log(response)
+        }
+    }).done(function (response) {
+        $('.dark_bg').removeClass('active')
+        $('.lds-spinner').removeClass('active')
+    })
+};
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
