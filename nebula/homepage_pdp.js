@@ -581,6 +581,9 @@ if (document.querySelector('.navbar-image img')) {
 }
 function drawHomepage() {
     let path = window.location.pathname
+    if (document.querySelector('.navbar-image img')) {
+        document.querySelector('.navbar-image img').setAttribute('src', 'https://i.ibb.co/Pc5JBYq/logo.png')
+    }
     if(path.includes('whole-genome-sequencing-dna-test')) {
         if(!document.querySelector('.main_section')) {
             if (document.querySelector('.mainpage') && document.querySelector('.choose-plan-1') && document.querySelector('.mini-faqs')){
@@ -709,3 +712,8 @@ if (!href.includes('cart')) {
 } else  {
     drawCheckout()
 }
+
+
+
+
+
