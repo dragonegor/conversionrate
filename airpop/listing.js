@@ -649,7 +649,7 @@ let listing = `
             <div class="bg">
               <a href="https://www.airpophealth.com/eu/airpop-pocket-4pcs-white" class="to_pdp">
                 <img
-                  src="https://www.airpophealth.com/media/catalog/product/cache/6c07725d11cf11164242a71cef72688e/4/3/43347_1.png"
+                  src="https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/4/3/43347_1.png"
                   alt="mask">
                 <div class="product_name">Airpop Pocket</div>
               </a>
