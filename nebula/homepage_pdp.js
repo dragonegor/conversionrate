@@ -616,7 +616,7 @@ function links() {
         let clickLink = new Event('click')
 
         document.querySelectorAll('.purchase-button').forEach((item) => {
-            item.innerText = 'Choose your plan'
+            item.innerHTML = 'Choose your plan'
         })
 
         document.querySelectorAll('a.link-tag').forEach((item) => {
@@ -628,7 +628,7 @@ function links() {
         })
 
         document.querySelectorAll('.button-div button').forEach((item) => {
-            item.innerText = 'Choose your plan'
+            item.innerHTML = 'Choose your plan'
         })
 
         document.querySelectorAll('a.button-div').forEach((item) => {
