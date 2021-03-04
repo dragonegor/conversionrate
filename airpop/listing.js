@@ -602,8 +602,8 @@ let listing = `
               </div>
               <div class="product_price">$29.99 ${t[4]} 4 ${t[5][1]}</div>
               <div class="product_color flx">
-                <div class="white selected" data-color="white"></div>
-                <div class="black" data-color="black"></div>
+                <div class="white" data-color="white"></div>
+                <div class="black selected" data-color="black"></div>
               </div>
               <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
