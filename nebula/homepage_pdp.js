@@ -620,10 +620,11 @@ function links() {
         })
 
         document.querySelectorAll('a.link-tag').forEach((item) => {
-            item.addEventListener('click', function (e) {
-                e.preventDefault()
-                document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
-            })
+            item.setAttribute('href', '/whole-genome-sequencing-dna-test/#choose')
+            // item.addEventListener('click', function (e) {
+            //     e.preventDefault()
+            //     document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+            // })
         })
 
         document.querySelectorAll('.button-div button').forEach((item) => {
@@ -631,18 +632,21 @@ function links() {
         })
 
         document.querySelectorAll('a.button-div').forEach((item) => {
-            item.addEventListener('click', function (e) {
-                e.preventDefault()
-                document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
-            })
+            item.setAttribute('href', '/whole-genome-sequencing-dna-test/#choose')
+
+            // item.addEventListener('click', function (e) {
+            //     e.preventDefault()
+            //      document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+            // })
         })
 
         document.querySelectorAll('.get-started-button a').forEach((item) => {
             item.innerHTML = 'Choose your plan'
-            item.addEventListener('click', function (e) {
-                e.preventDefault()
-                document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
-            })
+            item.setAttribute('href', '/whole-genome-sequencing-dna-test/#choose')
+            // item.addEventListener('click', function (e) {
+            //     e.preventDefault()
+            //     document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+            // })
         })
     }
 }
@@ -672,7 +676,7 @@ function drawCheckout () {
 if (!href.includes('cart')) {
     let mut = new MutationObserver((ms) => {
         drawHomepage()
-        // links()
+        links()
     })
     drawHomepage()
     links()
