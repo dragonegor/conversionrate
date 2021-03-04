@@ -188,6 +188,10 @@ let styleListing = `
     ul li {
       list-style: none;
     }
+
+    .section-items.slider-nav-sections-items {
+      display: none;
+}
     
     .flx {
       display: flex;
