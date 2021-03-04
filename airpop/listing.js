@@ -1102,12 +1102,12 @@ let products = {
 
 }
 
-
+let $ = jQuery;
 setTimeout(function () {
     document.querySelector('#maincontent').style.opacity = '1'
     document.body.insertAdjacentHTML('afterbegin', styleListing)
     document.querySelector('#maincontent').innerHTML = listing
-    let $ = jQuery;
+    
 
     $('.category_tabs').on('click', '.tab', function () {
         let i = $(this).index()
