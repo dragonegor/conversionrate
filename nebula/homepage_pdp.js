@@ -674,30 +674,34 @@ function drawCheckout () {
 
 
 if (!href.includes('cart')) {
-
-    if(href.includes('/oasis-labs-partnership/')) {
+    let mut = new MutationObserver((ms) => {
+        let h = window.location.href
+        if(h.includes('/oasis-labs-partnership/') || h.includes('/george-church/')) {
+            links()
+        } else {
+            drawHomepage()
+        }
+    })
+    if(href.includes('/oasis-labs-partnership/') || href.includes('/george-church/')) {
         links()
     } else {
-        let mut = new MutationObserver((ms) => {
-            drawHomepage()
-            links()
-        })
         drawHomepage()
-
-        mut.observe(document.body, {
-            childList: true,
-            subtree: true
-        })
-
-        if(href.includes('whole-genome-sequencing-dna-test/#choose')) {
-            setTimeout(function () {
-                document.getElementById('choose').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                })
-            }, 1500)
-        }
     }
+
+    mut.observe(document.body, {
+        childList: true,
+        subtree: true
+    })
+
+    if(href.includes('whole-genome-sequencing-dna-test/#choose')) {
+        setTimeout(function () {
+            document.getElementById('choose').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        }, 1500)
+    }
+
 } else  {
     drawCheckout()
 }
