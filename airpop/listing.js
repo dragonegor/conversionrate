@@ -911,7 +911,7 @@ let listing = `
               <button class="add_to_cart">${t[34]}</button>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 ${t[35]}</p>
+                <p>2 ${t[35]}</p>
               </div>
             </div>
             <button class="add_to_cart">${t[34]}</button>
@@ -931,10 +931,6 @@ let listing = `
               <div class="product_name">Airpop Active + Halo Smart Mask</div>
             </a>
             <div class="product_price">$149.99</div>
-            <div class="product_reviews">
-              <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-              <p>34 ${t[35]}</p>
-            </div>
             <ul class="specialization">
               <li>
                 <img src="https://i.ibb.co/178f9Qc/microorganisms.png" alt="">
@@ -1001,7 +997,7 @@ let listing = `
               <div class="product_price">${t[36]} 4 ${t[37]} $24.99</div>
               <div class="product_reviews">
                 <img src="https://i.ibb.co/JKSYhY2/stars.png" alt="stars">
-                <p>34 ${t[35]}</p>
+                <p>2 ${t[35]}</p>
               </div>
             </div>
             <button class="add_to_cart">${t[34]}</button>
@@ -1107,7 +1103,7 @@ setTimeout(function () {
     document.querySelector('#maincontent').style.opacity = '1'
     document.body.insertAdjacentHTML('afterbegin', styleListing)
     document.querySelector('#maincontent').innerHTML = listing
-    
+
 
     $('.category_tabs').on('click', '.tab', function () {
         let i = $(this).index()
@@ -1307,6 +1303,8 @@ function to_cart(id) {
     }).done(function (response) {
         $('.dark_bg').removeClass('active')
         $('.lds-spinner').removeClass('active')
+        let c = new Event('click')
+        document.querySelector('.action.showcart').dispatchEvent(c)
     })
 };
 
