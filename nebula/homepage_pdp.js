@@ -583,7 +583,7 @@ function drawHomepage() {
     let path = window.location.pathname
     if(path.includes('whole-genome-sequencing-dna-test')) {
         if(!document.querySelector('.main_section')) {
-            if (document.querySelector('.mainpage') && document.querySelector('.choose-plan-1')){
+            if (document.querySelector('.mainpage') && document.querySelector('.choose-plan-1') && document.querySelector('.mini-faqs')){
                 document.querySelector('.mainpage').innerHTML = mainsection
                 document.querySelector('.choose-plan-1 .right').innerHTML = `<img src="https://portal.nebula.org/api/public-images/brochure/30xProduct/choose-product-bg.png">`
                 document.querySelector('.choose-plan-1').insertAdjacentHTML('afterbegin', `<h2>About Our DNA tests, reports and technology</h2>`)
@@ -612,6 +612,7 @@ function drawHomepage() {
 }
 
 function links() {
+    mut.disconnect()
     if (document.querySelector('.get-started-button a') && (document.querySelector('.get-started-button a').innerText !== 'Choose your plan') || (document.querySelector('a.link-tag') && document.querySelector('a.link-tag').innerHTML !== 'Choose your plan')) {
         let clickLink = new Event('click')
 
@@ -649,6 +650,10 @@ function links() {
             // })
         })
     }
+    mut.observe(document.body, {
+        childList: true,
+        subtree: true
+    })
 }
 
 function drawCheckout () {
@@ -670,18 +675,17 @@ function drawCheckout () {
 }
 
 
-
+let mut = new MutationObserver((ms) => {
+    let h = window.location.href
+    if(h.includes('/oasis-labs-partnership/') || h.includes('/george-church/')) {
+        links()
+    } else {
+        drawHomepage()
+    }
+})
 
 
 if (!href.includes('cart')) {
-    let mut = new MutationObserver((ms) => {
-        let h = window.location.href
-        if(h.includes('/oasis-labs-partnership/') || h.includes('/george-church/')) {
-            links()
-        } else {
-            drawHomepage()
-        }
-    })
     if(href.includes('/oasis-labs-partnership/') || href.includes('/george-church/')) {
         links()
     } else {
@@ -705,8 +709,3 @@ if (!href.includes('cart')) {
 } else  {
     drawCheckout()
 }
-
-
-
-
-
