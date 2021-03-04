@@ -576,10 +576,10 @@ let miniPdp = `
 `
 
 document.body.insertAdjacentHTML('afterbegin', homepageStyle)
+if (document.querySelector('.navbar-image img')) {
+    document.querySelector('.navbar-image img').setAttribute('src', 'https://i.ibb.co/Pc5JBYq/logo.png')
+}
 function drawHomepage() {
-    if (document.querySelector('.navbar-image img')) {
-        document.querySelector('.navbar-image img').setAttribute('src', 'https://i.ibb.co/Pc5JBYq/logo.png')
-    }
     let path = window.location.pathname
     if(path.includes('whole-genome-sequencing-dna-test')) {
         if(!document.querySelector('.main_section')) {
@@ -674,17 +674,30 @@ function drawCheckout () {
 
 
 if (!href.includes('cart')) {
-    let mut = new MutationObserver((ms) => {
-        drawHomepage()
-        links()
-    })
-    drawHomepage()
-    links()
-    mut.observe(document.body, {
-        childList: true,
-        subtree: true
-    })
 
+    if(href.includes('/oasis-labs-partnership/')) {
+        links()
+    } else {
+        let mut = new MutationObserver((ms) => {
+            drawHomepage()
+            links()
+        })
+        drawHomepage()
+
+        mut.observe(document.body, {
+            childList: true,
+            subtree: true
+        })
+
+        if(href.includes('whole-genome-sequencing-dna-test/#choose')) {
+            setTimeout(function () {
+                document.getElementById('choose').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
+            }, 1500)
+        }
+    }
 } else  {
     drawCheckout()
 }
