@@ -627,6 +627,7 @@ function links() {
             item.addEventListener('click', function (e) {
                 e.preventDefault()
                 document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+                scrollTOPdp()
             })
         })
 
@@ -639,6 +640,7 @@ function links() {
             item.addEventListener('click', function (e) {
                 e.preventDefault()
                  document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+                scrollTOPdp()
             })
         })
 
@@ -647,6 +649,7 @@ function links() {
             item.addEventListener('click', function (e) {
                 e.preventDefault()
                 document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+                scrollTOPdp()
             })
         })
     }
@@ -697,20 +700,18 @@ if (!href.includes('cart')) {
         subtree: true
     })
 
-    if(href.includes('whole-genome-sequencing-dna-test/#choose')) {
+} else  {
+    drawCheckout()
+}
+
+function scrollTOPdp() {
         setTimeout(function () {
             document.getElementById('choose').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             })
         }, 1500)
-    }
-
-} else  {
-    drawCheckout()
 }
-
-
 
 
 
