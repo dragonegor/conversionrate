@@ -739,23 +739,21 @@ let mut = new MutationObserver((ms) => {
     }
 })
 
+window.onload = function() {
+    if (!href.includes('cart')) {
+        if (href.includes('/oasis-labs-partnership/') || href.includes('/george-church/')) {
+            links()
+        } else {
+            drawHomepage()
+        }
 
-if (!href.includes('cart')) {
-    if(href.includes('/oasis-labs-partnership/') || href.includes('/george-church/')) {
-        links()
+        mut.observe(document.body, {
+            childList: true,
+            subtree: true
+        })
+
     } else {
-        drawHomepage()
-    }
-
-    mut.observe(document.body, {
-        childList: true,
-        subtree: true
-    })
-
-} else  {
-    window.onload = function() {
         drawCheckout()
-
     }
 }
 
