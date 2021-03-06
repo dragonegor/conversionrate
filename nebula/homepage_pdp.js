@@ -519,7 +519,7 @@ let mainsection = `
                 <p>The most accurate DNA test in the world to examine your ancestry, health, diet, and physical activity</p>
                 <img src="https://i.ibb.co/xG6Bybx/plane.png" alt="plane">
             </div>
-            <a href="#choose">Choose your plan</a>
+            <a href="#choose" data-number="1">Choose your plan</a>
         </div>
         <img src="https://portal.nebula.org/api/public-images/brochure/hero-image.png" alt="bg">
     </div>
@@ -527,7 +527,7 @@ let mainsection = `
 
 let btn = `
     <div class="btn_block">
-      <a href="#choose" class="btn_choose">Choose your plan</a>
+      <a href="#choose" class="btn_choose" data-number="3">Choose your plan</a>
     </div>
 `
 
@@ -593,22 +593,14 @@ function drawHomepage() {
                 document.querySelector('.choose-plan-1').insertAdjacentHTML('afterend', miniPdp)
                 document.querySelector('.mini-faqs').insertAdjacentHTML('beforebegin', btn)
                 document.querySelector('.mini-faqs').insertAdjacentHTML('afterend', btn)
-                document.querySelector('.comparison-chart-component').insertAdjacentHTML('beforeend', `<a href="#choose" class="btn_choose">Choose your plan</a>`)
+                document.querySelector('.comparison-chart-component').insertAdjacentHTML('beforeend', `<a href="#choose" class="btn_choose" data-number="2">Choose your plan</a>`)
             }
 
             const anchors = document.querySelectorAll('a[href*="#"]')
 
-            for (let anchor of anchors) {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault()
-
-                    const blockID = anchor.getAttribute('href').substr(1)
-
-                    document.getElementById(blockID).scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    })
-                })
+            for (let i=0; i<anchors.length; i++) {
+                anchors[i].removeEventListener('click', clickAnchors.bind(anchors[i]))
+                anchors[i].addEventListener('click', clickAnchors.bind(anchors[i]))
             }
         }
     }
@@ -617,18 +609,14 @@ function drawHomepage() {
 function links() {
     mut.disconnect()
     if (document.querySelector('.get-started-button a') && (document.querySelector('.get-started-button a').innerText !== 'Choose your plan') || (document.querySelector('a.link-tag') && document.querySelector('a.link-tag').innerHTML !== 'Choose your plan')) {
-        let clickLink = new Event('click')
 
         document.querySelectorAll('.purchase-button').forEach((item) => {
             item.innerHTML = 'Choose your plan'
         })
 
         document.querySelectorAll('a.link-tag').forEach((item) => {
-            item.addEventListener('click', function (e) {
-                e.preventDefault()
-                document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
-                scrollTOPdp()
-            })
+            item.removeEventListener('click', clickLT)
+            item.addEventListener('click', clickLT)
         })
 
         document.querySelectorAll('.button-div button').forEach((item) => {
@@ -636,22 +624,18 @@ function links() {
         })
 
         document.querySelectorAll('a.button-div').forEach((item) => {
-
-            item.addEventListener('click', function (e) {
-                e.preventDefault()
-                 document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
-                scrollTOPdp()
-            })
+            item.removeEventListener('click', clickBD)
+            item.addEventListener('click', clickBD)
         })
 
-        document.querySelectorAll('.get-started-button a').forEach((item) => {
-            item.innerHTML = 'Choose your plan'
-            item.addEventListener('click', function (e) {
-                e.preventDefault()
-                document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
-                scrollTOPdp()
-            })
-        })
+        document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
+        document.querySelectorAll('.get-started-button a')[0].removeEventListener('click', clickAboutlink1)
+        document.querySelectorAll('.get-started-button a')[0].addEventListener('click', clickAboutlink1)
+
+        document.querySelectorAll('.get-started-button a')[1].innerHTML = 'Choose your plan'
+        document.querySelectorAll('.get-started-button a')[1].removeEventListener('click', clickAboutlink2)
+        document.querySelectorAll('.get-started-button a')[1].addEventListener('click', clickAboutlink2)
+
     }
     mut.observe(document.body, {
         childList: true,
@@ -660,6 +644,7 @@ function links() {
 }
 
 function drawCheckout () {
+
     document.body.insertAdjacentHTML('afterbegin', styleCheckout)
     document.querySelector('.cart-page-component').insertAdjacentHTML('beforebegin', topCheckoutBlock)
     document.querySelector('.toggle-product-container').remove()
@@ -669,11 +654,78 @@ function drawCheckout () {
     document.querySelector('.plan-selection-desktop .plan-offers').innerHTML = listCheckout
     document.querySelector('.quantity').insertAdjacentHTML('afterend', `<p class="economy"><span>Normally  <s><b>${(href.includes('-30x'))?'$1000':'$3500'}</b></s></span> <span>Save <b>70%!</b></span></p>`)
     document.querySelector('.total-label').insertAdjacentHTML('beforeend', `<span>FREE shipping!</span>`)
-    document.querySelectorAll('.plan-name')[0].insertAdjacentHTML('beforeend', `<div class="info"> <div class="popup_info">$19.99/mo, charged when sequencing is completed, cancel anytime thereafter. <a href="https://nebulagenomics.zendesk.com/hc/en-us/articles/360028257612-Refund-Policy-" target="_blank">Refund policy.</a></div></div>`)
-    document.querySelectorAll('.plan-name')[1].insertAdjacentHTML('beforeend', `<div class="info"> <div class="popup_info">$9.99/mo, billed yearly, charged when sequencing is completed, cancel anytime thereafter. <a href="https://nebulagenomics.zendesk.com/hc/en-us/articles/360028257612-Refund-Policy-" target="_blank">Refund policy.</a></div></div>`)
-    document.querySelectorAll('.plan-name')[2].insertAdjacentHTML('beforeend', `<div class="info"> <div class="popup_info">One time payment, unlimited access to all reporting features. <a href="https://nebulagenomics.zendesk.com/hc/en-us/articles/360028257612-Refund-Policy-" target="_blank">Refund policy.</a></div></div>`)
+    document.querySelectorAll('.plan-name')[0].insertAdjacentHTML('beforeend', `<div class="info"> <div class="popup_info">$19.99/mo, charged when sequencing is completed, cancel anytime thereafter. <a class="return_policy" href="https://nebulagenomics.zendesk.com/hc/en-us/articles/360028257612-Refund-Policy-" target="_blank">Refund policy.</a></div></div>`)
+    document.querySelectorAll('.plan-name')[1].insertAdjacentHTML('beforeend', `<div class="info"> <div class="popup_info">$9.99/mo, billed yearly, charged when sequencing is completed, cancel anytime thereafter. <a class="return_policy" href="https://nebulagenomics.zendesk.com/hc/en-us/articles/360028257612-Refund-Policy-" target="_blank">Refund policy.</a></div></div>`)
+    document.querySelectorAll('.plan-name')[2].insertAdjacentHTML('beforeend', `<div class="info"> <div class="popup_info">One time payment, unlimited access to all reporting features. <a class="return_policy" href="https://nebulagenomics.zendesk.com/hc/en-us/articles/360028257612-Refund-Policy-" target="_blank">Refund policy.</a></div></div>`)
     let cl = new Event('click')
     document.querySelector('.coupon-code-question').dispatchEvent(cl)
+
+
+    document.querySelectorAll('label[for="monthly-plan"]')[0].addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp - Homepage mini PDP',
+            'eventAction': 'click on Monthly checkbox Checkout'
+        });
+    })
+
+    document.querySelectorAll('label[for="monthly-plan"] .info')[0].addEventListener('mouseover', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp - Homepage mini PDP',
+            'eventAction': 'click on info for Monthly Checkout'
+        });
+    })
+
+    document.querySelectorAll('label[for="yearly-plan"]')[0].addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp - Homepage mini PDP',
+            'eventAction': 'click on Yearly checkbox Checkout'
+        });
+    })
+
+    document.querySelectorAll('label[for="yearly-plan"] .info')[0].addEventListener('mouseover', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp - Homepage mini PDP',
+            'eventAction': 'click on info for Yearly Checkout'
+        });
+    })
+
+    document.querySelectorAll('label[for="no-plan"]')[0].addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp - Homepage mini PDP',
+            'eventAction': 'click on Unlimited checkbox Checkout'
+        });
+    })
+
+    document.querySelectorAll('label[for="no-plan"] .info')[0].addEventListener('mouseover', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp - Homepage mini PDP',
+            'eventAction': 'click on info for ULA Checkout'
+        });
+    })
+
+    document.querySelectorAll('.return_policy').forEach((item) => {
+        item.addEventListener('click', function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp - Homepage mini PDP',
+                'eventAction': 'click on Return policy Checkout'
+            });
+        })
+    })
+
 
 }
 
@@ -701,8 +753,11 @@ if (!href.includes('cart')) {
     })
 
 } else  {
-    drawCheckout()
+    setTimeout(drawCheckout, 500)
 }
+
+let clickLink = new Event('click')
+
 
 function scrollTOPdp() {
         setTimeout(function () {
@@ -713,5 +768,86 @@ function scrollTOPdp() {
         }, 1500)
 }
 
+function clickBD(e) {
+    e.preventDefault()
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on Choose your plan-1 Oasis Labs'
+    });
+    document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+    scrollTOPdp()
+}
 
+function clickLT(e) {
+    e.preventDefault()
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on Choose your plan-2 Oasis Labs'
+    });
+    document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+    scrollTOPdp()
+}
+
+function clickAboutlink1 (e) {
+    e.preventDefault()
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': `click on Choose your plan-1 About Us`
+    });
+    document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+    scrollTOPdp()
+}
+
+function clickAboutlink2 (e) {
+    e.preventDefault()
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': `click on Choose your plan-2 About Us`
+    });
+    document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+    scrollTOPdp()
+}
+
+function clickAnchors(e) {
+    e.preventDefault()
+    const blockID = this.getAttribute('href').substr(1)
+    let i = this.getAttribute('data-number')
+    console.log(i)
+
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': `click on Choose your plan-${i} Homepage`
+    });
+
+    document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    })
+}
+
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:1209457,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - HP mini PDPs',
+    'eventAction': 'loaded'
+});
 
