@@ -753,7 +753,10 @@ if (!href.includes('cart')) {
     })
 
 } else  {
-    setTimeout(drawCheckout, 500)
+    window.onload = function() {
+        drawCheckout()
+
+    }
 }
 
 let clickLink = new Event('click')
