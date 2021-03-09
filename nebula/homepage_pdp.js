@@ -366,7 +366,7 @@ let styleCheckout = `
      }
 
     .cart-page .quantity {
-        margin-left: 15px;
+        margin-right: 15px;
     }
       
      .product-image-order-summary .order-summary .quantity-subtotal[data-v-6cc7eacc],
