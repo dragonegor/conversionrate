@@ -149,6 +149,9 @@ let homepageStyle = `
         background-color: #fff;
         border-radius: 6px;
         padding: 60px 60px 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
       
       .mini_pdp ul, .checkout_info ul {
