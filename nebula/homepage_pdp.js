@@ -634,14 +634,16 @@ function links() {
             item.removeEventListener('click', clickBD)
             item.addEventListener('click', clickBD)
         })
+        
+        if(document.querySelector('.get-started-button a')) {
+            document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
+            document.querySelectorAll('.get-started-button a')[0].removeEventListener('click', clickAboutlink1)
+            document.querySelectorAll('.get-started-button a')[0].addEventListener('click', clickAboutlink1)
 
-        document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
-        document.querySelectorAll('.get-started-button a')[0].removeEventListener('click', clickAboutlink1)
-        document.querySelectorAll('.get-started-button a')[0].addEventListener('click', clickAboutlink1)
-
-        document.querySelectorAll('.get-started-button a')[1].innerHTML = 'Choose your plan'
-        document.querySelectorAll('.get-started-button a')[1].removeEventListener('click', clickAboutlink2)
-        document.querySelectorAll('.get-started-button a')[1].addEventListener('click', clickAboutlink2)
+            document.querySelectorAll('.get-started-button a')[1].innerHTML = 'Choose your plan'
+            document.querySelectorAll('.get-started-button a')[1].removeEventListener('click', clickAboutlink2)
+            document.querySelectorAll('.get-started-button a')[1].addEventListener('click', clickAboutlink2)
+        }
 
     }
     mut.observe(document.body, {
