@@ -364,6 +364,10 @@ let styleCheckout = `
       width: 30% !important;
       font-size: 28px !important;
      }
+
+    .cart-page .quantity {
+        margin-left: 15px;
+    }
       
      .product-image-order-summary .order-summary .quantity-subtotal[data-v-6cc7eacc],
       .total[data-v-6cc7eacc]{
