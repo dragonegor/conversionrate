@@ -764,10 +764,10 @@ window.onload = function() {
             console.log('work')
             if (document.querySelector('.cart-page-component')) {
                 drawCheckout()
-                console.log('work')
+                console.log('end')
                 clearInterval(timer)
             }
-        })
+        }, 100)
     }
 }
 
@@ -775,12 +775,12 @@ let clickLink = new Event('click')
 
 
 function scrollTOPdp() {
-        setTimeout(function () {
-            document.getElementById('choose').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            })
-        }, 1500)
+    setTimeout(function () {
+        document.getElementById('choose').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    }, 1500)
 }
 
 function clickBD(e) {
