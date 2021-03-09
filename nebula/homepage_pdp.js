@@ -760,7 +760,14 @@ window.onload = function() {
         })
 
     } else {
-        drawCheckout()
+        let timer = setInterval(function () {
+            console.log('work')
+            if (document.querySelector('.cart-page-component')) {
+                drawCheckout()
+                console.log('work')
+                clearInterval(timer)
+            }
+        })
     }
 }
 
