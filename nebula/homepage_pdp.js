@@ -634,7 +634,7 @@ function links() {
             item.removeEventListener('click', clickBD)
             item.addEventListener('click', clickBD)
         })
-        
+
         if(document.querySelector('.get-started-button a')) {
             document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
             document.querySelectorAll('.get-started-button a')[0].removeEventListener('click', clickAboutlink1)
@@ -793,7 +793,7 @@ function clickBD(e) {
         'eventCategory': 'Exp - Homepage mini PDP',
         'eventAction': 'click on Choose your plan-1 Oasis Labs'
     });
-    document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+    document.querySelector('.navbar-links>:first-child a').click()
     scrollTOPdp()
 }
 
@@ -805,7 +805,7 @@ function clickLT(e) {
         'eventCategory': 'Exp - Homepage mini PDP',
         'eventAction': 'click on Choose your plan-2 Oasis Labs'
     });
-    document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+    document.querySelector('.navbar-links>:first-child a').click()
     scrollTOPdp()
 }
 
@@ -817,7 +817,7 @@ function clickAboutlink1 (e) {
         'eventCategory': 'Exp - Homepage mini PDP',
         'eventAction': `click on Choose your plan-1 About Us`
     });
-    document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+    document.querySelector('.navbar-links>:first-child a').click()
     scrollTOPdp()
 }
 
@@ -829,7 +829,7 @@ function clickAboutlink2 (e) {
         'eventCategory': 'Exp - Homepage mini PDP',
         'eventAction': `click on Choose your plan-2 About Us`
     });
-    document.querySelector('.navbar-links>:first-child a').dispatchEvent(clickLink)
+    document.querySelector('.navbar-links>:first-child a').click()
     scrollTOPdp()
 }
 
