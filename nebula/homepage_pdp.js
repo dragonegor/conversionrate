@@ -559,7 +559,7 @@ let miniPdp = `
             <img src="https://i.ibb.co/X4y27gJ/box.png" alt="">
             <div class="price">$299</div>
           </div>
-          <a href="https://portal.nebula.org/cart/nebula-30x" class="btn_choose">Buy your DNA test</a>
+          <a href="https://portal.nebula.org/cart/nebula-30x" class="btn_choose test299">Buy your DNA test</a>
         </div>
         <div class="x100">
         <h3>Ultra Deep Whole Genome Sequencing</h3>
@@ -576,7 +576,7 @@ let miniPdp = `
             <img src="https://i.ibb.co/X4y27gJ/box.png" alt="">
             <div class="price">$999</div>
           </div>
-          <a href="https://portal.nebula.org/cart/nebula-100x" class="btn_choose">Buy your DNA test</a>
+          <a href="https://portal.nebula.org/cart/nebula-100x" class="btn_choose test999">Buy your DNA test</a>
         </div>
       </div>
     </div>
@@ -602,6 +602,11 @@ function drawHomepage() {
                 document.querySelector('.mini-faqs').insertAdjacentHTML('afterend', btn)
                 document.querySelector('.comparison-chart-component').insertAdjacentHTML('beforeend', `<a href="#choose" class="btn_choose" data-number="2">Choose your plan</a>`)
             }
+            
+            document.querySelector('.test299').removeEventListener('click', buyTest299)
+            document.querySelector('.test299').addEventListener('click', buyTest299)
+            document.querySelector('.test999').removeEventListener('click', buyTest999)
+            document.querySelector('.test999').addEventListener('click', buyTest999)
 
             const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -850,6 +855,24 @@ function clickAnchors(e) {
         behavior: 'smooth',
         block: 'start'
     })
+}
+
+function buyTest299() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on Buy your DNA test $299'
+    });
+}
+
+function buyTest999() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on Buy your DNA test $999'
+    });
 }
 
 (function(h,o,t,j,a,r){
