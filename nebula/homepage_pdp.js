@@ -602,7 +602,7 @@ function drawHomepage() {
                 document.querySelector('.mini-faqs').insertAdjacentHTML('afterend', btn)
                 document.querySelector('.comparison-chart-component').insertAdjacentHTML('beforeend', `<a href="#choose" class="btn_choose" data-number="2">Choose your plan</a>`)
             }
-            
+
             document.querySelector('.test299').removeEventListener('click', buyTest299)
             document.querySelector('.test299').addEventListener('click', buyTest299)
             document.querySelector('.test999').removeEventListener('click', buyTest999)
@@ -675,69 +675,27 @@ function drawCheckout () {
     document.querySelector('.coupon-code-question').dispatchEvent(cl)
 
 
-    document.querySelectorAll('label[for="monthly-plan"]')[0].addEventListener('click', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp - Homepage mini PDP',
-            'eventAction': 'click on Monthly checkbox Checkout'
-        });
-    })
+    document.querySelectorAll('label[for="monthly-plan"]')[0].removeEventListener('click', monthlyPlan)
+    document.querySelectorAll('label[for="monthly-plan"]')[0].addEventListener('click', monthlyPlan)
 
-    document.querySelectorAll('label[for="monthly-plan"] .info')[0].addEventListener('mouseover', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp - Homepage mini PDP',
-            'eventAction': 'click on info for Monthly Checkout'
-        });
-    })
+    document.querySelectorAll('label[for="monthly-plan"] .info')[0].removeEventListener('mouseover', monthlyPlanInfo)
+    document.querySelectorAll('label[for="monthly-plan"] .info')[0].addEventListener('mouseover', monthlyPlanInfo)
 
-    document.querySelectorAll('label[for="yearly-plan"]')[0].addEventListener('click', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp - Homepage mini PDP',
-            'eventAction': 'click on Yearly checkbox Checkout'
-        });
-    })
+    document.querySelectorAll('label[for="yearly-plan"]')[0].removeEventListener('click', yearlyPlan)
+    document.querySelectorAll('label[for="yearly-plan"]')[0].addEventListener('click', yearlyPlan)
 
-    document.querySelectorAll('label[for="yearly-plan"] .info')[0].addEventListener('mouseover', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp - Homepage mini PDP',
-            'eventAction': 'click on info for Yearly Checkout'
-        });
-    })
+    document.querySelectorAll('label[for="yearly-plan"] .info')[0].removeEventListener('mouseover', yearlyPlanInfo)
+    document.querySelectorAll('label[for="yearly-plan"] .info')[0].addEventListener('mouseover', yearlyPlanInfo)
 
-    document.querySelectorAll('label[for="no-plan"]')[0].addEventListener('click', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp - Homepage mini PDP',
-            'eventAction': 'click on Unlimited checkbox Checkout'
-        });
-    })
+    document.querySelectorAll('label[for="no-plan"]')[0].removeEventListener('click', noPlan)
+    document.querySelectorAll('label[for="no-plan"]')[0].addEventListener('click', noPlan)
 
-    document.querySelectorAll('label[for="no-plan"] .info')[0].addEventListener('mouseover', function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp - Homepage mini PDP',
-            'eventAction': 'click on info for ULA Checkout'
-        });
-    })
+    document.querySelectorAll('label[for="no-plan"] .info')[0].removeEventListener('mouseover', noPlanInfo)
+    document.querySelectorAll('label[for="no-plan"] .info')[0].addEventListener('mouseover', noPlanInfo)
 
     document.querySelectorAll('.return_policy').forEach((item) => {
-        item.addEventListener('click', function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp - Homepage mini PDP',
-                'eventAction': 'click on Return policy Checkout'
-            });
-        })
+        item.removeEventListener('click', returnPolicy)
+        item.addEventListener('click', returnPolicy)
     })
 
 
@@ -872,6 +830,69 @@ function buyTest999() {
         'event': 'event-to-ga',
         'eventCategory': 'Exp - Homepage mini PDP',
         'eventAction': 'click on Buy your DNA test $999'
+    });
+}
+
+function monthlyPlan() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on Monthly checkbox Checkout'
+    });
+}
+
+function monthlyPlanInfo() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on info for Monthly Checkout'
+    });
+}
+
+function yearlyPlan() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on Yearly checkbox Checkout'
+    });
+}
+
+function yearlyPlanInfo() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on info for Yearly Checkout'
+    });
+}
+
+function noPlan() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on Unlimited checkbox Checkout'
+    });
+}
+
+function noPlanInfo() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on info for ULA Checkout'
+    });
+}
+
+function returnPolicy() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Homepage mini PDP',
+        'eventAction': 'click on Return policy Checkout'
     });
 }
 
