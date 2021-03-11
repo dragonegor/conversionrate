@@ -874,7 +874,7 @@ function yearlyPlanInfo(e) {
 }
 
 function noPlan(e) {
-    e.stopImmediatePropagation())
+    e.stopImmediatePropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
