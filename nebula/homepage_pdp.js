@@ -834,7 +834,7 @@ function buyTest999() {
 }
 
 function monthlyPlan(e) {
-    e.stopPropagation()
+    e.stopImmediatePropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -844,7 +844,7 @@ function monthlyPlan(e) {
 }
 
 function monthlyPlanInfo(e) {
-    e.stopPropagation()
+    e.stopImmediatePropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -854,7 +854,7 @@ function monthlyPlanInfo(e) {
 }
 
 function yearlyPlan(e) {
-    e.stopPropagation()
+    e.stopImmediatePropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -864,7 +864,7 @@ function yearlyPlan(e) {
 }
 
 function yearlyPlanInfo(e) {
-    e.stopPropagation()
+    e.stopImmediatePropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -874,7 +874,7 @@ function yearlyPlanInfo(e) {
 }
 
 function noPlan(e) {
-    e.stopPropagation()
+    e.stopImmediatePropagation())
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -884,7 +884,7 @@ function noPlan(e) {
 }
 
 function noPlanInfo(e) {
-    e.stopPropagation()
+    e.stopImmediatePropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -894,7 +894,7 @@ function noPlanInfo(e) {
 }
 
 function returnPolicy(e) {
-    e.stopPropagation()
+    e.stopImmediatePropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
