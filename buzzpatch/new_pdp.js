@@ -476,7 +476,7 @@ let lastBlock = `
 </div>
 `
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
     document.body.insertAdjacentHTML('afterbegin', style)
     document.querySelector('.navbar-expand-lg').insertAdjacentHTML('afterend', block1)
     document.querySelector('header').insertAdjacentHTML('afterend', natural)
@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
     });
-});
+// });
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
