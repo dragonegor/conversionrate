@@ -675,20 +675,20 @@ function drawCheckout () {
     document.querySelector('.coupon-code-question').dispatchEvent(cl)
 
 
-    document.querySelectorAll('label[for="monthly-plan"]')[0].removeEventListener('click', monthlyPlan)
-    document.querySelectorAll('label[for="monthly-plan"]')[0].addEventListener('click', monthlyPlan)
+    document.querySelectorAll('input#monthly-plan.form-check-input')[0].removeEventListener('click', monthlyPlan)
+    document.querySelectorAll('input#monthly-plan.form-check-input')[0].addEventListener('click', monthlyPlan)
 
     document.querySelectorAll('label[for="monthly-plan"] .info')[0].removeEventListener('mouseover', monthlyPlanInfo)
     document.querySelectorAll('label[for="monthly-plan"] .info')[0].addEventListener('mouseover', monthlyPlanInfo)
 
-    document.querySelectorAll('label[for="yearly-plan"]')[0].removeEventListener('click', yearlyPlan)
-    document.querySelectorAll('label[for="yearly-plan"]')[0].addEventListener('click', yearlyPlan)
+    document.querySelectorAll('input#yearly-plan.form-check-input')[0].removeEventListener('click', yearlyPlan)
+    document.querySelectorAll('input#yearly-plan.form-check-input')[0].addEventListener('click', yearlyPlan)
 
     document.querySelectorAll('label[for="yearly-plan"] .info')[0].removeEventListener('mouseover', yearlyPlanInfo)
     document.querySelectorAll('label[for="yearly-plan"] .info')[0].addEventListener('mouseover', yearlyPlanInfo)
 
-    document.querySelectorAll('label[for="no-plan"]')[0].removeEventListener('click', noPlan)
-    document.querySelectorAll('label[for="no-plan"]')[0].addEventListener('click', noPlan)
+    document.querySelectorAll('input#yearly-plan.form-check-input')[0].removeEventListener('click', noPlan)
+    document.querySelectorAll('input#yearly-plan.form-check-input')[0].addEventListener('click', noPlan)
 
     document.querySelectorAll('label[for="no-plan"] .info')[0].removeEventListener('mouseover', noPlanInfo)
     document.querySelectorAll('label[for="no-plan"] .info')[0].addEventListener('mouseover', noPlanInfo)
