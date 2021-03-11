@@ -476,7 +476,7 @@ let lastBlock = `
 </div>
 `
 
-//document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     document.body.insertAdjacentHTML('afterbegin', style)
     document.querySelector('.navbar-expand-lg').insertAdjacentHTML('afterend', block1)
     document.querySelector('header').insertAdjacentHTML('afterend', natural)
@@ -494,6 +494,15 @@ let lastBlock = `
             controls: false,
             navPosition: 'bottom',
             preventScrollOnTouch: 'auto'
+        })
+
+        s.events.on('transitionEnd', function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp — PDP improvements',
+                'eventAction': 'Swipe by reviews slider'
+            });
         })
     }, 1000)
 
@@ -526,13 +535,19 @@ let lastBlock = `
     document.querySelectorAll('.new-btn').forEach((item) => {
         item.addEventListener('click', function (e) {
             e.preventDefault()
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp — PDP improvements',
+                'eventAction': 'click on Get Buzzpatch'
+            });
             document.getElementById('getNow').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             })
         })
     });
-//});
+});
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
