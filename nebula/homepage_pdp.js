@@ -833,7 +833,8 @@ function buyTest999() {
     });
 }
 
-function monthlyPlan() {
+function monthlyPlan(e) {
+    e.stopPropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -842,7 +843,8 @@ function monthlyPlan() {
     });
 }
 
-function monthlyPlanInfo() {
+function monthlyPlanInfo(e) {
+    e.stopPropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -851,7 +853,8 @@ function monthlyPlanInfo() {
     });
 }
 
-function yearlyPlan() {
+function yearlyPlan(e) {
+    e.stopPropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -860,7 +863,8 @@ function yearlyPlan() {
     });
 }
 
-function yearlyPlanInfo() {
+function yearlyPlanInfo(e) {
+    e.stopPropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -869,7 +873,8 @@ function yearlyPlanInfo() {
     });
 }
 
-function noPlan() {
+function noPlan(e) {
+    e.stopPropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -878,7 +883,8 @@ function noPlan() {
     });
 }
 
-function noPlanInfo() {
+function noPlanInfo(e) {
+    e.stopPropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
@@ -887,7 +893,8 @@ function noPlanInfo() {
     });
 }
 
-function returnPolicy() {
+function returnPolicy(e) {
+    e.stopPropagation()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'event-to-ga',
