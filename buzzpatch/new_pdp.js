@@ -547,24 +547,7 @@ let lastBlock = `
 
 
     document.querySelectorAll('#faqs .card-link').forEach((item) => {
-        item.addEventListener('click', function () {
-            document.querySelectorAll('#faqs .card-link').forEach((i) => {
-                if(item !== i && i < 6) {
-                    if(!i.classList.contains('collapsed')) {
-                        i.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
-                    } else {
-                        i.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
-                    }
-                } else {
-                    if(!item.classList.contains('collapsed') && i < 6) {
-                        item.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
-                    } else {
-                        item.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
-                    }
-                }
-
-            })
-        })
+        item.addEventListener('click', setImg)
     })
 
     document.querySelectorAll('.rated_trustpilot').forEach((item) => {
@@ -594,6 +577,21 @@ let lastBlock = `
         })
     });
 // });
+
+function setImg() {
+    setTimeout(function () {
+        document.querySelectorAll('#faqs .card-link').forEach(item => {
+            console.log(item.classList.contains('collapsed'))
+            if(item.querySelector('img')) {
+                if(item.classList.contains('collapsed')) {
+                    item.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
+                } else {
+                    item.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
+                }
+            }
+        })
+    }, 300)
+}
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
