@@ -547,16 +547,23 @@ let lastBlock = `
 
 
     document.querySelectorAll('#faqs .card-link').forEach((item) => {
-        let imgSrc = (item.classList.contains('collapsed'))? 'https://i.ibb.co/Rj2dGt5/plus.png' : 'https://i.ibb.co/MfC9Pzf/minus.png'
-
         item.addEventListener('click', function () {
             document.querySelectorAll('#faqs .card-link').forEach((i) => {
-                console.log(item === i)
-                if(!i.classList.contains('collapsed')) {
-                    i.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
+                if(item !== i && i < 6) {
+                    if(!i.classList.contains('collapsed')) {
+                        i.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
+                    } else {
+                        i.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
+                    }
                 } else {
-                    i.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
+                    console.log(item.getAttribute('src'))
+                    if(!item.classList.contains('collapsed')) {
+                        item.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
+                    } else {
+                        item.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
+                    }
                 }
+
             })
         })
 
