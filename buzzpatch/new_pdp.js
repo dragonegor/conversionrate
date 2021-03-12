@@ -557,7 +557,7 @@ let lastBlock = `
                     i.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
                 }
             })
-            if(item.classList.contains('collapsed')) {
+            if(!item.classList.contains('collapsed')) {
                 item.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
             } else {
                 item.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
