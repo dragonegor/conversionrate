@@ -551,7 +551,7 @@ let lastBlock = `
 
         item.addEventListener('click', function () {
             document.querySelectorAll('#faqs .card-link').forEach((i) => {
-                if(i.classList.contains('collapsed')) {
+                if(!i.classList.contains('collapsed')) {
                     i.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
                 } else {
                     i.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
