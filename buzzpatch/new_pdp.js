@@ -590,7 +590,7 @@ function setImg() {
                 }
             }
         })
-    }, 300)
+    }, 50)
 }
 
 (function(h,o,t,j,a,r){
