@@ -581,7 +581,6 @@ let lastBlock = `
 function setImg() {
     setTimeout(function () {
         document.querySelectorAll('#faqs .card-link').forEach(item => {
-            console.log(item.classList.contains('collapsed'))
             if(item.querySelector('img')) {
                 if(item.classList.contains('collapsed')) {
                     item.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
