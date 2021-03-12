@@ -548,7 +548,6 @@ let lastBlock = `
 
     document.querySelectorAll('#faqs .card-link').forEach((item) => {
         let imgSrc = (item.classList.contains('collapsed'))? 'https://i.ibb.co/Rj2dGt5/plus.png' : 'https://i.ibb.co/MfC9Pzf/minus.png'
-        item.insertAdjacentHTML('afterbegin', `<img class="point" src="${imgSrc}">`)
 
         item.addEventListener('click', function () {
             document.querySelectorAll('#faqs .card-link').forEach((i) => {
@@ -558,10 +557,10 @@ let lastBlock = `
                     i.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
                 }
             })
-            
+
         })
-        
-        
+
+
     })
 
     document.querySelectorAll('.rated_trustpilot').forEach((item) => {
