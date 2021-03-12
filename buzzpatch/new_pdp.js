@@ -8,6 +8,27 @@ script.src = 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-
 script.async = false;
 document.head.appendChild(script)
 
+let faq = [
+    ['How do I place stickers to protect my whole child\'s body?',
+    `Kids aged 0-2 need 1 patch: One patch placed centrally on clothes (ie, on their jumpsuit on the stomach, chest)<br>
+      Kids aged 3-5 need 2 patches: One patch on the top clothes (sweater, t-shirt) and one on the shorts.<br>
+      Kids aged 6+ need 2-4 patches: One patch on the clothing next to each exposed limb (one on the sleeve of both the left and right arm, and if wearing shorts, one on the left and right side of the shorts)`],
+    ['How long do unopened stickers last?',
+    `1 pack consists of 10 separately packed sheets. Each sheet contains 6 stickers. Opened sticker sheets are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.<br>
+      BuzzPatch when sealed will last up to 6 months.`],
+    ['Where are they made?',
+    'The stickers are made in Australia and USA.'],
+    ['How do they work?',
+     'Mosquitoes find us by sensing the carbon dioxide (CO2) we emit when we exhale. Certain compounds, including specific essential oils, overpower the CO2 we emit, essentially hiding us from mosquitoes.'],
+    ['How many stickers do I need?',
+    `Kids aged 0-2 need 1: One patch placed centrally on clothes (ie, on their jumpsuit on the stomach, chest)<br>
+        Kids aged 3-5 need 2: One patch on the top clothes (sweater, t-shirt) and one on the shorts.<br>
+        Kids aged 6+ need 2-4: One patch on the clothing next to each exposed limb (one on the sleeve of both the left and right arm, and if wearing shorts, one on the left and right side of the shorts)`],
+    ['How long will shipping take?',
+    'All orders are dispatched the same day, and usually take 3-5 days to USA, Canada and Australia. However, with current travel restrictions, we’re seeing shipping times range between 10-15 days, and in some cases up to 25 days.'],
+    ['Is shipping free?', 'Yes! We provide FREE, worldwide shipping on all orders.']
+]
+
 let style = `
     <style>
     
@@ -488,6 +509,23 @@ let lastBlock = `
     document.querySelector('#getNow p.sub').insertAdjacentHTML('afterend', `<img src="https://i.ibb.co/NKDRJ0L/patches.png">`)
     document.querySelector('#getNow .btn').insertAdjacentHTML('afterend', lastBlock)
 
+
+    document.querySelectorAll('#faqs .card').forEach((item, i) => {
+        if (i > 6) {
+            item.style.display = 'none'
+        } else {
+            let collapsed = item.querySelector('a').classList.contains('collapsed')
+            if (!collapsed) {
+                item.querySelector('a').innerHTML = `<img class="point" src="https://i.ibb.co/MfC9Pzf/minus.png"> ${faq[i][0]}`
+            } else {
+                item.querySelector('a').innerHTML = `<img class="point" src="https://i.ibb.co/Rj2dGt5/plus.png"> ${faq[i][0]}`
+            }
+            item.querySelector('.card-body').innerHTML = `<p>${faq[i][1]}</p>`
+        }
+    })
+
+
+
     setTimeout(function () {
         let s = tns({
             container: '.slider',
@@ -513,12 +551,17 @@ let lastBlock = `
         item.insertAdjacentHTML('afterbegin', `<img class="point" src="${imgSrc}">`)
 
         item.addEventListener('click', function () {
-            if(item.classList.contains('collapsed')) {
-                item.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
-            } else {
-                item.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
-            }
+            document.querySelectorAll('#faqs .card-link').forEach((i) => {
+                if(i.classList.contains('collapsed')) {
+                    i.querySelector('img').setAttribute('src', 'https://i.ibb.co/MfC9Pzf/minus.png')
+                } else {
+                    i.querySelector('img').setAttribute('src', 'https://i.ibb.co/Rj2dGt5/plus.png')
+                }
+            })
+            
         })
+        
+        
     })
 
     document.querySelectorAll('.rated_trustpilot').forEach((item) => {
