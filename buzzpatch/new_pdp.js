@@ -16,8 +16,8 @@ let faq = [
     ['How long do unopened stickers last?',
     `1 pack consists of 10 separately packed sheets. Each sheet contains 6 stickers. Opened sticker sheets are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.<br>
       BuzzPatch when sealed will last up to 6 months.`],
-    ['Where are they made?',
-    'The stickers are made in Australia and USA.'],
+    ['Where are BuzzPatch stickers made?',
+    'Patches are formulated and designed in Australia.'],
     ['How do they work?',
      'Mosquitoes find us by sensing the carbon dioxide (CO2) we emit when we exhale. Certain compounds, including specific essential oils, overpower the CO2 we emit, essentially hiding us from mosquitoes.'],
     ['How many stickers do I need?',
@@ -39,9 +39,37 @@ let style = `
       .js-main header {
         background-color: #ECEEF0 !important;
       }
+      
+      header {
+        background-size: 130% !important;
+      }
     
       header .navbar.navbar-expand-lg {
-        padding: 5px 15px !important;
+        padding: 5px 27px !important;
+        background-color: #EFAE17;
+      }
+      
+      @media (max-width: 991px) {
+        header .navbar.fixed-top.static-top {
+          padding: 5px 27px !important;
+        } 
+      }
+      
+      .tac{
+        text-align: center;
+      }
+      
+      header .fixed-top .js-btn.btn-primary {
+        padding: 10px 0 !important;
+      }
+      
+      header nav .js-btn.btn-primary {
+        height: 44px;
+        width: 130px;
+        box-shadow: none;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0;
+        font-weight: 400;
       }
     
       .guarantee {
@@ -59,23 +87,34 @@ let style = `
         display:flex;
         align-items: center;
         justify-content:center;
-        font-size: 14px;
+        font-size: 14px !important;
         font-weight: 500;
       }
       
       .guarantee p:first-child {
         border-right: 1px solid white;
+        width: 40%;
+      }
+      
+      .guarantee p:last-child {
+        width: 60%;
       }
       
       .guarantee+h1 {
-        margin: 40px 20px;
+        margin: 20px;
+        font-family: 'Din Condensed', Roboto, sans-serif;
+        font-size: 30px !important;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        font-weight: 400 !important;
+        line-height: 36px;
       }
       
       .rated_trustpilot {
         display:flex;
         justify-content:space-between;
         width: 90%;
-        margin: 0 auto 60px;
+        margin: 0 auto 120px;
         padding: 17px 25px;
         background-color: #fff;
         border-radius: 15px;
@@ -98,6 +137,10 @@ let style = `
         flex-direction: column;
       }
       
+      .js-video img {
+        box-shadow: none !important;
+      }
+      
       h1.js-title,
       section.js-mobile,
       section.included,
@@ -110,6 +153,10 @@ let style = `
       #getNow .mc
        {
         display: none !important;
+      }
+      
+      #faqs .js-title {
+        font-size: 36px !important;
       }
       
       #ingredients {
@@ -295,9 +342,9 @@ let style = `
         font-weight: 600;
       }
       
-      #getNow img {
+      #getNow>img {
         max-width: none !important;
-        margin-bottom: 15px;
+        margin: 15px auto 50px !important;
       }
       
       .money_back {
@@ -313,7 +360,7 @@ let style = `
       .money_back .rated_trustpilot {
         width: 70%;
         margin: 0;
-        background-color: #F9F8F6;
+        background: none;
       }
       
       .tns-nav {
@@ -334,6 +381,51 @@ let style = `
         background-color: #FF3C7F;
       }
       
+      #getNow {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 27.82%);
+      }
+      
+      #getNow h2 {
+        font-size: 36px;
+        margin-bottom: 15px;
+      }
+      
+      .radio-inline {
+        font-size: 18px !important;
+      }
+      
+      .radio-inline span {
+        font-size: 13px !important;
+      }
+      
+      .prices .js-total {
+        font-size: 25px !important;
+        font-weight: 700 !important;
+        margin-top: 30px !important;
+      }
+      
+      #purchase .rated_trustpilot>:first-child>p {
+        text-align: left;
+      }
+      
+      #purchase .rated_trustpilot {
+        padding: 0;
+        margin-left: 50px;
+      }
+      
+      #purchase .rated_trustpilot img, #purchase .rated_trustpilot p {
+        margin: 0;
+      }
+      
+      #getNow .js-btn.btn-primary {
+        width: 100% !important;
+        margin: 33px 0 50px !important;
+        max-width: 100%;
+      }
+      
+      #getNow.grey {
+        padding: 30px 20px 20px!important;
+      }
     </style>
 `
 
@@ -342,11 +434,10 @@ let block1 = `
       <p>Free shipping</p>
       <p>30-day money-back guarantee</p>
     </div>
-    <h1>Keep mosquitoes away. 100% Effectively</h1>
+    <h1>Keep mosquitoes away.<br>100% Effectively</h1>
     <a href="https://www.trustpilot.com/review/buzzpatch.com" class="rated_trustpilot" target="_blank">
       <div>
-        <p>Is rated<br>
-        <b>Excellent</b></p>
+        <p>Our customers rate<br>us as <b>Excellent</b></p>
         <img src="https://i.ibb.co/bJ7dzWV/stars.png" alt="stars">
       </div>
       <div>
@@ -360,8 +451,7 @@ let block1 = `
 let natural = `
     <div class="natural">
       <p class="withImg"><img src="https://i.ibb.co/HFLFrZG/natural.png" alt="natural"><b>100% natural content & chemical free</b></p>
-      <p>The BuzzPatch has only 3 natural ingredients:  Lavender, Citronella and Geraniol oils. It is completely
-       chemical free and safe for kids.</p>
+      <p>BuzzPatch has only 3 natural ingredients:  lavender, citronella and geraniol oils. It is completely chemical free and safe for kids. </p>
     </div>
 `
 
@@ -369,14 +459,14 @@ let effective = `
     <section id="new_block">
        <div class="12hours">
         <p class="withImg"><img src="https://i.ibb.co/fpq1tYw/hours.png" alt="hours"><b>Effective up to 12 hours</b></p>
-        <p>Stickers are the most effective in the first 8 hours after opening, and continues to be effective for 24-72 hours from opening. </p>
+        <p>Our stickers are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.</p>
        </div>
        <img src="https://i.ibb.co/YZ57H2F/path.png" alt="product">
-       <p>6-piece sheet is the most effective within first 8 hours after opening, and continue to be effective for 24-72 hours from opening</p>
+       <p class="tac">For best protection, use patches within 8 hours of opening each sheet. Unused patches from the 6-piece sheet remain effective for up to 72 hours.</p>
        <p class="withImg"><img src="https://i.ibb.co/09P5Bfd/shield.png" alt="shield"><b>Protects the whole body</b></p>
-       <p>Just put several stickers on your kids cloths and be safe</p>
+       <p>Stick patches to your kids' clothes to keep them safe from mosquitoes</p>
        <p class="withImg"><img src="https://i.ibb.co/dBL8X8K/baby.png" alt="baby"><b>Safe for kids 0+ year old</b></p>
-       <p>100% natural components and medical adhensive are safe for even the youngest ones</p>
+       <p>100% natural components and medical adhesive are safe for even the littlest ones</p>
        <a href="#getNow" class="btn js-btn btn-primary new-btn">GET BUZZPATCH</a>
        <p class="title">As seen on:</p>
        <div class="brands">
@@ -485,7 +575,7 @@ let lastBlock = `
     <img src="https://i.ibb.co/pjzKN5d/back.png" alt="">
     <a href="https://www.trustpilot.com/review/buzzpatch.com" class="rated_trustpilot" target="_blank">
       <div>
-        <p>Is rated<br>
+        <p>Rated<br>
         <b>Excellent</b></p>
         <img src="https://i.ibb.co/bJ7dzWV/stars.png" alt="stars">
       </div>
@@ -508,6 +598,7 @@ let lastBlock = `
     document.querySelector('#getNow .star+img').remove()
     document.querySelector('#getNow p.sub').insertAdjacentHTML('afterend', `<img src="https://i.ibb.co/NKDRJ0L/patches.png">`)
     document.querySelector('#getNow .btn').insertAdjacentHTML('afterend', lastBlock)
+    document.querySelector('#faqs .js-title').innerHTML = 'FAQ'
 
 
     document.querySelectorAll('#faqs .card').forEach((item, i) => {
