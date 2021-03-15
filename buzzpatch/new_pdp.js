@@ -471,11 +471,11 @@ let effective = `
        <a href="#getNow" class="btn js-btn btn-primary new-btn">GET BUZZPATCH</a>
        <p class="title">As seen on:</p>
        <div class="brands">
-        <img src="https://i.ibb.co/jVP2M1w/yahoo.png" alt="img1">
-        <img src="https://i.ibb.co/CbSyB9J/wh.png" alt="img2">
-        <img src="https://i.ibb.co/ncNMVDh/ut.png" alt="img3">
-        <img src="https://i.ibb.co/HHtKgYV/delish.png" alt="img4">
-        <img src="https://i.ibb.co/KxRBFR2/today.png" alt="img5">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/yahoo.svg" alt="img1">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/wh.svg" alt="img2">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/ut.svg" alt="img3">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/delish.svg" alt="img4">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/today.svg" alt="img5">
        </div>
     </section> 
 `
@@ -504,7 +504,7 @@ let slider = `
           </div>
           <div class="review_footer">
             <p><img src="https://i.ibb.co/HpV2jQ8/flag.png" alt="flag">Canada</p>
-            <img src="https://i.ibb.co/4dFzMpR/buyer.png" alt="verify">
+            <img src="https://dragonegor.github.io/conversionrate/buzzpatch/buyer.svg" alt="verify">
           </div>
         </div></div>
         <div class="slide_wrap">
@@ -522,7 +522,7 @@ let slider = `
           </div>
           <div class="review_footer">
             <p><img src="https://i.ibb.co/HpV2jQ8/flag.png" alt="flag">Canada</p>
-            <img src="https://i.ibb.co/4dFzMpR/buyer.png" alt="verify">
+            <img src="https://dragonegor.github.io/conversionrate/buzzpatch/buyer.svg" alt="verify">
           </div>
         </div></div>
         <div class="slide_wrap">
@@ -544,7 +544,7 @@ let slider = `
           </div>
           <div class="review_footer">
             <p><img src="https://i.ibb.co/HpV2jQ8/flag.png" alt="flag">Canada</p>
-            <img src="https://i.ibb.co/4dFzMpR/buyer.png" alt="verify">
+            <img src="https://dragonegor.github.io/conversionrate/buzzpatch/buyer.svg" alt="verify">
           </div>
         </div></div>
         <div class="slide_wrap">
@@ -563,7 +563,7 @@ let slider = `
           </div>
           <div class="review_footer">
             <p><img src="https://i.ibb.co/HpV2jQ8/flag.png" alt="flag">Canada</p>
-            <img src="https://i.ibb.co/4dFzMpR/buyer.png" alt="verify">
+            <img src="https://dragonegor.github.io/conversionrate/buzzpatch/buyer.svg" alt="verify">
           </div>
         </div>
         </div>
@@ -573,7 +573,7 @@ let slider = `
 
 let lastBlock = `
 <div class="money_back">
-    <img src="https://i.ibb.co/pjzKN5d/back.png" alt="">
+    <img src="https://dragonegor.github.io/conversionrate/buzzpatch/back.svg" alt="">
     <a href="https://www.trustpilot.com/review/buzzpatch.com" class="rated_trustpilot" target="_blank">
       <div>
         <p>Rated<br>
