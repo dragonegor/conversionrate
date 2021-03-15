@@ -521,7 +521,7 @@ let slider = `
             </p>
           </div>
           <div class="review_footer">
-            <p><img src="https://dragonegor.github.io/conversionrate/buzzpatch/svg.png" alt="flag">Canada</p>
+            <p><img src="https://dragonegor.github.io/conversionrate/buzzpatch/flag.svg" alt="flag">Canada</p>
             <img src="https://dragonegor.github.io/conversionrate/buzzpatch/buyer.svg" alt="verify">
           </div>
         </div></div>
