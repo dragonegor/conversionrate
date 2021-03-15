@@ -210,7 +210,7 @@ let style = `
       }
       
       .withImg img{
-        height: 54px;
+        height: 40px;
         margin-right: 20px;
       }
       
@@ -228,6 +228,7 @@ let style = `
         font-size: 18px !important;
         margin-bottom: 160px;
       }
+      
       
       #new_block {
         padding: 0 26px;
@@ -457,15 +458,15 @@ let natural = `
 
 let effective = `
     <section id="new_block">
-       <div class="12hours">
+       <div class="hours12">
         <p class="withImg"><img src="https://i.ibb.co/fpq1tYw/hours.png" alt="hours"><b>Effective up to 12 hours</b></p>
         <p>Our stickers are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.</p>
        </div>
-       <img src="https://i.ibb.co/YZ57H2F/path.png" alt="product">
+       <img src="https://dragonegor.github.io/conversionrate/buzzpatch/path.svg" alt="product">
        <p class="tac">For best protection, use patches within 8 hours of opening each sheet. Unused patches from the 6-piece sheet remain effective for up to 72 hours.</p>
-       <p class="withImg"><img src="https://i.ibb.co/09P5Bfd/shield.png" alt="shield"><b>Protects the whole body</b></p>
+       <p class="withImg"><img src="https://dragonegor.github.io/conversionrate/buzzpatch/shield.png" alt="shield"><b>Protects the whole body</b></p>
        <p>Stick patches to your kids' clothes to keep them safe from mosquitoes</p>
-       <p class="withImg"><img src="https://i.ibb.co/dBL8X8K/baby.png" alt="baby"><b>Safe for kids 0+ year old</b></p>
+       <p class="withImg"><img src="https://dragonegor.github.io/conversionrate/buzzpatch/baby.png" alt="baby"><b>Safe for kids 0+ year old</b></p>
        <p>100% natural components and medical adhesive are safe for even the littlest ones</p>
        <a href="#getNow" class="btn js-btn btn-primary new-btn">GET BUZZPATCH</a>
        <p class="title">As seen on:</p>
@@ -596,7 +597,7 @@ let lastBlock = `
     document.querySelector('.natural').insertAdjacentHTML('afterend', effective)
     document.querySelector('#ingredients').insertAdjacentHTML('beforeend', `<a href="#getNow" class="btn js-btn btn-primary new-btn">GET BUZZPATCH</a>`)
     document.querySelector('#getNow .star+img').remove()
-    document.querySelector('#getNow p.sub').insertAdjacentHTML('afterend', `<img src="https://i.ibb.co/NKDRJ0L/patches.png">`)
+    document.querySelector('#getNow p.sub').insertAdjacentHTML('afterend', `<img src="https://dragonegor.github.io/conversionrate/buzzpatch/product.svg">`)
     document.querySelector('#getNow .btn').insertAdjacentHTML('afterend', lastBlock)
     document.querySelector('#faqs .js-title').innerHTML = 'FAQ'
 
