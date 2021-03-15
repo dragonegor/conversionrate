@@ -226,7 +226,7 @@ let style = `
       
       .natural p:last-child {
         font-size: 18px !important;
-        margin-bottom: 140px;
+        margin-bottom: 160px;
       }
       
       #new_block {
