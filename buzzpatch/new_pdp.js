@@ -10,22 +10,22 @@ document.head.appendChild(script)
 
 let faq = [
     ['How do I place stickers to protect my whole child\'s body?',
-    `Kids aged 0-2 need 1 patch: One patch placed centrally on clothes (ie, on their jumpsuit on the stomach, chest)<br>
+        `Kids aged 0-2 need 1 patch: One patch placed centrally on clothes (ie, on their jumpsuit on the stomach, chest)<br>
       Kids aged 3-5 need 2 patches: One patch on the top clothes (sweater, t-shirt) and one on the shorts.<br>
       Kids aged 6+ need 2-4 patches: One patch on the clothing next to each exposed limb (one on the sleeve of both the left and right arm, and if wearing shorts, one on the left and right side of the shorts)`],
     ['How long do unopened stickers last?',
-    `1 pack consists of 10 separately packed sheets. Each sheet contains 6 stickers. Opened sticker sheets are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.<br>
+        `1 pack consists of 10 separately packed sheets. Each sheet contains 6 stickers. Opened sticker sheets are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.<br>
       BuzzPatch when sealed will last up to 6 months.`],
     ['Where are BuzzPatch stickers made?',
-    'Patches are formulated and designed in Australia.'],
+        'Patches are formulated and designed in Australia.'],
     ['How do they work?',
-     'Mosquitoes find us by sensing the carbon dioxide (CO2) we emit when we exhale. Certain compounds, including specific essential oils, overpower the CO2 we emit, essentially hiding us from mosquitoes.'],
+        'Mosquitoes find us by sensing the carbon dioxide (CO2) we emit when we exhale. Certain compounds, including specific essential oils, overpower the CO2 we emit, essentially hiding us from mosquitoes.'],
     ['How many stickers do I need?',
-    `Kids aged 0-2 need 1: One patch placed centrally on clothes (ie, on their jumpsuit on the stomach, chest)<br>
+        `Kids aged 0-2 need 1: One patch placed centrally on clothes (ie, on their jumpsuit on the stomach, chest)<br>
         Kids aged 3-5 need 2: One patch on the top clothes (sweater, t-shirt) and one on the shorts.<br>
         Kids aged 6+ need 2-4: One patch on the clothing next to each exposed limb (one on the sleeve of both the left and right arm, and if wearing shorts, one on the left and right side of the shorts)`],
     ['How long will shipping take?',
-    'All orders are dispatched the same day, and usually take 3-5 days to USA, Canada and Australia. However, with current travel restrictions, we’re seeing shipping times range between 10-15 days, and in some cases up to 25 days.'],
+        'All orders are dispatched the same day, and usually take 3-5 days to USA, Canada and Australia. However, with current travel restrictions, we’re seeing shipping times range between 10-15 days, and in some cases up to 25 days.'],
     ['Is shipping free?', 'Yes! We provide FREE, worldwide shipping on all orders.']
 ]
 
@@ -439,10 +439,10 @@ let block1 = `
     <a href="https://www.trustpilot.com/review/buzzpatch.com" class="rated_trustpilot" target="_blank">
       <div>
         <p>Our customers rate<br>us as <b>Excellent</b></p>
-        <img src="https://i.ibb.co/bJ7dzWV/stars.png" alt="stars">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/stars.svg" alt="stars">
       </div>
       <div>
-        <img src="https://i.ibb.co/PZ7JjbS/logo-trust.png" alt="logo">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/trustpilot.svg" alt="logo">
         <p>Reviews 233</p>
       </div>
     </a>
@@ -578,10 +578,10 @@ let lastBlock = `
       <div>
         <p>Rated<br>
         <b>Excellent</b></p>
-        <img src="https://i.ibb.co/bJ7dzWV/stars.png" alt="stars">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/stars.svg" alt="stars">
       </div>
       <div>
-        <img src="https://i.ibb.co/PZ7JjbS/logo-trust.png" alt="logo">
+        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/trustpilot.svg" alt="logo">
         <p>Reviews 233</p>
       </div>
     </a>
@@ -589,85 +589,85 @@ let lastBlock = `
 `
 
 // document.addEventListener('DOMContentLoaded', function () {
-    document.body.insertAdjacentHTML('afterbegin', style)
-    document.querySelector('.navbar-expand-lg').insertAdjacentHTML('afterend', block1)
-    document.querySelector('header').insertAdjacentHTML('afterend', natural)
-    document.querySelector('#ingredients').after(document.querySelector('#faqs'))
-    document.querySelector('.natural').insertAdjacentHTML('afterend', slider)
-    document.querySelector('.natural').insertAdjacentHTML('afterend', effective)
-    document.querySelector('#ingredients').insertAdjacentHTML('beforeend', `<a href="#getNow" class="btn js-btn btn-primary new-btn">GET BUZZPATCH</a>`)
-    document.querySelector('#getNow .star+img').remove()
-    document.querySelector('#getNow p.sub').insertAdjacentHTML('afterend', `<img src="https://dragonegor.github.io/conversionrate/buzzpatch/product.svg">`)
-    document.querySelector('#getNow .btn').insertAdjacentHTML('afterend', lastBlock)
-    document.querySelector('#faqs .js-title').innerHTML = 'FAQ'
+document.body.insertAdjacentHTML('afterbegin', style)
+document.querySelector('.navbar-expand-lg').insertAdjacentHTML('afterend', block1)
+document.querySelector('header').insertAdjacentHTML('afterend', natural)
+document.querySelector('#ingredients').after(document.querySelector('#faqs'))
+document.querySelector('.natural').insertAdjacentHTML('afterend', slider)
+document.querySelector('.natural').insertAdjacentHTML('afterend', effective)
+document.querySelector('#ingredients').insertAdjacentHTML('beforeend', `<a href="#getNow" class="btn js-btn btn-primary new-btn">GET BUZZPATCH</a>`)
+document.querySelector('#getNow .star+img').remove()
+document.querySelector('#getNow p.sub').insertAdjacentHTML('afterend', `<img src="https://dragonegor.github.io/conversionrate/buzzpatch/product.svg">`)
+document.querySelector('#getNow .btn').insertAdjacentHTML('afterend', lastBlock)
+document.querySelector('#faqs .js-title').innerHTML = 'FAQ'
 
 
-    document.querySelectorAll('#faqs .card').forEach((item, i) => {
-        if (i > 6) {
-            item.style.display = 'none'
+document.querySelectorAll('#faqs .card').forEach((item, i) => {
+    if (i > 6) {
+        item.style.display = 'none'
+    } else {
+        let collapsed = item.querySelector('a').classList.contains('collapsed')
+        if (!collapsed) {
+            item.querySelector('a').innerHTML = `<img class="point" src="https://i.ibb.co/MfC9Pzf/minus.png"> ${faq[i][0]}`
         } else {
-            let collapsed = item.querySelector('a').classList.contains('collapsed')
-            if (!collapsed) {
-                item.querySelector('a').innerHTML = `<img class="point" src="https://i.ibb.co/MfC9Pzf/minus.png"> ${faq[i][0]}`
-            } else {
-                item.querySelector('a').innerHTML = `<img class="point" src="https://i.ibb.co/Rj2dGt5/plus.png"> ${faq[i][0]}`
-            }
-            item.querySelector('.card-body').innerHTML = `<p>${faq[i][1]}</p>`
+            item.querySelector('a').innerHTML = `<img class="point" src="https://i.ibb.co/Rj2dGt5/plus.png"> ${faq[i][0]}`
         }
+        item.querySelector('.card-body').innerHTML = `<p>${faq[i][1]}</p>`
+    }
+})
+
+
+
+setTimeout(function () {
+    let s = tns({
+        container: '.slider',
+        controls: false,
+        navPosition: 'bottom',
+        preventScrollOnTouch: 'auto'
     })
 
-
-
-    setTimeout(function () {
-        let s = tns({
-            container: '.slider',
-            controls: false,
-            navPosition: 'bottom',
-            preventScrollOnTouch: 'auto'
-        })
-
-        s.events.on('transitionEnd', function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp — PDP improvements',
-                'eventAction': 'Swipe by reviews slider'
-            });
-        })
-    }, 1000)
-
-
-
-    document.querySelectorAll('#faqs .card-link').forEach((item) => {
-        item.addEventListener('click', setImg)
+    s.events.on('transitionEnd', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp — PDP improvements',
+            'eventAction': 'Swipe by reviews slider'
+        });
     })
+}, 1000)
 
-    document.querySelectorAll('.rated_trustpilot').forEach((item) => {
-        item.addEventListener('click', function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp — PDP improvements',
-                'eventAction': 'click on Trustpilot'
-            });
+
+
+document.querySelectorAll('#faqs .card-link').forEach((item) => {
+    item.addEventListener('click', setImg)
+})
+
+document.querySelectorAll('.rated_trustpilot').forEach((item) => {
+    item.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp — PDP improvements',
+            'eventAction': 'click on Trustpilot'
+        });
+    })
+})
+
+document.querySelectorAll('.new-btn').forEach((item) => {
+    item.addEventListener('click', function (e) {
+        e.preventDefault()
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp — PDP improvements',
+            'eventAction': 'click on Get Buzzpatch'
+        });
+        document.getElementById('getNow').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
         })
     })
-
-    document.querySelectorAll('.new-btn').forEach((item) => {
-        item.addEventListener('click', function (e) {
-            e.preventDefault()
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp — PDP improvements',
-                'eventAction': 'click on Get Buzzpatch'
-            });
-            document.getElementById('getNow').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            })
-        })
-    });
+});
 // });
 
 function setImg() {
