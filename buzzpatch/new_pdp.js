@@ -13,9 +13,8 @@ let faq = [
         `Kids aged 0-2 need 1 patch: One patch placed centrally on clothes (ie, on their jumpsuit on the stomach, chest)<br>
       Kids aged 3-5 need 2 patches: One patch on the top clothes (sweater, t-shirt) and one on the shorts.<br>
       Kids aged 6+ need 2-4 patches: One patch on the clothing next to each exposed limb (one on the sleeve of both the left and right arm, and if wearing shorts, one on the left and right side of the shorts)`],
-    ['How long do unopened stickers last?',
-        `1 pack consists of 10 separately packed sheets. Each sheet contains 6 stickers. Opened sticker sheets are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.<br>
-      BuzzPatch when sealed will last up to 6 months.`],
+    ['How long will sealed stickers last?',
+        `The bag has a ziplock. Put the unused patches into the bag and seal it. BuzzPatch when sealed will last up to 6 months.`],
     ['Where are BuzzPatch stickers made?',
         'Patches are formulated and designed in Australia.'],
     ['How do they work?',
@@ -79,6 +78,7 @@ let style = `
         display:flex;
         justify-content:center;
         margin-bottom: 17px;
+        position: sticky;
       }
       
       .guarantee p {
@@ -433,7 +433,7 @@ let style = `
 let block1 = `
     <div class="guarantee">
       <p>Free shipping</p>
-      <p>30-day money-back guarantee</p>
+      <p>365-day Money Back Guarantee</p>
     </div>
     <h1>Keep mosquitoes away.<br>100% Effectively</h1>
     <a href="https://www.trustpilot.com/review/buzzpatch.com" class="rated_trustpilot" target="_blank">
@@ -462,7 +462,7 @@ let effective = `
         <p class="withImg"><img src="https://i.ibb.co/fpq1tYw/hours.png" alt="hours"><b>Effective up to 12 hours</b></p>
         <p>Our stickers are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.</p>
        </div>
-       <img src="https://dragonegor.github.io/conversionrate/buzzpatch/path.svg" alt="product">
+       <img src="https://dragonegor.github.io/conversionrate/buzzpatch/path.png" alt="product">
        <p class="tac">For best protection, use patches within 8 hours of opening each sheet. Unused patches from the 6-piece sheet remain effective for up to 72 hours.</p>
        <p class="withImg"><img src="https://dragonegor.github.io/conversionrate/buzzpatch/shield.png" alt="shield"><b>Protects the whole body</b></p>
        <p>Stick patches to your kids' clothes to keep them safe from mosquitoes</p>
@@ -597,7 +597,7 @@ document.querySelector('.natural').insertAdjacentHTML('afterend', slider)
 document.querySelector('.natural').insertAdjacentHTML('afterend', effective)
 document.querySelector('#ingredients').insertAdjacentHTML('beforeend', `<a href="#getNow" class="btn js-btn btn-primary new-btn">GET BUZZPATCH</a>`)
 document.querySelector('#getNow .star+img').remove()
-document.querySelector('#getNow p.sub').insertAdjacentHTML('afterend', `<img src="https://dragonegor.github.io/conversionrate/buzzpatch/product.svg">`)
+document.querySelector('#getNow p.sub').insertAdjacentHTML('afterend', `<img src="https://dragonegor.github.io/conversionrate/buzzpatch/patches.png">`)
 document.querySelector('#getNow .btn').insertAdjacentHTML('afterend', lastBlock)
 document.querySelector('#faqs .js-title').innerHTML = 'FAQ'
 
