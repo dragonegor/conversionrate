@@ -241,6 +241,7 @@ let style = `
       
       #new_block>img {
         width: 100%;
+        margin: 20px 0 30px;
       }
       
       .new-btn {
