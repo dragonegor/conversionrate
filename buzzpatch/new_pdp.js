@@ -469,7 +469,6 @@ let effective = `
         <p>Our stickers are most effective within 8 hours of opening, and continue to be effective for up to 72 hours.</p>
        </div>
        <img src="https://dragonegor.github.io/conversionrate/buzzpatch/path.png" alt="product">
-       <p class="tac">For best protection, use patches within 8 hours of opening each sheet. Unused patches from the 6-piece sheet remain effective for up to 72 hours.</p>
        <p class="withImg"><img src="https://dragonegor.github.io/conversionrate/buzzpatch/shield.png" alt="shield"><b>Protects the whole body</b></p>
        <p>Stick patches to your kids' clothes to keep them safe from mosquitoes</p>
        <p class="withImg"><img src="https://dragonegor.github.io/conversionrate/buzzpatch/baby.png" alt="baby"><b>Safe for kids 0+ year old</b></p>
