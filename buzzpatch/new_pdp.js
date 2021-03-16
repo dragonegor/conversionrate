@@ -239,6 +239,10 @@ let style = `
         margin: 25px 0;
       }
       
+      #new_block>img {
+        width: 100%;
+      }
+      
       .new-btn {
         margin: 0 auto;
         display: flex !important;
@@ -346,6 +350,7 @@ let style = `
       #getNow>img {
         max-width: none !important;
         margin: 15px auto 50px !important;
+        width: 100%;
       }
       
       .money_back {
