@@ -93,11 +93,11 @@ let style = `
       
       .guarantee p:first-child {
         border-right: 1px solid white;
-        width: 40%;
+        width: 35%;
       }
       
       .guarantee p:last-child {
-        width: 60%;
+        width: 65%;
       }
       
       .guarantee+h1 {
@@ -381,6 +381,7 @@ let style = `
         background-color: #c9c9c9;
         border-radius: 50%;
         margin: 0 10px;
+        padding: 0;
       }
       
       .tns-nav button.tns-nav-active {
