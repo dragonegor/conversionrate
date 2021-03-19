@@ -655,7 +655,7 @@ window.onload = function () {
         });
     };
 
-});
+};
 
 
 (function(h,o,t,j,a,r){
