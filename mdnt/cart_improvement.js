@@ -513,7 +513,8 @@ window.onload = function () {
             preventScrollOnTouch: 'auto',
             nav: false,
             items: 2.5,
-            gutter: 10
+            gutter: 10,
+            loop: false
         })
     }, 1000)
 
