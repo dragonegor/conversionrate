@@ -463,7 +463,7 @@ let completeLook = `
       </div>
     </div>
 `
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
 
     //основные перестановки и изменения структуры
     document.body.insertAdjacentHTML('afterbegin', style)
