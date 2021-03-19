@@ -426,7 +426,14 @@ let handles = ['gothic-hooded-cowl-scarf',
     'winter-black-mittens',
     'cosplay-black-hood-1',
     'hooded-scarf',
-    'geometric-tote-bag'
+    'geometric-tote-bag',
+    'black-leather-wide-bracelets',
+    'oversized-black-snood',
+    'blanket-scarf',
+    'womens-black-long-mesh-fingerless-gloves',
+    'holographic-chest-body-harness',
+    'womens-black-long-leather-fingerless-gloves',
+    'black-chest-bondage'
 ]
 
 
