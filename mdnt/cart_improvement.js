@@ -348,8 +348,8 @@ let style = `
       
       
       .complete_look {
-         margin-top: 30px;
-         padding: 28px;
+         margin: 30px -17px 0;
+         padding: 28px 0 28px 28px;
          overflow: hidden;
          background-color: rgba(0, 0, 0, 0.05);
       }
