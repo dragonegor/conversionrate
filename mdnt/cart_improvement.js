@@ -471,7 +471,7 @@ let completeLook = `
     </div>
 `
 window.onload = function () {
-
+setTimeout(function () {
     //основные перестановки и изменения структуры
     document.body.insertAdjacentHTML('afterbegin', style)
     document.body.insertAdjacentHTML('beforeend', popup)
@@ -662,6 +662,8 @@ window.onload = function () {
             })
         });
     };
+
+}, 1000);
 
 };
 
