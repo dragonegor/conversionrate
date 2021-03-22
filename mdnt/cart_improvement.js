@@ -471,14 +471,14 @@ let completeLook = `
     </div>
 `
 window.onload = function () {
-setTimeout(function () {
+
     //основные перестановки и изменения структуры
     document.body.insertAdjacentHTML('afterbegin', style)
     document.body.insertAdjacentHTML('beforeend', popup)
     document.querySelector('.section-header__title+div').style.display = 'none'
     document.querySelector('.section-header__title+div').insertAdjacentHTML('afterend', topCheckoutBtn)
     document.querySelector('form.cart>div:last-child').before(document.querySelector('#sca-fg-slider-cart'))
-    document.querySelector('form.cart .cti-container').insertAdjacentHTML('beforebegin', msgs)
+    document.querySelector('.cart__checkout-wrapper').insertAdjacentHTML('afterend', msgs)
     document.querySelector('.cart__checkout-wrapper').insertAdjacentHTML("beforebegin", `<p class="subtotal">CART SUB-TOTAL:<br><span>${subtotal}</span></p>`)
     document.querySelector('form.cart>:last-child .cti-heading center').innerHTML = 'We accept:'
     document.querySelector('#sca-fg-slider-cart').insertAdjacentHTML('afterend', completeLook)
@@ -662,8 +662,6 @@ setTimeout(function () {
             })
         });
     };
-
-}, 1000);
 
 };
 
