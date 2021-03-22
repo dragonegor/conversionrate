@@ -480,7 +480,7 @@ window.onload = function () {
     document.querySelector('form.cart>div:last-child').before(document.querySelector('#sca-fg-slider-cart'))
     document.querySelector('.cart__checkout-wrapper').insertAdjacentHTML('afterend', msgs)
     document.querySelector('.cart__checkout-wrapper').insertAdjacentHTML("beforebegin", `<p class="subtotal">CART SUB-TOTAL:<br><span>${subtotal}</span></p>`)
-    document.querySelector('form.cart>:last-child .cti-heading center').innerHTML = 'We accept:'
+    // document.querySelector('form.cart>:last-child .cti-heading center').innerHTML = 'We accept:'
     document.querySelector('#sca-fg-slider-cart').insertAdjacentHTML('afterend', completeLook)
     document.querySelector('.top-checkout .btn').addEventListener('click', function () {
         document.querySelector('.btn.cart__checkout').click()
