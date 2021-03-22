@@ -417,6 +417,10 @@ let style = `
       .tns-nav button.tns-nav-active {
         background-color: rgba(0, 0, 0, 0.5);
       }
+      
+      .announcement-bar {
+        display:none;
+      }
     </style>
 `
 let handles = ['gothic-hooded-cowl-scarf',
@@ -473,6 +477,7 @@ let completeLook = `
 window.onload = function () {
 
     //основные перестановки и изменения структуры
+    document.querySelector('#MainContent').style.opacity = '1'
     document.body.insertAdjacentHTML('afterbegin', style)
     document.body.insertAdjacentHTML('beforeend', popup)
     document.querySelector('.section-header__title+div').style.display = 'none'
