@@ -433,7 +433,6 @@ let style = `
     </style>
 `
 let handles = ['gothic-hooded-cowl-scarf',
-    'black-wool-scarf-with-leather-trim',
     'faux-leather-kimono-belt',
     'black-extra-large-vegan-leather-purse',
     'winter-black-mittens',
@@ -442,10 +441,8 @@ let handles = ['gothic-hooded-cowl-scarf',
     'geometric-tote-bag',
     'black-leather-wide-bracelets',
     'oversized-black-snood',
-    'blanket-scarf',
     'womens-black-long-mesh-fingerless-gloves',
     'holographic-chest-body-harness',
-    'womens-black-long-leather-fingerless-gloves',
     'black-chest-bondage'
 ]
 
