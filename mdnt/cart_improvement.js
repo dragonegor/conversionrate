@@ -177,9 +177,14 @@ let style = `
         margin-top: 25px;
       }
       
-      .total_sum span, .subtotal span {
+      .subtotal span {
         font-size: 16px;
         font-weight: 400;
+      }
+      
+      .total_sum span {
+        font-size: 16px;
+        font-weight: 700;
       }
       
       .h4+p.cart__product-meta {
