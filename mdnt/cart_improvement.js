@@ -251,7 +251,7 @@ let style = `
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 100;
+        z-index: 2002;
       }
       
       .dark_bg.active {
@@ -265,7 +265,7 @@ let style = `
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 101;
+        z-index: 2003;
         overflow-y: scroll;
         padding: 50px 20px;
       }
