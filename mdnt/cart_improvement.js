@@ -421,6 +421,10 @@ let style = `
       .announcement-bar {
         display:none;
       }
+      
+      .btn.cart__checkout {
+        background-color: rgb(192, 3, 3);
+      }
     </style>
 `
 let handles = ['gothic-hooded-cowl-scarf',
@@ -507,7 +511,7 @@ window.onload = function () {
 
         item.querySelector('.h4+p.cart__product-meta').insertAdjacentHTML("beforeend", `<span class="new_price">${price}</span>`)
         item.querySelector('.h4+p.cart__product-meta').after(item.querySelector('input'))
-        item.querySelector('.three-quarters').insertAdjacentHTML("beforeend", `<p class="total_sum">Total <span>${total}</span></p>`)
+        item.querySelector('.three-quarters').insertAdjacentHTML("beforeend", `<p class="total_sum" style="font-weight: 700">Total <span>${total}</span></p>`)
     })
 
     //активация слайдера
@@ -560,7 +564,7 @@ window.onload = function () {
             <div class="item_slide" data-id="${product.variants[0].id}" data-handle="${product.handle}">
               <img src="${product.images[0]}" alt="img">
               <p class="name">${product.title}</p>
-              <p class="prod_price">₴${new Intl.NumberFormat('en-IN').format(product.price / 100)}</p>
+              <p class="prod_price">${(product.price > 100000)? '₴':'$'}${new Intl.NumberFormat('en-IN').format(product.price / 100)}</p>
               <button class="btn">Add to Cart</button>
             </div>
         `
@@ -613,7 +617,7 @@ window.onload = function () {
                 ${imgs}
               </div>
               <div class="flx">
-                <div class="prod_price">₴${new Intl.NumberFormat('en-IN').format(product.price / 100)}</div>
+                <div class="prod_price">${(product.price > 100000)? '₴':'$'}${new Intl.NumberFormat('en-IN').format(product.price / 100)}</div>
               </div>
               <div class="descr">${product.description}</div>
               <a href="https://mdnt45.com/${product.url}" target="_blank">Read more</a>
