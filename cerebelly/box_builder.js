@@ -377,7 +377,7 @@ let mut = new  MutationObserver((muts) => {
 })
 let start = setInterval(function () {
     if(document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
-        start.clearInterval()
+        clearInterval(start)
 
         document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
         document.querySelectorAll('.links a').forEach(item => {
