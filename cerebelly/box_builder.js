@@ -362,17 +362,7 @@ let cartList = `
 `
 
 document.body.insertAdjacentHTML('afterbegin', style)
-document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
-document.querySelectorAll('.links a').forEach(item => {
-    item.addEventListener('click', function (e) {
-        e.preventDefault()
-        let id = item.getAttribute('href').split('#')[1]
-        document.getElementById(id).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
-    })
-})
+
 
 let mut = new  MutationObserver((muts) => {
     mut.disconnect()
@@ -388,6 +378,18 @@ let mut = new  MutationObserver((muts) => {
 let start = setInterval(function () {
     if(document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
         start.clearInterval()
+
+        document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
+        document.querySelectorAll('.links a').forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault()
+                let id = item.getAttribute('href').split('#')[1]
+                document.getElementById(id).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
+            })
+        })
         drawMainPage()
 
         mut.observe(document,{
