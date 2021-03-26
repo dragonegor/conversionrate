@@ -390,12 +390,11 @@ let start = setInterval(function () {
                 })
             })
         })
-        drawMainPage()
-
         mut.observe(document,{
             childList: true,
             subtree: true
         })
+        drawMainPage()
     }
 }, 50)
 
