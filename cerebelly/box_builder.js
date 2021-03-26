@@ -401,8 +401,10 @@ let start = setInterval(function () {
 
 
 function drawMainPage() {
-    document.querySelector('.css-1qdusrr').before(document.querySelector('.more_products'))
-    document.querySelector('.more_products').before(document.querySelector('#recommended-pack'))
+    if (document.querySelector('.css-1qdusrr')) {
+        document.querySelector('.css-1qdusrr').before(document.querySelector('.more_products'))
+        document.querySelector('.more_products').before(document.querySelector('#recommended-pack'))
+    }
     let name = document.querySelector('h1.desktop').innerText.split("'")[0]
     document.querySelector('h1.desktop').style.display = 'none'
     document.querySelector('#recommended-pack .info-text h2 span:first-child').innerText = name + "’s personalized food box"
