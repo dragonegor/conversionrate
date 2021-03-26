@@ -242,6 +242,23 @@ let style = `
         cursor: pointer;
       }
       
+      .cart_info2 {
+        margin: 20px 0;
+        padding: 15px;
+        text-align: center;
+        background-color: #D7DAF6;
+        border-radius: 5px;
+      }
+      
+      .cart_info2 span {
+        color: #ea9341;
+      }
+      
+      .cart_info2 p {
+        margin-bottom: 0;
+        font-size: 13px; 
+      }
+      
       .cart_list {
         display:flex;
         padding: 25px;
@@ -353,6 +370,12 @@ let cartInfo = `
     </div>
 `
 
+let cartInfo2 = `
+    <div class="cart_info2"">
+      <p>Add <span>3</span> more items and get <span>10% OFF</span> + <span>Free Shipping</span></p>
+    </div>
+`
+
 let cartList = `
     <ul class="cart_list">
         <li>Ships every 14 days</li>
@@ -378,7 +401,6 @@ let mut = new  MutationObserver((muts) => {
 let start = setInterval(function () {
     if(document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
         clearInterval(start)
-        setTimeout(function () {
             document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
             document.querySelectorAll('.links a').forEach(item => {
                 item.addEventListener('click', function (e) {
@@ -395,8 +417,6 @@ let start = setInterval(function () {
                 subtree: true
             })
             drawMainPage()
-        }, 1000)
-
     }
 }, 50)
 
@@ -470,7 +490,9 @@ function boxDown() {
 }
 
 function drawCart() {
-
+    if(!document.querySelector('.cart_info2')) {
+        document.querySelector('.box-blueprint-title').insertAdjacentHTML('afterend', cartInfo2)
+    }
     if(!document.querySelector('.css-144a7ev .cart_list')) {
         document.querySelector('.css-144a7ev .remove-button').insertAdjacentHTML('afterend', cartList)
     } else {
@@ -488,6 +510,20 @@ function drawCart() {
         box = box[0].split('+')
     }
     let items = +document.querySelector('.css-1ehfhhn h4').innerText.split('(')[1].split(')')[0]
+    let discount = 10
+    if(+box[1] !== 13) {
+        discount = document.querySelector('.discount').innerText.split('%')[0]
+    }
+    console.log(+box[1] !== 13)
+
+    if(+box[1]-items <= 0 ) {
+        document.querySelector('.cart_info2').remove()
+    } else {
+        document.querySelector('.cart_info2 span:first-child').innerHTML = +box[1]-items
+        document.querySelector('.cart_info2 span:nth-child(2)').innerHTML = `${+discount + 5}% OFF`
+    }
+
+
     if(!document.querySelector('.css-144a7ev .new_info')) {
         document.querySelector('.css-144a7ev table.products').insertAdjacentHTML('afterend', `<p class="new_info"><b>30% OFF your first order</b> | Free shipping</p>`)
     }
