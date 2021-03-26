@@ -378,23 +378,25 @@ let mut = new  MutationObserver((muts) => {
 let start = setInterval(function () {
     if(document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
         clearInterval(start)
-
-        document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
-        document.querySelectorAll('.links a').forEach(item => {
-            item.addEventListener('click', function (e) {
-                e.preventDefault()
-                let id = item.getAttribute('href').split('#')[1]
-                document.getElementById(id).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+        setTimeout(function () {
+            document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
+            document.querySelectorAll('.links a').forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault()
+                    let id = item.getAttribute('href').split('#')[1]
+                    document.getElementById(id).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    })
                 })
             })
-        })
-        mut.observe(document,{
-            childList: true,
-            subtree: true
-        })
-        drawMainPage()
+            mut.observe(document,{
+                childList: true,
+                subtree: true
+            })
+            drawMainPage()
+        }, 1000)
+
     }
 }, 50)
 
