@@ -386,7 +386,7 @@ let mut = new  MutationObserver((muts) => {
     })
 })
 let start = setInterval(function () {
-    if(document.querySelector('#recommended-pack')) {
+    if(document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
         start.clearInterval()
         drawMainPage()
 
