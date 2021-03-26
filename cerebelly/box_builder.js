@@ -399,7 +399,8 @@ let mut = new  MutationObserver((muts) => {
     })
 })
 let start = setInterval(function () {
-    if(document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
+    let loc = window.location.pathname
+    if(loc === '/box-builder' && document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
         clearInterval(start)
             document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
             document.querySelectorAll('.links a').forEach(item => {
