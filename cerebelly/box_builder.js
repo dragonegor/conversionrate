@@ -399,13 +399,7 @@ let mut = new  MutationObserver((muts) => {
 })
 let start = setInterval(function () {
     let loc = window.location.pathname
-    if(loc === '/box-builder' && !document.querySelector('#test-style')) {
-        document.body.insertAdjacentHTML('afterbegin', style)
-    } else if (loc !== '/box-builder') {
-        document.querySelector('#test-style').remove()
-    }
-
-    if(loc === '/box-builder' && document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
+        if(loc === '/box-builder' && document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
         clearInterval(start)
             document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
             document.querySelectorAll('.links a').forEach(item => {
@@ -429,6 +423,13 @@ let start = setInterval(function () {
 
 
 function drawMainPage() {
+
+    if(loc === '/box-builder' && !document.querySelector('#test-style')) {
+        document.body.insertAdjacentHTML('afterbegin', style)
+    } else if (loc !== '/box-builder') {
+        document.querySelector('#test-style').remove()
+    }
+
     if (document.querySelector('.css-1qdusrr')) {
         document.querySelector('.css-1qdusrr').before(document.querySelector('.more_products'))
         document.querySelector('.more_products').before(document.querySelector('#recommended-pack'))
