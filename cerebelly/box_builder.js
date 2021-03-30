@@ -423,7 +423,7 @@ let start = setInterval(function () {
 
 
 function drawMainPage() {
-
+    let loc = window.location.pathname
     if(loc === '/box-builder' && !document.querySelector('#test-style')) {
         document.body.insertAdjacentHTML('afterbegin', style)
     } else if (loc !== '/box-builder') {
