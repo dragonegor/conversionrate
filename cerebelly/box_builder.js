@@ -1,5 +1,5 @@
 let style = `
-    <style>
+    <style id="test-style">
       #recommended-pack {
         background-color: rgb(248, 245, 237);
         position:relative;
@@ -384,7 +384,6 @@ let cartList = `
     </ul>
 `
 
-document.body.insertAdjacentHTML('afterbegin', style)
 
 
 let mut = new  MutationObserver((muts) => {
@@ -400,6 +399,12 @@ let mut = new  MutationObserver((muts) => {
 })
 let start = setInterval(function () {
     let loc = window.location.pathname
+    if(loc === '/box-builder' && !document.querySelector('#test-style')) {
+        document.body.insertAdjacentHTML('afterbegin', style)
+    } else if (loc !== '/box-builder') {
+        document.querySelector('#test-style').remove()
+    }
+
     if(loc === '/box-builder' && document.querySelector('#recommended-pack') && document.querySelector('.css-1qdusrr')) {
         clearInterval(start)
             document.querySelector('.css-1qdusrr').insertAdjacentHTML('beforebegin', moreProducts)
