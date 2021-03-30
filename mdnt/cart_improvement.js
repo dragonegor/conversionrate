@@ -447,7 +447,7 @@ let handles = ['gothic-hooded-cowl-scarf',
 ]
 
 
-let subtotal = document.querySelectorAll('form.cart>:last-child .h4')[1].innerHTML
+
 
 let topCheckoutBtn = `
     <div class="top-checkout">
@@ -482,7 +482,7 @@ let completeLook = `
 `
 
 function startExp() {
-
+    let subtotal = document.querySelectorAll('form.cart>:last-child .h4')[1].innerHTML
     //основные перестановки и изменения структуры
     document.querySelector('#MainContent').style.opacity = '1'
     document.body.insertAdjacentHTML('afterbegin', style)
