@@ -480,7 +480,8 @@ let completeLook = `
       </div>
     </div>
 `
-window.onload = function () {
+
+function startExp() {
 
     //основные перестановки и изменения структуры
     document.querySelector('#MainContent').style.opacity = '1'
@@ -673,8 +674,15 @@ window.onload = function () {
             })
         });
     };
+}
 
-};
+
+let st = setInterval(function () {
+    if(document.querySelector('.cart__checkout-wrapper')) {
+        clearInterval(st)
+        startExp()
+    }
+}, 30);
 
 
 (function(h,o,t,j,a,r){
