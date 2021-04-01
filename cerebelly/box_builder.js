@@ -85,7 +85,8 @@ let style = `
       
       .recommended-pack .products .new-info,
       .recommended-pack .products .out-of-stock-info,
-      .recommended-pack .products .recommended-info {
+      .recommended-pack .products .recommended-info,
+      .header-progress-wrap {
         display: none;
       }
       
@@ -107,13 +108,17 @@ let style = `
         position:relative;
       }
       
+      .recommended-pack .add_block ul li {
+        display:flex;
+        align-items: center;
+      }
+      
       .recommended-pack .add_block ul li img {
         width: 100px;
       }
       
       .recommended-pack .add_block ul li:before, .cart_list li:before {
         position:absolute;
-        top: 4px;
         left: -24px;
         content: '';
         display: block;
@@ -121,6 +126,7 @@ let style = `
         width: 14px;
         background: url("https://dragonegor.github.io/conversionrate/cerebelly/img/confirm.svg") center center no-repeat;
         background-size: contain;
+        align-self: flex-start;
       }
       
       .recommended-pack .add_block button {
@@ -175,7 +181,7 @@ let style = `
       
       .more_products a {
         font-size: 18px;
-        padding: 10px 36px;
+        padding: 10px 20px;
         background-color: #ECEEF6;
         color: #15226A;
         text-decoration: none;
@@ -197,7 +203,6 @@ let style = `
       
       .box-blueprint-progress,
       .box-blueprint-title .secondary,
-      .css-144a7ev .css-ve8dmg,
       .css-1ehfhhn>h4{
         display: none;
       }
@@ -269,22 +274,36 @@ let style = `
       .cart_list li {
         font-size: 11px;
         padding-left: 25px;
-      }
-      
-      .cart_list li:first-child {
-        width: 20%;
-      }
-      
-      .cart_list li:nth-child(2) {
-        width: 30%;
-      }
-      
-      .cart_list li:last-child {
-        width: 45%;
+        display: flex;
+        align-items: center;
       }
       
       .cart_list li:before {
         left: 0;
+      }
+      
+      .cart_list li .tooltip {
+        margin-bottom: 0;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        position:relative;
+      }
+      
+      .tooltip span {
+        position:absolute;
+        bottom: 100%;
+        right: 50%;
+        display: none;
+        padding: 10px;
+        border-radius: 5px;
+        background-color:#ECEEF6;
+        color: #1E415F;
+        font-size: 11px;
+      }
+      
+      .tooltip.active span {
+          display: block;
       }
       
       .new_info {
@@ -336,14 +355,22 @@ let style = `
     </style>
 `
 
+let stylebox = `
+    <style id="special_style">
+    .css-144a7ev .css-ve8dmg {
+      display:none;
+    }
+</style>
+`
+
 let moreProducts = `
     <div class="more_products">
       <h2>Add more products to your box</h2>
       <div class="links">
-        <a href="#pouches"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/purees.png" alt="">Purees</a>
+        <a href="#pouches"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/pure.png" alt="">Purees</a>
         <a href="#peppa"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/peppa.png" alt="">Cerebelly x Peppa</a>
         <a href="#smoothies">Smoothies</a>
-        <a href="#bars"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/bars.png" alt="">Smart Bars</a>
+        <a href="#bars"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/candy.png" alt="">Smart Bars</a>
         <a href="#bundles">Bundles</a>
       </div>
     </div>
@@ -356,10 +383,10 @@ let addToCartBlock = `
           <li>Farm fresh, science-backed nutrition.</li>
           <li>Each ingredient was carefully selected to taste great</li>
           <li>Net WT 4 oz (113 g) each</li>
-          <li>XXX 5-star reviews <img src="https://dragonegor.github.io/conversionrate/cerebelly/img/stars.png" alt=""></li>
+          <li>256 5-star reviews <img src="https://dragonegor.github.io/conversionrate/cerebelly/img/stars.png" alt=""></li>
       </ul>
       <button>ADD TO  CART</button>
-      <p><span>30% OFF your first order</span>|<span>Free Shipping</span></p>
+      <p><span>30% OFF your first order</span>|<span>Free shipping</span></p>
     </div>
 `
 
@@ -379,8 +406,8 @@ let cartInfo2 = `
 let cartList = `
     <ul class="cart_list">
         <li>Ships every 14 days</li>
-        <li>Pause, cancel, or delay anytime</li>
-        <li>We’ll send you 3 new pouches for free if you don’t like the flavor</li>
+        <li>Flavor guarantee</li>
+        <li>100% flexible <p class="tooltip"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/question.svg" alt=""><span>text</span></p></li>
     </ul>
 `
 
@@ -459,8 +486,9 @@ function boxUp() {
         'eventCategory': 'Exp: Box Builder Improvement',
         'eventAction': 'Box Increase'
     });
-
+    document.body.insertAdjacentHTML("afterbegin", stylebox)
     document.querySelector('.box-blueprint-title .secondary').click()
+
     setTimeout(function () {
         let index = 0;
         document.querySelectorAll('.group .plan').forEach((item, i) => {
@@ -471,6 +499,7 @@ function boxUp() {
                 item.click()
             }
         })
+        document.querySelector('#special_style').remove()
     }, 30)
 }
 
@@ -481,6 +510,7 @@ function boxDown() {
     }
     let items = +document.querySelector('.css-1ehfhhn h4').innerText.split('(')[1].split(')')[0]
     if(items < +b[0]) {
+        document.body.insertAdjacentHTML("afterbegin", stylebox)
         document.querySelector('.box-blueprint-title .secondary').click()
         setTimeout(function () {
             let index = 4;
@@ -492,6 +522,7 @@ function boxDown() {
                     item.click()
                 }
             })
+            document.querySelector('#special_style').remove()
         }, 30)
     }
 }
@@ -502,6 +533,9 @@ function drawCart() {
     }
     if(!document.querySelector('.css-144a7ev .cart_list')) {
         document.querySelector('.css-144a7ev .remove-button').insertAdjacentHTML('afterend', cartList)
+        document.querySelector('.tooltip').addEventListener('click', function () {
+            document.querySelector('.tooltip').classList.toggle('active')
+        })
     } else {
         document.querySelector('.css-144a7ev .remove-button').after(document.querySelector('.cart_list'))
     }
@@ -532,7 +566,7 @@ function drawCart() {
 
 
     if(!document.querySelector('.css-144a7ev .new_info')) {
-        document.querySelector('.css-144a7ev table.products').insertAdjacentHTML('afterend', `<p class="new_info"><b>30% OFF your first order</b> | Free shipping</p>`)
+        document.querySelector('.css-144a7ev table.products').insertAdjacentHTML('afterend', `<p class="new_info">Free shipping</p>`)
     }
 
     if(items === +box[1]) {
