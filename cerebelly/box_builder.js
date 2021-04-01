@@ -300,6 +300,8 @@ let style = `
         background-color:#ECEEF6;
         color: #1E415F;
         font-size: 11px;
+        width: 150px;
+        line-height: 1.3;
       }
       
       .tooltip.active span {
