@@ -407,7 +407,7 @@ let cartList = `
     <ul class="cart_list">
         <li>Ships every 14 days</li>
         <li>Flavor guarantee</li>
-        <li>100% flexible <p class="tooltip"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/question.svg" alt=""><span>text</span></p></li>
+        <li>100% flexible <p class="tooltip"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/question.svg" alt=""><span>Feel free to pause, reschedule, cancel, or customize your shipments at any time, with no penalty</span></p></li>
     </ul>
 `
 
