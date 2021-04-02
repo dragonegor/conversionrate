@@ -369,10 +369,10 @@ let moreProducts = `
     <div class="more_products">
       <h2>Add more products to your box</h2>
       <div class="links">
-        <a href="#pouches"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/pure.png" alt="">Purees</a>
-        <a href="#peppa"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/peppa.png" alt="">Cerebelly x Peppa</a>
+        <a href="#pouches">Purees</a>
+        <a href="#peppa">Cerebelly x Peppa</a>
         <a href="#smoothies">Smoothies</a>
-        <a href="#bars"><img src="https://dragonegor.github.io/conversionrate/cerebelly/img/candy.png" alt="">Smart Bars</a>
+        <a href="#bars">Smart Bars</a>
         <a href="#bundles">Bundles</a>
       </div>
     </div>
