@@ -388,7 +388,7 @@ let addToCartBlock = `
           <li>256 5-star reviews <img src="https://dragonegor.github.io/conversionrate/cerebelly/img/stars.png" alt=""></li>
       </ul>
       <button>ADD TO  CART</button>
-      <p><span>30% OFF your first order</span>|<span>Free shipping</span></p>
+      <p>Free shipping</p>
     </div>
 `
 
