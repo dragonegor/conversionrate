@@ -70,7 +70,7 @@ let homepageStyle = `
         text-align: center;
       }
       
-      .choose-plan-1[data-v-65739f6e] {
+      .choose-plan-1[data-v-609c338a] {
         background-color: #ffffff;
         padding-bottom: 55px;
       }
