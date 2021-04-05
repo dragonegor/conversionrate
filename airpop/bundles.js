@@ -586,7 +586,7 @@ let select = `
 
 let $ = jQuery;
 
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
 
 
     let product1 = document.querySelector('.price-final_price[data-product-id]').getAttribute('data-product-id')
@@ -676,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     createBundle()
-})
+}
 
 function createBundle() {
 
