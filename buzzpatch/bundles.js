@@ -389,9 +389,7 @@ window.onload = function() {
             'eventAction': 'closed',
             'eventLabel': 'Popup PDP'
         });
-        document.querySelector('.dark_bg').classList.remove('active')
-        document.querySelector('.wrap_popup').classList.remove('active')
-        document.body.style.overflow = 'scroll'
+        document.querySelector('#getNow .btn-primary').click()
     })
 
     document.querySelector('.popup button.skip').addEventListener('click', function () {
