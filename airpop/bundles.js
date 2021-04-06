@@ -206,6 +206,40 @@ let style = `
     .custom_select.active {
       display: block;
     }
+    
+    .popup_slider {
+      display: none;
+      width: 95%;
+      border-radius: 20px;
+      background-color: #fff;
+      border: 1px solid black;
+      margin: 10px 2.5%;
+      position:fixed;
+      padding: 20px;
+      z-index: 9999;
+    }
+    
+    .popup_slider.active {
+      display: block;
+    }
+    
+    .popup_slider .close {
+      position: absolute;
+      content: "";
+      top: 15px;
+      right: 15px;
+      height: 14px;
+      width: 14px;
+      background: url("https://dragonegor.github.io/conversionrate/airpop/img/close.svg") center center no-repeat;
+      background-size: contain;
+      cursor: pointer;
+      z-index: 100;
+    }
+    
+    .slider_wrap {
+      height: 100%;
+    }
+    
     .lds-spinner {
       display: none;
       color: white;
@@ -578,17 +612,18 @@ let select = `
     </ul>
     <button class="cancel">Cancel</button>
 </div>
-.
+
+<div class="popup_slider">
+  
+</div>
   
 <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 `
 
-
 let $ = jQuery;
 
 window.onload = function () {
-
-
+    console.log('start')
     let product1 = document.querySelector('.price-final_price[data-product-id]').getAttribute('data-product-id')
     let sku1 = productsSort[product1][2]
     let category1 = productsSort[product1][4]
@@ -946,6 +981,58 @@ window.onload = function () {
             }
         })
     }
+
+    $('a.to_pdp').click(function () {
+        $('.dark_bg').addClass('active')
+        $('.lds-spinner').addClass('active')
+
+        let sku = productsSort[$(this).closest('.item').data('id')][2]
+        console.log(sku)
+        $('body').css('overflow', 'hidden')
+        $('.popup_slider').append(`<span class="close"></span><div class="slider_wrap"></div>`)
+        jQuery.ajax({
+            type: "GET",
+            url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries`,
+            data: {},
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
+            },
+            error: function (response) {
+                $('.dark_bg').removeClass('active')
+                $('.lds-spinner').removeClass('active')
+                console.log(response)
+            },
+            success: function (response) {
+                console.log(response)
+
+                response.media_gallery_entries.forEach(item => {
+                    $('.slider_wrap').append(`<img src="https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/${item.file}" >`)
+                })
+
+                let slider2 = tns({
+                    container: '.slider_wrap',
+                    controls: false,
+                    navPosition: 'bottom',
+                    preventScrollOnTouch: 'auto',
+                    gutter: 10
+                })
+
+
+                $('.lds-spinner').removeClass('active')
+                $('.popup_slider').addClass('active')
+            }
+        });
+
+
+
+    });
+
+    $('.popup_slider').on('click', '.close', function () {
+        $('.dark_bg').removeClass('active')
+        $('.popup_slider').removeClass('active')
+        $('.popup_slider').empty()
+        $('body').css('overflow', 'scroll')
+    });
 };
 
 (function(h,o,t,j,a,r){
