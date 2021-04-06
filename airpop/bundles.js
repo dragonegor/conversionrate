@@ -983,6 +983,13 @@ window.onload = function () {
     }
 
     $('a.to_pdp').click(function () {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp — PDP bundles',
+            'eventAction': 'click on product',
+            'eventLabel': 'Section: Bundle'
+        });
         $('.dark_bg').addClass('active')
         $('.lds-spinner').addClass('active')
 
