@@ -228,8 +228,8 @@ let style = `
       content: "";
       top: 15px;
       right: 15px;
-      height: 14px;
-      width: 14px;
+      height: 20px;
+      width: 20px;
       background: url("https://dragonegor.github.io/conversionrate/airpop/img/close.svg") center center no-repeat;
       background-size: contain;
       cursor: pointer;
@@ -1021,7 +1021,8 @@ window.onload = function () {
                     controls: false,
                     navPosition: 'bottom',
                     preventScrollOnTouch: 'auto',
-                    gutter: 10
+                    gutter: 10,
+                    loop: false
                 })
 
 
