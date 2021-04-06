@@ -209,6 +209,7 @@ let style = `
       width: 48%;
       border: 1px solid #FFDCE8;
       border-radius: 3px;
+      height: 125px;
     }
     
     .popup .close_popup {
@@ -589,4 +590,3 @@ dataLayer.push({
     'eventCategory': 'Exp — PDP: Add bundle',
     'eventAction': 'loaded'
 });
-
