@@ -22,7 +22,8 @@ let tL = {
     3: 'Add Both to Cart',
     4: 'mask',
     5: 'masks',
-    6: 'Cancel'
+    6: 'Cancel',
+    7: 'for'
 }
 
 if (window.location.href.includes('/de/')) {
@@ -32,7 +33,8 @@ if (window.location.href.includes('/de/')) {
         3: 'In den Warenkorb Beide',
         4: 'maske',
         5: 'masken',
-        6: 'Stornieren'
+        6: 'Stornieren',
+        7: 'für'
     }
 } else if(window.location.href.includes('/nl/')) {
     tL = {
@@ -41,7 +43,8 @@ if (window.location.href.includes('/de/')) {
         3: 'In winkelwagen Beide',
         4: 'masker',
         5: 'maskers',
-        6: 'Annuleren'
+        6: 'Annuleren',
+        7: 'voor'
     }
 } else if(window.location.href.includes('/it/')) {
     tL = {
@@ -50,7 +53,8 @@ if (window.location.href.includes('/de/')) {
         3: 'Aggiungi al carrello entrambi',
         4: 'mask',
         5: 'masks',
-        6: 'Annulla'
+        6: 'Annulla',
+        7: 'for'
     }
 }
 
@@ -825,7 +829,7 @@ let start = setInterval(function () {
                         success: function (response) {
                             console.log(response);
                             aim.find('a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                            aim.find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
+                            aim.find('.product_price').html(`$${response.price} ${tl[7]} ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
                             aim.find('.product_select').html(`${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
                             aim.data('id', newid)
                             aim.find('.product_name').html(response.name)
@@ -877,9 +881,9 @@ let start = setInterval(function () {
                             console.log(response);
                             aim.closest('.item').find('a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
                             if (aim.closest('.item').attr('data-category') === 'cases') {
-                                aim.closest('.item').find('.product_price').html(`$${response.price} for 1 case`)
+                                aim.closest('.item').find('.product_price').html(`$${response.price} ${tL[7]} 1 case`)
                             } else {
-                                aim.closest('.item').find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
+                                aim.closest('.item').find('.product_price').html(`$${response.price} ${tL[7]} ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
                             }
                             aim.closest('.item').find('.product_select').html(`${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
                             aim.closest('.item').find('.product_name').html(response.name)
@@ -954,16 +958,16 @@ let start = setInterval(function () {
             if (productsSort[r.id][4] === 'se' || productsSort[r.id][4] === 'pocket' || productsSort[r.id][4] === 'kids') {
                 qty = productsSort[r.id][0]
                 aim.find('.product_select').html(`${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
-                aim.find('.product_price').html(`$${r.price} for ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
+                aim.find('.product_price').html(`$${r.price} ${tL[7]} ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
             } else if (productsSort[r.id][4] === 'filter') {
                 aim.find('.product_select').css('display', 'none')
-                aim.find('.product_price').html(`$${r.price} for 4 filters`)
+                aim.find('.product_price').html(`$${r.price} ${tL[7]} 4 filters`)
             } else if (productsSort[r.id][4] === 'cases') {
                 aim.find('.product_select').css('display', 'none')
-                aim.find('.product_price').html(`$${r.price} for 1 case`)
+                aim.find('.product_price').html(`$${r.price} ${tL[7]} 1 case`)
             } else {
                 aim.find('.product_select').css('display', 'none')
-                aim.find('.product_price').html(`$${r.price} for 1 mask`)
+                aim.find('.product_price').html(`$${r.price} ${tL[7]} 1 ${tL[4]}`)
             }
             let color_block = ``
             if (cat === 'filter' || cat === 'halo' || cat === 'cases') {
