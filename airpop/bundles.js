@@ -622,426 +622,428 @@ let select = `
 
 let $ = jQuery;
 
-window.onload = function () {
-    console.log('start')
-    let product1 = document.querySelector('.price-final_price[data-product-id]').getAttribute('data-product-id')
-    let sku1 = productsSort[product1][2]
-    let category1 = productsSort[product1][4]
-    let set_color1 = productsSort[product1][3]
-    let product2, product3, product4
-    if (category1 === 'original' || category1 === 'active' || category1 === 'halo') {
-        product2 = '3182'
-    } else if (category1 === 'se') {
-        product2 = '3163'
-    } else if (category1 === 'cases') {
-        product2 = (set_color1 === 'black') ? '3172' : '3185'
-    } else if (category1 === 'kids') {
-        product2 = '3166'
-        product3 = '3172'
-    } else if (category1 === 'pocket') {
-        product2 = (set_color1 === 'black') ? '3185' : '3172'
-        product3 = (set_color1 === 'black') ? '3167' : '3166'
-        product4 = '3163'
-    }
-
-    let sku2 = productsSort[product2][2]
-    let category2 = productsSort[product2][4]
-    let set_color2 = productsSort[product2][3]
-    console.log(sku1)
-    console.log(sku2)
-    let sku3, sku4, category3, category4, set_color3, set_color4
-
-    jQuery.ajax({
-        url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku1}?fields=id,sku,name,price,media_gallery_entries`,
-        success: function (response) {
-            console.log(response);
-            setProductData(response)
+let start = setInterval(function () {
+    if(document.querySelector('.attribute.description')) {
+        clearInterval(start)
+        console.log('start')
+        let product1 = document.querySelector('.price-final_price[data-product-id]').getAttribute('data-product-id')
+        let sku1 = productsSort[product1][2]
+        let category1 = productsSort[product1][4]
+        let set_color1 = productsSort[product1][3]
+        let product2, product3, product4
+        if (category1 === 'original' || category1 === 'active' || category1 === 'halo') {
+            product2 = '3182'
+        } else if (category1 === 'se') {
+            product2 = '3163'
+        } else if (category1 === 'cases') {
+            product2 = (set_color1 === 'black') ? '3172' : '3185'
+        } else if (category1 === 'kids') {
+            product2 = '3166'
+            product3 = '3172'
+        } else if (category1 === 'pocket') {
+            product2 = (set_color1 === 'black') ? '3185' : '3172'
+            product3 = (set_color1 === 'black') ? '3167' : '3166'
+            product4 = '3163'
         }
-    });
-    jQuery.ajax({
-        url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku2}?fields=id,sku,name,price,media_gallery_entries`,
-        success: function (response) {
-            console.log(response);
-            setProductData(response, 1, true)
-            totalPrice(1)
-        }
-    });
 
-    if (category1 === 'pocket') {
-        bundle_main = bundle_main3
-        sku3 = productsSort[product3][2]
-        category3 = productsSort[product3][4]
-        set_color3 = productsSort[product3][3]
+        let sku2 = productsSort[product2][2]
+        let category2 = productsSort[product2][4]
+        let set_color2 = productsSort[product2][3]
+        console.log(sku1)
+        console.log(sku2)
+        let sku3, sku4, category3, category4, set_color3, set_color4
 
-        sku4 = productsSort[product4][2]
-        category4 = productsSort[product4][4]
-        set_color4 = productsSort[product4][3]
         jQuery.ajax({
-            url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku3}?fields=id,sku,name,price,media_gallery_entries`,
+            url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku1}?fields=id,sku,name,price,media_gallery_entries`,
             success: function (response) {
                 console.log(response);
-                setProductData(response, 2, true)
-                totalPrice(2)
+                setProductData(response)
             }
         });
         jQuery.ajax({
-            url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku4}?fields=id,sku,name,price,media_gallery_entries`,
+            url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku2}?fields=id,sku,name,price,media_gallery_entries`,
             success: function (response) {
                 console.log(response);
-                setProductData(response, 3, true)
-                totalPrice(3)
+                setProductData(response, 1, true)
+                totalPrice(1)
             }
         });
-    }
-    if (category1 === 'kids') {
-        bundle_main = bundle_main2
-        sku3 = productsSort[product3][2]
-        category3 = productsSort[product3][4]
-        set_color3 = productsSort[product3][3]
 
-        jQuery.ajax({
-            url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku3}?fields=id,sku,name,price,media_gallery_entries`,
-            success: function (response) {
-                console.log(response);
-                setProductData(response, 2, true)
-                totalPrice(2)
-            }
-        });
-    }
+        if (category1 === 'pocket') {
+            bundle_main = bundle_main3
+            sku3 = productsSort[product3][2]
+            category3 = productsSort[product3][4]
+            set_color3 = productsSort[product3][3]
 
-
-    createBundle()
-
-
-    function createBundle() {
-
-        document.querySelector('.attribute.description').insertAdjacentHTML('beforebegin', bundle_main)
-
-        setTimeout(function () {
-            let slider = tns({
-                container: '.slider',
-                controls: false,
-                navPosition: 'top',
-                preventScrollOnTouch: 'auto',
-                gutter: 10
-            })
-        }, 500)
-        document.body.insertAdjacentHTML('afterbegin', style)
-        document.body.insertAdjacentHTML('afterbegin', select)
-
-
-        $('.product_select').click(function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp — PDP bundles',
-                'eventAction': 'click on quantity',
-                'eventLabel': 'Section: Bundle'
+            sku4 = productsSort[product4][2]
+            category4 = productsSort[product4][4]
+            set_color4 = productsSort[product4][3]
+            jQuery.ajax({
+                url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku3}?fields=id,sku,name,price,media_gallery_entries`,
+                success: function (response) {
+                    console.log(response);
+                    setProductData(response, 2, true)
+                    totalPrice(2)
+                }
             });
-            let cat = $(this).closest('.item').data('category')
-            let color = $(this).closest('.item').data('color')
-            let id = $(this).closest('.item').data('id')
-            let prod = ($(this).closest('.item').hasClass('prod1')) ? '.prod1' : '.prod2'
-            let bundle = $(this).closest('.category').data('bundle')
-
-            $('.custom_select').data('selector', `.category[data-bundle="${bundle}"] ${prod}`)
-            console.log(cat, color, id)
-            let list = products[cat][color]
-            console.log(list)
-            for (let item in list) {
-                let classList = ''
-                if (+item === +id) {
-                    classList += 'selected'
+            jQuery.ajax({
+                url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku4}?fields=id,sku,name,price,media_gallery_entries`,
+                success: function (response) {
+                    console.log(response);
+                    setProductData(response, 3, true)
+                    totalPrice(3)
                 }
-                if (list[item][0] === '4') {
-                    classList += ' popular'
+            });
+        }
+        if (category1 === 'kids') {
+            bundle_main = bundle_main2
+            sku3 = productsSort[product3][2]
+            category3 = productsSort[product3][4]
+            set_color3 = productsSort[product3][3]
+
+            jQuery.ajax({
+                url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku3}?fields=id,sku,name,price,media_gallery_entries`,
+                success: function (response) {
+                    console.log(response);
+                    setProductData(response, 2, true)
+                    totalPrice(2)
                 }
-                let li = `<li class="${classList}" data-sku="${list[item][2]}" data-qty="${list[item][0]}" data-newid="${+item}">${list[item][0]} ${(+list[item][0] === 1) ? "mask" : "masks"} <span>$${list[item][1]}</span></li>`
-                $('.custom_select ul').append(li)
-            }
-
-            $('.dark_bg').addClass('active')
-            $('.custom_select').addClass('active')
+            });
+        }
 
 
-            $('.custom_select li').click(function () {
-                let sku = $(this).data('sku')
-                let qty = $(this).data('qty')
-                let newid = $(this).data('newid')
-                let selector = $('.custom_select').data('selector')
-                let aim = $(selector)
-                $('.custom_select ul').empty()
-                $('.custom_select').removeClass('active')
-                $('.lds-spinner').addClass('active')
+        createBundle()
 
 
-                jQuery.ajax({
-                    type: "GET",
-                    url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries,custom_attributes`,
-                    data: {},
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
-                    },
-                    success: function (response) {
-                        console.log(response);
-                        aim.find('a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                        aim.find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
-                        aim.find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
-                        aim.data('id', newid)
-                        aim.find('.product_name').html(response.name)
-                        aim.attr('data-price', response.price)
+        function createBundle() {
 
-                        $('.dark_bg').removeClass('active')
-                        $('.lds-spinner').removeClass('active')
-                        totalPrice(bundle)
-                    }
+            document.querySelector('.attribute.description').insertAdjacentHTML('beforebegin', bundle_main)
+
+            setTimeout(function () {
+                let slider = tns({
+                    container: '.slider',
+                    controls: false,
+                    navPosition: 'top',
+                    preventScrollOnTouch: 'auto',
+                    gutter: 10
+                })
+            }, 500)
+            document.body.insertAdjacentHTML('afterbegin', style)
+            document.body.insertAdjacentHTML('afterbegin', select)
+
+
+            $('.product_select').click(function () {
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    'event': 'event-to-ga',
+                    'eventCategory': 'Exp — PDP bundles',
+                    'eventAction': 'click on quantity',
+                    'eventLabel': 'Section: Bundle'
                 });
-            })
-        })
-
-        $('.product_color').on('click', 'div', function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp — PDP bundles',
-                'eventAction': 'click on color',
-                'eventLabel': 'Section: Bundle'
-            });
-            let aim = $(this)
-            if (!aim.hasClass('selected')) {
                 let cat = $(this).closest('.item').data('category')
-                let color = aim.data('color')
-                let sku = productsSort[+Object.keys(products[cat][color])[0]][2]
-                let qty = Object.values(products[cat][color])[0][0]
-                let newid = `${+Object.keys(products[cat][color])[0]}`
-                let bundle = aim.closest('.category').data('bundle')
-                console.log(color, sku, qty, newid)
+                let color = $(this).closest('.item').data('color')
+                let id = $(this).closest('.item').data('id')
+                let prod = ($(this).closest('.item').hasClass('prod1')) ? '.prod1' : '.prod2'
+                let bundle = $(this).closest('.category').data('bundle')
 
-                $('.lds-spinner').addClass('active')
-                $('.dark_bg').addClass('active')
-
-
-                jQuery.ajax({
-                    type: "GET",
-                    url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries`,
-                    data: {},
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
-                    },
-                    error: function (response) {
-                        $('.dark_bg').removeClass('active')
-                        $('.lds-spinner').removeClass('active')
-                        console.log(response)
-                    },
-                    success: function (response) {
-                        console.log(response);
-                        aim.closest('.item').find('a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                        if (aim.closest('.item').attr('data-category') === 'cases') {
-                            aim.closest('.item').find('.product_price').html(`$${response.price} for 1 case`)
-                        } else {
-                            aim.closest('.item').find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
-                        }
-                        aim.closest('.item').find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
-                        aim.closest('.item').find('.product_name').html(response.name)
-                        aim.closest('.item').attr('data-id', newid)
-                        aim.closest('.item').attr('data-color', color)
-                        aim.closest('.item').attr('data-price', response.price)
-                        aim.addClass('selected').siblings('div').removeClass('selected')
-                        $('.dark_bg').removeClass('active')
-                        $('.lds-spinner').removeClass('active')
-                        totalPrice(bundle)
+                $('.custom_select').data('selector', `.category[data-bundle="${bundle}"] ${prod}`)
+                console.log(cat, color, id)
+                let list = products[cat][color]
+                console.log(list)
+                for (let item in list) {
+                    let classList = ''
+                    if (+item === +id) {
+                        classList += 'selected'
                     }
+                    if (list[item][0] === '4') {
+                        classList += ' popular'
+                    }
+                    let li = `<li class="${classList}" data-sku="${list[item][2]}" data-qty="${list[item][0]}" data-newid="${+item}">${list[item][0]} ${(+list[item][0] === 1) ? "mask" : "masks"} <span>$${list[item][1]}</span></li>`
+                    $('.custom_select ul').append(li)
+                }
+
+                $('.dark_bg').addClass('active')
+                $('.custom_select').addClass('active')
+
+
+                $('.custom_select li').click(function () {
+                    let sku = $(this).data('sku')
+                    let qty = $(this).data('qty')
+                    let newid = $(this).data('newid')
+                    let selector = $('.custom_select').data('selector')
+                    let aim = $(selector)
+                    $('.custom_select ul').empty()
+                    $('.custom_select').removeClass('active')
+                    $('.lds-spinner').addClass('active')
+
+
+                    jQuery.ajax({
+                        type: "GET",
+                        url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries,custom_attributes`,
+                        data: {},
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
+                        },
+                        success: function (response) {
+                            console.log(response);
+                            aim.find('a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
+                            aim.find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                            aim.find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                            aim.data('id', newid)
+                            aim.find('.product_name').html(response.name)
+                            aim.attr('data-price', response.price)
+
+                            $('.dark_bg').removeClass('active')
+                            $('.lds-spinner').removeClass('active')
+                            totalPrice(bundle)
+                        }
+                    });
+                })
+            })
+
+            $('.product_color').on('click', 'div', function () {
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    'event': 'event-to-ga',
+                    'eventCategory': 'Exp — PDP bundles',
+                    'eventAction': 'click on color',
+                    'eventLabel': 'Section: Bundle'
                 });
+                let aim = $(this)
+                if (!aim.hasClass('selected')) {
+                    let cat = $(this).closest('.item').data('category')
+                    let color = aim.data('color')
+                    let sku = productsSort[+Object.keys(products[cat][color])[0]][2]
+                    let qty = Object.values(products[cat][color])[0][0]
+                    let newid = `${+Object.keys(products[cat][color])[0]}`
+                    let bundle = aim.closest('.category').data('bundle')
+                    console.log(color, sku, qty, newid)
+
+                    $('.lds-spinner').addClass('active')
+                    $('.dark_bg').addClass('active')
 
 
+                    jQuery.ajax({
+                        type: "GET",
+                        url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries`,
+                        data: {},
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
+                        },
+                        error: function (response) {
+                            $('.dark_bg').removeClass('active')
+                            $('.lds-spinner').removeClass('active')
+                            console.log(response)
+                        },
+                        success: function (response) {
+                            console.log(response);
+                            aim.closest('.item').find('a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
+                            if (aim.closest('.item').attr('data-category') === 'cases') {
+                                aim.closest('.item').find('.product_price').html(`$${response.price} for 1 case`)
+                            } else {
+                                aim.closest('.item').find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                            }
+                            aim.closest('.item').find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                            aim.closest('.item').find('.product_name').html(response.name)
+                            aim.closest('.item').attr('data-id', newid)
+                            aim.closest('.item').attr('data-color', color)
+                            aim.closest('.item').attr('data-price', response.price)
+                            aim.addClass('selected').siblings('div').removeClass('selected')
+                            $('.dark_bg').removeClass('active')
+                            $('.lds-spinner').removeClass('active')
+                            totalPrice(bundle)
+                        }
+                    });
+
+
+                }
+            })
+
+            $('.custom_select .cancel').click(function () {
+                $('.custom_select ul').empty()
+                $('.dark_bg').removeClass('active')
+                $('.custom_select').removeClass('active')
+            })
+
+            $('.add_bundle').click(function () {
+                let id1 = $(this).closest('.slide').find('.prod1').data('id')
+                let id2 = $(this).closest('.slide').find('.prod2').data('id')
+                console.log(id1, id2)
+
+                to_cart(id1)
+                to_cart(id2)
+                $('.dark_bg').addClass('active')
+                $('.lds-spinner').addClass('active')
+                setTimeout(function () {
+                    document.querySelector('.action.showcart').click()
+                }, 2000)
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    'event': 'event-to-ga',
+                    'eventCategory': 'Exp — PDP bundles',
+                    'eventAction': 'click on button Add to Cart Both',
+                    'eventLabel': 'Section: Bundle'
+                });
+            })
+        }
+
+        function setProductData(r, bundle, add) {
+            let aim, cat, color, qty
+            if (add) {
+                aim = $(`.category[data-bundle="${bundle}"] .prod2`)
+            } else {
+                aim = $(`.prod1`)
             }
-        })
+            switch (bundle) {
+                case 1:
+                    cat = category2
+                    color = set_color2
+                    break
+                case 2:
+                    cat = category3
+                    color = set_color3
+                    break
+                case 3:
+                    cat = category4
+                    color = set_color4
+                    break
+                default:
+                    cat = category1
+                    color = set_color1
+            }
+            console.log(aim, cat, color)
 
-        $('.custom_select .cancel').click(function () {
-            $('.custom_select ul').empty()
-            $('.dark_bg').removeClass('active')
-            $('.custom_select').removeClass('active')
-        })
+            if (productsSort[r.id][4] === 'se' || productsSort[r.id][4] === 'pocket' || productsSort[r.id][4] === 'kids') {
+                qty = productsSort[r.id][0]
+                aim.find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                aim.find('.product_price').html(`$${r.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+            } else if (productsSort[r.id][4] === 'filter') {
+                aim.find('.product_select').css('display', 'none')
+                aim.find('.product_price').html(`$${r.price} for 4 filters`)
+            } else if (productsSort[r.id][4] === 'cases') {
+                aim.find('.product_select').css('display', 'none')
+                aim.find('.product_price').html(`$${r.price} for 1 case`)
+            } else {
+                aim.find('.product_select').css('display', 'none')
+                aim.find('.product_price').html(`$${r.price} for 1 mask`)
+            }
+            let color_block = ``
+            if (cat === 'filter' || cat === 'halo' || cat === 'cases') {
+                aim.find('.product_color').css('display', 'none')
+            } else {
+                for (let i in products[cat]) {
+                    color_block += `<div class="${i} ${(i === color) ? 'selected' : ''}" data-color="${i}"></div>`
+                }
 
-        $('.add_bundle').click(function () {
-            let id1 = $(this).closest('.slide').find('.prod1').data('id')
-            let id2 = $(this).closest('.slide').find('.prod2').data('id')
-            console.log(id1, id2)
+                aim.find('.product_color').html(color_block)
+            }
 
-            to_cart(id1)
-            to_cart(id2)
+
+            aim.attr('data-category', cat)
+            aim.attr('data-color', color)
+            aim.attr('data-id', r.id)
+            aim.attr('data-price', r.price)
+            aim.find('.to_pdp img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/${r.media_gallery_entries[0].file}`)
+            aim.find('.product_name').html(r.name)
+
+        }
+
+        function totalPrice(b) {
+            let int = setInterval(function () {
+                let price1 = $(`.category[data-bundle="${b}"] .prod1`).attr('data-price')
+                let price2 = $(`.category[data-bundle="${b}"] .prod2`).attr('data-price')
+                if (price1 && price2) {
+                    $(`.category[data-bundle="${b}"]+.total_price span`).html(`${(+price1 + +price2).toFixed(2)}`)
+                    console.log(price1, price2)
+                    clearInterval(int)
+                }
+            }, 100)
+        }
+
+        function to_cart(id) {
+            jQuery.ajax({
+                url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + id + '/',
+                type: 'POST',
+                data: {
+                    product: id,
+                    selected_configurable_option: '',
+                    related_product: '',
+                    item: id,
+                    form_key: jQuery.cookie('form_key'),
+                    qty: 1
+                },
+                success: function (response) {
+                    $('.dark_bg').removeClass('active')
+                    $('.lds-spinner').removeClass('active')
+                },
+                error: function (response) {
+                    $('.dark_bg').removeClass('active')
+                    $('.lds-spinner').removeClass('active')
+                    console.log(response)
+                }
+            })
+        }
+
+        $('a.to_pdp').click(function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp — PDP bundles',
+                'eventAction': 'click on product',
+                'eventLabel': 'Section: Bundle'
+            });
             $('.dark_bg').addClass('active')
             $('.lds-spinner').addClass('active')
-            setTimeout(function () {
-                document.querySelector('.action.showcart').click()
-            }, 2000)
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp — PDP bundles',
-                'eventAction': 'click on button Add to Cart Both',
-                'eventLabel': 'Section: Bundle'
+
+            let sku = productsSort[$(this).closest('.item').data('id')][2]
+            console.log(sku)
+            $('body').css('overflow', 'hidden')
+            $('.popup_slider').append(`<span class="close"></span><div class="slider_wrap"></div>`)
+            jQuery.ajax({
+                type: "GET",
+                url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries`,
+                data: {},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
+                },
+                error: function (response) {
+                    $('.dark_bg').removeClass('active')
+                    $('.lds-spinner').removeClass('active')
+                    console.log(response)
+                },
+                success: function (response) {
+                    console.log(response)
+
+                    response.media_gallery_entries.forEach(item => {
+                        $('.slider_wrap').append(`<img src="https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/${item.file}" >`)
+                    })
+
+                    let slider2 = tns({
+                        container: '.slider_wrap',
+                        controls: false,
+                        navPosition: 'bottom',
+                        preventScrollOnTouch: 'auto',
+                        gutter: 10,
+                        loop: false
+                    })
+
+
+                    $('.lds-spinner').removeClass('active')
+                    $('.popup_slider').addClass('active')
+                }
             });
-        })
-    }
-
-    function setProductData(r, bundle, add) {
-        let aim, cat, color, qty
-        if (add) {
-            aim = $(`.category[data-bundle="${bundle}"] .prod2`)
-        } else {
-            aim = $(`.prod1`)
-        }
-        switch (bundle) {
-            case 1:
-                cat = category2
-                color = set_color2
-                break
-            case 2:
-                cat = category3
-                color = set_color3
-                break
-            case 3:
-                cat = category4
-                color = set_color4
-                break
-            default:
-                cat = category1
-                color = set_color1
-        }
-        console.log(aim, cat, color)
-
-        if (productsSort[r.id][4] === 'se' || productsSort[r.id][4] === 'pocket' || productsSort[r.id][4] === 'kids') {
-            qty = productsSort[r.id][0]
-            aim.find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
-            aim.find('.product_price').html(`$${r.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
-        } else if (productsSort[r.id][4] === 'filter') {
-            aim.find('.product_select').css('display', 'none')
-            aim.find('.product_price').html(`$${r.price} for 4 filters`)
-        } else if (productsSort[r.id][4] === 'cases') {
-            aim.find('.product_select').css('display', 'none')
-            aim.find('.product_price').html(`$${r.price} for 1 case`)
-        } else {
-            aim.find('.product_select').css('display', 'none')
-            aim.find('.product_price').html(`$${r.price} for 1 mask`)
-        }
-        let color_block = ``
-        if (cat === 'filter' || cat === 'halo' || cat === 'cases') {
-            aim.find('.product_color').css('display', 'none')
-        } else {
-            for (let i in products[cat]) {
-                color_block += `<div class="${i} ${(i === color) ? 'selected' : ''}" data-color="${i}"></div>`
-            }
-
-            aim.find('.product_color').html(color_block)
-        }
 
 
-        aim.attr('data-category', cat)
-        aim.attr('data-color', color)
-        aim.attr('data-id', r.id)
-        aim.attr('data-price', r.price)
-        aim.find('.to_pdp img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/${r.media_gallery_entries[0].file}`)
-        aim.find('.product_name').html(r.name)
-
-    }
-
-    function totalPrice(b) {
-        let int = setInterval(function () {
-            let price1 = $(`.category[data-bundle="${b}"] .prod1`).attr('data-price')
-            let price2 = $(`.category[data-bundle="${b}"] .prod2`).attr('data-price')
-            if (price1 && price2) {
-                $(`.category[data-bundle="${b}"]+.total_price span`).html(`${(+price1 + +price2).toFixed(2)}`)
-                console.log(price1, price2)
-                clearInterval(int)
-            }
-        }, 100)
-    }
-
-    function to_cart(id) {
-        jQuery.ajax({
-            url: window.BASE_URL + 'checkout/cart/add/uenc/aaaa/product/' + id + '/',
-            type: 'POST',
-            data: {
-                product: id,
-                selected_configurable_option: '',
-                related_product: '',
-                item: id,
-                form_key: jQuery.cookie('form_key'),
-                qty: 1
-            },
-            success: function (response) {
-                $('.dark_bg').removeClass('active')
-                $('.lds-spinner').removeClass('active')
-            },
-            error: function (response) {
-                $('.dark_bg').removeClass('active')
-                $('.lds-spinner').removeClass('active')
-                console.log(response)
-            }
-        })
-    }
-
-    $('a.to_pdp').click(function () {
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp — PDP bundles',
-            'eventAction': 'click on product',
-            'eventLabel': 'Section: Bundle'
-        });
-        $('.dark_bg').addClass('active')
-        $('.lds-spinner').addClass('active')
-
-        let sku = productsSort[$(this).closest('.item').data('id')][2]
-        console.log(sku)
-        $('body').css('overflow', 'hidden')
-        $('.popup_slider').append(`<span class="close"></span><div class="slider_wrap"></div>`)
-        jQuery.ajax({
-            type: "GET",
-            url: `https://www.airpophealth.com/rest/ap_eu/V1/products/${sku}?fields=sku,name,price,media_gallery_entries`,
-            data: {},
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', "Bearer 4p7re7j8e4tzqskprdyuh04628u3vhp1");
-            },
-            error: function (response) {
-                $('.dark_bg').removeClass('active')
-                $('.lds-spinner').removeClass('active')
-                console.log(response)
-            },
-            success: function (response) {
-                console.log(response)
-
-                response.media_gallery_entries.forEach(item => {
-                    $('.slider_wrap').append(`<img src="https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404/${item.file}" >`)
-                })
-
-                let slider2 = tns({
-                    container: '.slider_wrap',
-                    controls: false,
-                    navPosition: 'bottom',
-                    preventScrollOnTouch: 'auto',
-                    gutter: 10,
-                    loop: false
-                })
-
-
-                $('.lds-spinner').removeClass('active')
-                $('.popup_slider').addClass('active')
-            }
         });
 
-
-
-    });
-
-    $('.popup_slider').on('click', '.close', function () {
-        $('.dark_bg').removeClass('active')
-        $('.popup_slider').removeClass('active')
-        $('.popup_slider').empty()
-        $('body').css('overflow', 'scroll')
-    });
-};
+        $('.popup_slider').on('click', '.close', function () {
+            $('.dark_bg').removeClass('active')
+            $('.popup_slider').removeClass('active')
+            $('.popup_slider').empty()
+            $('body').css('overflow', 'scroll')
+        });
+    }
+});
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
