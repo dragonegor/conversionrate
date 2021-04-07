@@ -547,7 +547,7 @@ let bundle_main = `
             </div>
             
             <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add to Cart Both</button>
+            <button class="add_bundle">Add Both to Cart</button>
         </div>
      </div>
 `
@@ -561,7 +561,7 @@ let bundle_main2 = `
                 ${product2_block}
             </div>
             <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add to Cart Both</button>
+            <button class="add_bundle">Add Both to Cart</button>
         </div>
         <div class="slide"> 
             <div class="category" data-bundle="2">
@@ -569,7 +569,7 @@ let bundle_main2 = `
                 ${product2_block}
             </div>
             <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add to Cart Both</button>
+            <button class="add_bundle">Add Both to Cart</button>
         </div>
      </div>
 `
@@ -583,7 +583,7 @@ let bundle_main3 = `
                 ${product2_block}
             </div>
             <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add to Cart Both</button>
+            <button class="add_bundle">Add Both to Cart</button>
         </div>
         <div class="slide"> 
             <div class="category" data-bundle="2">
@@ -591,7 +591,7 @@ let bundle_main3 = `
                 ${product2_block}
             </div>
             <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add to Cart Both</button>
+            <button class="add_bundle">Add Both to Cart</button>
         </div>
         <div class="slide"> 
             <div class="category" data-bundle="3">
@@ -599,7 +599,7 @@ let bundle_main3 = `
                 ${product2_block}
             </div>
             <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add to Cart Both</button>
+            <button class="add_bundle">Add Both to Cart</button>
         </div>
      </div>
 `
