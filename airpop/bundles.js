@@ -16,6 +16,44 @@ jQuery.ajaxSetup({
     }
 });
 
+let tL = {
+    1: 'Frequently bought together',
+    2: 'Total price',
+    3: 'Add Both to Cart',
+    4: 'mask',
+    5: 'masks',
+    6: 'Cancel'
+}
+
+if (window.location.href.includes('/de/')) {
+    tL = {
+        1: 'Wird oft zusammen gekauft',
+        2: 'Gesamtpreis',
+        3: 'In den Warenkorb Beide',
+        4: 'maske',
+        5: 'masken',
+        6: 'Stornieren'
+    }
+} else if(window.location.href.includes('/nl/')) {
+    tL = {
+        1: 'Vaak samen gekocht',
+        2: 'Totale prijs',
+        3: 'In winkelwagen Beide',
+        4: 'masker',
+        5: 'maskers',
+        6: 'Annuleren'
+    }
+} else if(window.location.href.includes('/it/')) {
+    tL = {
+        1: 'Acquistati frequentemente insieme',
+        2: 'Prezzo totale',
+        3: 'Aggiungi al carrello entrambi',
+        4: 'mask',
+        5: 'masks',
+        6: 'Annulla'
+    }
+}
+
 let style = `
     <style>
         * {
@@ -538,7 +576,7 @@ let product2_block = `
 
 
 let bundle_main = `
-     <h2 class="for_bundle">Frequently bought together</h2>
+     <h2 class="for_bundle">${tL[1]}</h2>
      <div class="slider">
         <div class="slide"> 
             <div class="category" data-bundle="1">
@@ -546,60 +584,60 @@ let bundle_main = `
                 ${product2_block}
             </div>
             
-            <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add Both to Cart</button>
+            <div class="total_price">${tL[2]}: $<span></span></div>
+            <button class="add_bundle">${tL[3]}</button>
         </div>
      </div>
 `
 
 let bundle_main2 = `
-     <h2 class="for_bundle">Frequently bought together</h2>
+     <h2 class="for_bundle">${tL[1]}</h2>
      <div class="slider">
         <div class="slide"> 
             <div class="category" data-bundle="1">
                 ${product1_block}
                 ${product2_block}
             </div>
-            <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add Both to Cart</button>
+            <div class="total_price">${tL[2]}: $<span></span></div>
+            <button class="add_bundle">${tL[3]}</button>
         </div>
         <div class="slide"> 
             <div class="category" data-bundle="2">
                 ${product1_block}
                 ${product2_block}
             </div>
-            <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add Both to Cart</button>
+            <div class="total_price">${tL[2]}: $<span></span></div>
+            <button class="add_bundle">${tL[3]}</button>
         </div>
      </div>
 `
 
 let bundle_main3 = `
-     <h2 class="for_bundle">Frequently bought together</h2>
+     <h2 class="for_bundle">${tL[1]}</h2>
      <div class="slider">
         <div class="slide"> 
             <div class="category" data-bundle="1">
                 ${product1_block}
                 ${product2_block}
             </div>
-            <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add Both to Cart</button>
+            <div class="total_price">${tL[2]}: $<span></span></div>
+            <button class="add_bundle">${tL[3]}</button>
         </div>
         <div class="slide"> 
             <div class="category" data-bundle="2">
                 ${product1_block}
                 ${product2_block}
             </div>
-            <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add Both to Cart</button>
+            <div class="total_price">${tL[2]}: $<span></span></div>
+            <button class="add_bundle">${tL[3]}</button>
         </div>
         <div class="slide"> 
             <div class="category" data-bundle="3">
                 ${product1_block}
                 ${product2_block}
             </div>
-            <div class="total_price">Total price: $<span></span></div>
-            <button class="add_bundle">Add Both to Cart</button>
+            <div class="total_price">${tL[2]}: $<span></span></div>
+            <button class="add_bundle">${tL[3]}</button>
         </div>
      </div>
 `
@@ -787,8 +825,8 @@ let start = setInterval(function () {
                         success: function (response) {
                             console.log(response);
                             aim.find('a>img').attr('src', `https://www.airpophealth.com/media/catalog/product/cache/7f1b7b880056465fcb587a305b4a1404${response.media_gallery_entries[0].file}`)
-                            aim.find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
-                            aim.find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                            aim.find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
+                            aim.find('.product_select').html(`${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
                             aim.data('id', newid)
                             aim.find('.product_name').html(response.name)
                             aim.attr('data-price', response.price)
@@ -841,9 +879,9 @@ let start = setInterval(function () {
                             if (aim.closest('.item').attr('data-category') === 'cases') {
                                 aim.closest('.item').find('.product_price').html(`$${response.price} for 1 case`)
                             } else {
-                                aim.closest('.item').find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                                aim.closest('.item').find('.product_price').html(`$${response.price} for ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
                             }
-                            aim.closest('.item').find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                            aim.closest('.item').find('.product_select').html(`${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
                             aim.closest('.item').find('.product_name').html(response.name)
                             aim.closest('.item').attr('data-id', newid)
                             aim.closest('.item').attr('data-color', color)
@@ -915,8 +953,8 @@ let start = setInterval(function () {
 
             if (productsSort[r.id][4] === 'se' || productsSort[r.id][4] === 'pocket' || productsSort[r.id][4] === 'kids') {
                 qty = productsSort[r.id][0]
-                aim.find('.product_select').html(`${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
-                aim.find('.product_price').html(`$${r.price} for ${qty} ${(+qty === 1) ? 'mask' : 'masks'}`)
+                aim.find('.product_select').html(`${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
+                aim.find('.product_price').html(`$${r.price} for ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
             } else if (productsSort[r.id][4] === 'filter') {
                 aim.find('.product_select').css('display', 'none')
                 aim.find('.product_price').html(`$${r.price} for 4 filters`)
