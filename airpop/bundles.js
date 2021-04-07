@@ -23,7 +23,8 @@ let tL = {
     4: 'mask',
     5: 'masks',
     6: 'Cancel',
-    7: 'for'
+    7: 'for',
+    8: 'filters'
 }
 
 if (window.location.href.includes('/de/')) {
@@ -34,7 +35,8 @@ if (window.location.href.includes('/de/')) {
         4: 'maske',
         5: 'masken',
         6: 'Stornieren',
-        7: 'für'
+        7: 'für',
+        8: 'filter'
     }
 } else if(window.location.href.includes('/nl/')) {
     tL = {
@@ -44,7 +46,8 @@ if (window.location.href.includes('/de/')) {
         4: 'masker',
         5: 'maskers',
         6: 'Annuleren',
-        7: 'voor'
+        7: 'voor',
+        8: 'filters'
     }
 } else if(window.location.href.includes('/it/')) {
     tL = {
@@ -54,7 +57,8 @@ if (window.location.href.includes('/de/')) {
         4: 'mask',
         5: 'masks',
         6: 'Annulla',
-        7: 'for'
+        7: 'for',
+        8: 'filtri'
     }
 }
 
@@ -961,7 +965,7 @@ let start = setInterval(function () {
                 aim.find('.product_price').html(`$${r.price} ${tL[7]} ${qty} ${(+qty === 1) ? tL[4] : tL[5]}`)
             } else if (productsSort[r.id][4] === 'filter') {
                 aim.find('.product_select').css('display', 'none')
-                aim.find('.product_price').html(`$${r.price} ${tL[7]} 4 filters`)
+                aim.find('.product_price').html(`$${r.price} ${tL[7]} 4 ${tL[8]}`)
             } else if (productsSort[r.id][4] === 'cases') {
                 aim.find('.product_select').css('display', 'none')
                 aim.find('.product_price').html(`$${r.price} ${tL[7]} 1 case`)
