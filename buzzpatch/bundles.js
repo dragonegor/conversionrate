@@ -335,7 +335,7 @@ let bundles = `
 
 let popup = `
     <div class="wrap_popup">
-      <div class="popup">
+      <div class="popup" data-id="34767547138092">
           <span class="close_popup"></span>
           <h2>Add Itch relief patches</h2>
           <div>
