@@ -153,7 +153,9 @@ let btnRed = `
 `
 
 
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function () {
+
+
 
     document.body.insertAdjacentHTML('afterbegin', style)
     document.querySelector('.mobile-nav__item.appear-delay-6 a').after(document.querySelector('.mobile-nav__social'))
@@ -237,7 +239,7 @@ window.onload = function() {
         });
     })
 
-};
+});
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
