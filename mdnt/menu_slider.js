@@ -153,7 +153,7 @@ let btnRed = `
 `
 
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 
 
 
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     })
 
-});
+// });
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
