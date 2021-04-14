@@ -359,7 +359,7 @@ let style = `
 
 let stylebox = `
     <style id="special_style">
-    .css-144a7ev .css-ve8dmg {
+    .css-1kq4096 .css-ve8dmg {
       display:none;
     }
 </style>
@@ -533,18 +533,18 @@ function drawCart() {
     if(!document.querySelector('.cart_info2')) {
         document.querySelector('.box-blueprint-title').insertAdjacentHTML('afterend', cartInfo2)
     }
-    if(!document.querySelector('.css-144a7ev .cart_list')) {
-        document.querySelector('.css-144a7ev .remove-button').insertAdjacentHTML('afterend', cartList)
+    if(!document.querySelector('.css-1kq4096 .cart_list')) {
+        document.querySelector('.css-1kq4096 .remove-button').insertAdjacentHTML('afterend', cartList)
         document.querySelector('.tooltip').addEventListener('click', function () {
             document.querySelector('.tooltip').classList.toggle('active')
         })
     } else {
-        document.querySelector('.css-144a7ev .remove-button').after(document.querySelector('.cart_list'))
+        document.querySelector('.css-1kq4096 .remove-button').after(document.querySelector('.cart_list'))
     }
-    document.querySelector('.css-144a7ev button.action').innerText = 'CHECKOUT'
-    document.querySelector('.css-144a7ev button.action').addEventListener('click', function () {
+    document.querySelector('.css-1kq4096 button.action').innerText = 'CHECKOUT'
+    document.querySelector('.css-1kq4096 button.action').addEventListener('click', function () {
         setTimeout(function () {
-            document.querySelector('.css-144a7ev button.action').click()
+            document.querySelector('.css-1kq4096 button.action').click()
         }, 20)
     })
 
@@ -567,8 +567,8 @@ function drawCart() {
     }
 
 
-    if(!document.querySelector('.css-144a7ev .new_info')) {
-        document.querySelector('.css-144a7ev table.products').insertAdjacentHTML('afterend', `<p class="new_info">Free shipping</p>`)
+    if(!document.querySelector('.css-1kq4096 .new_info')) {
+        document.querySelector('.css-1kq4096 table.products').insertAdjacentHTML('afterend', `<p class="new_info">Free shipping</p>`)
     }
 
     if(items === +box[1]) {
