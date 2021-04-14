@@ -157,6 +157,10 @@ window.onload = function() {
     document.querySelector('.mobile-nav__social').insertAdjacentHTML('afterend', slider)
     document.querySelector('#NavDrawer').insertAdjacentHTML('beforeend', btnRed)
 
+    if ( document.querySelector('.collapsible-trigger.collapsible--auto-height.is-open')){
+        document.querySelector('.collapsible-trigger.collapsible--auto-height.is-open').click()
+    }
+
     handles.forEach(item => {
         getProductInfo(item)
     })
