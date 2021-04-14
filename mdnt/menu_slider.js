@@ -84,6 +84,9 @@ let style = `
     
     .complete_look .btn {
       width: calc(100% - 25px);
+      border: 2px solid black;
+      color: black;
+      background: none;
     }
     
     .mobile-nav {
@@ -141,7 +144,7 @@ let slider = `
       <div class="slider_look">
         
       </div>
-      <a href="${href}" class="btn">Show more</a>
+      <a href="${href}" class="btn">View all bestsellers</a>
     </div>
 `
 
