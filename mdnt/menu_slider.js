@@ -237,7 +237,7 @@ let btnRed = `
             'eventAction': 'Clicks to bestellers',
             'eventLabel': 'button'
         });
-    })
+    });
 
 // });
 
