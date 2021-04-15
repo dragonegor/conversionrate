@@ -206,55 +206,58 @@ setTimeout(function () {
             })
         });
     }
+    setTimeout(function () {
 
-    let $ = jQuery;
 
-    $('.collapsible-trigger').click(function () {
-        setTimeout(function () {
-            if (document.querySelector('.mobile-nav__item .collapsible-content.is-open')) {
-                $('.complete_look').slideUp()
-                $('.red_btn').css('display', 'block')
-            } else {
-                $('.complete_look').slideDown()
-                $('.red_btn').css('display', 'none')
-            }
-        }, 500)
-    })
+        let $ = jQuery;
 
-    $('.item_slide').click(function () {
-        console.log('Clicks to bestellers Section: items')
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp — Bestsellers block',
-            'eventAction': 'Clicks to bestellers',
-            'eventLabel': 'Section: items'
+        $('.collapsible-trigger').click(function () {
+            setTimeout(function () {
+                if (document.querySelector('.mobile-nav__item .collapsible-content.is-open')) {
+                    $('.complete_look').slideUp()
+                    $('.red_btn').css('display', 'block')
+                } else {
+                    $('.complete_look').slideDown()
+                    $('.red_btn').css('display', 'none')
+                }
+            }, 500)
+        })
+
+        $('.item_slide').click(function () {
+            console.log('Clicks to bestellers Section: items')
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp — Bestsellers block',
+                'eventAction': 'Clicks to bestellers',
+                'eventLabel': 'Section: items'
+            });
+        })
+
+        $('.complete_look .btn').click(function () {
+            console.log('Clicks to bestellers Section: items')
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp — Bestsellers block',
+                'eventAction': 'Clicks to bestellers',
+                'eventLabel': 'Section: items'
+            });
+        })
+
+        $('.red_btn').click(function () {
+            console.log('Clicks to bestellers')
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp — Bestsellers block',
+                'eventAction': 'Clicks to bestellers',
+                'eventLabel': 'button'
+            });
         });
-    })
+    }, 1500)
 
-    $('.complete_look .btn').click(function () {
-        console.log('Clicks to bestellers Section: items')
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp — Bestsellers block',
-            'eventAction': 'Clicks to bestellers',
-            'eventLabel': 'Section: items'
-        });
-    })
-
-    $('.red_btn').click(function () {
-        console.log('Clicks to bestellers')
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp — Bestsellers block',
-            'eventAction': 'Clicks to bestellers',
-            'eventLabel': 'button'
-        });
-    });
-
-}, 1000);
+}, 300);
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
