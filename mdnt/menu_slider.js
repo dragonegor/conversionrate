@@ -163,7 +163,9 @@ setTimeout(function () {
     document.querySelector('#NavDrawer').insertAdjacentHTML('beforeend', btnRed)
 
     if ( document.querySelector('.collapsible-trigger.collapsible--auto-height.is-open')){
-        document.querySelector('.collapsible-trigger.collapsible--auto-height.is-open').click()
+        document.querySelectorAll('.collapsible-trigger.collapsible--auto-height.is-open').forEach(item => {
+            item.click()
+        })
     }
 
     handles.forEach(item => {
