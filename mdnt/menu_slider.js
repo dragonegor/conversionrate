@@ -231,7 +231,7 @@ setTimeout(function () {
             'eventLabel': 'Section: items'
         });
     })
-    
+
     $('.complete_look .btn').click(function () {
         console.log('Clicks to bestellers Section: items')
         window.dataLayer = window.dataLayer || [];
@@ -254,7 +254,7 @@ setTimeout(function () {
         });
     });
 
-}, 200);
+}, 1000);
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
