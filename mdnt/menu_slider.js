@@ -142,7 +142,9 @@ let slider = `
     <div class="complete_look">
       <h3>${title}</h3>
       <div class="slider_look">
-        <a href="${href}" class="btn">View all bestsellers</a>
+        <div class="item_slide">
+          <a href="${href}" class="btn">View all bestsellers</a>
+        </div>
       </div>
       <a href="${href}" class="btn">View all bestsellers</a>
     </div>
