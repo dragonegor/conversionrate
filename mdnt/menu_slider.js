@@ -116,6 +116,10 @@ let style = `
       margin: 5px 15%;
       display: block;
     }
+    
+    .complete_look .btn:hover {
+      background-color: #C10302;
+    }
 </style>
 `
 
