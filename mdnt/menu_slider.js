@@ -198,21 +198,17 @@ setTimeout(function () {
         getProductInfo(item)
     })
 
-    let t = setInterval(function () {
-        if(tns) {
-            clearInterval(t)
-            let slider2 = tns({
-                container: '.slider_look',
-                controls: false,
-                preventScrollOnTouch: 'auto',
-                nav: false,
-                items: 2.5,
-                gutter: 10,
-                loop: false
-            })
-        }
-        
-    }, 100)
+    setTimeout(function () {
+        let slider2 = tns({
+            container: '.slider_look',
+            controls: false,
+            preventScrollOnTouch: 'auto',
+            nav: false,
+            items: 2.5,
+            gutter: 10,
+            loop: false
+        })
+    }, 2000)
 
     function getProductInfo(handle) {
         jQuery.getJSON(`/products/${handle}.js`, function (product) {
