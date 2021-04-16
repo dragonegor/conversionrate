@@ -274,7 +274,7 @@ setTimeout(function () {
         });
     }, 1500)
 
-}, 300);
+}, 1000);
 
 (function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
