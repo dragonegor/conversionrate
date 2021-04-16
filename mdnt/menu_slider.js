@@ -198,17 +198,21 @@ setTimeout(function () {
         getProductInfo(item)
     })
 
-    setTimeout(function () {
-        let slider2 = tns({
-            container: '.slider_look',
-            controls: false,
-            preventScrollOnTouch: 'auto',
-            nav: false,
-            items: 2.5,
-            gutter: 10,
-            loop: false
-        })
-    }, 1000)
+    let t = setInterval(function () {
+        if(tns) {
+            clearInterval(t)
+            let slider2 = tns({
+                container: '.slider_look',
+                controls: false,
+                preventScrollOnTouch: 'auto',
+                nav: false,
+                items: 2.5,
+                gutter: 10,
+                loop: false
+            })
+        }
+        
+    }, 100)
 
     function getProductInfo(handle) {
         jQuery.getJSON(`/products/${handle}.js`, function (product) {
@@ -279,7 +283,6 @@ setTimeout(function () {
             });
         });
     }, 1500)
-
 }, 1000);
 
 (function(h,o,t,j,a,r){
