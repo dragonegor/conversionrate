@@ -200,16 +200,6 @@ setTimeout(function () {
             </a>
         `
             document.querySelector('.slider_look').insertAdjacentHTML('afterbegin', block)
-            document.querySelector(`.item_slide[data-id="${product.variants[0].id}"] .btn`).addEventListener('click', function (e) {
-                e.preventDefault()
-                window.dataLayer = window.dataLayer || []
-                dataLayer.push({
-                    event: "event-to-ga",
-                    eventCategory: "GO — Cart improvement",
-                    eventAction: "click on button Add to cart",
-                    eventLabel: "Complete look"
-                })
-            })
         });
     }
     setTimeout(function () {
