@@ -208,7 +208,7 @@ setTimeout(function () {
             gutter: 10,
             loop: false
         })
-    }, 2000)
+    }, 1500)
 
     function getProductInfo(handle) {
         jQuery.getJSON(`/products/${handle}.js`, function (product) {
