@@ -104,7 +104,7 @@ let style = `
       font-weight: 300;
       text-align: center;
       height: 175px;
-      padding-right: 0;
+      padding-right: 0 !important;
     }
     
     .complete_look .btn {
@@ -113,6 +113,8 @@ let style = `
       color: white;
       letter-spacing: 0;
       width: 60%;
+      margin: 5px 15%;
+      display: block;
     }
 </style>
 `
