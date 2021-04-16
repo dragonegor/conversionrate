@@ -92,6 +92,11 @@ let style = `
     .mobile-nav {
       margin-bottom: 100px;
     }
+    
+    .item_slide .btn {
+      margin: 100% auto 0;
+      width: 120%;
+    }
 </style>
 `
 
