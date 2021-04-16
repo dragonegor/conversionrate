@@ -142,7 +142,7 @@ let slider = `
     <div class="complete_look">
       <h3>${title}</h3>
       <div class="slider_look">
-        
+        <a href="${href}" class="btn">View all bestsellers</a>
       </div>
       <a href="${href}" class="btn">View all bestsellers</a>
     </div>
@@ -193,7 +193,7 @@ setTimeout(function () {
               <p class="prod_price">${(product.price_max > 100000) ? '₴' : '$'}${new Intl.NumberFormat('en-IN').format(product.price_max / 100)}</p>
             </a>
         `
-            document.querySelector('.slider_look').insertAdjacentHTML('beforeend', block)
+            document.querySelector('.slider_look').insertAdjacentHTML('afterbegin', block)
             document.querySelector(`.item_slide[data-id="${product.variants[0].id}"] .btn`).addEventListener('click', function (e) {
                 e.preventDefault()
                 window.dataLayer = window.dataLayer || []
