@@ -94,11 +94,14 @@ let style = `
     }
     
     .view_all {
-      background-color: #807f7f;
+      border: 1px solid #807f7f;
       color: black;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 300;
     }
 </style>
 `
