@@ -96,12 +96,23 @@ let style = `
     .view_all {
       border: 1px solid #807f7f;
       color: black;
-      display: flex;
+      display: flex !important;
       align-items: center;
       justify-content: center;
       font-size: 12px;
       text-transform: uppercase;
       font-weight: 300;
+      text-align: center;
+      height: 175px;
+      padding-right: 0;
+    }
+    
+    .complete_look .btn {
+      background-color: #C10302;
+      border: none;
+      color: white;
+      letter-spacing: 0;
+      width: 60%;
     }
 </style>
 `
