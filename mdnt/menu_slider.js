@@ -231,7 +231,6 @@ setTimeout(function () {
         })
 
         $('.item_slide').click(function () {
-            console.log('Clicks to bestellers Section: items')
             window.dataLayer = window.dataLayer || [];
             dataLayer.push({
                 'event': 'event-to-ga',
@@ -242,18 +241,16 @@ setTimeout(function () {
         })
 
         $('.complete_look .btn').click(function () {
-            console.log('Clicks to bestellers Section: items')
             window.dataLayer = window.dataLayer || [];
             dataLayer.push({
                 'event': 'event-to-ga',
                 'eventCategory': 'Exp — Bestsellers block',
                 'eventAction': 'Clicks to bestellers',
-                'eventLabel': 'Section: items'
+                'eventLabel': 'View more'
             });
         })
 
         $('.red_btn').click(function () {
-            console.log('Clicks to bestellers')
             window.dataLayer = window.dataLayer || [];
             dataLayer.push({
                 'event': 'event-to-ga',
