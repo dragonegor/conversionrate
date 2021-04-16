@@ -190,7 +190,7 @@ setTimeout(function () {
             <a href="${product.url}"  class="item_slide" data-id="${product.variants[0].id}" data-handle="${product.handle}">
               <img src="${product.images[0]}" alt="img">
               <p class="name">${product.title}</p>
-              <p class="prod_price">${(product.price > 100000) ? '₴' : '$'}${new Intl.NumberFormat('en-IN').format(product.price / 100)}</p>
+              <p class="prod_price">${(product.price_max > 100000) ? '₴' : '$'}${new Intl.NumberFormat('en-IN').format(product.price_max / 100)}</p>
             </a>
         `
             document.querySelector('.slider_look').insertAdjacentHTML('beforeend', block)
