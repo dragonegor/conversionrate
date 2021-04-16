@@ -93,9 +93,12 @@ let style = `
       margin-bottom: 100px;
     }
     
-    .item_slide .btn {
-      margin: 100% auto 0;
-      width: 120%;
+    .item_slide .view_all {
+      background-color: #807f7f;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 </style>
 `
@@ -147,9 +150,7 @@ let slider = `
     <div class="complete_look">
       <h3>${title}</h3>
       <div class="slider_look">
-        <div class="item_slide">
-          <a href="${href}" class="btn">View all bestsellers</a>
-        </div>
+          <a href="${href}" class="view_all">View all bestsellers</a>
       </div>
       <a href="${href}" class="btn">View all bestsellers</a>
     </div>
@@ -161,8 +162,6 @@ let btnRed = `
 
 
 setTimeout(function () {
-
-
 
     document.body.insertAdjacentHTML('afterbegin', style)
     document.querySelector('.mobile-nav__item.appear-delay-6 a').after(document.querySelector('.mobile-nav__social'))
@@ -247,6 +246,16 @@ setTimeout(function () {
                 'eventCategory': 'Exp — Bestsellers block',
                 'eventAction': 'Clicks to bestellers',
                 'eventLabel': 'View more'
+            });
+        })
+
+        $('.complete_look .view_all').click(function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp — Bestsellers block',
+                'eventAction': 'Clicks to bestellers',
+                'eventLabel': 'View more on slider'
             });
         })
 
