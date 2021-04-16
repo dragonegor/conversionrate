@@ -93,7 +93,7 @@ let style = `
       margin-bottom: 100px;
     }
     
-    .item_slide .view_all {
+    .view_all {
       background-color: #807f7f;
       color: black;
       display: flex;
@@ -202,8 +202,8 @@ setTimeout(function () {
             document.querySelector('.slider_look').insertAdjacentHTML('afterbegin', block)
         });
     }
-    setTimeout(function () {
 
+    setTimeout(function () {
 
         let $ = jQuery;
 
