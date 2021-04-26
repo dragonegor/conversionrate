@@ -359,7 +359,7 @@ let style = `
 
 let stylebox = `
     <style id="special_style">
-    .css-94l1tz .css-ve8dmg {
+    .css-10no68i .css-ve8dmg {
       display:none;
     }
 </style>
@@ -470,7 +470,7 @@ function drawMainPage() {
     if (!document.querySelector('.add_block')) {
         document.querySelector('.recommended-pack ').insertAdjacentHTML('beforeend', addToCartBlock)
         document.querySelector('.recommended-pack .add_block button').addEventListener('click', function () {
-            document.querySelector('header button[aria-label="ADD A BOX"]').click()
+            document.querySelector('header .e-right-quiz button').click()
             window.dataLayer = window.dataLayer || [];
             dataLayer.push({
                 'event': 'event-to-ga',
@@ -533,18 +533,18 @@ function drawCart() {
     if(!document.querySelector('.cart_info2')) {
         document.querySelector('.box-blueprint-title').insertAdjacentHTML('afterend', cartInfo2)
     }
-    if(!document.querySelector('.css-94l1tz .cart_list')) {
-        document.querySelector('.css-94l1tz .remove-button').insertAdjacentHTML('afterend', cartList)
+    if(!document.querySelector('.css-10no68i .cart_list')) {
+        document.querySelector('.css-10no68i .remove-button').insertAdjacentHTML('afterend', cartList)
         document.querySelector('.tooltip').addEventListener('click', function () {
             document.querySelector('.tooltip').classList.toggle('active')
         })
     } else {
-        document.querySelector('.css-94l1tz .remove-button').after(document.querySelector('.cart_list'))
+        document.querySelector('.css-10no68i .remove-button').after(document.querySelector('.cart_list'))
     }
-    document.querySelector('.css-94l1tz button.action').innerText = 'CHECKOUT'
-    document.querySelector('.css-94l1tz button.action').addEventListener('click', function () {
+    document.querySelector('.css-10no68i button.action').innerText = 'CHECKOUT'
+    document.querySelector('.css-10no68i button.action').addEventListener('click', function () {
         setTimeout(function () {
-            document.querySelector('.css-94l1tz button.action').click()
+            document.querySelector('.css-10no68i button.action').click()
         }, 20)
     })
 
@@ -567,8 +567,8 @@ function drawCart() {
     }
 
 
-    if(!document.querySelector('.css-94l1tz .new_info')) {
-        document.querySelector('.css-94l1tz table.products').insertAdjacentHTML('afterend', `<p class="new_info">Free shipping</p>`)
+    if(!document.querySelector('.css-10no68i .new_info')) {
+        document.querySelector('.css-10no68i table.products').insertAdjacentHTML('afterend', `<p class="new_info">Free shipping</p>`)
     }
 
     if(items === +box[1]) {
